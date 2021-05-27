@@ -3,7 +3,7 @@
 ¡Bienvenidos a nuestra presentación!
 Estos son nuestros integrantes:
 
-- **Alexis**:
+- **Alexis**: 19 años. Aficionado por la tecnología y los juegos de computadora. Estudia programación web.
 - **Marcia:** 30 años. Apasionado por los algoritmos y la lógica de los sistemas. Caracterizada por evaluar las situaciones desde una perspectiva integral, hallando así soluciones prácticas y eficientes. Estudia programación web
 - **Octavio:** 27 años. Trabaja en soporte técnico en sistemas. Fotógrafo aficionado. Estudia programación web
 
