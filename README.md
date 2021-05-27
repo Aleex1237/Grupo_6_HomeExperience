@@ -13,9 +13,8 @@ de carácter público, nos hemos visto privados de vivir experiencias fuera de n
 De ahora en más podremos disfrutar la experiencia de estar en un bar o en un cine, pero en la comodidad de nuestro living.
 ¿Cómo recrearemos estas experiencias? A Través de **BOXES**. Nuestras cajas fueron diseñadas y pensadas para que puedas sentir replicada la experiencia que desees. Dentro de ella podrás encontrar las bebidas, comidas y todo lo necesario para sentir que estás en un bar en cualquier parte del mundo o dentro de tu cine preferido.
 
-Las experiencias son muy importantes a lo largo de toda la vida, por ello, desde **HOME EXPERIENCE**, apuntamos a un público amplio y diverso. 
+Las experiencias son muy importantes a lo largo de toda la vida, por ello, desde **HOME EXPERIENCE**, apuntamos a un público amplio y diverso. La experiencia de estar en un **CINE** podrá ser consumida por personas de cualquier edad, mientras que la experiencia de **COCTELERÍA** será exclusivamente para mayores de 18 años.
 
-La experiencia de estar en un **CINE** podrá ser consumida por personas de cualquier edad, mientras que la experiencia de **COCTELERÍA** será exclusivamente para mayores de 18 años.
 
 
 **Listado de páginas web referentes para nuestro sitio:**
