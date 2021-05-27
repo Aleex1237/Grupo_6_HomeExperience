@@ -1,4 +1,4 @@
-#HOME EXPERIENCE
+# HOME EXPERIENCE
 
 ¡Bienvenidos a nuestra presentación!
 Estos son nuestros integrantes:
@@ -20,3 +20,4 @@ Las experiencias son muy importantes a lo largo de toda la vida, por ello, desde
 2) [Presidente Bar](https://www.presidentebar.com.ar) Nos gustó el diseño minimalista que tiene y la simpleza del sitio
 3) [GoldenPack](https://www.goldenpack.com.ar/home) De acá tomamos el concepto de packs y cómo regalar experiencias.
 4) [Personal](https://tienda.personal.com.ar/) De esta web nos inspiramos a la hora de cómo presentar el detalle de los productos 
+
