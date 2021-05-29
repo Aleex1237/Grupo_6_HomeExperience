@@ -4,8 +4,8 @@
 Estos son nuestros integrantes:
 
 - **Alexis**: 19 años. Aficionado por la tecnología y los juegos de computadora. Estudia programación web.
-- **Marcia:** 30 años. Apasionado por los algoritmos y la lógica de los sistemas. Caracterizada por evaluar las situaciones desde una perspectiva integral, hallando así soluciones prácticas y eficientes. Estudia programación web
-- **Octavio:** 27 años. Trabaja en soporte técnico en sistemas. Fotógrafo aficionado. Estudia programación web
+- **Marcia:** 30 años. Apasionado por los algoritmos y la lógica de los sistemas. Caracterizada por evaluar las situaciones desde una perspectiva integral, hallando así soluciones prácticas y eficientes. Estudia programación web.
+- **Octavio:** 27 años. Trabaja en soporte técnico en sistemas. Fotógrafo aficionado. Estudia programación web.
 
 Somos una empresa que nace atendiendo una necesidad. Debido a acontecimientos sanitarios
 de carácter público, nos hemos visto privados de vivir experiencias fuera de nuestras casas. Por ello surge **HOME EXPERIENCE**, con la intención de llevar esas experiencias a la comodidad y seguridad de nuestros hogares. 
@@ -18,9 +18,9 @@ Las experiencias son muy importantes a lo largo de toda la vida, por ello, desde
 
 
 **Listado de páginas web referentes para nuestro sitio:**
-1) [BIGBOX](https://www.bigbox.com.ar). De este sitio hemos tomado el concepto general de BOX y cómo aplicarlo
-2) [Presidente Bar](https://www.presidentebar.com.ar) Nos gustó el diseño minimalista que tiene y la simpleza del sitio
+1) [BIGBOX](https://www.bigbox.com.ar). De este sitio hemos tomado el concepto general de BOX y cómo aplicarlo.
+2) [Presidente Bar](https://www.presidentebar.com.ar) Nos gustó el diseño minimalista que tiene y la simpleza del sitio.
 3) [GoldenPack](https://www.goldenpack.com.ar/home) De acá tomamos el concepto de packs y cómo regalar experiencias.
-4) [Personal](https://tienda.personal.com.ar/) De esta web nos inspiramos a la hora de cómo presentar el detalle de los productos 
-5) [American Eagle](https://www.ae.com/us/en) Tomamos como referencia el carrito de compras
+4) [Personal](https://tienda.personal.com.ar/) De esta web nos inspiramos a la hora de cómo presentar el detalle de los productos.
+5) [American Eagle](https://www.ae.com/us/en) Tomamos como referencia el carrito de compras.
 
