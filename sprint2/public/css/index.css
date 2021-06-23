@@ -1,47 +1,14 @@
 .home{
     background-color: var(--color-azul-oscuro);
 }
-
-
-/* HEADER */
-.home  header h2,
-.home a.shopping-basket,
-.home .burger-menu{
-    color: var(--color-gris);
-}
-.home header{
-    width: 100%;
-    height: 9vh;
-    border-bottom: solid 1.5px var(--color-celeste);
-}
-.home header h2{
-    display: inline-block;
-    font-size: 3vw;
-    margin-left: 4vw;
-}
-.home .shopping-basket{
-    margin-left: 50vw;
-    font-size: 6vw;
-    padding-right: 2vw;
-}
-.home .burger-menu{
-    font-size: 5.5vw;
-}
-.home .burger-menu i{
-    margin-top: 3vh;
-}
 .home ul li{
     list-style: none;
 }
 .home a{
     text-decoration: none;
     color: var(--color-blanco);
-}
+}   
 
-.home .nav-user,
-.home .nav-bar{
-    display: none;
-}
 /* MAIN */
 
 .home .banner .banner-img{
