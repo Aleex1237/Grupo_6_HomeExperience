@@ -11,8 +11,8 @@
 }
 .home header{
     width: 100%;
-    height: 11vh;
-    border-bottom: solid 3px var(--color-celeste);
+    height: 9vh;
+    border-bottom: solid 1.5px var(--color-celeste);
 }
 .home header h2{
     display: inline-block;
@@ -52,7 +52,7 @@
 }
 .home .texto-encima{
     position: absolute;
-    top: 20vh;
+    top: 13vh;
     left: 0vw;
     color: var(--color-blanco);
     font-size: 4.5vw;
@@ -61,7 +61,7 @@
 }
 .home .texto-encima2{
     position: absolute;
-    top: 31vh;
+    top: 21vh;
     left: 0vw;
     color: var(--color-blanco);
     font-size: 4.5vw;
@@ -70,7 +70,7 @@
 }
 .home .banner h3{
     position: absolute;
-    top: 44vh;
+    top: 30vh;
     left: 11%;
     color: var(--color-blanco);
     font-size: 5.5vw;
@@ -103,7 +103,6 @@
 }
 .home .bar{
     position: relative;
-    width: 48%;
     height: 50%;
     
 }
@@ -124,13 +123,19 @@
 /* FOOTER */
 .home footer{
     background-color: #262B2E;
-    height: 9vh;
+    height: 7vh;
+    padding: 13px;
+    color: var(--color-blanco);
+    border-top: solid 1.5px var(--color-celeste);
 }
 .home footer h5{
-    color: var(--color-blanco);
+    
     display: inline-block;
 }
 .home footer .nav-footer{
+    display: inline;
+}
+.home footer ul{
     display: inline;
 }
 .home footer li{
@@ -142,4 +147,10 @@
 .home footer li:last-child{
     border-right: none;
     padding-right: 0;
+    margin-right: 12vw;
+}
+.home footer h4{
+    font-size: 2vw;
+    font-weight: 400;
+    display: inline;
 }
