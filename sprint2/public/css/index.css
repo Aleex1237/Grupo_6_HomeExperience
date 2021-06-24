@@ -25,6 +25,7 @@
     font-size: 4.5vw;
     text-align: center;
     padding: 0px 17px;
+    line-height: 3.3vh;
 }
 .home .texto-encima2{
     position: absolute;
@@ -34,6 +35,8 @@
     font-size: 4.5vw;
     text-align: center;
     padding: 0px 34px;
+    line-height: 3.3vh;
+    margin: 1vh 0;
 }
 .home .banner h3{
     position: absolute;
@@ -42,24 +45,28 @@
     color: var(--color-blanco);
     font-size: 5.5vw;
     text-align: center;
+    margin: 2vh 0;
 }
 .home section{
     display: flex;
     align-items: center;
+    margin-top: 5vw;
+    width: 94%;
+    margin: 3%;
+}
+.home .cine-container{
+    position: relative;
 }
 .home .cine{
-    position: relative;
-    width: 49%;
-    height: 50%;
-    margin: 1%;
-    display: inline-block;
+    width: 50vw;
+    height: 35vh;
+    background-image: url('../images/Cine.webp');
+    filter: brightness(0.6);
+    background-size: cover;
+    background-position: center;
 }
-.home .cine img{
-    width: 49vw;
-    height: 34vh;
-    filter: brightness(0.4);
-}
-.home .cine a{
+
+.home article .btn-cine{
     position: absolute;
     top: 12vh;
     left: 18vw;
@@ -68,17 +75,20 @@
     font-size: 5vw;
     padding: 0 3vw;
 }
-.home .bar{
+.home .bar-container{
     position: relative;
-    height: 50%;
-    
 }
-.home .bar img{
-    width: 100%;
-    height: 34vh;
-    filter: brightness(0.6);
+.home .bar{
+    width: 44.5vw;
+    height: 35vh;
+    background-image: url('../images/Bar.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    margin-left: 2.5px;
 }
-.home .bar a{
+
+.home article .btn-bar{
     position: absolute;
     top: 12vh;
     left: 18vw;
@@ -94,10 +104,14 @@
     padding: 13px;
     color: var(--color-blanco);
     border-top: solid 1.5px var(--color-celeste);
+    margin-top: 10vh;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 .home footer h5{
     
-    display: inline-block;
+    display: none;
 }
 .home footer .nav-footer{
     display: inline;
@@ -114,10 +128,16 @@
 .home footer li:last-child{
     border-right: none;
     padding-right: 0;
-    margin-right: 12vw;
+    margin-right: 16vw;
+}
+.home footer .nav-footer ul li .fa-twitter:active{
+    color: skyblue;
 }
 .home footer h4{
     font-size: 2vw;
     font-weight: 400;
     display: inline;
+    text-align: center;
+    
+    
 }
