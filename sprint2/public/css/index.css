@@ -108,6 +108,8 @@
     position: fixed;
     bottom: 0;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 .home footer h5{
     
@@ -128,7 +130,7 @@
 .home footer li:last-child{
     border-right: none;
     padding-right: 0;
-    margin-right: 16vw;
+    margin-right: 5vw;
 }
 .home footer .nav-footer ul li .fa-twitter:active{
     color: skyblue;
@@ -138,6 +140,7 @@
     font-weight: 400;
     display: inline;
     text-align: center;
+    margin-top: 5px;
     
     
 }
