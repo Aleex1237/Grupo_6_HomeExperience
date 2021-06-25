@@ -1,0 +1,56 @@
+ footer{
+    background-color: #262B2E;
+    height: 7vh;
+    padding: 13px;
+    color: var(--color-blanco);
+    border-top: solid 1.5px var(--color-celeste);
+    margin-top: 10vh;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+ footer h5{
+    
+    display: none;
+}
+ footer .nav-footer{
+    display: inline;
+}
+ footer ul{
+    display: inline;
+}
+ footer li{
+    display: inline;
+    margin: 8px;
+    border-right: solid 1px var(--color-blanco);
+    padding-right: 20px;
+}
+ footer li:last-child{
+    border-right: none;
+    padding-right: 0;
+    margin-right: 5vw;
+}
+ footer .nav-footer ul li .fa-twitter:active{
+    color: skyblue;
+}
+ footer h4{
+    font-size: 2vw;
+    font-weight: 400;
+    display: inline;
+    text-align: center;
+    margin-top: 5px;   
+}
+@media (min-width:768px) {
+    footer .nav-footer{
+        margin-top: .7vh;
+    }
+    footer h5{
+        display: initial;
+        margin-left: 4vw;
+    }
+    footer li{
+        margin: 6px;
+    }
+}
