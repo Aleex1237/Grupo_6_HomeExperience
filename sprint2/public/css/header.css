@@ -36,3 +36,24 @@ header .nav-user,
 header .nav-bar{
     display: none;
 }
+@media (min-width: 768px) {
+     header{
+        height: 11vh;
+        display: flex;
+        justify-content: space-between;
+    }
+     header h2{
+        margin-top: 5vw;
+    }
+     header .shopping-basket{
+        margin-left: 47vw;
+        margin-top: 2vh;
+    }
+     header .shopping-basket i{
+        margin-top: 1vh;
+    }
+     header .burger-menu i{
+        margin-top: 3.6vh;
+        margin-right: 4vw;
+    }
+}
