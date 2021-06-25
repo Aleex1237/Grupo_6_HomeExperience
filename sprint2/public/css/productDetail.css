@@ -1,0 +1,30 @@
+body{
+    background-color:var(--color-azul-oscuro);
+    width:100%;
+}
+main{
+    text-align:center center;
+}
+main .imagen{
+    width:70%;
+    height:40vh;
+    background-image:url("/images/imagen-producto-1.jpeg");
+    background-size:cover;
+    background-position:center;
+    margin:5% 15% 10% 15%;
+}
+main h1{
+    color:var(--color-blanco);
+}
+main .precio{
+    color:var(--color-gris);
+}
+main .cuotas{
+    color:var(--color-gris);
+}
+main button{
+    background-color:var(--color-celeste);
+    color:var(--color-blanco);
+    border:solid 1px var(--color-celeste);
+    border-radius:7%;
+}
