@@ -97,50 +97,102 @@
     font-size: 5vw;
     padding: 0 3vw;
 }
-/* FOOTER */
-.home footer{
-    background-color: #262B2E;
-    height: 7vh;
-    padding: 13px;
-    color: var(--color-blanco);
-    border-top: solid 1.5px var(--color-celeste);
-    margin-top: 10vh;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+
+@media (min-width: 768px) {
+    .home .texto-encima{
+        top: 20vh;
+        font-size: 5vw;
+        padding: 0 27px;
+        line-height: 1;
+    }
+    .home .texto-encima2{
+        top: 31vh;
+        font-size: 5vw;
+        padding: 0 45px;
+        line-height: 1;
+    }
+    .home .banner h3{
+        top: 42vh;
+        font-size: 4vh;
+        right: 7vw;
+    }
+    .home .banner .banner-img{
+        width: 92%;
+        margin-left: 4vw;
+    }
+    .home section{
+        justify-content: space-evenly;
+    }
+    .home .cine{
+        width: 45.2vw;
+        height: 29vh;
+        
+    }
+    .home article .btn-cine{
+        top: 10vh;
+        left: 15vw;
+    }
+    .home .bar{
+        height: 29vh;
+        width: 46.2vw;
+    }
+    .home article .btn-bar{
+        top: 10vh;
+        left: 20vw;
+    }
 }
-.home footer h5{
+@media (min-width:1024px) {
     
-    display: none;
-}
-.home footer .nav-footer{
-    display: inline;
-}
-.home footer ul{
-    display: inline;
-}
-.home footer li{
-    display: inline;
-    margin: 8px;
-    border-right: solid 1px var(--color-blanco);
-    padding-right: 20px;
-}
-.home footer li:last-child{
-    border-right: none;
-    padding-right: 0;
-    margin-right: 5vw;
-}
-.home footer .nav-footer ul li .fa-twitter:active{
-    color: skyblue;
-}
-.home footer h4{
-    font-size: 2vw;
-    font-weight: 400;
-    display: inline;
-    text-align: center;
-    margin-top: 5px;
-    
-    
+    .home header{
+        padding-top: 1vh;
+        align-items: baseline;
+        height: 9vh;
+    }
+    .home header h2{
+        font-size: 2vw;
+        margin: 0;
+        margin-left: 3.7vw;
+    }
+    .home header .shopping-basket{
+        font-size: 4vw;
+        margin: 0;
+        margin-left: 4vw;
+    }
+    .home header .shopping-basket i{
+        margin: 0;
+        font-size: 3vw;
+    }
+    .home header .burger-menu{
+        display: none;
+    }
+    .home header .nav-user,
+    .home header .nav-bar{
+        display: initial;
+    }
+    .home .nav-bar{
+    }
+    .home .nav-bar ul{
+        display: flex;
+        margin-left: 10vh;
+    }
+    .home .nav-bar li{
+        margin-right: 2vw;
+        font-weight: 700;
+    }
+    .home .nav-user{
+
+    }
+    .home header .nav-user ul{
+        display: flex;
+        width: 19vw;
+    }
+    .home .nav-user li{
+        border-right: solid 1px var(--color-blanco);
+    }
+    .home .nav-user li:last-child{
+        border-right: none;
+    }
+    .home header .shopping-basket{
+        margin-left: 0;
+    }
 }
