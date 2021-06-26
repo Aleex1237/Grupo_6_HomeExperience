@@ -1,30 +1,75 @@
-body{
+.productDetail a{
+    color:var(--color-blanco);
+    text-decoration:none;
+}
+
+.productDetail{
     background-color:var(--color-azul-oscuro);
     width:100%;
 }
-main{
-    text-align:center center;
+.productDetail main{
+    width:90%;
+    margin-left:5%;
+    margin-right:5%;
 }
-main .imagen{
+.productDetail main .imagen{
     width:70%;
-    height:40vh;
+    height:25vh;
     background-image:url("/images/imagen-producto-1.jpeg");
     background-size:cover;
     background-position:center;
     margin:5% 15% 10% 15%;
 }
-main h1{
+
+.productDetail main h1{
     color:var(--color-blanco);
+    font-weight: normal;
+    font-size:18px;
 }
-main .precio{
+.productDetail main .precio{
     color:var(--color-gris);
 }
-main .cuotas{
+.productDetail main .cuotas{
     color:var(--color-gris);
 }
-main button{
+.productDetail main button{
+    margin-top:10px;
+    margin-bottom: 10px;
+    width:100%;
+    height:2rem;
+    text-align:center;
     background-color:var(--color-celeste);
     color:var(--color-blanco);
     border:solid 1px var(--color-celeste);
-    border-radius:7%;
+}
+.productDetail main .contenedora{
+    display:flex;
+    width:100%;
+
+}
+.productDetail main .opciones{
+    width:50%;
+    height:1.5rem;
+    text-align:center; 
+    border-bottom:solid 1px var(--color-celeste);
+}
+.productDetail main h2{
+    font-size:12px;
+    color:var(--color-gris);
+}
+.productDetail main .experiencia, .contenido{
+    width:100%;
+    height:25vh;
+    background-color:var(--color-gris);
+    color:var(--color-blanco);
+    font-size:10px;
+    margin-top:5px;
+    text-align:center;
+    padding:20px 15px;
+}
+.productDetail main .contenido{
+    display:none;
+}
+.productDetail main .experiencia{
+    display:inline-block;
 }
