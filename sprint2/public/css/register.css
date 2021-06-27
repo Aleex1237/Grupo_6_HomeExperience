@@ -1,0 +1,9 @@
+.register{
+    background-color:var(--color-gris);
+    width:100%;
+    text-align:center;
+}
+.register h1{
+    color:var(--color-azul-oscuro);
+    font-size:10vw
+}
