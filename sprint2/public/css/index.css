@@ -17,6 +17,9 @@
     position: relative;
     filter:brightness(0.4);
 }
+.home .banner .banner-desk{
+    display: none;
+}
 .home .texto-encima{
     position: absolute;
     top: 13vh;
@@ -139,5 +142,80 @@
     .home article .btn-bar{
         top: 10vh;
         left: 20vw;
+    }
+}
+@media (min-width:1024px) {
+    /* MAIN */
+    .home .banner .banner-img{
+        display: none;
+    }
+    .home .banner .banner-desk{
+        display: initial;
+        width: 94%;
+        margin: 3%;
+        position: relative;
+        filter:brightness(0.6);
+        height: 30vh;
+    }
+    .home .texto-encima{
+        font-size: 1.3vw;
+        left:22vw;
+        padding-left: 14vw;
+        padding-right: 35vw;
+        top: 24.2vh;
+    }
+    .home .texto-encima2{
+        font-size: 1.4vw;
+        left: 24vw;
+        top: 28.6vh;
+        height: 4vh;
+        padding-left: 9vw;
+        padding-right: 32vw;
+    }
+    .home .banner h3{
+        left: 8vw;
+        top: 34vh;
+        font-size: 1.5vw;
+    }
+    .home .container-texto{
+        position: absolute;
+        background: var(--color-azul-oscuro);
+        top: 21vh;
+        width: 37vw;
+        height: 21vh;
+        left: 32vw;
+        box-shadow: 8px 5px rgba(4, 15, 22, 0.45);
+    }
+    .home section{
+        margin: 0 3%;
+    }
+    .home .cine,
+    .home .bar{
+        height: 47vh;
+    }
+    .home article .btn-cine,
+    .home article .btn-bar{
+        top: 16vh;
+        left: 18vw;
+        font-size: 3vw;
+        padding: 0 2vw;
+        text-transform: uppercase;
+        transition: 0.4s;
+        
+    }
+    .home article .btn-cine:hover{
+        box-shadow: 8px 5px rgba(255, 255, 255, 0.7);
+        background-color: var(--color-celeste);
+        color: var(--color-azul-oscuro);
+    
+    }
+    .home article .btn-bar:hover{
+        box-shadow: -8px 5px rgba(255, 255, 255, 0.7);
+        background-color: var(--color-celeste);
+        color: var(--color-azul-oscuro);
+    
+    }
+    .home article .btn-bar{
+        left: 21vw;
     }
 }
