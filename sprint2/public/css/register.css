@@ -28,11 +28,11 @@
 .register main .dato{
     display:inline-block;
     width:90%;
-    height:2rem;
+    font-size:4vw;
+    padding:8px;
     margin-bottom:20px;
     background-color:var(--color-celeste);
     color:var(--color-blanco);
-    padding-left:20px;
     border-radius:5%;
 }
 .register main label{
@@ -54,8 +54,38 @@
     color:var(--color-blanco);
     font-size:10vw;
     padding:10px;
-    margin-bottom:100px;
+    margin-bottom:50px;
     border:solid 1px var(--color-azul-oscuro);
     margin-top:15px;
     border-radius:5%;
+}
+.register footer a{
+    color:var(--color-blanco);
+}
+
+@media(min-width:754px){
+    .register main h1{
+        font-size:9vw;
+    }
+    .register main p{
+        font-size:3vw;
+    }
+    .register main .contenedor{
+        display:flex;
+        width:90vw;
+        margin-left:5vw;
+        justify-content:center;
+    }
+    .register main .dibujo{
+        margin-top:0;
+    }
+    .register main .dato{
+        font-size:2vw;
+    }
+    .register main label{
+        font-size:1.5vw;
+    }
+    .register main button{
+        font-size:4vw;
+    }
 }
