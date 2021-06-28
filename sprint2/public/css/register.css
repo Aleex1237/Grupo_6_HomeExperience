@@ -1,9 +1,61 @@
 .register{
     background-color:var(--color-gris);
+    text-align:center;
     width:100%;
+}
+.register header{
+    background-color:var(--color-azul-oscuro);
+}
+.register main h1{
+    color:var(--color-azul-oscuro);
+    font-size:15vw;
+    text-align:center;
+    margin:30px;
+}
+.register main .dibujo{
+    margin: 40px 5% 40px 5%;
+    width: 90%;
+    height: 158px;
+    background-image:url("/images/dibujo.png");
+    background-size:contain;
+}
+.register main p{
+    margin-top:30px;
+    margin-bottom:60px;
+    color:var(--color-azul-oscuro);
+    font-size:9vw;
+}
+.register main .dato{
+    display:inline-block;
+    width:90%;
+    height:2rem;
+    margin-bottom:20px;
+    background-color:var(--color-celeste);
+    color:var(--color-blanco);
+    padding-left:20px;
+    border-radius:5%;
+}
+.register main label{
+    display:inline-block;
+    color:var(--azul-oscuro);
+    font-size:4vw;
+    padding-left:15px;
+    padding-right:15px;
+}
+.register main a{
+    display:inline-block;
+    margin:10px;
+    color:var(--color-blanco);
+    width:90%;
     text-align:center;
 }
-.register h1{
-    color:var(--color-azul-oscuro);
-    font-size:10vw
+.register main button{
+    background-color:var(--color-azul-oscuro);
+    color:var(--color-blanco);
+    font-size:10vw;
+    padding:10px;
+    margin-bottom:100px;
+    border:solid 1px var(--color-azul-oscuro);
+    margin-top:15px;
+    border-radius:5%;
 }

@@ -8,25 +8,60 @@
     <title>Registrate en Home Experience</title>
 </head>
 <body class="register">
-    <h1>Creá tu cuenta</h1>
-    <div class="contenedor">
-        <div class="portada">
-            <div class="dibujo"></div>
-            <p>¿No tenés cuenta? Registrate y descubrí Home Experience</p>
+    <header>
+        <a href="#"><h2>HOME EXPERIENCE</h2></a>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="#">Experiencias</a></li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <nav class="nav-user">
+            <ul>
+                <li><a href="#">Iniciar sesión</a></li>
+                <li><a href="#">Registrarse</a></li>
+            </ul>
+        </nav>
+        
+        <a class="shopping-basket" href="#"><i class="fas fa-shopping-basket"></i></a>
+        <a class="burger-menu" href="#"><i class="fas fa-bars"></i></a>
+       
+
+    </header>
+    <main>
+        <h1>¡Creá tu cuenta!</h1>
+        <div class="contenedor">
+            <div class="portada">
+                <div class="dibujo"></div>
+                <p>¿No tenés cuenta? Registrate y descubrí Home Experience</p>
+            </div>
+            <div class="formulario">
+                <form action="" method="">
+                    <input class="dato" type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+                    <input class="dato" type="email" name="email" id="email" placeholder="Email" required>
+                    <input class="dato" type="password" name="password" id="password" placeholder="Clave" required>
+                    <input class="dato" type="password" name="password2" id="password2" placeholder="Confirma tu clave" required>
+                    <label>
+                        <input class="check" type="checkbox">Acepto los términos y políticas de este sitio web
+                    </label>
+                    <a href="">¿Ya tenés cuenta? ¡Iniciá sesión!</a>
+                    <button type="submit">REGISTRATE</button>
+                </form>
+            </div>
         </div>
-        <div class="formulario">
-            <form action="" method="">
-                <input type="text" name="nombre" id="nombre" placeholder="Nombre" required>
-                <input type="email" name="email" id="email" placeholder="Email" required>
-                <input type="password" name="password" id="password" placeholder="Clave" required>
-                <input type="password" name="password2" id="password2" placeholder="Confirma tu clave" required>
-                <label>
-                    <input type="checkbox">Acepto los términos y políticas de este sitio web
-                </label>
-                <a href="">¿Ya tenés cuenta? ¡Iniciá sesión!</a>
-                <button type="submit">REGISTRATE</button>
-            </form>
-        </div>
-    </div>
+    </main>
+    <footer>
+        <nav class="nav-footer">
+            <h5>Seguinos :</h5>
+            <ul>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            </ul>
+        </nav>
+        <h4>Copyright © 2021 - Todos los derechos reservados</h5>
+</footer>
 </body>
 </html>
