@@ -1,9 +1,9 @@
- footer{
+footer{
     background-color: #262B2E;
     height: 7vh;
     padding: 13px;
     color: var(--color-blanco);
-    border-top: solid .2vh var(--color-celeste);
+    border-top: solid 1.5px var(--color-celeste);
     margin-top: 10vh;
     position: fixed;
     bottom: 0;
@@ -42,9 +42,6 @@
     text-align: center;
     margin-top: 5px;   
 }
-footer .news-div{
-    display: none;
-}
 @media (min-width:768px) {
     footer .nav-footer{
         margin-top: .7vh;
@@ -56,68 +53,4 @@ footer .news-div{
     footer li{
         margin: 6px;
     }
-}
-@media (min-width:1024px) {
-        footer{
-            height: 11vh;
-            position: initial;
-            margin-top: 5vh;
-            
-        }
-        footer .nav-footer{
-            margin-top: 2vh;
-        }
-        footer .nav-footer .fa-twitter:hover{
-            color: skyblue;
-        }
-        footer .nav-footer .fa-facebook:hover{
-            color: #4267B2;
-        }
-        footer .nav-footer .fa-instagram,
-        footer .nav-footer .fa-facebook,
-        footer .nav-footer .fa-twitter{
-            font-size: 1.5vw;
-            transition: 0.4s;
-        }
-        footer .nav-footer .fa-instagram:hover{
-            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-            -webkit-background-clip: text;
-                    /* Also define standard property for compatibility */
-                    background-clip: text;
-            -webkit-text-fill-color: transparent;
-            
-            
-        }
-        footer h5{
-            margin-left: 2vw;
-            margin-top: 2vh;
-            font-size: 1.2vw;
-            font-weight: 400;
-        }
-        footer .news-div{
-            display: flex;
-            flex-direction: column;
-            align-content: baseline;
-            margin-left: 2vw;
-        }
-        footer .news-div label{
-            font-size: 80%;
-            text-align: center;
-            line-height: 2vh;
-            margin-bottom: 1vh;
-        }
-        footer .news-div input{
-            width: 14vw;
-            background-color: var(--color-azul-oscuro);
-            border: none;
-            color: var(--color-blanco);
-            text-align: center;
-        }
-        footer h4{
-            font-size: 1vw;
-            margin-top: 2vh;
-            margin-right: 2vw;
-        }
-        
-
 }
