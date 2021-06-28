@@ -63,7 +63,7 @@
     color:var(--color-blanco);
 }
 
-@media(min-width:754px){
+@media(min-width:768px){
     .register main h1{
         font-size:9vw;
     }
@@ -88,4 +88,7 @@
     .register main button{
         font-size:4vw;
     }
+}
+@media(min-width:1024px){
+    
 }
