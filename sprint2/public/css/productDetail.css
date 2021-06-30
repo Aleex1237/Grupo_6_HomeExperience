@@ -1,12 +1,16 @@
+
+
+.productDetail{
+    background-color:var(--color-azul-oscuro);
+    width:100%;
+    position:relative;
+    height:100vh;
+}
 .productDetail a{
     color:var(--color-blanco);
     text-decoration:none;
 }
 
-.productDetail{
-    background-color:var(--color-azul-oscuro);
-    width:100%;
-}
 .productDetail main{
     width:90%;
     margin-left:5%;
