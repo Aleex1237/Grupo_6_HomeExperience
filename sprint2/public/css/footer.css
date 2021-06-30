@@ -20,6 +20,7 @@ footer{
 }
  footer ul{
     display: inline;
+    padding: 0;
 }
  footer li{
     display: inline;
@@ -59,9 +60,9 @@ footer .news-div{
 }
 @media (min-width:1024px) {
         footer{
-            height: 11vh;
-            position: initial;
-            margin-top: 5vh;
+            height: 12vh;
+            position: absolute;
+            margin-top: 9vh;
             
         }
         footer .nav-footer{
@@ -76,8 +77,8 @@ footer .news-div{
         footer .nav-footer .fa-instagram,
         footer .nav-footer .fa-facebook,
         footer .nav-footer .fa-twitter{
-            font-size: 1.5vw;
-            transition: 0.4s;
+            font-size: 1.2vw;
+            transition: 0.6s;
         }
         footer .nav-footer .fa-instagram:hover{
             background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
@@ -98,20 +99,50 @@ footer .news-div{
             display: flex;
             flex-direction: column;
             align-content: baseline;
-            margin-left: 2vw;
+            margin-left: 8vw;
         }
         footer .news-div label{
             font-size: 80%;
             text-align: center;
             line-height: 2vh;
-            margin-bottom: 1vh;
+            margin-left: 2vw;
         }
         footer .news-div input{
-            width: 14vw;
+            width: 10vw;
             background-color: var(--color-azul-oscuro);
             border: none;
             color: var(--color-blanco);
             text-align: center;
+            height: 2.3vh;
+            transition: 0.5s;
+        }
+        footer .news-div input:focus{
+            border: solid 1px var(--color-celeste);
+            outline: var(--color-celeste);
+            width: 14vw;
+            box-shadow: 1px 1px 5px var(--color-celeste);
+        }
+        footer .input-div{
+            margin-top: 0.5vh;
+        }
+        footer form button{
+            background-color: #262B2E;
+            border:none;
+            color:var(--color-blanco);
+            cursor: pointer;
+            transition: 0.5s;
+            width: 5vw;
+            margin-left: 1vw;
+        }
+        footer form button:hover{
+            border: solid 1px var(--color-blanco);
+            width: 6vw;
+            background-color:var(--color-celeste);
+            box-shadow: 1px 1px 10px var(--color-celeste);
+            border-radius: 4px;
+        }
+        footer form button:active{
+            opacity:0.5;
         }
         footer h4{
             font-size: 1vw;
