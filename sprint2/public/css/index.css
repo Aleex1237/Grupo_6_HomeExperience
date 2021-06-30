@@ -1,5 +1,7 @@
 .home{
     background-color: var(--color-azul-oscuro);
+    height: 120vh;
+    position: relative;
 }
 .home ul li{
     list-style: none;
