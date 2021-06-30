@@ -1,7 +1,9 @@
 .register{
+    position:relative;
     background-color:var(--color-gris);
     text-align:center;
     width:100%;
+    padding-bottom:50px;
 }
 .register header{
     background-color:var(--color-azul-oscuro);
