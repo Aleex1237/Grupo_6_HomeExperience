@@ -1,0 +1,153 @@
+/* prueba header */
+
+.login header a{
+    margin-top: 2vh;
+}
+
+.login header .nav-bar{
+    display: none;
+}
+
+.login header .nav-user{
+    display: none;
+}
+
+.login header .fa-shopping-basket{
+    display: none;
+}
+
+.login header .fa-bars{
+    display: none;
+}
+
+
+
+
+
+
+
+/* fin de header */
+
+.login {
+    background-color:var(--color-gris);
+}
+
+.login a {
+    text-decoration: none;
+    color: var(--color-blanco);
+}
+
+.login .cuerpo {
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 32px;
+    /* margin-left: 45px; */ 
+    margin: 32px auto;
+    flex-wrap: nowrap;
+}
+
+.login .cuerpo h1{
+    font-size: 60px;
+    text-align: center;
+    color: var(--color-azul-oscuro);
+    margin-bottom: 30px;
+}
+
+.login .cuerpo .form-control{
+    background-color: var( --color-celeste);
+}
+
+.login .cuerpo .datosformulario{
+    color: var(--color-blanco);
+}
+
+.login .cuerpo .conectado{
+    margin-top: 18px;
+    color: var(--color-azul-oscuro);
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.login .cuerpo .recuperarpassword,
+.creacuenta{
+    color: var(--color-blanco);
+    margin-top: 30px;
+    font-size: 14.5px;
+}
+
+.login .cuerpo .boton{
+    color: var(--color-blanco);
+   background-color:var(--color-azul-oscuro);
+   text-transform: uppercase;
+   margin-top: 16px;
+   border-radius: 12px;
+   padding: 10px 40px
+}
+
+
+@media (min-width:768px){
+
+    .login header a{
+        margin-top: -2vh;
+    }
+
+.login .cuerpo {
+    margin-left: 15vw;
+    margin-top: 50px;
+    }
+
+    .login .cuerpo .conectado{
+        margin-top: 30px;
+        margin-bottom: 7px;
+        font-size: 20px;
+    }
+
+    .login .cuerpo .form-control{
+        width: 55%;
+        margin-left: 16vw;
+    }
+
+    .login .cuerpo .datosformulario{
+        margin-left: 16vw;
+    }
+
+    .login .cuerpo .recuperarpassword,
+.creacuenta{
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+.login .cuerpo .boton{
+   margin-top: 25px;
+   margin-bottom: 25px;
+   margin-left: 21vw;
+   width: 28vw;
+}
+}
+@media (min-width:1024px) {
+   
+    .login header a{
+        margin-top: 1vh;
+    }
+
+    .login .cuerpo{
+        margin-left: 15vw;
+    }
+
+    .login .cuerpo .form-control{
+        width: 32vw;
+        margin-left: 19vw;
+    }
+
+    .login .cuerpo .datosformulario{
+        margin-left: 19vw;
+    }
+
+    .login .cuerpo .boton{
+        margin-left: 21vw;
+        width: 28vw;
+    }
+
+}
