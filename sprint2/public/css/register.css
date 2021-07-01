@@ -46,6 +46,9 @@
     color:var(--color-blanco);
     border-radius:5%;
 }
+::placeholder{
+    color:var(--color-blanco);
+}
 .register main label{
     display:inline-block;
     color:var(--azul-oscuro);
