@@ -1,5 +1,3 @@
-
-
 .productDetail{
     background-color:var(--color-azul-oscuro);
     width:100%;
@@ -122,6 +120,12 @@
     .productDetail main .experiencia, .contenido{
     height:33vh;
     font-size:2.2vw;
+    }
+}
+@media (min-width: 1024px){
+    .productDetail main .experiencia, .contenido{
+    height:33vh;
+    font-size:1.8vw;
     }
 }
 
