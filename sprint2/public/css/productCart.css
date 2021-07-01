@@ -1,0 +1,326 @@
+.productCart {
+   background-color:var(--color-azul-oscuro);
+   position: relative;
+   /* height: 130vw; */
+}
+
+.productCart a{
+    color: var(--color-blanco);
+}
+
+
+.productCart h1{
+    color:var(--color-blanco);
+    text-align: center;
+    font-size: 25px;
+    text-transform: uppercase;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.productCart  h3{
+    color:var(--color-blanco);
+    font-size: 23px;
+    border-bottom: 1.5px solid var(--color-celeste);
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.productCart .resumentabletdesktop{
+    display: none;
+}
+
+.productCart .resumenh3{
+    display: none;
+}
+
+/* producto */
+
+.productCart .body{
+    display: flex;
+    flex-direction: column;
+}
+
+.productCart .producto{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 25px;
+}
+
+.productCart .producto .imgproducto{
+    width: 130px;
+}
+
+.productCart .producto p{
+    color:var(--color-blanco);
+    font-size: 16.5px;
+    margin-left: 10px;
+    line-height: 32px;
+}
+
+.productCart .producto .precio{
+    color: var(--color-celeste);
+}
+
+.productCart .producto li{
+    text-decoration: none;
+    display: inline;
+    /* border-right: 1px solid var(--color-celeste); */
+    margin-left: 2px;
+    padding: 8px;
+}
+
+.productCart .producto ul{
+    margin-top: 12px;
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.productCart .resumen .barracodigo{
+    margin-left: 15px;
+    margin-top: 17px;
+    margin-bottom: 15px;
+    background-color: var(--color-celeste);
+    color: var(--color-blanco);
+    border-radius: 5px;
+    font-size: 15px;
+    border: none;
+    height: 4.2vh;
+}
+
+::placeholder{
+color: var(--color-blanco);
+margin-left: 15px;
+}
+
+.productCart .resumen .pruebadesc{
+    margin: 16px;
+}
+
+.productCart  .resumen .nombreproducto{
+    display: none;
+}
+
+.productCart  .resumen .envio{
+    display: none;
+}
+
+.productCart .resumen .nombreyprecio, .enviodiv{
+    display: none;
+}
+
+
+.productCart .resumen .subtotal, .total{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 16px;
+    margin-right: 16px;
+    font-weight: bold;
+}
+
+.productCart .resumen .subtotal, .total p{
+    text-transform: uppercase;
+    padding-top: 7px;
+    font-size: 20px;
+}
+
+.productCart .resumen .subtotal .subtotalpalabra{
+    color: #262B2E;
+}
+
+.productCart .resumen .subtotal .preciosubtotal{
+    color: var(--color-gris);
+}
+
+.productCart .resumen .total .totalpalabra{
+    color: var(--color-blanco)
+}
+
+.productCart .resumen .total .preciototal{
+    color: var(--color-celeste);
+}
+
+.productCart .checkout{
+    color: var(--color-blanco);
+    margin-top: 28px;
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 7px;
+    font-weight: 400;
+    font-size: 20px;
+    margin-left: 14vw;
+    text-align: center;
+    margin-bottom: 12vh;
+    background-color:var(--color-celeste);
+    border-radius: 12px;
+}
+
+/* TABLET */
+
+@media (min-width:768px){
+
+    .productCart .titulos{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .productCart .body{
+        flex-direction: row;
+    }
+
+    .productCart  h1{
+        text-align: left;
+        font-size: 30px;
+        margin-left: 25px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    .productCart  h3{
+        font-size: 23px;
+        border-bottom: 2px solid var(--color-celeste);
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
+
+    .productCart .resumenmobile{
+        display: none;
+    }
+
+    .productCart .articuloh3{
+        display: inline-block;
+        width: 40%;
+        margin-left: 25px;
+    }
+
+    .productCart .resumenh3{
+        display: inline-block;
+        width: 40%;
+        margin-right: 25px;
+    }
+
+    .productCart .producto{
+        margin-top: 25px;
+        margin-left: 3vw;
+    }
+
+    .productCart .resumen .barracodigo{
+        margin-top: 7px;
+    }
+
+    .productCart .resumen{
+        margin-left: 100px;
+        margin-top: 25px;
+    }
+
+    .productCart .resumen .nombreyprecio{
+        display: flex;
+        justify-content: space-between;
+        color: var(--color-blanco);
+        font-size: 14px;
+        padding: 16px;
+        margin-bottom: -10px;
+    }
+ 
+    .productCart  .resumen .nombreproducto{
+     display: inline;
+     color: var(--color-blanco);
+     margin-left: -2px;
+ }
+    
+
+    .productCart .resumen .enviodiv{
+        display: flex;
+       justify-content: space-between;
+       color: var(--color-blanco);
+       padding: 16px;
+    }
+
+    .productCart  .resumen .envio{
+        display: inline;
+        color: var(--color-blanco);
+    }
+
+
+
+    .productCart .resumen .subtotal, .total{
+        margin-left: 15px;
+    }
+
+
+    .productCart .checkout{
+        margin-left: 15px;
+        font-size: 24px;
+}
+}
+
+@media (min-width:1024px){
+
+    .productCart {
+        height: 80vw;
+     }
+
+    .productCart  h1{
+        font-size: 40px;
+        margin-left: 40px;
+    }
+
+    .productCart .titulos h3{
+        margin-left: 40px;
+        font-size: 30px;
+    }
+
+
+    .productCart .producto .imgproducto{
+        width: 230px;
+    }
+
+    .productCart .producto p{
+        
+        font-size: 20px;
+        margin-left: 10px;
+        line-height: 62px;
+    }
+
+    .productCart .producto li{
+        margin-left: -5px;
+        padding: 15px;
+    }
+
+    .productCart .producto ul{
+        font-size: 20px;
+    }
+
+    .productCart .resumen .barracodigo{
+        margin-top: 22px;
+    }
+
+    .productCart  .resumen .codigodesc{
+        font-size: 20px;
+        margin-bottom: -5px;
+    }
+    
+    .productCart .resumen .nombreyprecio{
+        font-size: 20px;
+        justify-content: space-between;
+        margin-top: -10px;
+
+    }
+    .productCart .resumen{
+        line-height: 42px;
+        margin-left: 120px;
+    }
+
+    .productCart .resumen .enviodiv{
+        font-size: 20px;
+    }
+
+    .productCart .checkout{
+        margin-left: 15px;
+        font-size: 32px;
+}
+
+}
