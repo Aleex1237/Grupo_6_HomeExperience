@@ -24,3 +24,8 @@ Las experiencias son muy importantes a lo largo de toda la vida, por ello, desde
 4) [Personal](https://tienda.personal.com.ar/) De esta web nos inspiramos a la hora de cómo presentar el detalle de los productos.
 5) [American Eagle](https://www.ae.com/us/en) Tomamos como referencia el carrito de compras.
 
+**Tablero de trabajo:**
+Para organizarnos utilizamaos la plataforma Trello. 
+El enlace de nuestro proyecto es:
+https://trello.com/b/ac0FtsLQ/grupo6home-experience
+
