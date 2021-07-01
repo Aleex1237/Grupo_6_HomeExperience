@@ -67,7 +67,6 @@
  .productCart .producto li{
      text-decoration: none;
      display: inline;
-     /* border-right: 1px solid var(--color-celeste); */
      margin-left: 2px;
      padding: 8px;
  }
