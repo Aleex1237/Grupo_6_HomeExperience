@@ -8,9 +8,19 @@
 .register header{
     background-color:var(--color-azul-oscuro);
 }
-.register header .nav-bar, .nav-user, .shopping-basket-mobile-tablet, .burger-menu{
+.register header .nav-bar{
     display:none;
 }
+.register header .nav-user{
+    display:none;
+}
+.register header .shopping-basket-mobile-tablet{
+    display:none;
+}
+.register header .burger-menu{
+    display:none;
+}
+
 .register header .nav-user ul{
     display:none;
 }
