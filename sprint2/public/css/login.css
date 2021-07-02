@@ -21,11 +21,6 @@
 }
 
 
-
-
-
-
-
 /* fin de header */
 
 .login {
@@ -134,6 +129,7 @@
 
     .login .cuerpo{
         margin-left: 15vw;
+        margin-top: 3vh;
     }
 
     .login .cuerpo .form-control{
