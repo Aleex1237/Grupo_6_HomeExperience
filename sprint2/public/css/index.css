@@ -1,6 +1,6 @@
 .home{
     background-color: var(--color-azul-oscuro);
-    height: 120vh;
+    height: 93vh;
     position: relative;
 }
 .home ul li{
@@ -12,11 +12,12 @@
 }   
 
 /* MAIN */
-
+.home .banner{
+    position: relative;
+}
 .home .banner .banner-img{
     width: 94%;
     margin: 3%;
-    position: relative;
     filter:brightness(0.4);
 }
 .home .banner .banner-desk{
@@ -24,7 +25,7 @@
 }
 .home .texto-encima{
     position: absolute;
-    top: 13vh;
+    top: 5vh;
     left: 0vw;
     color: var(--color-blanco);
     font-size: 4.5vw;
@@ -34,7 +35,7 @@
 }
 .home .texto-encima2{
     position: absolute;
-    top: 21vh;
+    top: 13vh;
     left: 0vw;
     color: var(--color-blanco);
     font-size: 4.5vw;
@@ -45,7 +46,7 @@
 }
 .home .banner h3{
     position: absolute;
-    top: 30vh;
+    top: 22vh;
     left: 11%;
     color: var(--color-blanco);
     font-size: 5.5vw;
