@@ -1,42 +1,59 @@
-header h2, header a.shopping-basket, header a.burger-menu, header a.shopping-basket-mobile-tablet {
-    color: var(--color-celeste);
-}
-
 header .nav-user .user{
     display:initial;
 }
 header {
     width: 100%;
-    height: 9vh;
     border-bottom: solid .2vh var(--color-celeste);
     display: flex;
     align-items: baseline;
     justify-content: space-between;
     overflow: hidden;
     background-color: var(--color-azul-oscuro);
+    padding-top: 1vh;
+}
+header .navbar{
+    background-color: var(--color-azul-oscuro) !important;
+    width: 53vw !important;
+}
+header .navbar a{
+    color: white !important;
+}
+header .navbar button{
+    margin-left: 43vw;
+}
+header .navbar button .burgermenu i{
+    color: var(--color-celeste);
+}
+header .navbar .collapse.show{
+    margin-right: 13vw;
 }
 
+header .navbar li{
+    border-top: solid 1px white;
+    
+}
+header .navbar li a{
+    text-align: center;
+}
+header #navhome li:first-child{
+    border-top: none;
+}
+
+header #navuser li:last-child{
+    display: none;
+}
+header .shopping-basket-mobile-tablet{
+    display: initial;
+}
+header a .fa-shopping-basket{
+    color: var(--color-celeste) !important;
+    font-size: 5.3vw;
+}
 header h2 {
     display: inline-block;
     font-size: 3vw;
     margin-left: 4vw;
-}
-
-header .shopping-basket-mobile-tablet {
-    margin-left: 50vw;
-    font-size: 6vw;
-    padding-right: 2vw;
-}
-header .shopping-basket{
-    display: none;
-}
-header .burger-menu {
-    font-size: 5.5vw;
-}
-
-header .burger-menu i {
-    margin-top: 3vh;
-    margin-right: 3vw;
+    color: var(--color-celeste);
 }
 
 header ul li {
@@ -48,140 +65,104 @@ header a {
     color: var(--color-blanco);
 }
 
-header .nav-user, header .nav-bar {
-    display: none;
-}
+
 
 @media (min-width: 768px) {
     header {
-        height: 11vh;
+        
         display: flex;
         justify-content: space-between;
     }
     header h2 {
-        margin-top: 5vw;
+        margin-top: 3vw;
     }
-    header .shopping-basket-mobile-tablet {
-        margin-left: 47vw;
-        margin-top: 2vh;
+    header .navbar{
+        width: 47vw;
+        border: none;
     }
-    header .shopping-basket-mobile-tablet i {
-        margin-top: 1vh;
-    }
-    header .burger-menu i {
-        margin-top: 3.6vh;
-        margin-right: 4vw;
+    header .navbar button .burgermenu i{
+        font-size: 5.3vw;
+        padding: 0;
+    }    
+    
+}
+@media (min-width:992px) {
+    header .navbar li{
+        border: none;
     }
 }
+
 
 @media (min-width:1024px) {
     header {
         padding-top: 4vh;
         align-items: baseline;
         height: 12vh;
-        
+    }
+    header .navbar{
+        width: 66vw !important;
+    }
+    .navbar-expand-lg .navbar-collapse{
+        align-items: baseline;
+        justify-content: space-evenly;
+    }
+    header .navbar-nav{
+        align-items: baseline;
+    }
+    header #navhome{
+        margin-right: 7vw !important;
+    }
+    header #navhome li{
+        border-right: solid 1px white;
+    }
+    header #navhome li:last-child{
+        border: none;
+    }
+    header #navhome li a{
+        padding: 0 1vw 0 1vw;
+    }
+    header #navuser{
+        margin-right: 5vw !important;
+    }
+    header #navuser li{
+        height: 3vh;
+        margin-bottom: 0;
+    }
+    header #navuser li:first-child{
+        border-right: solid 1px white;
+        padding-right: 1vw;
+    }
+    header #navuser li:first-child a{
+        padding: 0 1vw 0 0;
+    }
+    header #navuser li a:hover{
+        text-decoration: underline;
+    }
+    header #navuser #register{
+        margin-right: 1vw;
+        margin-left: 1vw;
+    }
+    header #navuser li:last-child{
+        display: initial;
+    }
+    header #navuser li:last-child a{
+        padding: 0%;
+    }
+    header #navuser li:last-child a .fa-shopping-basket{
+        font-size: 26px;
     }
     header h2 {
         font-size: 1.5vw;
         margin: 0;
         margin-left: 3.7vw;
     }
+    header .navbar li{
+        border: none;
+    }
     header .shopping-basket-mobile-tablet{
         display: none;
     }
-     header .shopping-basket {
-        margin-left: 50vw;
-        font-size: 6vw;
-        padding-right: 2vw;
-        font-size: 2.1vw;
-        margin: 0;
+    header .shopping-basket-desktop{
         display: initial;
-    
-    }
-     header .shopping-basket i {
-        margin: 0;
-        font-size: 1.5vw;
-    }
-    header .burger-menu {
-        display: none;
-    }
-     header .nav-user, 
-     header .nav-bar {
-        display: initial;
-    }
-    header .nav-bar ul {
-        display: flex;
-        margin-right: 0;
-        margin-left: 18vw;
-    }
-    header .nav-bar li {
-        margin-right: 2vw;
-        font-weight: 700;
-        font-size: 1.2vw;
-        border-right: solid 1px white;
-        padding-right: 1.5vw;
-    }
-    header .nav-bar li:last-child {
-        margin-right: 10vw;
-        border-right: none;
-    }
-    header .nav-user ul {
-        display: flex;
-        align-items: baseline;
-        width: 26vw;
-    }
-    header .nav-user li {
-        margin-right: 1vw;
-        border-right: solid 1px var(--color-blanco);
-        padding-right: 1vw;
-        font-weight: 100;
-        
-    }
-    header .nav-user li a{
-        transition: 0.4s;
-    }
-    header .nav-user li a:hover{
-        text-decoration: underline;
-    }
-    
-    header .nav-user #li-register{
-        border-right: none;
-    }
-    header .nav-user li:last-child {
-        margin-right: 0;
-        border-right: none;
-    }
-    
-    header .nav-user .user-loged{
-        
-        display: flex;
-        display: none;
-        color: var(--color-blanco);
-        border: solid 2px var(--color-celeste);
-        padding: 5px;
-        padding-right: 5px;
-        border-radius: 17px 17px;
-        width: 14vw;
-        height: 5vh;
-        
-    }
-    header .nav-user .user-loged i{
-        border: solid 1px white;
-        padding: 5px;
-        border-radius: 50%;
-        margin-right: 10px;
-    }
-    header .nav-user .user-loged p{
-        border-left: solid 1px var(--color-celeste);
-        padding-left: 1vw;
-    }
-    header .nav-user .user-loged button{
-        background: none;
-        border: none;
-    }
-    header .nav-user .user-loged .fa-chevron-down{
-        border: none;
-        color: var(--color-blanco);
-        margin-left: 6px;
     }
 }

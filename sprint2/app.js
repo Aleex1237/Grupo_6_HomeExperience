@@ -36,6 +36,17 @@ app.get("/productLoad", (req, res)=>{
     res.sendFile(path.join(__dirname, "views","productLoad.html")) 
 })
 
+app.get("/contact", (req, res)=>{
+    res.sendFile(path.join(__dirname, "views","contact.html")) 
+})
+
+app.get("/experience", (req, res)=>{
+    res.sendFile(path.join(__dirname, "views","experience.html")) 
+})
+
+app.get("/about", (req, res)=>{
+    res.sendFile(path.join(__dirname, "views","about.html")) 
+})
 app.listen(port,()=>{
     console.log(`El proyecto Home Experience se está ejecutando en localhost:${port}`)
 })
