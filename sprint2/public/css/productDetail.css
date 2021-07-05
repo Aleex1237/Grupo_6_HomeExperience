@@ -2,7 +2,7 @@
     background-color:var(--color-azul-oscuro);
     width:100%;
     position:relative;
-    height:100vh;
+    min-height:100vh;
 }
 .productDetail a{
     color:var(--color-blanco);
@@ -65,11 +65,12 @@
 }
 .productDetail main .experiencia, .contenido{
     width:100%;
-    height:23vh;
+    height:24vh;
     background-color:var(--color-gris);
     color:var(--color-blanco);
     font-size:3vw;
     margin-top:5px;
+    margin-bottom:150px;
     text-align:center;
     padding:20px 15px;
 }
