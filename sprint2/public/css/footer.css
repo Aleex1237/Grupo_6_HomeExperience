@@ -62,8 +62,8 @@ footer .news-div{
         footer{
             height: 12vh;
             position: absolute;
-            margin-top: 9vh;
-            
+            margin-top: 9vh;    
+            align-items: flex-start;
         }
         footer .nav-footer{
             margin-top: 2vh;
@@ -106,7 +106,9 @@ footer .news-div{
             text-align: center;
             line-height: 2vh;
             margin-left: 2vw;
+            margin-bottom: 0 !important;
         }
+        
         footer .news-div input{
             width: 10vw;
             background-color: var(--color-azul-oscuro);
@@ -114,6 +116,7 @@ footer .news-div{
             color: var(--color-blanco);
             text-align: center;
             height: 2.3vh;
+            font-size: 77%;
             transition: 0.5s;
         }
         footer .news-div input:focus{
@@ -122,14 +125,12 @@ footer .news-div{
             width: 14vw;
             box-shadow: 1px 1px 5px var(--color-celeste);
         }
-        footer .input-div{
-            margin-top: 0.5vh;
-        }
         footer form button{
             background-color: #262B2E;
             border:none;
             color:var(--color-blanco);
             cursor: pointer;
+            font-size: 77%;
             transition: 0.5s;
             width: 5vw;
             margin-left: 1vw;
