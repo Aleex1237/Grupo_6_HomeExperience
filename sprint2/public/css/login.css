@@ -20,6 +20,9 @@
     display: none;
 }
 
+.login header .navbar{
+    display: none;
+}
 
 /* fin de header */
 
@@ -48,14 +51,17 @@
     text-align: center;
     color: var(--color-azul-oscuro);
     margin-bottom: 30px;
+    font-weight: bold;
 }
 
 .login .cuerpo .form-control{
     background-color: var( --color-celeste);
+    height: 40px;
 }
 
 .login .cuerpo .datosformulario{
     color: var(--color-blanco);
+    margin-top: -7px;
 }
 
 .login .cuerpo .conectado{
