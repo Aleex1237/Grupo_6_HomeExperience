@@ -65,7 +65,7 @@
 }
 .productDetail main .experiencia, .contenido{
     width:100%;
-    height:24vh;
+    /* height:24vh; */
     background-color:var(--color-gris);
     color:var(--color-blanco);
     font-size:3vw;
