@@ -5,32 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bar</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/styles.css">
     <script src="https://kit.fontawesome.com/bd438a186b.js" crossorigin="anonymous"></script>
 </head>
 <body class="bar">
     <header>
         <a href="/"><h2>HOME EXPERIENCE</h2></a>
-        
-        <nav class="nav-bar">
-            <ul>
-                <li><a href="#">Experiencias</a></li>
-                <li><a href="#">Nosotros</a></li>
-                <li><a href="#">Contacto</a></li>
-            </ul>
-        </nav>
-
-        <nav class="nav-user">
-            <ul>
-                <li class="user"><a href="/login">Iniciar sesión</a></li>
-                <li class="user" id="li-register"><a href="/register"> Registrarse</a></li>
-                <li class="user-loged"><i class="fas fa-user"></i><p>usuario</p> <button><i class="fas fa-chevron-down"></i></button></li>
-                <li><a class="shopping-basket" href="/productCart"><i class="fas fa-shopping-basket"></i></a></li>
-            </ul>
-        </nav>
-        
-        <a class="shopping-basket-mobile-tablet" href="/productCart"><i class="fas fa-shopping-basket"></i></a>
-        <a class="burger-menu" href="#"><i class="fas fa-bars"></i></a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="burgermenu"><i class="fas fa-bars"></i></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul id="navhome" class="navbar-nav mr-auto ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/experience">Experiencias <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/about">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/contact">Contacto<span class="sr-only">(current)</span></a>
+                </li>
+              </ul>
+              
+              <ul id="navuser" class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/login">Iniciar sesión<span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item active" id="register">
+                    <a class="nav-link" href="/register">Registro<span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item active">
+                    <a href="/productCart" class="nav-link shopping-basket-desktop"><i class="fas fa-shopping-basket"></i></a>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+          <a href="/productCart" class="nav-link shopping-basket-mobile-tablet"><i class="fas fa-shopping-basket"></i></a>
        
 
     </header>
@@ -138,5 +151,8 @@
         </div>
         <h4>Copyright © 2021 - Todos los derechos reservados</h4>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 </html>
