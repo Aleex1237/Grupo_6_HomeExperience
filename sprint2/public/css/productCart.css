@@ -36,28 +36,36 @@
  
  /* producto */
  
- .productCart .body{
-     display: flex;
-     flex-direction: column;
- }
+
  
  .productCart .producto{
      display: flex;
      flex-wrap: wrap;
-     justify-content: center;
+     justify-content: space-around;
      align-items: flex-start;
      margin-top: 25px;
  }
  
+.productCart .productoentero{
+    display: flex;
+    justify-content: space-between;
+}
+
+.productCart .imagenproducto{
+    display: flex;
+}
+
  .productCart .producto .imgproducto{
-     width: 130px;
+     width: 122px;
  }
  
  .productCart .producto p{
      color:var(--color-blanco);
-     font-size: 16.5px;
-     margin-left: 10px;
-     line-height: 32px;
+    /*  font-size: 16.5px; */
+    font-size: 18.5px;
+     margin-left: 7px;
+     line-height: 4vh;
+     margin-top: 1vh;
  }
  
  .productCart .producto .precio{
@@ -67,9 +75,9 @@
  .productCart .producto li{
      text-decoration: none;
      display: inline;
-     /* border-right: 1px solid var(--color-celeste); */
-     margin-left: 2px;
-     padding: 8px;
+     margin-left: -26px;
+     /* padding: 8px; */
+     padding-right: 40px;
  }
  
  .productCart .producto ul{
@@ -82,12 +90,13 @@
      margin-left: 15px;
      margin-top: 17px;
      margin-bottom: 15px;
-     background-color: var(--color-celeste);
+     background-color: #262B2E;
      color: var(--color-blanco);
      border-radius: 5px;
      font-size: 15px;
      border: none;
      height: 4.2vh;
+     border: 1px solid var(--color-celeste);
  }
  
  ::placeholder{
@@ -141,20 +150,24 @@
  .productCart .resumen .total .preciototal{
      color: var(--color-celeste);
  }
+
+ .productCart .divcheckout{
+     display: flex;
+     justify-content: center;
+ }
  
  .productCart .checkout{
-     color: var(--color-blanco);
-     margin-top: 28px;
-     display: inline-block;
-     text-decoration: none;
-     padding: 10px 7px;
-     font-weight: 400;
-     font-size: 20px;
-     margin-left: 14vw;
-     text-align: center;
-     margin-bottom: 12vh;
-     background-color:var(--color-celeste);
-     border-radius: 12px;
+    color: var(--color-blanco);
+    margin-top: 28px;
+    text-decoration: none;
+    padding: 10px 7px;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 12vh;
+    background-color:var(--color-celeste);
+    border-radius: 12px;
+
  }
  
  /* TABLET */
@@ -163,17 +176,22 @@
  
      .productCart .titulos{
          display: flex;
-         justify-content: space-between;
+         justify-content: center;
      }
  
      .productCart .body{
          flex-direction: row;
      }
+
+     .productCart .flextabletdesktop{
+         display: flex;
+         justify-content: space-around;
+     }
  
      .productCart  h1{
          text-align: left;
          font-size: 30px;
-         margin-left: 25px;
+         margin-left: 30px;
          margin-top: 30px;
          margin-bottom: 20px;
      }
@@ -181,10 +199,16 @@
      .productCart  h3{
          font-size: 23px;
          border-bottom: 2px solid var(--color-celeste);
-         margin-left: 25px;
+         margin-left: 70px;
          margin-right: 25px;
      }
+
+     
  
+     .productCart .producto .imgproducto{
+         width: 150px;
+     }
+
  
      .productCart .resumenmobile{
          display: none;
@@ -194,25 +218,29 @@
          display: inline-block;
          width: 40%;
          margin-left: 25px;
+         padding-left: 30px;
      }
  
      .productCart .resumenh3{
          display: inline-block;
          width: 40%;
-         margin-right: 25px;
+         padding-left: 30px;
+
      }
  
      .productCart .producto{
          margin-top: 25px;
-         margin-left: 3vw;
+         margin-left: -5vw;
      }
  
      .productCart .resumen .barracodigo{
          margin-top: 7px;
+          margin-left: -8vw;
      }
  
+
+
      .productCart .resumen{
-         margin-left: 100px;
          margin-top: 25px;
      }
  
@@ -220,7 +248,7 @@
          display: flex;
          justify-content: space-between;
          color: var(--color-blanco);
-         font-size: 14px;
+         font-size: 16px;
          padding: 16px;
          margin-bottom: -10px;
      }
@@ -228,31 +256,32 @@
      .productCart  .resumen .nombreproducto{
       display: inline;
       color: var(--color-blanco);
-      margin-left: -2px;
-  }
+       margin-left: -10vw;
+
+   }
      
  
      .productCart .resumen .enviodiv{
          display: flex;
         justify-content: space-between;
         color: var(--color-blanco);
-        padding: 16px;
+        padding: 18px;
+        margin-left: -10vw; 
      }
  
      .productCart  .resumen .envio{
          display: inline;
          color: var(--color-blanco);
+         font-size: 16px;
      }
- 
- 
  
      .productCart .resumen .subtotal, .total{
-         margin-left: 15px;
-     }
+          margin-left: -8vw;
+    }
  
  
      .productCart .checkout{
-         margin-left: 15px;
+         margin-left: -50px;
          font-size: 24px;
  }
  }
@@ -265,28 +294,29 @@
  
      .productCart  h1{
          font-size: 40px;
-         margin-left: 40px;
+         margin-left: 35px;
      }
  
      .productCart .titulos h3{
-         margin-left: 40px;
+         margin-left: 50px;
          font-size: 30px;
      }
  
  
      .productCart .producto .imgproducto{
-         width: 230px;
+         width: 200px;
+         margin-left: 80px;
      }
  
      .productCart .producto p{
          
          font-size: 20px;
-         margin-left: 10px;
-         line-height: 62px;
+         margin-left: 50px;
+         line-height: 52px;
      }
  
      .productCart .producto li{
-         margin-left: -5px;
+         margin-left: 2px;
          padding: 15px;
      }
  
@@ -298,9 +328,10 @@
          margin-top: 22px;
      }
  
-     .productCart  .resumen .codigodesc{
+     .productCart  .resumen .barracodigo{
          font-size: 20px;
          margin-bottom: -5px;
+         margin-left: -8.5vw;
      }
      
      .productCart .resumen .nombreyprecio{
@@ -316,11 +347,16 @@
  
      .productCart .resumen .enviodiv{
          font-size: 20px;
+        
      }
  
      .productCart .checkout{
-         margin-left: 15px;
+         margin-left: 0px;
          font-size: 32px;
  }
  
+
+ .productCart .resumen .subtotal, .total{
+    margin-left: -8.5vw;
+}
  }
