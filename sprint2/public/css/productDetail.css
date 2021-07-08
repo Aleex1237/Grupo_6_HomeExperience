@@ -60,15 +60,14 @@
     border-bottom:solid 1px var(--color-celeste);
 }
 .productDetail main h2{
-    font-size:3.5vw;
+    font-size:4vw;
     color:var(--color-gris);
 }
 .productDetail main .experiencia, .contenido{
     width:100%;
-    /* height:24vh; */
     background-color:var(--color-gris);
     color:var(--color-blanco);
-    font-size:3vw;
+    font-size:4vw;
     margin-top:5px;
     margin-bottom:150px;
     text-align:center;
