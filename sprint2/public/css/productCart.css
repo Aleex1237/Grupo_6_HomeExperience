@@ -82,12 +82,13 @@
      margin-left: 15px;
      margin-top: 17px;
      margin-bottom: 15px;
-     background-color: var(--color-celeste);
+     background-color: #262B2E;
      color: var(--color-blanco);
      border-radius: 5px;
      font-size: 15px;
      border: none;
      height: 4.2vh;
+     border: 1px solid var(--color-celeste);
  }
  
  ::placeholder{
