@@ -1,6 +1,7 @@
-header .nav-user .user{
-    display:initial;
+header .nav-user .user {
+    display: initial;
 }
+
 header {
     width: 100%;
     border-bottom: solid .2vh var(--color-celeste);
@@ -10,45 +11,111 @@ header {
     overflow: hidden;
     background-color: var(--color-azul-oscuro);
     padding-top: 1vh;
+    position: relative;
 }
-header .navbar{
+
+header .navbar {
     background-color: var(--color-azul-oscuro) !important;
     width: 53vw !important;
 }
-header .navbar a{
+
+header .navbar a {
     color: white !important;
 }
-header .navbar button{
+
+header .navbar button {
     margin-left: 43vw;
 }
-header .navbar button .burgermenu i{
+
+header .navbar button .burgermenu i {
     color: var(--color-celeste);
 }
-header .navbar .collapse.show{
+
+header .navbar .collapse.show {
     margin-right: 13vw;
 }
 
-header .navbar li{
+header .navbar li {
     border-top: solid 1px white;
-    
 }
-header .navbar li a{
+
+header .navbar li a {
     text-align: center;
 }
-header #navhome li:first-child{
+
+header #navhome li:first-child {
     border-top: none;
 }
 
-header #navuser li:last-child{
+header #navuser li:last-child {
     display: none;
 }
-header .shopping-basket-mobile-tablet{
+
+header #navuser .user-loged {
+    border: solid 1px var(--color-celeste);
+    border-radius: 20px;
+    padding: 0;
+    padding: 8px;
+    width: 11.1vw;
+    height: 4.1vh;
+    padding-left: 8px;
+    padding-top: 3px;
+    display: none;
+}
+
+header #navuser .user-loged span {
+    color: white;
+}
+
+header #navuser .user-loged p {
+    display: inline-block;
+}
+
+header #navuser .user-loged .btn-group button {
+    background: none;
+    color: white;
+    padding: 0;
+    padding-left: 0.2vw;
+}
+
+header #navuser li.user-loged ul.dropdown-menu {
+    background-color: var(--color-azul-oscuro) !important;
+    width: 12vw;
+    position: absolute;
+    z-index: 10;
+}
+
+header #navuser li.user-loged ul.dropdown-menu li:first-child {
+    border: none;
+}
+
+header #navuser li.user-loged ul.dropdown-menu li:last-child {
+    border-top: solid 1px white;
+    padding-top: 1vh;
+}
+
+header #navuser li.user-loged ul.dropdown-menu a {
+    display: inline-block;
+    text-align: left;
+    color: white !important;
+    text-decoration: none;
+    width: 100%;
+}
+
+header #navuser li.user-loged ul.dropdown-menu a:hover {
+    color: black !important;
+    background-color: white;
+}
+
+header .shopping-basket-mobile-tablet {
     display: initial;
 }
-header a .fa-shopping-basket{
+
+header a .fa-shopping-basket {
     color: var(--color-celeste) !important;
     font-size: 5.3vw;
 }
+
 header h2 {
     display: inline-block;
     font-size: 3vw;
@@ -65,90 +132,96 @@ header a {
     color: var(--color-blanco);
 }
 
-
-
 @media (min-width: 768px) {
     header {
-        
         display: flex;
         justify-content: space-between;
     }
     header h2 {
         margin-top: 3vw;
     }
-    header .navbar{
+    header .navbar {
         width: 47vw;
         border: none;
     }
-    header .navbar button .burgermenu i{
+    header .navbar button .burgermenu i {
         font-size: 5.3vw;
         padding: 0;
-    }    
-    
-}
-@media (min-width:992px) {
-    header .navbar li{
-        border: none;
     }
 }
 
+@media (min-width:992px) {
+    header .navbar li {
+        border: none;
+    }
+}
 
 @media (min-width:1024px) {
     header {
         padding-top: 4vh;
         align-items: baseline;
-        height: 12vh;
+        height: 14vh;
     }
-    header .navbar{
+    header .navbar {
         width: 66vw !important;
     }
-    .navbar-expand-lg .navbar-collapse{
+    .navbar-expand-lg .navbar-collapse {
         align-items: baseline;
         justify-content: space-evenly;
     }
-    header .navbar-nav{
+    header .navbar-nav {
         align-items: baseline;
     }
-    header #navhome{
+    header #navhome {
         margin-right: 7vw !important;
+    }header #navhome li a:hover {
+        background-color: var(--color-celeste);
     }
-    header #navhome li{
+    header #navhome li {
         border-right: solid 1px white;
     }
-    header #navhome li:last-child{
+    header #navhome li:last-child {
         border: none;
     }
-    header #navhome li a{
+    header #navhome li a {
         padding: 0 1vw 0 1vw;
+        transition: 0.4s;
     }
-    header #navuser{
+    header #navuser .user-loged {
+        display: none;
+        max-width: 100px;
+    }
+    header #navuser {
         margin-right: 5vw !important;
     }
-    header #navuser li{
+    header #navuser li {
         height: 3vh;
         margin-bottom: 0;
     }
-    header #navuser li:first-child{
-        border-right: solid 1px white;
-        padding-right: 1vw;
+    header #navuser li a{
+        transition: 0.4s;
     }
-    header #navuser li:first-child a{
+    header #navuser li:first-child a {
         padding: 0 1vw 0 0;
     }
-    header #navuser li a:hover{
-        text-decoration: underline;
+    header #navuser li a:hover {
+        background-color: var(--color-celeste);
     }
-    header #navuser #register{
+    header #navuser li:last-child a:hover{
+        background: none;
+        border: none;
+    }
+    header #navuser #register {
         margin-right: 1vw;
         margin-left: 1vw;
     }
-    header #navuser li:last-child{
+    header #navuser li:last-child {
         display: initial;
     }
-    header #navuser li:last-child a{
+    header #navuser li:last-child a {
         padding: 0%;
     }
-    header #navuser li:last-child a .fa-shopping-basket{
+    header #navuser li:last-child a .fa-shopping-basket {
         font-size: 26px;
     }
     header h2 {
@@ -156,13 +229,13 @@ header a {
         margin: 0;
         margin-left: 3.7vw;
     }
-    header .navbar li{
+    header .navbar li {
         border: none;
     }
-    header .shopping-basket-mobile-tablet{
+    header .shopping-basket-mobile-tablet {
         display: none;
     }
-    header .shopping-basket-desktop{
+    header .shopping-basket-desktop {
         display: initial;
     }
 }
