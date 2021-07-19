@@ -62,7 +62,9 @@ header #navuser .user-loged {
     padding-top: 3px;
     display: none;
 }
-
+header #navuser #user-loged-mobile{
+    display: none;
+}
 header #navuser .user-loged span {
     color: white;
 }
@@ -103,8 +105,7 @@ header #navuser li.user-loged ul.dropdown-menu a {
 }
 
 header #navuser li.user-loged ul.dropdown-menu a:hover {
-    color: black !important;
-    background-color: white;
+    background-color: var(--color-celeste);
 }
 
 header .shopping-basket-mobile-tablet {
@@ -186,6 +187,9 @@ header a {
     header #navhome li a {
         padding: 0 1vw 0 1vw;
         transition: 0.4s;
+    }
+    header #navuser #user-loged-mobile{
+        display: none;
     }
     header #navuser .user-loged {
         display: none;
