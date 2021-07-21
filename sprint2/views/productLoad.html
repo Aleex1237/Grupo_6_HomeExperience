@@ -9,7 +9,7 @@
     <link href="css/styles.css" rel="stylesheet">
     <title>Carga de Producto</title>
 </head>
-<body class="register">
+<body class="productLoad">
     <header>
         <a href="/"><h2>HOME EXPERIENCE</h2></a>
         <nav class="navbar navbar-expand-lg navbar-light bg-light ">
@@ -48,34 +48,45 @@
 
     </header>
     <main>
-        <!-- <h1>Nueva experiencia</h1>
-        <input class="nombre" type="text" name="nombre" id="nombre" placeholder="Nombre" required>
-        <span></span>
-        <div class="contenedor">
-            <div class="caja1">
-                <textarea name="descripcion" cols="30" rows="10" placeholdedr="Descripción" required></textarea>
-                <div class="contenedor2">
-
-                </div>
-
-            </div>
-            <div class="caja2">
-                <form action="" method="">
+        <h1>Nueva experiencia</h1>
+        <form action="" method="" enctype="multipart/form-data">
+          <div class="nombre">
+            <input class="nombre" type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+          <span></span>
+          </div>
+          <div class="contenedor">
+              <div class="caja1">
+                  <textarea name="descripcion" cols="30" rows="10" placeholder="Descripción" required></textarea>
+                  <div class="contenedor2">
+                    <div>
+                      <input class="precio" type="text" name="precio" id="precio" placeholder="Precio" required>
+                      <span></span>
+                      <select name="categoria">
+                        <option hidden selected>Categoría</option>
+                        <option value="bar">Bar</option>
+                        <option value="cine">Cine</option>
+                      </select>
+                      <span></span>
+                    </div>
+                    <div class="div-imagen" id="input-file">
+                      <input class="input-file" type="file" name="imagen" placeholder="+ FOTO">
+                    </div>
                     
-                    <input class="dato" type="email" name="email" id="email" placeholder="Email" required>
-                    <span></span>
-                    <input class="dato" type="password" name="password" id="password" placeholder="Clave" required>
-                    <span></span>
-                    <input class="dato" type="password" name="password2" id="password2" placeholder="Confirma tu clave" required>
-                    <span></span>
-                    <label>
-                        <input class="check" type="checkbox">Acepto los términos y políticas de este sitio web
-                    </label>
-                    <a href="./login">¿Ya tenés cuenta? ¡Iniciá sesión!</a>
-                    <button type="submit">REGISTRATE</button>
-                </form>
-            </div>
-        </div> -->
+                  </div>
+              </div>
+              <div class="caja2">
+                    <h3>Productos incluidos en la experiencia:</h3>
+                    <textarea class="listaProductos" name="listaProductos">
+                      Producto 1
+                      Producto 2
+                    </textarea>
+              </div>
+          </div> 
+          <div>
+            <button type="submit">GUARDAR</button>
+          </div>
+        </form>
+        
     </main>
     <footer>
         
