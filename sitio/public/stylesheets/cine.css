@@ -1,0 +1,210 @@
+.cine {
+    background-color: var(--color-azul-oscuro);
+    height: 247vh;
+}
+
+.cine a {
+    text-decoration: none;
+    color: var(--color-blanco);
+}
+
+.cine .banner {
+    position: relative;
+}
+
+.cine .banner img{
+    width: 100%;
+    height: 30vh;
+    filter: brightness(0.5);
+    margin-top: 1vh;
+}
+
+.cine .banner .background-letter {
+    background-color: var(--color-azul-oscuro);
+    width: 82%;
+    height: 21vh;
+    position: absolute;
+    top: 5vh;
+    left: 10vw;
+    box-shadow: 8px 5px rgba(4, 15, 22, 0.45);
+}
+
+.cine .banner p {
+    color: var(--color-blanco);
+    font-size: 4vw;
+    position: absolute;
+    top: 7vh;
+    left: 1vw;
+    padding: 0 35px;
+    text-align: center;
+}
+
+.cine .banner h3 {
+    position: absolute;
+    color: var(--color-blanco);
+    top: 22vh;
+    left: 16vw;
+    font-size: 4vw;
+    font-weight: 900;
+}
+
+.cine section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 185vh;
+    justify-content: space-between;
+}
+
+.cine .product {
+    position: relative;
+    background-color: #262B2E;
+    width: 63.3vw;
+    height: 34vh;
+    border: solid 3px #262B2E;
+    ;
+    margin-top: 2vh;
+    margin-left: 4vw;
+    margin-bottom: 2vh;
+}
+
+.cine .product img {
+    width: 61.5vw;
+    height: 33.2vh;
+    position: absolute;
+    left: 0px;
+    border: solid 1px #262B2E;
+}
+
+.cine .product .product-info {
+    background-color: #262B2E;
+    position: absolute;
+    top: 35vh;
+    width: 63.3vw;
+    height: 11vh;
+    left: -1vw;
+}
+
+.cine .product .product-info h3 {
+    color: var(--color-blanco);
+    margin-bottom: 1vh;
+    text-align: center;
+    font-size: 5vw;
+    margin-top: 1vh;
+    padding: 3px 0px;
+}
+
+.cine .product .product-info .product-details {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cine .product .product-info span {
+    display: inline-block;
+    color: var(--color-celeste);
+    margin-right: 0vw;
+}
+
+.cine .product .product-info span .btn-cart {
+    background: none;
+    padding: 5px;
+    color: var(--color-celeste);
+    border: solid 1px var(--color-blanco);
+    border-radius: 20px 20px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.cine .product .product-info span .btn-cart:hover {
+    background-color: var(--color-celeste);
+    color: var(--color-blanco);
+}
+
+@media (min-width:768px) {
+    .cine{
+        height: 174vh;
+    }
+    .cine .banner img {
+        height: 43vh;
+    }
+    .cine .banner .background-letter{
+        height: 29vh;
+        background-color: rgba(4, 15, 22, 0.8);
+    }
+    .cine .banner p{
+        font-size: 3vw;
+        padding: 0 78px;
+    }
+    .cine .banner h3{
+        top: 26vh;
+        left: 24vw;
+        font-size: 3vw;
+    }
+    .cine section{
+        height: 100vh;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .cine .product{
+        width: 34.2vw;
+    }
+    .cine .product img{
+        width: 33.5vw;
+    }
+    .cine .product .product-info{
+        width: 34.3vw;
+        left: -0.4vw;
+    }
+    .cine .product .product-info h3{
+        font-size: 2.3vw;
+    }
+}
+@media (min-width:1024px) {
+    .cine{
+        position: relative;
+        height: 125vh;
+    }
+    .cine .banner img{
+        width: 84%;
+        margin: 2vh;
+        margin-left: 8vw;
+    }
+    .cine .banner .background-letter{
+        height: 26vh;
+        width: 41%;
+        left: 29vw;
+        top: 7vh;
+    }
+    .cine .banner p{
+        font-size: 1.5vw;
+        padding: 0 32%;
+        top: 10vh;
+    }
+    .cine .banner h3{
+        top: 28vh;
+        left: 36vw;
+        font-size: 1.5vw;
+    }
+    .cine section{
+        height: 65vh;
+        flex-wrap: wrap;
+        width: 94%;
+        flex-direction: initial;
+        align-items: initial;
+        margin-left: 1vw;
+    }
+    .cine .product{
+        width: 18vw;
+        
+    }
+    .cine .product img{
+        width: 17.6vw;
+    }
+    .cine .product .product-info{
+        width: 18vw;
+        left: -0.2vw;
+    }
+    .cine .product .product-info h3{
+        font-size: 1vw;
+    }
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="css/styles.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b29d4baab6.js" crossorigin="anonymous"></script>
+    <title>Detalle de producto</title>
+</head>
+<body class="productDetail">
+    <header>
+        <a href="/"><h2>HOME EXPERIENCE</h2></a>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="burgermenu"><i class="fas fa-bars"></i></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul id="navhome" class="navbar-nav mr-auto ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/experience">Experiencias <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/about">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="/contact">Contacto<span class="sr-only">(current)</span></a>
+                </li>
+              </ul>
+              
+              <ul id="navuser" class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/login">Iniciar sesión<span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item active" id="register">
+                    <a class="nav-link" href="/register">Registro<span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item active">
+                    <a href="/productCart" class="nav-link shopping-basket-desktop"><i class="fas fa-shopping-basket"></i></a>
+                  </li>
+              </ul>
+            </div>
+          </nav>
+          <a href="/productCart" class="nav-link shopping-basket-mobile-tablet"><i class="fas fa-shopping-basket"></i></a>
+       
+
+    </header>
+    <main>
+    <div class="contenedor1">
+        <div class="caja1">
+            <div class="imagen"></div>
+        </div>
+        <div class="caja2">
+            <h1>BIG BOX - EXPERIENCIA CUBA</h1>
+            <P class="precio">$4000</P>
+            <P class="cuotas">o 6 cuotas de $666.66</P>
+            <button>AGREGAR AL CARRITO</button>
+        </div>
+    </div>
+        <section>
+            <div class="contenedor2">
+                <div class="opciones"><a href="" class="exp"><h2>Experiencia</h2></a></div>
+                <div class="opciones"><a href="" class="cont"><h2>Contenido de la caja</h2></a></div>
+            </div>
+            <article class="experiencia">
+                <p>
+                    La gama de cócteles autóctonos de Cuba es muy amplia. Siempre mezclados con el indispensable ron en sus variantes blancos u oscuros de distintas edades de conservación y añejamiento.
+                    En esta BOX encontrarás lo necesario para disfrutar de uno de los tragos cubanos por excelencia: el MOJITO.
+                    Elegí la BOX CUBA y disfrutá de una experiencia inolvidable 
+                    </p>
+            </article>
+            <article class="contenido">
+                <p>Los insumos necesarios para explorar distintas formas de beber un buen MOJITO, se pueden difrutar hasta 12 cócteles. </p>
+                <ul>
+                    <li>Botella Bacardí Carta Blanca 980ml.</li>
+                    <li>3 (tres) latas de agua con gas Perrier.</li>
+                    <li>Lima, hierba buena y azúcar.</li>
+                    <li>Set de coctelería.</li>
+                    <li>2 (dos) vasos Mojito.</li>
+                    <li>Set chocolates Kit Kat.</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+    <footer>
+        
+        <nav class="nav-footer">
+            <h5>Seguinos :</h5>
+            <ul>
+                <li><a href="http://instagram.com"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="http://facebook.com"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="http://twitter.com"><i class="fab fa-twitter"></i></a></li>
+            </ul>
+        </nav>
+        <div class="news-div">
+            <form action="#" method="POST">
+                <label for="emailUsuario">
+                Enterate de las novedades</label>
+                <div class="input-div"></div>
+                    <input type="email" placeholder="Dejanos tu email" name="emailUsuario" id="emailUsuario" required>
+                    <span></span>
+                    <button type="submit">Suscribite</button>
+                </div>
+            </form>
+            
+        </div>
+        <h4>Copyright © 2021 - Todos los derechos reservados</h4>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

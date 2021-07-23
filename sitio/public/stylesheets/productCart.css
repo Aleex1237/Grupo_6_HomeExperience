@@ -1,0 +1,362 @@
+.productCart {
+    background-color:var(--color-azul-oscuro);
+    position: relative;
+    /* height: 130vw; */
+ }
+ 
+ .productCart a{
+     color: var(--color-blanco);
+ }
+ 
+ 
+ .productCart h1{
+     color:var(--color-blanco);
+     text-align: center;
+     font-size: 25px;
+     text-transform: uppercase;
+     margin-top: 30px;
+     margin-bottom: 20px;
+ }
+ 
+ .productCart  h3{
+     color:var(--color-blanco);
+     font-size: 23px;
+     border-bottom: 1.5px solid var(--color-celeste);
+     margin-left: 16px;
+     margin-right: 16px;
+ }
+ 
+ .productCart .resumentabletdesktop{
+     display: none;
+ }
+ 
+ .productCart .resumenh3{
+     display: none;
+ }
+ 
+ /* producto */
+ 
+
+ 
+ .productCart .producto{
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+     align-items: flex-start;
+     margin-top: 25px;
+ }
+ 
+.productCart .productoentero{
+    display: flex;
+    justify-content: space-between;
+}
+
+.productCart .imagenproducto{
+    display: flex;
+}
+
+ .productCart .producto .imgproducto{
+     width: 122px;
+ }
+ 
+ .productCart .producto p{
+     color:var(--color-blanco);
+    /*  font-size: 16.5px; */
+    font-size: 18.5px;
+     margin-left: 7px;
+     line-height: 4vh;
+     margin-top: 1vh;
+ }
+ 
+ .productCart .producto .precio{
+     color: var(--color-celeste);
+ }
+ 
+ .productCart .producto li{
+     text-decoration: none;
+     display: inline;
+     margin-left: -26px;
+     /* padding: 8px; */
+     padding-right: 40px;
+ }
+ 
+ .productCart .producto ul{
+     margin-top: 12px;
+     margin-bottom: 20px;
+     text-decoration: none;
+ }
+ 
+ .productCart .resumen .barracodigo{
+     margin-left: 15px;
+     margin-top: 17px;
+     margin-bottom: 15px;
+     background-color: #262B2E;
+     color: var(--color-blanco);
+     border-radius: 5px;
+     font-size: 15px;
+     border: none;
+     height: 4.2vh;
+     border: 1px solid var(--color-celeste);
+ }
+ 
+ ::placeholder{
+ color: var(--color-blanco);
+ margin-left: 15px;
+ }
+ 
+ .productCart .resumen .pruebadesc{
+     margin: 16px;
+ }
+ 
+ .productCart  .resumen .nombreproducto{
+     display: none;
+ }
+ 
+ .productCart  .resumen .envio{
+     display: none;
+ }
+ 
+ .productCart .resumen .nombreyprecio, .enviodiv{
+     display: none;
+ }
+ 
+ 
+ .productCart .resumen .subtotal, .total{
+     display: flex;
+     justify-content: space-between;
+     margin-left: 16px;
+     margin-right: 16px;
+     font-weight: bold;
+ }
+ 
+ .productCart .resumen .subtotal, .total p{
+     text-transform: uppercase;
+     padding-top: 7px;
+     font-size: 20px;
+ }
+ 
+ .productCart .resumen .subtotal .subtotalpalabra{
+     color: #262B2E;
+ }
+ 
+ .productCart .resumen .subtotal .preciosubtotal{
+     color: var(--color-gris);
+ }
+ 
+ .productCart .resumen .total .totalpalabra{
+     color: var(--color-blanco)
+ }
+ 
+ .productCart .resumen .total .preciototal{
+     color: var(--color-celeste);
+ }
+
+ .productCart .divcheckout{
+     display: flex;
+     justify-content: center;
+ }
+ 
+ .productCart .checkout{
+    color: var(--color-blanco);
+    margin-top: 28px;
+    text-decoration: none;
+    padding: 10px 7px;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 12vh;
+    background-color:var(--color-celeste);
+    border-radius: 12px;
+
+ }
+ 
+ /* TABLET */
+ 
+ @media (min-width:768px){
+ 
+     .productCart .titulos{
+         display: flex;
+         justify-content: center;
+     }
+ 
+     .productCart .body{
+         flex-direction: row;
+     }
+
+     .productCart .flextabletdesktop{
+         display: flex;
+         justify-content: space-around;
+     }
+ 
+     .productCart  h1{
+         text-align: left;
+         font-size: 30px;
+         margin-left: 30px;
+         margin-top: 30px;
+         margin-bottom: 20px;
+     }
+ 
+     .productCart  h3{
+         font-size: 23px;
+         border-bottom: 2px solid var(--color-celeste);
+         margin-left: 70px;
+         margin-right: 25px;
+     }
+
+     
+ 
+     .productCart .producto .imgproducto{
+         width: 150px;
+     }
+
+ 
+     .productCart .resumenmobile{
+         display: none;
+     }
+ 
+     .productCart .articuloh3{
+         display: inline-block;
+         width: 40%;
+         margin-left: 25px;
+         padding-left: 30px;
+     }
+ 
+     .productCart .resumenh3{
+         display: inline-block;
+         width: 40%;
+         padding-left: 30px;
+
+     }
+ 
+     .productCart .producto{
+         margin-top: 25px;
+         margin-left: -5vw;
+     }
+ 
+     .productCart .resumen .barracodigo{
+         margin-top: 7px;
+          margin-left: -8vw;
+     }
+ 
+
+
+     .productCart .resumen{
+         margin-top: 25px;
+     }
+ 
+     .productCart .resumen .nombreyprecio{
+         display: flex;
+         justify-content: space-between;
+         color: var(--color-blanco);
+         font-size: 16px;
+         padding: 16px;
+         margin-bottom: -10px;
+     }
+  
+     .productCart  .resumen .nombreproducto{
+      display: inline;
+      color: var(--color-blanco);
+       margin-left: -10vw;
+
+   }
+     
+ 
+     .productCart .resumen .enviodiv{
+         display: flex;
+        justify-content: space-between;
+        color: var(--color-blanco);
+        padding: 18px;
+        margin-left: -10vw; 
+     }
+ 
+     .productCart  .resumen .envio{
+         display: inline;
+         color: var(--color-blanco);
+         font-size: 16px;
+     }
+ 
+     .productCart .resumen .subtotal, .total{
+          margin-left: -8vw;
+    }
+ 
+ 
+     .productCart .checkout{
+         margin-left: -50px;
+         font-size: 24px;
+ }
+ }
+ 
+ @media (min-width:1024px){
+ 
+     .productCart {
+         height: 80vw;
+      }
+ 
+     .productCart  h1{
+         font-size: 40px;
+         margin-left: 35px;
+     }
+ 
+     .productCart .titulos h3{
+         margin-left: 50px;
+         font-size: 30px;
+     }
+ 
+ 
+     .productCart .producto .imgproducto{
+         width: 200px;
+         margin-left: 80px;
+     }
+ 
+     .productCart .producto p{
+         
+         font-size: 20px;
+         margin-left: 50px;
+         line-height: 52px;
+     }
+ 
+     .productCart .producto li{
+         margin-left: 2px;
+         padding: 15px;
+     }
+ 
+     .productCart .producto ul{
+         font-size: 20px;
+     }
+ 
+     .productCart .resumen .barracodigo{
+         margin-top: 22px;
+     }
+ 
+     .productCart  .resumen .barracodigo{
+         font-size: 20px;
+         margin-bottom: -5px;
+         margin-left: -8.5vw;
+     }
+     
+     .productCart .resumen .nombreyprecio{
+         font-size: 20px;
+         justify-content: space-between;
+         margin-top: -10px;
+ 
+     }
+     .productCart .resumen{
+         line-height: 42px;
+         margin-left: 120px;
+     }
+ 
+     .productCart .resumen .enviodiv{
+         font-size: 20px;
+        
+     }
+ 
+     .productCart .checkout{
+         margin-left: 0px;
+         font-size: 32px;
+ }
+ 
+
+ .productCart .resumen .subtotal, .total{
+    margin-left: -8.5vw;
+}
+ }

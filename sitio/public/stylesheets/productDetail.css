@@ -1,0 +1,131 @@
+.productDetail{
+    background-color:var(--color-azul-oscuro);
+    width:100%;
+    position:relative;
+    min-height:100vh;
+}
+.productDetail a{
+    color:var(--color-blanco);
+    text-decoration:none;
+}
+
+.productDetail main{
+    width:90%;
+    margin-left:5%;
+    margin-right:5%;
+}
+.productDetail main .imagen{
+    width:70%;
+    height:25vh;
+    background-image:url("/images/imagen-producto-1.jpeg");
+    background-size:cover;
+    background-position:center;
+    margin:5% 15% 10% 15%;
+}
+
+.productDetail main h1{
+    color:var(--color-blanco);
+    font-weight: normal;
+    font-size:6vw;
+}
+.productDetail main .precio{
+    color:var(--color-gris);
+    font-size:5vw;
+}
+.productDetail main .cuotas{
+    color:var(--color-gris);
+    font-size:4vw;
+}
+.productDetail main button{
+    font-size:4vw;
+    margin-top:10px;
+    margin-bottom: 10px;
+    width:100%;
+    padding:10px;
+    text-align:center;
+    background-color:var(--color-celeste);
+    color:var(--color-blanco);
+    border:solid 1px var(--color-celeste);
+}
+.productDetail main .contenedor2{
+    display:flex;
+    width:100%;
+
+}
+.productDetail main .opciones{
+    width:50%;
+    /* height:2rem; */
+    padding:7px;
+    text-align:center; 
+    border-bottom:solid 1px var(--color-celeste);
+}
+.productDetail main h2{
+    font-size:4vw;
+    color:var(--color-gris);
+}
+.productDetail main .experiencia, .contenido{
+    width:100%;
+    background-color:var(--color-gris);
+    color:var(--color-blanco);
+    font-size:4vw;
+    margin-top:5px;
+    margin-bottom:150px;
+    text-align:center;
+    padding:20px 15px;
+}
+.productDetail main .contenido{
+    display:none;
+}
+.productDetail main .experiencia{
+    display:inline-block;
+}
+
+@media (min-width: 768px){
+    .productDetail main .contenedor1{
+        display:flex;
+        margin-top:25px;
+        margin-bottom:25px;
+    }
+    .productDetail main .caja1{
+        width:30%;
+    }
+    .productDetail main .caja2{
+        width:70%;
+        padding-left:30px;
+    }
+    .productDetail main .imagen{
+    width:100%;
+    margin:0;
+    height:30vh;
+}
+    .productDetail main button{
+    width:60%;
+    font-size:2.7vw;
+    }
+    .productDetail main h1{
+    /* font-size:24px; */
+    margin-bottom:10px;
+    font-size:3.5vw;
+    }
+    .productDetail main h2{
+    font-size:2.3vw;
+}
+    .productDetail main .precio{
+    font-size:2.7vw;
+    }
+    .productDetail main .cuotas{
+        color:var(--color-gris);
+        font-size:2.4vw;
+    }
+    .productDetail main .experiencia, .contenido{
+    height:33vh;
+    font-size:2.2vw;
+    }
+}
+@media (min-width: 1024px){
+    .productDetail main .experiencia, .contenido{
+    height:33vh;
+    font-size:1.8vw;
+    }
+}
+

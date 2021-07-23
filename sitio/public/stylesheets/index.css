@@ -1,0 +1,228 @@
+.home{
+    background-color: var(--color-azul-oscuro);
+    height: 93vh;
+    position: relative;
+}
+.home ul li{
+    list-style: none;
+}
+.home a{
+    text-decoration: none;
+    color: var(--color-blanco);
+}   
+
+/* MAIN */
+.home .banner{
+    position: relative;
+}
+.home .banner .banner-img{
+    width: 94%;
+    margin: 3%;
+    filter:brightness(0.4);
+}
+.home .banner .banner-desk{
+    display: none;
+}
+.home .texto-encima{
+    position: absolute;
+    top: 5vh;
+    left: 0vw;
+    color: var(--color-blanco);
+    font-size: 4.5vw;
+    text-align: center;
+    padding: 0px 17px;
+    line-height: 3.3vh;
+}
+.home .texto-encima2{
+    position: absolute;
+    top: 13vh;
+    left: 0vw;
+    color: var(--color-blanco);
+    font-size: 4.5vw;
+    text-align: center;
+    padding: 0px 34px;
+    line-height: 3.3vh;
+    margin: 1vh 0;
+}
+.home .banner h3{
+    position: absolute;
+    top: 22vh;
+    left: 11%;
+    color: var(--color-blanco);
+    font-size: 5.5vw;
+    text-align: center;
+    margin: 2vh 0;
+}
+.home section{
+    display: flex;
+    align-items: center;
+    margin-top: 5vw;
+    width: 94%;
+    margin: 3%;
+}
+.home .cine-container{
+    position: relative;
+}
+.home .cine{
+    width: 50vw;
+    height: 35vh;
+    background-image: url('../images/Cine.webp');
+    filter: brightness(0.6);
+    background-size: cover;
+    background-position: center;
+}
+
+.home article .btn-cine{
+    position: absolute;
+    top: 12vh;
+    left: 18vw;
+    border: solid 1px var(--color-celeste);
+    background-color: rgba(0, 0, 0, .5);
+    font-size: 5vw;
+    padding: 0 3vw;
+}
+.home .bar-container{
+    position: relative;
+}
+.home .bar{
+    width: 44.5vw;
+    height: 35vh;
+    background-image: url('../images/Bar.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    margin-left: 2.5px;
+}
+
+.home article .btn-bar{
+    position: absolute;
+    top: 12vh;
+    left: 18vw;
+    border: solid 1px var(--color-celeste);
+    background-color: rgba(0, 0, 0, .5);
+    font-size: 5vw;
+    padding: 0 3vw;
+}
+
+@media (min-width: 768px) {
+    .home .texto-encima{
+        top: 20vh;
+        font-size: 5vw;
+        padding: 0 27px;
+        line-height: 1;
+    }
+    .home .texto-encima2{
+        top: 31vh;
+        font-size: 5vw;
+        padding: 0 45px;
+        line-height: 1;
+    }
+    .home .banner h3{
+        top: 42vh;
+        font-size: 4vh;
+        right: 7vw;
+    }
+    .home .banner .banner-img{
+        width: 92%;
+        margin-left: 4vw;
+    }
+    .home section{
+        justify-content: space-evenly;
+    }
+    .home .cine{
+        width: 45.2vw;
+        height: 29vh;
+        
+    }
+    .home article .btn-cine{
+        top: 10vh;
+        left: 15vw;
+    }
+    .home .bar{
+        height: 29vh;
+        width: 46.2vw;
+    }
+    .home article .btn-bar{
+        top: 10vh;
+        left: 20vw;
+    }
+}
+@media (min-width:1024px) {
+    /* MAIN */
+    .home{
+        height: 113vh;
+    }
+    .home .banner .banner-img{
+        display: none;
+    }
+    .home .banner .banner-desk{
+        display: initial;
+        width: 94%;
+        margin: 3%;
+        position: relative;
+        filter:brightness(0.6);
+        height: 30vh;
+    }
+    .home .container-texto{
+        position: absolute;
+        background: var(--color-azul-oscuro);
+        top: 8vh;
+        width: 37vw;
+        height: 21vh;
+        left: 31vw;
+        box-shadow: 8px 5px rgba(4, 15, 22, 0.45);
+    }
+    .home .texto-encima{
+        font-size: 1.3vw;
+        left:20vw;
+        padding-left: 14vw;
+        padding-right: 35vw;
+        top: 11.2vh;
+    }
+    .home .texto-encima2{
+        font-size: 1.4vw;
+        left: 23vw;
+        top: 15.6vh;
+        height: 4vh;
+        padding-left: 9vw;
+        padding-right: 32vw;
+    }
+    .home .banner h3{
+        left: 7vw;
+        top: 21vh;
+        font-size: 1.5vw;
+    }
+    
+    .home section{
+        margin: 0 3%;
+    }
+    .home .cine,
+    .home .bar{
+        height: 47vh;
+    }
+    .home article .btn-cine,
+    .home article .btn-bar{
+        top: 16vh;
+        left: 18vw;
+        font-size: 3vw;
+        padding: 0 2vw;
+        text-transform: uppercase;
+        transition: 0.4s;
+        
+    }
+    .home article .btn-cine:hover{
+        box-shadow: 8px 5px rgba(255, 255, 255, 0.7);
+        background-color: var(--color-celeste);
+        color: var(--color-azul-oscuro);
+    
+    }
+    .home article .btn-bar:hover{
+        box-shadow: -8px 5px rgba(255, 255, 255, 0.7);
+        background-color: var(--color-celeste);
+        color: var(--color-azul-oscuro);
+    
+    }
+    .home article .btn-bar{
+        left: 21vw;
+    }
+}
