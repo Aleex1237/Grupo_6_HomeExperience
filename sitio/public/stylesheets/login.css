@@ -1,5 +1,9 @@
 /* prueba header */
 
+.login header{
+    height:8vh;
+ }
+
 .login header a{
     margin-top: 2vh;
 }
@@ -128,6 +132,10 @@
 }
 }
 @media (min-width:1024px) {
+
+    .login header{
+        height:11vh;
+     }
    
     .login header a{
         margin-top: 1vh;
