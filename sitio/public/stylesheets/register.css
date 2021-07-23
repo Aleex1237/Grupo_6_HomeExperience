@@ -7,6 +7,7 @@
 }
 .register header{
     background-color:var(--color-azul-oscuro);
+    height:10vh;
 }
 .register header .navbar{
     display:none;
