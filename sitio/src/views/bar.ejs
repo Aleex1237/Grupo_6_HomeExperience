@@ -1,52 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bar</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/styles.css">
-    <script src="https://kit.fontawesome.com/bd438a186b.js" crossorigin="anonymous"></script>
-</head>
-<body class="bar">
-    <header>
-        <a href="/"><h2>HOME EXPERIENCE</h2></a>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light ">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="burgermenu"><i class="fas fa-bars"></i></span>
-            </button>
-          
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul id="navhome" class="navbar-nav mr-auto ">
-                <li class="nav-item active">
-                  <a class="nav-link" href="/experience">Experiencias <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/about">Nosotros</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="/contact">Contacto<span class="sr-only">(current)</span></a>
-                </li>
-              </ul>
-              
-              <ul id="navuser" class="navbar-nav mr-auto">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="/login">Iniciar sesión<span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item active" id="register">
-                    <a class="nav-link" href="/register">Registro<span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item active">
-                    <a href="/productCart" class="nav-link shopping-basket-desktop"><i class="fas fa-shopping-basket"></i></a>
-                  </li>
-              </ul>
-            </div>
-          </nav>
-          <a href="/productCart" class="nav-link shopping-basket-mobile-tablet"><i class="fas fa-shopping-basket"></i></a>
-       
+<html lang="es">
 
-    </header>
+    <%- include("./partials/head") %>
+
+<body class="bar">
+
+        <%- include("./partials/header") %>
 
 
     <main>
@@ -54,105 +13,82 @@
             <img src="/images/primavera-en-japon-consejos.jpg" alt="">
             <div class="background-letter">
             </div>
-            <div class="texto-encima"><p>Disfrutá de las mejores experiencias en
-                coctelería. En nuestras Boxes encontrarás
-                lo necesario para disfrutar la experiencia
-                de estar en un bar en cualquier parte del
-                mundo, pero en la comodidad de tu hogar.</p>
+            <div class="texto-encima">
+                <p>Disfrutá de las mejores experiencias en
+                    coctelería. En nuestras Boxes encontrarás
+                    lo necesario para disfrutar la experiencia
+                    de estar en un bar en cualquier parte del
+                    mundo, pero en la comodidad de tu hogar.</p>
                 <h3>REGALÁ EXPERIENCIAS. REGALÁ VIDA</h3>
             </div>
         </div>
 
-            <section>
-                <article class="product">
-                    <div>
-                        <a href="/productDetail"><img src="/images/productobar2.png" alt=""></a>
-                    </div>
-                    <div class="product-info">
-                        <h3>Experiencia Ruta Licia</h3>
-                        <div class="product-details">
-                            <span class="product-price">$7.000</span>
-                            <form action="#" method="POST">
+        <section>
+            <article class="product">
+                <div>
+                    <a href="/productDetail"><img src="/images/productobar2.png" alt=""></a>
+                </div>
+                <div class="product-info">
+                    <h3>Experiencia Ruta Licia</h3>
+                    <div class="product-details">
+                        <span class="product-price">$7.000</span>
+                        <form action="#" method="POST">
                             <span><button class="btn-cart" type="submit">Añadir al carrito</button> </span>
-                            </form>
-                        </div>
+                        </form>
                     </div>
-                </article>
+                </div>
+            </article>
 
-                <article class="product">
-                    <div>
-                        <a href="/productDetail"><img src="/images/productobar2.png" alt=""></a>
-                    </div>
-                    <div class="product-info">
-                        <h3>Experiencia Ruta Licia</h3>
-                        <div class="product-details">
-                            <span class="product-price">$7.000</span>
-                            <form action="#" method="POST">
+            <article class="product">
+                <div>
+                    <a href="/productDetail"><img src="/images/productobar2.png" alt=""></a>
+                </div>
+                <div class="product-info">
+                    <h3>Experiencia Ruta Licia</h3>
+                    <div class="product-details">
+                        <span class="product-price">$7.000</span>
+                        <form action="#" method="POST">
                             <span><button class="btn-cart" type="submit">Añadir al carrito</button> </span>
-                            </form>
-                        </div>
+                        </form>
                     </div>
-                </article>
+                </div>
+            </article>
 
-                <article class="product">
-                    <div>
-                        <a href="/productDetail"><img src="/images/productobar2.png" alt=""></a>
-                    </div>
-                    <div class="product-info">
-                        <h3>Experiencia Ruta Licia</h3>
-                        <div class="product-details">
-                            <span class="product-price">$7.000</span>
-                            <form action="#" method="POST">
+            <article class="product">
+                <div>
+                    <a href="/productDetail"><img src="/images/productobar2.png" alt=""></a>
+                </div>
+                <div class="product-info">
+                    <h3>Experiencia Ruta Licia</h3>
+                    <div class="product-details">
+                        <span class="product-price">$7.000</span>
+                        <form action="#" method="POST">
                             <span><button class="btn-cart" type="submit">Añadir al carrito</button> </span>
-                            </form>
-                        </div>
+                        </form>
                     </div>
-                </article>
+                </div>
+            </article>
 
-                <article class="product">
-                    <div>
-                        <a href="/productDetail"><img src="/images/productobar2.png" alt=""></a>
-                    </div>
-                    <div class="product-info">
-                        <h3>Experiencia Ruta Licia</h3>
-                        <div class="product-details">
-                            <span class="product-price">$7.000</span>
-                            <form action="#" method="POST">
+            <article class="product">
+                <div>
+                    <a href="/productDetail"><img src="/images/productobar2.png" alt=""></a>
+                </div>
+                <div class="product-info">
+                    <h3>Experiencia Ruta Licia</h3>
+                    <div class="product-details">
+                        <span class="product-price">$7.000</span>
+                        <form action="#" method="POST">
                             <span><button class="btn-cart" type="submit">Añadir al carrito</button> </span>
-                            </form>
-                        </div>
+                        </form>
                     </div>
-                </article>
-            </section>
-    
+                </div>
+            </article>
+        </section>
+
     </main>
 
-    <footer>
-        
-        <nav class="nav-footer">
-            <h5>Seguinos :</h5>
-            <ul>
-                <li><a href="http://instagram.com"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="http://facebook.com"><i class="fab fa-facebook"></i></a></li>
-                <li><a href="http://twitter.com"><i class="fab fa-twitter"></i></a></li>
-            </ul>
-        </nav>
-        <div class="news-div">
-            <form action="#" method="POST">
-                <label for="emailUsuario">
-                Enterate de las novedades</label>
-                <div class="input-div"></div>
-                    <input type="email" placeholder="Dejanos tu email" name="emailUsuario" id="emailUsuario" required>
-                    <span></span>
-                    <button type="submit">Suscribite</button>
-                </div>
-            </form>
-            
-        </div>
-        <h4>Copyright © 2021 - Todos los derechos reservados</h4>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <%- include("./partials/footer") %>
+        <%- include("./partials/scripts") %>
 </body>
+
 </html>

@@ -106,19 +106,19 @@
 
 @media (min-width: 768px) {
     .home .texto-encima{
-        top: 20vh;
+        top: 15vw;
         font-size: 5vw;
         padding: 0 27px;
         line-height: 1;
     }
     .home .texto-encima2{
-        top: 31vh;
+        top: 30vw;
         font-size: 5vw;
         padding: 0 45px;
         line-height: 1;
     }
     .home .banner h3{
-        top: 42vh;
+        top: 45vw;
         font-size: 4vh;
         right: 7vw;
     }

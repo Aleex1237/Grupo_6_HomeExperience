@@ -37,6 +37,7 @@
     left: 1vw;
     padding: 0 35px;
     text-align: center;
+    line-height: 5vw;
 }
 
 .bar .banner h3 {
@@ -83,6 +84,7 @@
     width: 63.3vw;
     height: 11vh;
     left: -1vw;
+    height: 13vh;
 }
 
 .bar .product .product-info h3 {
@@ -179,6 +181,7 @@
         font-size: 1.5vw;
         padding: 0 32%;
         top: 10vh;
+        line-height: 2vw;
     }
     .bar .banner h3{
         top: 28vh;
