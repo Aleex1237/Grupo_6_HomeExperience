@@ -2,90 +2,64 @@
     <!DOCTYPE html>
     <html lang="es">
 
-        
-        <%- include("./partials/head") %>
 
-    <body class="cine">
-        
-        <%- include("./partials/header") %>
+        <%- include("./partials/head" ) %>
 
-        <main>
-            <div class="banner">
-                <img src="/images/volver-futuro-banner.png" alt="">
-                <div class="background-letter">
-                </div>
-                <div class="texto-encima">
-                    <p>Disfrutá de la experiencia cine. En nuestras Boxs encontrarás todos los platos y bebidas para que te sientas dentro de tu película preferida. Viví experiencias, ahora desde la comodidad de tu casa.</p>
-                    <h3>REGALÁ EXPERIENCIAS. REGALÁ VIDA</h3>
-                </div>
-            </div>
+            <body class="cine">
 
-            <section>
-                <article class="product">
-                    <div>
-                        <a href="/productDetail"><img src="/images/pulp-fiction.png" alt=""></a>
-                    </div>
-                    <div class="product-info">
-                        <h3>Experiencia Pulp Fiction</h3>
-                        <div class="product-details">
-                            <span class="product-price">$1.000</span>
-                            <form action="#" method="POST">
-                            <span><button class="btn-cart" type="submit">Añadir al carrito</button> </span>
-                            </form>
+                <%- include("./partials/header" ) %>
+
+                    <main>
+                        <div class="banner">
+                            <img src="/images/volver-futuro-banner.png" alt="">
+                            <div class="background-letter">
+                            </div>
+                            <div class="texto-encima">
+                                <p>Disfrutá de la experiencia cine. En nuestras
+                                    Boxs encontrarás todos los platos y bebidas
+                                    para que te sientas dentro de tu película
+                                    preferida. Viví experiencias, ahora desde la
+                                    comodidad de tu casa.</p>
+                                <h3>REGALÁ EXPERIENCIAS. REGALÁ VIDA</h3>
+                            </div>
                         </div>
-                    </div>
-                </article>
 
-                <article class="product">
-                    <div>
-                        <a href="/productDetail"><img src="/images/pulp-fiction.png" alt=""></a>
-                    </div>
-                    <div class="product-info">
-                        <h3>Experiencia Pulp Fiction</h3>
-                        <div class="product-details">
-                            <span class="product-price">$1.000</span>
-                            <form action="#" method="POST">
-                            <span><button class="btn-cart" type="submit">Añadir al carrito</button> </span>
-                            </form>
-                        </div>
-                    </div>
-                </article>
+                        <section>
+                            <% productosCine.forEach(producto=> { %>
+                                <article class="product">
+                                    <div>
+                                        <a href="/productDetail"><img
+                                                src="/images/<%= producto.image
+                                                %> " alt=""></a>
+                                    </div>
+                                    <div class="product-info">
+                                        <h3><%= producto.name %> </h3>
+                                            <div class="product-details">
+                                                <span class="product-price">$<%=
+                                                        producto.price %>
+                                                    </span>
+                                                    <form action="#"
+                                                        method="POST">
+                                                        <span><button
+                                                                class="btn-cart"
+                                                                type="submit">Añadir
+                                                                al
+                                                                carrito</button>
+                                                        </span>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </article>
+                                        <% }) %>
 
-                <article class="product">
-                    <div>
-                        <a href="/productDetail"><img src="/images/pulp-fiction.png" alt=""></a>
-                    </div>
-                    <div class="product-info">
-                        <h3>Experiencia Pulp Fiction</h3>
-                        <div class="product-details">
-                            <span class="product-price">$1.000</span>
-                            <form action="#" method="POST">
-                            <span><button class="btn-cart" type="submit">Añadir al carrito</button> </span>
-                            </form>
-                        </div>
-                    </div>
-                </article>
 
-                <article class="product">
-                    <div>
-                        <a href="/productDetail"><img src="/images/pulp-fiction.png" alt=""></a>
-                    </div>
-                    <div class="product-info">
-                        <h3>Experiencia Pulp Fiction</h3>
-                        <div class="product-details">
-                            <span class="product-price">$1.000</span>
-                            <form action="#" method="POST">
-                            <span><button class="btn-cart" type="submit">Añadir al carrito</button> </span>
-                            </form>
-                        </div>
-                    </div>
-                </article>
-            </section>
 
-        </main>
+                                        </section>
 
-        <%- include("./partials/footer") %>
-        <%- include("./partials/scripts") %>
-    </body>
+                                    </main>
 
-    </html>
+                                    <%- include("./partials/footer" ) %>
+                                        <%- include("./partials/scripts" ) %>
+                                        </body>
+
+                                    </html>
