@@ -24,65 +24,32 @@
         </div>
 
         <section>
-            <article class="product">
-                <div>
-                    <a href="/productDetail"><img src="/images/productobar2.png" alt=""></a>
-                </div>
-                <div class="product-info">
-                    <h3>Experiencia Ruta Licia</h3>
-                    <div class="product-details">
-                        <span class="product-price">$7.000</span>
-                        <form action="#" method="POST">
-                            <span><button class="btn-cart" type="submit">Añadir al carrito</button> </span>
-                        </form>
+            <% productosBar .forEach(producto=> { %>
+                <article class="product">
+                    <div>
+                        <a href="/productDetail"><img
+                                src="/images/<%= producto.image
+                                %> " alt=""></a>
                     </div>
-                </div>
-            </article>
-
-            <article class="product">
-                <div>
-                    <a href="/productDetail"><img src="/images/productobar2.png" alt=""></a>
-                </div>
-                <div class="product-info">
-                    <h3>Experiencia Ruta Licia</h3>
-                    <div class="product-details">
-                        <span class="product-price">$7.000</span>
-                        <form action="#" method="POST">
-                            <span><button class="btn-cart" type="submit">Añadir al carrito</button> </span>
-                        </form>
-                    </div>
-                </div>
-            </article>
-
-            <article class="product">
-                <div>
-                    <a href="/productDetail"><img src="/images/productobar2.png" alt=""></a>
-                </div>
-                <div class="product-info">
-                    <h3>Experiencia Ruta Licia</h3>
-                    <div class="product-details">
-                        <span class="product-price">$7.000</span>
-                        <form action="#" method="POST">
-                            <span><button class="btn-cart" type="submit">Añadir al carrito</button> </span>
-                        </form>
-                    </div>
-                </div>
-            </article>
-
-            <article class="product">
-                <div>
-                    <a href="/productDetail"><img src="/images/productobar2.png" alt=""></a>
-                </div>
-                <div class="product-info">
-                    <h3>Experiencia Ruta Licia</h3>
-                    <div class="product-details">
-                        <span class="product-price">$7.000</span>
-                        <form action="#" method="POST">
-                            <span><button class="btn-cart" type="submit">Añadir al carrito</button> </span>
-                        </form>
-                    </div>
-                </div>
-            </article>
+                    <div class="product-info">
+                        <h3><%= producto.name %> </h3>
+                            <div class="product-details">
+                                <span class="product-price">$<%=
+                                        producto.price %>
+                                    </span>
+                                    <form action="#"
+                                        method="POST">
+                                        <span><button
+                                                class="btn-cart"
+                                                type="submit">Añadir
+                                                al
+                                                carrito</button>
+                                        </span>
+                                    </form>
+                                </div>
+                            </div>
+                        </article>
+                        <% }) %>
         </section>
 
     </main>
