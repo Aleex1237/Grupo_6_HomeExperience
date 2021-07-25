@@ -50,8 +50,9 @@
 }
 
 @media (min-width:1024px) {
+
     .about .cuerpo .imagen{
-        width: 55vw;
+        width: 50vw;
         height: 37vh;
     }
 
