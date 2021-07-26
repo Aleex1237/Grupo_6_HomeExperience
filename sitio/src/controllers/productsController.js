@@ -50,5 +50,11 @@ module.exports = {
         productos.push(producto);
         guardar(productos);
         res.redirect("/");
+    },
+    load: (req,res)=>{
+
+    },
+    update: (req,res)=>{
+        
     }
 }

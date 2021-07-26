@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const methodOverride = require("method-override");
 
 //Requiriendo rutas
 var indexRouter = require('./routes/index');
@@ -20,6 +21,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(methodOverride("_method"));
 
 //Indicando donde se encuentra la carpeta public
 app.use(express.static(path.join(__dirname, '..', 'public')));

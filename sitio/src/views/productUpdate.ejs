@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include("./partials/head")%>
+<body class="productUpdate">
+  <%- include("./partials/header")%>
+    <main>
+        <h1>Nueva experiencia</h1>
+        <form action="/productos/agregar" method="POST">
+          <div class="nombre">
+            <input class="nombre" type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+          <span></span>
+          </div>
+          <div class="contenedor">
+              <div class="caja1">
+                  <textarea name="descripcion" cols="30" rows="10" placeholder="Descripción" required></textarea>
+                  <div class="contenedor2">
+                    <div>
+                      <input class="precio" type="text" name="precio" id="precio" placeholder="Precio" required>
+                      <span></span>
+                      <select name="categoria">
+                        <option hidden selected>Categoría</option>
+                        <option value="bar">Bar</option>
+                        <option value="cine">Cine</option>
+                      </select>
+                      <span></span>
+                    </div>
+                    <div class="div-imagen" id="input-file">
+                      <input class="input-file" type="file" name="imagen" placeholder="+ FOTO">
+                    </div>
+                    
+                  </div>
+              </div>
+              <div class="caja2">
+                    <h3>Productos incluidos en la experiencia:</h3>
+                    <textarea class="listaProductos" name="listaProductos">
+                      Producto 1
+                      Producto 2
+                    </textarea>
+              </div>
+          </div> 
+          <div>
+            <button type="submit">GUARDAR</button>
+          </div>
+        </form>
+        
+    </main>
+    <%- include("./partials/footer")%>
+    <%- include("./partials/scripts")%>
+</body>
+</html>
