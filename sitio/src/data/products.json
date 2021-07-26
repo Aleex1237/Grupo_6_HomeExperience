@@ -45,7 +45,7 @@
     "category": "cine",
     "image": "pulp-fiction.png",
     "description": "lorem ipsum asaj amet it",
-    "price": 1000
+    "price": 4000
   },
   {
     "id": 7,
@@ -63,5 +63,4 @@
     "description": "lorem ipsum asaj amet it",
     "price": 10000
   }
-
 ]

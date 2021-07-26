@@ -9,8 +9,8 @@ router.get('/bar', bar);
 router.get('/detalle/:id', detail);
 router.get('/agregar', add);
 router.post("/agregar", save); 
-router.get('/modificar', load);
-router.put("/modificar", update); 
+router.get('/modificar/:id', load);
+router.put("/modificar/:id", update); 
 router.get('/carrito', cart);
 
 

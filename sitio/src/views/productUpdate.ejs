@@ -4,23 +4,22 @@
 <body class="productUpdate">
   <%- include("./partials/header")%>
     <main>
-        <h1>Nueva experiencia</h1>
-        <form action="/productos/agregar" method="POST">
+        <h1>Modificar experiencia</h1>
+        <form action="/productos/modificar/<%=producto.id%>?_method=PUT" method="POST">
           <div class="nombre">
-            <input class="nombre" type="text" name="nombre" id="nombre" placeholder="Nombre" required>
+            <input class="nombre" type="text" name="nombre" id="nombre" value="<%=producto.name%>">
           <span></span>
           </div>
           <div class="contenedor">
               <div class="caja1">
-                  <textarea name="descripcion" cols="30" rows="10" placeholder="Descripción" required></textarea>
+                  <textarea name="descripcion" cols="30" rows="10" ><%=producto.description%></textarea>
                   <div class="contenedor2">
                     <div>
-                      <input class="precio" type="text" name="precio" id="precio" placeholder="Precio" required>
+                      <input class="precio" type="text" name="precio" id="precio" value="<%=producto.price%>">
                       <span></span>
                       <select name="categoria">
-                        <option hidden selected>Categoría</option>
-                        <option value="bar">Bar</option>
-                        <option value="cine">Cine</option>
+                        <option value="bar" <%=producto.category==="bar"?"selected":null%>>Bar</option>
+                        <option value="cine" <%=producto.category==="cine"?"selected":null%>>Cine</option>
                       </select>
                       <span></span>
                     </div>
