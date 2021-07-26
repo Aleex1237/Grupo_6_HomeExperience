@@ -1,66 +1,67 @@
 [
-    {
-        "id":1,
-        "name":"Experiencia Ruta Licia",
-        "category":"bar",
-        "image":"productobar2.png",
-        "description":"lorem ipsum asaj amet it",
-        "price":"6.000"
-    },
-    {
-        "id":2,
-        "name":"Experiencia Martini enriquecido",
-        "category":"bar",
-        "image":"productobar2.png",
-        "description":"lorem ipsum asaj amet it",
-        "price":"1.000"
-    },
-    {
-        "id":3,
-        "name":"Experiencia delicias del oriente",
-        "category":"bar",
-        "image":"productobar2.png",
-        "description":"lorem ipsum asaj amet it",
-        "price":"2.000"
-    },
-    {
-        "id":4,
-        "name":"Experiencia Cordobesa",
-        "category":"bar",
-        "image":"productobar2.png",
-        "description":"lorem ipsum asaj amet it",
-        "price":"10.000"
-    },
-    {
-        "id":5,
-        "name":"Experiencia Pulp Fiction",
-        "category":"cine",
-        "image":"pulp-fiction.png",
-        "description":"lorem ipsum asaj amet it",
-        "price":"6.000"
-    },
-    {
-        "id":6,
-        "name":"Experiencia El padrino",
-        "category":"cine",
-        "image":"pulp-fiction.png",
-        "description":"lorem ipsum asaj amet it",
-        "price":"1.000"
-    },
-    {
-        "id":7,
-        "name":"Experiencia Piratas del caribe",
-        "category":"cine",
-        "image":"pulp-fiction.png",
-        "description":"lorem ipsum asaj amet it",
-        "price":"2.000"
-    },
-    {
-        "id":8,
-        "name":"Experiencia Esperando la carroza",
-        "category":"cine",
-        "image":"pulp-fiction.png",
-        "description":"lorem ipsum asaj amet it",
-        "price":"10.000"
-    }
+  {
+    "id": 1,
+    "name": "Experiencia Ruta Licia",
+    "category": "bar",
+    "image": "productobar2.png",
+    "description": "lorem ipsum asaj amet it",
+    "price": 6000
+  },
+  {
+    "id": 2,
+    "name": "Experiencia Martini enriquecido",
+    "category": "bar",
+    "image": "productobar2.png",
+    "description": "lorem ipsum asaj amet it",
+    "price": 1000
+  },
+  {
+    "id": 3,
+    "name": "Experiencia delicias del oriente",
+    "category": "bar",
+    "image": "productobar2.png",
+    "description": "lorem ipsum asaj amet it",
+    "price": 2000
+  },
+  {
+    "id": 4,
+    "name": "Experiencia Cordobesa",
+    "category": "bar",
+    "image": "productobar2.png",
+    "description": "lorem ipsum asaj amet it",
+    "price": 10000
+  },
+  {
+    "id": 5,
+    "name": "Experiencia Pulp Fiction",
+    "category": "cine",
+    "image": "pulp-fiction.png",
+    "description": "lorem ipsum asaj amet it",
+    "price": 6000
+  },
+  {
+    "id": 6,
+    "name": "Experiencia El padrino",
+    "category": "cine",
+    "image": "pulp-fiction.png",
+    "description": "lorem ipsum asaj amet it",
+    "price": 1000
+  },
+  {
+    "id": 7,
+    "name": "Experiencia Piratas del caribe",
+    "category": "cine",
+    "image": "pulp-fiction.png",
+    "description": "lorem ipsum asaj amet it",
+    "price": 2000
+  },
+  {
+    "id": 8,
+    "name": "Experiencia Esperando la carroza",
+    "category": "cine",
+    "image": "pulp-fiction.png",
+    "description": "lorem ipsum asaj amet it",
+    "price": 10000
+  }
+
 ]

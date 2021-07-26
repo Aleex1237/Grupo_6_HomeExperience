@@ -6,12 +6,12 @@
     <main>
     <div class="contenedor1">
         <div class="caja1">
-            <div class="imagen"></div>
+            <img class="imagen" src="/images/<%= producto.image%>">
         </div>
         <div class="caja2">
-            <h1>BIG BOX - EXPERIENCIA CUBA</h1>
-            <P class="precio">$4000</P>
-            <P class="cuotas">o 6 cuotas de $666.66</P>
+            <h1>BIG BOX - <%= producto.name%></h1>
+            <P class="precio">$<%= producto.price.toFixed(2)%></P>
+            <P class="cuotas">o 6 cuotas de $<%= (producto.price/6).toFixed(2)%></P>
             <button>AGREGAR AL CARRITO</button>
         </div>
     </div>
@@ -22,9 +22,7 @@
             </div>
             <article class="experiencia">
                 <p>
-                    La gama de cócteles autóctonos de Cuba es muy amplia. Siempre mezclados con el indispensable ron en sus variantes blancos u oscuros de distintas edades de conservación y añejamiento.
-                    En esta BOX encontrarás lo necesario para disfrutar de uno de los tragos cubanos por excelencia: el MOJITO.
-                    Elegí la BOX CUBA y disfrutá de una experiencia inolvidable 
+                    <%= producto.description%>
                     </p>
             </article>
             <article class="contenido">
