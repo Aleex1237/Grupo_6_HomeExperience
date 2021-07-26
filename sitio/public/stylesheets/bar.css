@@ -164,7 +164,6 @@
 @media (min-width:1024px) {
     .bar{
         position: relative;
-        height: 125vh;
     }
     .bar .banner img{
         width: 84%;
@@ -189,12 +188,12 @@
         font-size: 1.5vw;
     }
     .bar section{
-        height: 65vh;
         flex-wrap: wrap;
         width: 94%;
-        flex-direction: initial;
-        align-items: initial;
+        flex-direction: row;
+        align-items: baseline;
         margin-left: 1vw;
+        justify-content: space-between;
     }
     .bar .product{
         width: 18vw;
