@@ -7,7 +7,8 @@
 .about .cuerpo{
     margin-right: 16px;
     margin-left: 16px;
-    height: 120vh;
+    height: 100vh;
+    text-align: center;
 }
 
 .about .cuerpo .titulo{
@@ -33,6 +34,10 @@
 .about .cuerpo b{
     font-size: 18px;
     font-weight: bold;
+}
+
+.about footer a{
+    color: white;
 }
 
 @media (min-width:768px) {
