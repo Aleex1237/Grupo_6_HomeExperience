@@ -207,7 +207,6 @@ header a {
         border: none;
     }
     header #navhome li a {
-        padding: 0 1vw 0 1vw;
         transition: 0.4s;
     }
     header #navuser #user-loged-mobile {
