@@ -1,5 +1,6 @@
 .about{
     background-color: var(--color-azul-oscuro);
+    position: relative;
 }
 
 
