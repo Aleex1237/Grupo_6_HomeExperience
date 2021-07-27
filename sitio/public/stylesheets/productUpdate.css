@@ -1,0 +1,147 @@
+.productUpdate{
+    position:relative;
+    background-color:var(--color-azul-oscuro);
+    text-align:center;
+    width:100%;
+    min-height:100vh;
+}
+.productUpdate .nombre{
+    margin-bottom:25px;
+}
+.productUpdate input,
+.productUpdate textarea,
+.productUpdate select
+{
+    background-color:var(--color-gris);
+    color:var(--color-blanco);
+    width:80%;
+    margin-bottom:20px;
+    border-radius:12px;
+    font-size:4vw;
+    padding:8px;
+}
+.productUpdate option{
+    font-size:4vw;
+    padding:8px;
+}
+
+.productUpdate main h1{
+    color:var(--color-blanco);
+    font-size:15vw;
+    text-align:center;
+    margin:30px;
+}
+.productUpdate main .contenedor2{
+    display:flex;
+    width:80%;
+    margin-left:10%;
+    justify-content: space-between;
+}
+.productUpdate main button{
+    background-color:var(--color-azul-oscuro);
+    color:var(--color-blanco);
+    font-size:10vw;
+    padding:10px;
+    margin-bottom:100px;
+    border:solid 1px var(--color-celeste);
+    margin-top:15px;
+    border-radius:12px;
+}
+.productUpdate main .caja2{
+    border:solid 2px var(--color-celeste);
+    height:300px;
+    width:80%;
+    margin-left:10%;
+    border-radius:12px;
+    margin-bottom:20px;
+}
+.productUpdate main .caja2 h3{
+    font-size:4vw;
+    height:20%;
+    color:var(--color-blanco);
+    background-color:var(--color-gris);
+    border-bottom:solid 1px var(--color-celeste);
+    padding-top:5px;
+    margin:0;
+}
+.productUpdate main .caja2 .listaProductos{
+    background-color:var(--color-azul-oscuro);
+    width:100%;
+    height:80%;
+}
+
+.div-imagen {          
+    position: relative;
+    display: inline-block;
+  }
+   
+  .div-imagen::before {
+    background-color: var(--color-gris);
+    height:140px;
+    color: var(--color-blanco);
+    display: flex;            
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    font-size:8vw;
+    content: '+FOTO'; /* testo por defecto */
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;                
+  }
+   
+  .div-imagen input{
+    opacity: 0;
+    width: 80%;
+    height: 140px;
+    display: inline-block;            
+  }
+   
+
+
+
+
+
+
+
+
+@media(min-width:768px){
+    .productUpdate .contenedor{
+        display:flex;
+        justify-content:space-around;
+        width:90%;
+        margin:0 auto;
+    }
+    .productUpdate main h1{
+        font-size:7vw;
+    }
+    .productUpdate input,
+    .productUpdate textarea,
+    .productUpdate select{
+        font-size:1.8vw;
+        margin-left:0;
+    }
+    .productUpdate main button{
+        font-size:4vw;
+    }
+    .productUpdate main .caja2 h3{
+        font-size:2vw;
+        height:10%;
+    }
+    .productUpdate main .caja2{
+        height:350px;
+    }
+    .productUpdate main .caja2 .listaProductos{
+        height:90%;
+    }
+    .div-imagen::before{
+        font-size:4vw;
+    }
+}
+@media(min-width:1024px){
+    .productUpdate main .caja2{
+        height:450px;
+    }
+}

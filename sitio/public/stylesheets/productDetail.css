@@ -16,10 +16,9 @@
 }
 .productDetail main .imagen{
     width:70%;
-    height:25vh;
-    background-image:url("/images/imagen-producto-1.jpeg");
+    display:inline-block;
     background-size:cover;
-    background-position:center;
+    background-position:center; 
     margin:5% 15% 10% 15%;
 }
 
@@ -96,7 +95,6 @@
     .productDetail main .imagen{
     width:100%;
     margin:0;
-    height:30vh;
 }
     .productDetail main button{
     width:60%;
