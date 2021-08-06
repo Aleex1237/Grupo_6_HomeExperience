@@ -43,7 +43,7 @@ module.exports = {
             id: obtenerProximoId(),
             name: req.body.nombre,
             description: req.body.descripcion,
-            image: "pulp-fiction.png",
+            image: req.file.filename,
             price: Number(req.body.precio),
             category: req.body.categoria
         };
@@ -66,6 +66,7 @@ module.exports = {
                 productos[i].description = req.body.descripcion;
                 productos[i].price = Number(req.body.precio);
                 productos[i].category = req.body.categoria;
+                productos[i].image = req.file.filename;
                 index = i;
             }
         };

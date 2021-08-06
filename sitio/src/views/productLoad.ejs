@@ -5,7 +5,7 @@
   <%- include("./partials/header")%>
     <main>
         <h1>Nueva experiencia</h1>
-        <form action="/productos/agregar" method="POST">
+        <form action="/productos/agregar" method="POST" enctype="multipart/form-data">
           <div class="nombre">
             <input class="nombre" type="text" name="nombre" id="nombre" placeholder="Nombre" required>
           <span></span>

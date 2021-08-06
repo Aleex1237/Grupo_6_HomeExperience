@@ -35,7 +35,7 @@
     "id": 5,
     "name": "Experiencia Pulp Fiction",
     "category": "cine",
-    "image": "pulp-fiction.png",
+    "image": "_img_1628223876811.jpeg",
     "description": "lorem ipsum asaj amet it",
     "price": 6000
   },
@@ -62,5 +62,13 @@
     "image": "pulp-fiction.png",
     "description": "lorem ipsum asaj amet it",
     "price": 10000
+  },
+  {
+    "id": 9,
+    "name": "Harry Potter",
+    "description": "bvbnv h hjg jhg hjg hjg jhg jhg jhg ",
+    "image": "_img_1628223545612.jpeg",
+    "price": 2000,
+    "category": "cine"
   }
 ]
