@@ -1,6 +1,5 @@
 .bar {
     background-color: var(--color-azul-oscuro);
-    height: 247vh;
 }
 
 .bar a {
@@ -123,9 +122,6 @@
 }
 
 @media (min-width:768px) {
-    .bar{
-        height: 174vh;
-    }
     .bar .banner img {
         height: 43vh;
     }
@@ -143,7 +139,6 @@
         font-size: 3vw;
     }
     .bar section{
-        height: 100vh;
         justify-content: space-around;
         flex-wrap: wrap;
     }
