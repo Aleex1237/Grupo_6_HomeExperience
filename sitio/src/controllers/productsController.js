@@ -45,7 +45,9 @@ module.exports = {
             description: req.body.descripcion,
             image: req.file.filename,
             price: Number(req.body.precio),
-            category: req.body.categoria
+            category: req.body.categoria,
+            productList:[req.body.product1, req.body.product2, req.body.product3, req.body.product4],
+            keywords: req.body.keywords.split(" ")
         };
         productos.push(producto);
         guardar(productos);
@@ -53,9 +55,14 @@ module.exports = {
     },
     load: (req, res) => {
         let producto = productos.find(producto => producto.id === +req.params.id);
+        let keywords = "";
+        for(let i=0;i<producto.keywords.length;i++){
+            keywords = keywords+producto.keywords[i]+" ";
+        }
         return res.render('productUpdate', {
             title: "Modificar: " + producto.name,
-            producto
+            producto, 
+            keywords
         })
     },
     update: (req, res) => {
@@ -66,7 +73,10 @@ module.exports = {
                 productos[i].description = req.body.descripcion;
                 productos[i].price = Number(req.body.precio);
                 productos[i].category = req.body.categoria;
-                productos[i].image = req.file.filename;
+                productos[i].image = req.file ? req.file.filename : productos[i].image;
+                productos[i].productList=[req.body.product1, req.body.product2, req.body.product3, req.body.product4],
+                productos[i].keywords= req.body.keywords.split(" ");
+   
                 index = i;
             }
         };

@@ -24,17 +24,23 @@
                       <span></span>
                     </div>
                     <div class="div-imagen" id="input-file">
-                      <input class="input-file" type="file" name="imagen" placeholder="+ FOTO">
+                      <input class="input-file" type="file" name="imagen" placeholder="+ FOTO" value="<%=producto.image%>">
                     </div>
                     
+                  </div>
+                  <div>
+                    <input class="precio" type="text" name="keywords" id="keywords" placeholder="Palabras relacionadas" value="<%=keywords%>" required>
+                    <span></span>
                   </div>
               </div>
               <div class="caja2">
                     <h3>Productos incluidos en la experiencia:</h3>
-                    <textarea class="listaProductos" name="listaProductos">
-                      Producto 1
-                      Producto 2
-                    </textarea>
+                    <br>
+                    <input class="precio" type="text" name="product1" id="keywords" placeholder="Agregar producto" value="<%=producto.productList[0]%>" required>
+                    <input class="precio" type="text" name="product2" id="keywords" placeholder="Agregar producto"  value="<%=producto.productList[1]%>" >
+                    <input class="precio" type="text" name="product3" id="keywords" placeholder="Agregar producto"  value="<%=producto.productList[2]%>" >
+                    <input class="precio" type="text" name="product4" id="keywords" placeholder="Agregar producto"  value="<%=producto.productList[3]%>"  >  
+                   
               </div>
           </div> 
           <div>

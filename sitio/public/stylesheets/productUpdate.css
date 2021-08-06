@@ -49,11 +49,12 @@
 }
 .productUpdate main .caja2{
     border:solid 2px var(--color-celeste);
-    height:300px;
+    /* height:300px; */
     width:80%;
     margin-left:10%;
     border-radius:12px;
     margin-bottom:20px;
+    padding-bottom:10px;
 }
 .productUpdate main .caja2 h3{
     font-size:4vw;
@@ -63,11 +64,6 @@
     border-bottom:solid 1px var(--color-celeste);
     padding-top:5px;
     margin:0;
-}
-.productUpdate main .caja2 .listaProductos{
-    background-color:var(--color-azul-oscuro);
-    width:100%;
-    height:80%;
 }
 
 .div-imagen {          
