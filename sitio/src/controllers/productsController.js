@@ -1,5 +1,6 @@
 const { leer, guardar, obtenerProximoId } = require("../data/products_db");
 let productos = leer();
+const {validationResult}= require('express-validator')
 
 module.exports = {
 
@@ -36,22 +37,35 @@ module.exports = {
     add: (req, res) => {
         return res.render('productLoad', {
             title: "Agregar producto",
+
         })
     },
     save: (req, res) => {
-        let producto = {
-            id: obtenerProximoId(),
-            name: req.body.nombre,
-            description: req.body.descripcion,
-            image: req.file.filename,
-            price: Number(req.body.precio),
-            category: req.body.categoria,
-            productList:[req.body.product1, req.body.product2, req.body.product3, req.body.product4],
-            keywords: req.body.keywords.split(" ")
-        };
-        productos.push(producto);
-        guardar(productos);
-        res.redirect("/");
+        let errors= validationResult(req)
+        
+        if (errors.isEmpty()) {
+            let producto = {
+                id: obtenerProximoId(),
+                name: req.body.nombre,
+                description: req.body.descripcion,
+                image: req.file.filename,
+                price: Number(req.body.precio),
+                category: req.body.categoria,
+                productList:[req.body.product1, req.body.product2, req.body.product3, req.body.product4],
+                keywords: req.body.keywords.split(" ")
+            };
+            productos.push(producto);
+            guardar(productos);
+            res.redirect("/");            
+        } else{
+            return res.render('productLoad',{
+                errors: errors.mapped(), /* el mapped ayuda a mostrar un error a la vez y diferenciar de que input es cada error */ 
+                title: "Agregar producto",
+                old: req.body/* el old se encarga de la persistencia de datos del formulario */
+            })
+        }
+
+        
     },
     load: (req, res) => {
         let producto = productos.find(producto => producto.id === +req.params.id);
