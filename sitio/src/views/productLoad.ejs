@@ -5,37 +5,69 @@
   <%- include("./partials/header")%>
     <main>
         <h1>Nueva experiencia</h1>
-        <form action="/productos/agregar" method="POST">
+        <form action="/productos/agregar" method="POST" enctype="multipart/form-data" novalidate>
           <div class="nombre">
-            <input class="nombre" type="text" name="nombre" id="nombre" placeholder="Nombre" required>
-          <span></span>
+            <input class="nombre" type="text" name="nombre" id="nombre" placeholder="Nombre" value="<%= locals.old && old.nombre ? old.nombre : null%>">
+            <% if (locals.errors && errors.nombre) { %>
+              <p class="text-danger"><%= errors.nombre.msg %> </p>
+            <% } %>
+          
           </div>
           <div class="contenedor">
               <div class="caja1">
-                  <textarea name="descripcion" cols="30" rows="10" placeholder="Descripción" required></textarea>
+                  <textarea name="descripcion" cols="30" rows="10" placeholder="Descripción"><%= locals.old && old.descripcion ? old.descripcion : null%></textarea>
+                  <% if (locals.errors && errors.descripcion) { %>
+                    <p class="text-danger"><%= errors.descripcion.msg %> </p>
+                  <% } %>
                   <div class="contenedor2">
                     <div>
-                      <input class="precio" type="text" name="precio" id="precio" placeholder="Precio" required>
-                      <span></span>
+                      <input class="precio" type="text" name="precio" id="precio" placeholder="Precio" value="<%= locals.old && old.precio ? old.precio : null%>">
+                      <% if (locals.errors && errors.precio) { %>
+                        <p class="text-danger"><%= errors.precio.msg %> </p>
+                      <% } %>
+            
                       <select name="categoria">
-                        <option hidden selected>Categoría</option>
-                        <option value="bar">Bar</option>
-                        <option value="cine">Cine</option>
+                        <option hidden selected value="">Categoría</option>
+                        <option value="bar" name='categoria' <%= locals.old && old.categoria === 'bar' ? 'selected' : ''%>>Bar</option>
+                        <option value="cine" name='categoria' <%= locals.old && old.categoria === 'cine' ? 'selected' : ''%>>Cine</option>
                       </select>
-                      <span></span>
+                      <% if (locals.errors && errors.categoria) { %>
+                        <p class="text-danger"><%= errors.categoria.msg %> </p>
+                      <% } %>
+                      
                     </div>
                     <div class="div-imagen" id="input-file">
                       <input class="input-file" type="file" name="imagen" placeholder="+ FOTO">
                     </div>
                     
                   </div>
+                  <div>
+                    <input class="precio" type="text" name="keywords" id="keywords" placeholder="Palabras relacionadas" value="<%= locals.old && old.keywords ? old.keywords : null%>">
+                    <% if (locals.errors && errors.keywords) { %>
+                      <p class="text-danger"><%= errors.keywords.msg %> </p>
+                    <% } %>
+                  </div>
               </div>
               <div class="caja2">
                     <h3>Productos incluidos en la experiencia:</h3>
-                    <textarea class="listaProductos" name="listaProductos">
-                      Producto 1
-                      Producto 2
-                    </textarea>
+                    <br>
+                    <input class="precio" type="text" name="product1" id="keywords" placeholder="Agregar producto" value="<%= locals.old && old.product1 ? old.product1 : null%>">
+                    <% if (locals.errors && errors.product1) { %>
+                      <p class="text-danger"><%= errors.product1.msg %> </p>
+                    <% } %>
+                    <input class="precio" type="text" name="product2" id="keywords" placeholder="Agregar producto" value="<%= locals.old && old.product2 ? old.product2 : null%>">
+                    <% if (locals.errors && errors.product2) { %>
+                      <p class="text-danger"><%= errors.product2.msg %> </p>
+                    <% } %>
+                    <input class="precio" type="text" name="product3" id="keywords" placeholder="Agregar producto" value="<%= locals.old && old.product3 ? old.product3 : null%>">
+                    <% if (locals.errors && errors.product3) { %>
+                      <p class="text-danger"><%= errors.product3.msg %> </p>
+                    <% } %>
+                    <input class="precio" type="text" name="product4" id="keywords" placeholder="Agregar producto" value="<%= locals.old && old.product4 ? old.product4 : null%>">
+                    <% if (locals.errors && errors.product4) { %>
+                      <p class="text-danger"><%= errors.product4.msg %> </p>
+                    <% } %>
+                   
               </div>
           </div> 
           <div>

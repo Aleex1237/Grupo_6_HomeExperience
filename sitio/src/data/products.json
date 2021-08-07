@@ -21,7 +21,18 @@
     "category": "bar",
     "image": "productobar2.png",
     "description": "lorem ipsum asaj amet it",
-    "price": 2000
+    "price": 2000,
+    "productList": [
+      "producto1",
+      "producto2",
+      "producto3",
+      "producto4"
+    ],
+    "keywords": [
+      "viaje",
+      "oriente",
+      "parejas"
+    ]
   },
   {
     "id": 4,
@@ -29,15 +40,37 @@
     "category": "bar",
     "image": "productobar2.png",
     "description": "lorem ipsum asaj amet it",
-    "price": 10000
+    "price": 10000,
+    "productList": [
+      "producto1",
+      "producto2",
+      "producto3",
+      "producto4"
+    ],
+    "keywords": [
+      "viaje",
+      "oriente",
+      "parejas"
+    ]
   },
   {
     "id": 5,
     "name": "Experiencia Pulp Fiction",
     "category": "cine",
-    "image": "pulp-fiction.png",
+    "image": "_img_1628223876811.jpeg",
     "description": "lorem ipsum asaj amet it",
-    "price": 6000
+    "price": 6000,
+    "productList": [
+      "producto1",
+      "producto2",
+      "producto3",
+      "producto4"
+    ],
+    "keywords": [
+      "viaje",
+      "oriente",
+      "parejas"
+    ]
   },
   {
     "id": 6,
@@ -45,7 +78,18 @@
     "category": "cine",
     "image": "pulp-fiction.png",
     "description": "lorem ipsum asaj amet it",
-    "price": 4000
+    "price": 4000,
+    "productList": [
+      "producto1",
+      "producto2",
+      "producto3",
+      "producto4"
+    ],
+    "keywords": [
+      "viaje",
+      "oriente",
+      "parejas"
+    ]
   },
   {
     "id": 7,
@@ -53,7 +97,19 @@
     "category": "cine",
     "image": "pulp-fiction.png",
     "description": "lorem ipsum asaj amet it",
-    "price": 2000
+    "price": 2000,
+    "productList": [
+      "producto1",
+      "producto2",
+      "producto3",
+      "whisky"
+    ],
+    "keywords": [
+      "viaje",
+      "oriente",
+      "parejas",
+      "cancun"
+    ]
   },
   {
     "id": 8,
@@ -61,6 +117,56 @@
     "category": "cine",
     "image": "pulp-fiction.png",
     "description": "lorem ipsum asaj amet it",
-    "price": 10000
+    "price": 10000,
+    "productList": [
+      "producto1",
+      "producto2",
+      "producto3",
+      "producto4"
+    ],
+    "keywords": [
+      "viaje",
+      "oriente",
+      "parejas"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Harry Potter",
+    "description": "bvbnv h hjg jhg hjg hjg jhg jhg jhg ",
+    "image": "_img_1628223545612.jpeg",
+    "price": 2000,
+    "category": "cine",
+    "productList": [
+      "producto1",
+      "producto2",
+      "producto3",
+      "producto4"
+    ],
+    "keywords": [
+      "viaje",
+      "oriente",
+      "parejas"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Liberen  a Willy",
+    "description": "fdfjdh fdsfdf sdf df sdf sdfsd",
+    "image": "_img_1628226454335.jpeg",
+    "price": 3500,
+    "category": "cine",
+    "productList": [
+      "Ballena",
+      "Coca Cola",
+      "Limon",
+      "Fernet"
+    ],
+    "keywords": [
+      "ballena",
+      "liberacion",
+      "vegan"
+    ]
   }
+ 
 ]
