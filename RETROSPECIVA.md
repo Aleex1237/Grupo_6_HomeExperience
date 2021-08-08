@@ -1,4 +1,4 @@
-Retrospectiva segundo sprint:
+##Retrospectiva segundo sprint:
 
 Luego del primer Sprint, nos hemos reunido en equipo para analizar el trabajo realizado, y poder ver cuáles son nuestros puntos fuertes y nuestras debilidades, ya que de esta manera lograremos trabajar de manera más eficiente en cada Sprint.
 En nuestro análisis aplicamos la técnica de la Estrella de Mar, y nuestras conclusiones fueron las siguientes:
@@ -22,8 +22,8 @@ Hacer menos / Dejar de hacer:
 En este Sprint no hemos identificado ninguna situación que nos parezca que debamos dejar de hacer o hacer menos, estamos conformes con la manera en que nos organizamos y con el compromiso de cada compañero. Sin embargo, prestaremos atención a lo largo del Segundo Sprint para poder identificar si alguna práctica realizada no es del todo eficiente. 
 
 
-Retrospectiva tercer sprint:
-Luego del segundo sprint, nos hemos reunido en equipo para analizar el trabajo realizado, y poder ver cuáles son nuestros puntos fuertes y nuestras debilidades, ya que de esta manera lograremos trabajar de manera más eficiente a futuro.
+Retrospectiva tercer sprint:  
+Luego del segundo sprint, nos hemos reunido en equipo para analizar el trabajo realizado, y poder ver cuáles son nuestros puntos fuertes y nuestras debilidades, ya que de esta manera lograremos trabajar de manera más eficiente a futuro.  
 En nuestro análisis aplicamos la técnica de la Estrella de Mar, y nuestras conclusiones fueron las siguientes:
 
 Seguir haciendo:
