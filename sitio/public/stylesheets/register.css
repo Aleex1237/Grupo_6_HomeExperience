@@ -120,6 +120,9 @@
     .register main button{
         font-size:4vw;
     }
+    .register footer{
+        position: absolute;
+    }
 }
 @media(min-width:1024px){
     .register header h2{

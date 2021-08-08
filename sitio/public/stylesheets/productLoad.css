@@ -96,7 +96,9 @@
     display: inline-block;            
   }
    
-
+.productLoad footer a{
+    color: var(--color-blanco);
+}
 
 
 
@@ -135,6 +137,9 @@
     }
     .div-imagen::before{
         font-size:4vw;
+    }
+    .productLoad footer{
+        position: absolute;
     }
 }
 @media(min-width:1024px){
