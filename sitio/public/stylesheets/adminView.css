@@ -1,0 +1,180 @@
+.admin {
+    background-color: var(--color-azul-oscuro);
+    color: white;
+}
+
+.admin main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin .search {
+    margin: 20px 0 5px 0;
+    color: #262B2E;
+    outline: var(--color-celeste);
+    border: solid 2px var(--color-celeste);
+    border-radius: 10px;
+    padding: 0 5px;
+}
+
+.admin .search-form {
+    position: relative;
+    color: black !important;
+}
+
+.admin .search-form input {
+    text-indent: 25px;
+}
+
+.admin .search-form input::placeholder {
+    color: var(--color-gris);
+}
+
+.admin .search-form button {
+    position: absolute;
+    top: 21px;
+    z-index: 1;
+    border: none;
+    background: none;
+    left: 10px;
+    cursor: pointer;
+}
+
+.admin .search-form button i {
+    color: #262B2E;
+}
+
+.admin a {
+    color: white;
+}
+
+.admin .container {
+    width: 90%;
+    background-color: #262B2E;
+    border-top: solid 1px var(--color-celeste);
+    border-bottom: solid 1px var(--color-celeste);
+    margin-top: 2vh;
+    margin-bottom: 4vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px;
+}
+
+.admin .container img {
+    width: 35%;
+    height: 100%;
+}
+
+.admin .container ul {
+    width: 50%;
+}
+
+.admin .container ul li {
+    list-style: none;
+    width: 84%;
+}
+
+.admin .container ul li:last-child {
+    color: var(--color-celeste);
+}
+
+.admin .container .form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20vh;
+}
+
+.admin .container .form button {
+    text-transform: uppercase;
+}
+
+.admin .container .hide {
+    background-color: rgba(107, 103, 103, 0.164);
+    color: white;
+    border: none;
+    padding: 5px;
+}
+
+.admin .container .form a {
+    width: 100%;
+}
+
+.admin .container .edit {
+    width: 100%;
+    background-color: var(--color-celeste);
+    color: white;
+    border: none;
+    padding: 5px;
+}
+
+.admin .container .delete {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px;
+}
+
+.admin footer {
+    position: initial;
+    margin-top: 0 !important;
+}
+
+@media (min-width:767px) {
+    .admin .container {
+        padding: 30px;
+        width: 100%;
+    }
+    .admin .container ul {
+        width: 32%;
+        margin-left: 2vw;
+    }
+    .admin .container .hide, .admin .container .edit, .admin .container .delete {
+        font-size: 4vw;
+    }
+    .admin .search-form {
+        width: 70%;
+        text-align: center;
+    }
+    .admin .search-form input {
+        width: 60%;
+        max-width: 60%;
+    }
+    .admin .search-form button {
+        left: 15.3vw;
+    }
+    @media (min-width:1023px) {
+        .admin .search-form input {
+            text-indent: 35px;
+        }
+
+
+        .admin .container .form {
+            height: 35vh;
+        }
+        .admin .container .hide, .admin .container .edit, .admin .container .delete {
+            cursor: pointer;
+            padding: 3px;
+            font-size: 3vw;
+        }
+        .admin .container .hide:hover, .admin .container .edit:hover, .admin .container .delete:hover {
+            transition: 0.6s;
+        }
+        .admin .container .hide:hover {
+            color: rgba(107, 103, 103, 0.164);
+            background-color: white;
+        }
+        .admin .container .edit:hover {
+            background-color: white;
+            color: var(--color-celeste);
+        }
+        .admin .container .delete:hover {
+            background-color: var(--color-rojo);
+            color: black;
+        }
+    }
+}

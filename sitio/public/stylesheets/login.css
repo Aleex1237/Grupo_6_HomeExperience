@@ -97,7 +97,10 @@
   width: 50vw;
   margin-bottom: 3vh;
 }
-
+.login footer{
+    position: fixed;
+    bottom: 0;
+}
 
 @media (min-width:768px){
 

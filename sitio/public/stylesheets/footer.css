@@ -4,8 +4,7 @@ footer{
     padding: 13px;
     color: var(--color-blanco);
     border-top: solid .2vh var(--color-celeste);
-    margin-top: 10vh;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
     display: flex;
@@ -61,8 +60,7 @@ footer .news-div{
 @media (min-width:1024px) {
         footer{
             height: 12vh;
-            position: absolute;
-            margin-top: 9vh;    
+
             align-items: flex-start;
         }
         footer .nav-footer{

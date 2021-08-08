@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include("partials/head" ) %>
+
+        <body class="admin">
+
+            <%- include("partials/header" ) %>
+                <main>
+                    <form action="" method="POST" class="search-form">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                        <input class="search" type="text" name="search_products"
+                            id="" placeholder="Buscar productos...">
+                    </form>
+
+                    <% products.forEach(product => { %>
+                        <article>
+                            <div class="container">
+                                <img src="/images/<%= product.image %> " alt="">
+                                <ul>
+                                    <li><%= product.name %> </li>
+                                    <li>Categoria : <%= product.category %> </li>
+                                    <li>ID del producto : <%= product.id %> </li>
+                                    <li>$<%= product.price %> </li>
+                                </ul>
+    
+                                <div class="form">
+                                    <button class="hide" type="submit">ocultar</button>
+                                    <a href="products/edit/:id"><button class="edit"
+                                            type="submit">editar</button></a>
+                                    <form action="products/delete/:id?_method"
+                                        method="POST"></form>
+                                     <button class="delete" type="submit">eliminar</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </article>
+                    <% }) %>
+                    
+            </main>
+
+
+
+            <%- include("partials/footer" ) %>
+                <%- include("partials/scripts" ) %>
+                </body>
+            </html>

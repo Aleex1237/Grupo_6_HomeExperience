@@ -78,7 +78,9 @@
 .productDetail main .experiencia{
     display:inline-block;
 }
-
+.productDetail footer a{
+    color: var(--color-blanco);
+}
 @media (min-width: 768px){
     .productDetail main .contenedor1{
         display:flex;
@@ -118,6 +120,9 @@
     .productDetail main .experiencia, .contenido{
     height:33vh;
     font-size:2.2vw;
+    }
+    .productDetail footer{
+        position: fixed;
     }
 }
 @media (min-width: 1024px){
