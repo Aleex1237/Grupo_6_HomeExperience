@@ -1,26 +1,50 @@
-module.exports= {
+const { validationResult } = require("express-validator");
+const { leer, guardar } = require("../data/newsLetter");
+const notice = leer();
 
-    index: (req,res) => {
-        return res.render('index',{
-            title: "Home Experience",
-        })
-    },
+module.exports = {
+  index: (req, res) => {
+    return res.render("index", {
+      title: "Home Experience",
+    });
+  },
 
-    contact: (req,res) => {
-        return res.render('contact',{
-            title: "Contacto",
-        })
-    },
+  contact: (req, res) => {
+    return res.render("contact", {
+      title: "Contacto",
+    });
+  },
+  contactPost: (req, res) => {
+    let errors = validationResult(req);
 
-    experience: (req,res) => {
-        return res.render('experience',{
-            title: "Experiencias",
-        })
-    },
+    if (errors.isEmpty()) {
+      let newsLetter = {
+        email: req.body.email,
+        textArea: req.body.textArea,
+      };
+      notice.push(newsLetter);
 
-    about: (req,res) => {
-        return res.render('about',{
-            title: "Sobre nosotros",
-        })
-    },
-}
+      guardar(notice);
+
+      res.redirect("/contacto");
+    } else {
+      return res.render("contact", {
+        errors: errors.mapped(),
+        title: "Contacto",
+        old: req.body,
+      });
+    }
+  },
+
+  experience: (req, res) => {
+    return res.render("experience", {
+      title: "Experiencias",
+    });
+  },
+
+  about: (req, res) => {
+    return res.render("about", {
+      title: "Sobre nosotros",
+    });
+  },
+};
