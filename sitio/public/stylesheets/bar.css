@@ -6,7 +6,8 @@
     text-decoration: none;
     color: var(--color-blanco);
 }
-.bar main{
+
+.bar main {
     margin-bottom: 5vh;
 }
 
@@ -188,10 +189,12 @@
         flex-direction: row;
         align-items: baseline;
         margin-left: 1vw;
-        justify-content: space-between;
+        justify-content: flex-start;
+        margin: 0 5vw;
     }
     .bar .product {
         width: 18vw;
+        margin-right: 5vw;
     }
     .bar .product img {
         width: 17.6vw;

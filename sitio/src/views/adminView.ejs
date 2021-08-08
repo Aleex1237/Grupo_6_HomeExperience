@@ -7,29 +7,30 @@
 
             <%- include("partials/header" ) %>
                 <main>
-                    <form action="" method="POST" class="search-form">
-                        <button type="submit"><i class="fas fa-search"></i></button>
-                        <input class="search" type="text" name="search_products"
-                            id="" placeholder="Buscar productos...">
-                    </form>
-
-                    <% products.forEach(product => { %>
+                    <div class="headerAdmin">
+                        <form action="" method="POST" class="search-form">
+                            <button type="submit"><i class="fas fa-search"></i></button>
+                            <input class="search" type="text" name="search_products"
+                                id="" placeholder="Buscar productos...">
+                        </form>
+                        <a href="/productos/agregar"><i class="fas fa-plus"></i>     Agregar producto</a>
+                    </div>
+                    <% productos.forEach(product => { %>
                         <article>
                             <div class="container">
-                                <img src="/images/<%= product.image %> " alt="">
+                                <img src="/images/products/<%= product.image%>" alt="">
                                 <ul>
                                     <li><%= product.name %> </li>
-                                    <li>Categoria : <%= product.category %> </li>
+                                    <li class="product-category">Categoria : <%= product.category %> </li>
                                     <li>ID del producto : <%= product.id %> </li>
                                     <li>$<%= product.price %> </li>
                                 </ul>
     
                                 <div class="form">
                                     <button class="hide" type="submit">ocultar</button>
-                                    <a href="products/edit/:id"><button class="edit"
+                                    <a href="/productos/modificar/<%= product.id %>"><button class="edit"
                                             type="submit">editar</button></a>
-                                    <form action="products/delete/:id?_method"
-                                        method="POST"></form>
+                                    <form action="/productos/eliminar/<%= product.id %>?_method=DELETE" method="POST">
                                      <button class="delete" type="submit">eliminar</button>
                                     </form>
                                 </div>

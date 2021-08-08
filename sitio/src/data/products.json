@@ -1,21 +1,5 @@
 [
   {
-    "id": 1,
-    "name": "Experiencia Ruta Licia",
-    "category": "bar",
-    "image": "productobar2.png",
-    "description": "lorem ipsum asaj amet it",
-    "price": 6000
-  },
-  {
-    "id": 2,
-    "name": "Experiencia Martini enriquecido",
-    "category": "bar",
-    "image": "productobar2.png",
-    "description": "lorem ipsum asaj amet it",
-    "price": 1000
-  },
-  {
     "id": 3,
     "name": "Experiencia delicias del oriente",
     "category": "bar",
@@ -41,25 +25,6 @@
     "image": "productobar2.png",
     "description": "lorem ipsum asaj amet it",
     "price": 10000,
-    "productList": [
-      "producto1",
-      "producto2",
-      "producto3",
-      "producto4"
-    ],
-    "keywords": [
-      "viaje",
-      "oriente",
-      "parejas"
-    ]
-  },
-  {
-    "id": 5,
-    "name": "Experiencia Pulp Fiction",
-    "category": "cine",
-    "image": "_img_1628223876811.jpeg",
-    "description": "lorem ipsum asaj amet it",
-    "price": 6000,
     "productList": [
       "producto1",
       "producto2",
@@ -168,5 +133,4 @@
       "vegan"
     ]
   }
- 
 ]
