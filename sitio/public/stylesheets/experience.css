@@ -1,0 +1,79 @@
+/* general */
+
+.experience{
+    background-color: var(--color-azul-oscuro);
+    position: relative;
+    margin: auto;
+    height: 112vh;
+}
+
+/* header */
+
+.experience header {
+    margin-top: -1vh;
+}
+
+.experience header h2{
+    margin-top: 1vh;
+}
+
+/* footer */
+
+.experience footer a{
+    color: white;
+}
+
+.experience footer{
+    position: fixed;
+    bottom: 0;
+}
+
+
+/* main */
+
+.experience .carousel-fade{
+    width: 100vw;
+    margin: auto;
+    margin-top: 4vh;
+}
+
+.experience .titulo, p{
+    margin-left: 16px;
+    margin-right: 16px;
+    color: var(--color-blanco);
+}
+
+.experience .titulo{
+    margin-top: 4vh;
+    text-align: center;
+}
+
+.experience p{
+    text-align: center;
+}
+
+.experience a{
+    color: var(--color-celeste)
+}
+
+.carousel-control-prev, .carousel-control-next{
+    background-color: var(--color-azul-oscuro)
+}
+
+
+@media (min-width: 768px) {
+    .experience{
+        height: 128vh;
+    } 
+}
+
+@media (min-width: 1024px) {
+    .experience img{
+        height: 50vh;
+    }
+
+    .experience header {
+        margin-top: -3.5vh;
+    }
+    
+}
