@@ -123,14 +123,10 @@ module.exports = {
       });
     }else{
       let producto = productos.find((producto) => producto.id === +req.params.id);
-      let keywords = "";
-      for (let i = 0; i < producto.keywords.length; i++) {
-        keywords = keywords + producto.keywords[i] + " ";
-      }
       return res.render("productUpdate", {
         title: "Modificar: " + producto.name,
         producto,
-        keywords,
+        keywords: req.body.keywords,
         errors: errors.mapped(),
         old: req.body
       });
