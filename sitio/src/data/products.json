@@ -1,13 +1,13 @@
 [
   {
     "id": 3,
-    "name": "Experiencia delicias del oriente",
+    "name": "Hola",
     "category": "bar",
     "image": "productobar2.png",
-    "description": "lorem ipsum asaj amet it",
+    "description": "lorem ipsum asaj amet it jhjkhjnkjhjkh",
     "price": 2000,
     "productList": [
-      "producto1",
+      "jhjkhjnm",
       "producto2",
       "producto3",
       "producto4"
@@ -15,7 +15,14 @@
     "keywords": [
       "viaje",
       "oriente",
-      "parejas"
+      "parejas",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
     ]
   },
   {
@@ -131,6 +138,37 @@
       "ballena",
       "liberacion",
       "vegan"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Deadpool",
+    "description": "hjg hjg hjg jhg hj gh jhg jhg hjg fgd gf gf ghf lkj kjluj i j jhjg hg hgv ",
+    "image": "_img_1628550860539.jpg",
+    "price": 3000,
+    "category": "cine",
+    "productList": [
+      "bvjhhgvjhv",
+      "ddcfdvg"
+    ],
+    "keywords": [
+      "superheroes"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Advengers",
+    "description": "dsfsdf sdfjsdfk sdfkd sfkldsf kcv xvkxc jvcxkgj dskfjds fksjc kvjx cvkxcvj xc",
+    "image": "_img_1628550913164.jpg",
+    "price": 3000,
+    "category": "cine",
+    "productList": [
+      "dsfsdfsdfs",
+      "cfgdfgdfgdf",
+      "chgfdfgfdgdfg"
+    ],
+    "keywords": [
+      "superheroes"
     ]
   }
 ]

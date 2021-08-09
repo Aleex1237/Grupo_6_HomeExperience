@@ -48,6 +48,13 @@ module.exports = {
   },
   save: (req, res) => {
     let errors = validationResult(req);
+    let lista = [req.body.product1, req.body.product2];
+    if(req.body.product3){
+      lista.push(req.body.product3);
+      if(req.body.product4){
+        lista.push(req.body.product4);
+      }
+    }
 
     if (errors.isEmpty()) {
       let producto = {
@@ -57,13 +64,8 @@ module.exports = {
         image: req.file.filename,
         price: Number(req.body.precio),
         category: req.body.categoria,
-        productList: [
-          req.body.product1,
-          req.body.product2,
-          req.body.product3,
-          req.body.product4,
-        ],
-        keywords: req.body.keywords.split(" "),
+        productList: lista,
+        keywords: req.body.keywords.trim().split(" "),
       };
       productos.push(producto);
       guardar(productos);
@@ -91,46 +93,66 @@ module.exports = {
   },
   update: (req, res) => {
     let index = 0;
-    for (let i = 0; i < productos.length; i++) {
-      if (productos[i].id === +req.params.id) {
-        productos[i].name = req.body.nombre;
-        productos[i].description = req.body.descripcion;
-        productos[i].price = Number(req.body.precio);
-        productos[i].category = req.body.categoria;
-        productos[i].image = req.file ? req.file.filename : productos[i].image;
-        (productos[i].productList = [
-          req.body.product1,
-          req.body.product2,
-          req.body.product3,
-          req.body.product4,
-        ]),
-          (productos[i].keywords = req.body.keywords.split(" "));
-
-        index = i;
+    let errors = validationResult(req);
+    let lista = [req.body.product1, req.body.product2];
+    if(req.body.product3){
+      lista.push(req.body.product3);
+      if(req.body.product4){
+        lista.push(req.body.product4);
       }
     }
-    guardar(productos);
-    let producto = productos[index];
-    return res.render("productDetail", {
-      title: "Detalle de Experiencia: " + producto.name,
-      producto,
-    });
-  }, destroy: (req, res) => {
-    let id = req.params.id;
-    //creamos un loop en el que nuestra variable iteradora es igual a 0 y mientras el iterador sea menor a la longitud del array se le sumara 1.
-    for (let i = 0; i < productos.length; i++) {
-      if (productos[i].id == id) {
-        //en products en la posicion i entramos al id (products=>product.id) y si matchea con el id pasado por parametro en la url se ejecutará el splice
-
-        productos.splice(i, 1);
-        //al utilizar el metodo splice sobre products indicamos que queremos que "corte" desde donde i está parado y cuantos elementos del array queremos que elimine, en este caso queremos que solo "corte" uno
+    if(errors.isEmpty()){
+      for (let i = 0; i < productos.length; i++) {
+        if (productos[i].id === +req.params.id) {
+          productos[i].name = req.body.nombre;
+          productos[i].description = req.body.descripcion;
+          productos[i].price = Number(req.body.precio);
+          productos[i].category = req.body.categoria;
+          productos[i].image = req.file ? req.file.filename : productos[i].image;
+          productos[i].productList =lista,
+          productos[i].keywords = req.body.keywords.trim().split(" ");
+  
+          index = i;
+        }
       }
+      guardar(productos);
+      let producto = productos[index];
+      return res.render("productDetail", {
+        title: "Detalle de Experiencia: " + producto.name,
+        producto,
+      });
+    }else{
+      let producto = productos.find((producto) => producto.id === +req.params.id);
+      let keywords = "";
+      for (let i = 0; i < producto.keywords.length; i++) {
+        keywords = keywords + producto.keywords[i] + " ";
+      }
+      return res.render("productUpdate", {
+        title: "Modificar: " + producto.name,
+        producto,
+        keywords,
+        errors: errors.mapped(),
+        old: req.body
+      });
     }
-    //En la función guardar se ejecuta  el modulo fs con su metodo writeFileSync y JSON.stringify lo que guardará la variable y la stringificara para que pueda ser una lectura mas eficiente hacía otros lenguajes
-    guardar(productos);
+    
+  },
+  destroy: (req, res) => {
+  let id = req.params.id;
+  //creamos un loop en el que nuestra variable iteradora es igual a 0 y mientras el iterador sea menor a la longitud del array se le sumara 1.
+  for (let i = 0; i < productos.length; i++) {
+    if (productos[i].id == id) {
+      //en products en la posicion i entramos al id (products=>product.id) y si matchea con el id pasado por parametro en la url se ejecutará el splice
 
-    //Al terminar la ejecución que creá el producto se redicrecciona al usuarío hacia el home.
-    res.redirect("/productos/admin");
+      productos.splice(i, 1);
+      //al utilizar el metodo splice sobre products indicamos que queremos que "corte" desde donde i está parado y cuantos elementos del array queremos que elimine, en este caso queremos que solo "corte" uno
+    }
+  }
+  //En la función guardar se ejecuta  el modulo fs con su metodo writeFileSync y JSON.stringify lo que guardará la variable y la stringificara para que pueda ser una lectura mas eficiente hacía otros lenguajes
+  guardar(productos);
+
+  //Al terminar la ejecución que creá el producto se redicrecciona al usuarío hacia el home.
+  res.redirect("/productos/admin");
   },
 
 };
