@@ -20,7 +20,7 @@ module.exports = {
     if (errors.isEmpty()) {
       let newsLetter = {
         email: req.body.email,
-        textArea: req.body.textArea,
+        textArea: req.body.textArea ? req.body.textArea : "",
       };
       notice.push(newsLetter);
 
