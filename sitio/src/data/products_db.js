@@ -12,8 +12,13 @@ const productos_db={
         let productos=productos_db.leer();
         return (productos[productos.length-1].id +1);
     },
-    eliminarImagen : (imagen)=>{
-        fs.unlinkSync(path.join(__dirname, "../../public/images/products/"+imagen))
+    eliminarImagen: (imagen)=>{
+        try {
+            fs.unlinkSync(path.join(__dirname, "../../public/images/products",imagen));
+            console.log('File removed')
+          } catch(err) {
+            console.error('Something wrong happened removing the file', err)
+          }
     }
 }
 
