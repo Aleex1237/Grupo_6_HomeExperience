@@ -11,7 +11,10 @@ const productos_db={
     obtenerProximoId: ()=>{
         let productos=productos_db.leer();
         return (productos[productos.length-1].id +1);
+    },
+    eliminarImagen : (imagen)=>{
+        fs.unlinkSync(path.join(__dirname, "../../public/images/products/"+imagen))
     }
 }
 
-module.exports=productos_db 
+module.exports=productos_db

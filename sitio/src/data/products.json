@@ -94,43 +94,5 @@
       "oriente",
       "parejas"
     ]
-  },
-  {
-    "id": 9,
-    "name": "Harry Potter",
-    "description": "bvbnv h hjg jhg hjg hjg jhg jhg jhg ",
-    "image": "_img_1628223545612.jpeg",
-    "price": 2000,
-    "category": "cine",
-    "productList": [
-      "producto1",
-      "producto2",
-      "producto3",
-      "producto4"
-    ],
-    "keywords": [
-      "viaje",
-      "oriente",
-      "parejas"
-    ]
-  },
-  {
-    "id": 10,
-    "name": "Liberen  a Willy",
-    "description": "fdfjdh fdsfdf sdf df sdf sdfsd",
-    "image": "_img_1628226454335.jpeg",
-    "price": 3500,
-    "category": "cine",
-    "productList": [
-      "Ballena",
-      "Coca Cola",
-      "Limon",
-      "Fernet"
-    ],
-    "keywords": [
-      "ballena",
-      "liberacion",
-      "vegan"
-    ]
   }
 ]

@@ -1,4 +1,4 @@
-const { leer, guardar, obtenerProximoId } = require("../data/products_db");
+const { leer, guardar, obtenerProximoId, eliminarImagen } = require("../data/products_db");
 let productos = leer();
 const { validationResult } = require("express-validator");
 
@@ -122,10 +122,17 @@ module.exports = {
       if (productos[i].id == id) {
         //en products en la posicion i entramos al id (products=>product.id) y si matchea con el id pasado por parametro en la url se ejecutará el splice
 
+        eliminarImagen(productos[i].image)
+
+
+
         productos.splice(i, 1);
         //al utilizar el metodo splice sobre products indicamos que queremos que "corte" desde donde i está parado y cuantos elementos del array queremos que elimine, en este caso queremos que solo "corte" uno
+        break;
       }
     }
+
+    
     //En la función guardar se ejecuta  el modulo fs con su metodo writeFileSync y JSON.stringify lo que guardará la variable y la stringificara para que pueda ser una lectura mas eficiente hacía otros lenguajes
     guardar(productos);
 
