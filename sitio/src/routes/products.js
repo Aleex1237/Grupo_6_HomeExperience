@@ -11,7 +11,7 @@ router.get('/detalle/:id', detail);
 router.get('/agregar', add);
 router.post("/agregar", upload.single("imagen"), addProductValidator, save); 
 router.get('/modificar/:id', load);
-router.put("/modificar/:id", upload.single("imagen"), update); 
+router.put("/modificar/:id", upload.single("imagen"), addProductValidator, update); 
 router.get('/carrito', cart);
 
 router.get("/admin",admin);
