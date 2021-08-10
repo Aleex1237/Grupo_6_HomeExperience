@@ -1,4 +1,4 @@
-const { leer, guardar, obtenerProximoId } = require("../data/products_db");
+const { leer, guardar, obtenerProximoId, eliminarImagen } = require("../data/products_db");
 let productos = leer();
 const { validationResult } = require("express-validator");
 
@@ -104,6 +104,9 @@ module.exports = {
     if(errors.isEmpty()){
       for (let i = 0; i < productos.length; i++) {
         if (productos[i].id === +req.params.id) {
+          if(req.file){
+            eliminarImagen(productos[i].image)
+          };
           productos[i].name = req.body.nombre;
           productos[i].description = req.body.descripcion;
           productos[i].price = Number(req.body.precio);
@@ -139,7 +142,7 @@ module.exports = {
   for (let i = 0; i < productos.length; i++) {
     if (productos[i].id == id) {
       //en products en la posicion i entramos al id (products=>product.id) y si matchea con el id pasado por parametro en la url se ejecutará el splice
-
+      eliminarImagen(productos[i].image);
       productos.splice(i, 1);
       //al utilizar el metodo splice sobre products indicamos que queremos que "corte" desde donde i está parado y cuantos elementos del array queremos que elimine, en este caso queremos que solo "corte" uno
     }
