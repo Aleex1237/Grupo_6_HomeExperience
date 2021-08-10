@@ -1,136 +1,223 @@
 [
   {
     "id": 3,
-    "name": "Hola",
+    "name": "Viaje a Cancún",
     "category": "bar",
-    "image": "productobar2.png",
-    "description": "lorem ipsum asaj amet it jhjkhjnkjhjkh dfsdfds fsdfsdfsdfdsf dsf sdf sdfd",
-    "price": 2000,
+    "image": "_img_1628599248145.jfif",
+    "description": "Siente la frescura del viento en las cálidas playas de Cancún mientras tomas Mezcal y comes unos deliciosos plátanos fritos con Dulce de Calabaza",
+    "price": 3500,
     "productList": [
-      "jhjkhjnm",
-      "producto2",
-      "producto3",
-      "producto4"
+      "2 botellas de Mezcal",
+      "12 plátanos fritos",
+      "1 dulce de calabaza 400 gr"
     ],
     "keywords": [
       "viaje",
-      "oriente",
-      "cancun"
+      "mexico",
+      "cancun",
+      "bar"
     ]
   },
   {
     "id": 4,
-    "name": "Experiencia Cordobesa",
+    "name": "Córdoba",
     "category": "bar",
-    "image": "productobar2.png",
-    "description": "lorem ipsum asaj amet it",
-    "price": 10000,
+    "image": "_img_1628599559321.jpg",
+    "description": "Siente el aire fresco de la sierra sin salir de tu casa! Podrás degustar los mejores alfajores cordobeses y para completar, recibirás un Fernet Artesanal elaborado allí, y más sorpresas para deleitar.",
+    "price": 1500,
     "productList": [
-      "producto1",
-      "producto2",
-      "producto3",
-      "producto4"
+      "Un Fernet artesanal",
+      "Una docena de alfajores",
+      "Medio kg de criollitos",
+      "Un salame de Colonia Caroya"
     ],
     "keywords": [
       "viaje",
-      "oriente",
-      "parejas"
+      "argentina",
+      "sierras",
+      "bar"
     ]
   },
   {
     "id": 6,
     "name": "Experiencia El padrino",
     "category": "cine",
-    "image": "pulp-fiction.png",
-    "description": "lorem ipsum asaj amet it",
-    "price": 4000,
+    "image": "_img_1628599824867.jpg",
+    "description": "Siéntete como Don Vito Corleone en la famosa película “el Padrino” y prepara este cóctel majestuoso.\r\n\r\nEsta experiencia te proporciona todo lo que vas a necesitar para elaborar el cóctel Godfater.",
+    "price": 7500,
     "productList": [
-      "producto1",
-      "producto2",
-      "producto3",
-      "producto4"
+      "Un whisky escocés",
+      "Una botella de Amaretto",
+      "250 cc de Angostura",
+      "Jugo de limón"
     ],
     "keywords": [
-      "viaje",
-      "oriente",
-      "parejas"
+      "pelicula",
+      "clasico",
+      "mafia"
     ]
   },
   {
     "id": 7,
     "name": "Experiencia Piratas del caribe",
     "category": "cine",
-    "image": "pulp-fiction.png",
-    "description": "lorem ipsum asaj amet it",
-    "price": 2000,
+    "image": "_img_1628600256190.jpg",
+    "description": "Prepara la bebida que mantuvo vivo a Jack Sparrow a lo largo de todas sus aventuras:\r\nConoce el \"Grog\", cuyo origen se debe al almirante inglés Edward Vernon, apodado por sus subordinados ‘Old Grog’.",
+    "price": 3000,
     "productList": [
-      "producto1",
-      "producto2",
-      "producto3",
-      "whisky"
+      "Una botella de Ron",
+      "Jugo de lima",
+      "Azúcar",
+      "Hielo"
     ],
     "keywords": [
-      "viaje",
-      "oriente",
-      "parejas",
-      "cancun"
+      "pelicula",
+      "caribe",
+      "piratas",
+      "ron"
     ]
   },
   {
     "id": 8,
-    "name": "Experiencia Esperando la carroza",
+    "name": "Esperando la carroza",
     "category": "cine",
-    "image": "pulp-fiction.png",
-    "description": "lorem ipsum asaj amet it",
-    "price": 10000,
+    "image": "_img_1628600531483.jpg",
+    "description": "Sientete parte de este clásico del cine Argentino, y representa la famosa frase de Luis Brandoni \"Tres empanadas para dos personas!\"",
+    "price": 3000,
     "productList": [
-      "producto1",
-      "producto2",
-      "producto3",
-      "producto4"
+      "Una docena de empanadas",
+      "Un vino malbec Alma Mora",
+      "3 planchas de ravioles caseros"
     ],
     "keywords": [
-      "viaje",
-      "oriente",
-      "parejas"
+      "argentina",
+      "clasico",
+      "comedia"
     ]
   },
   {
     "id": 9,
     "name": "Harry Potter",
-    "description": "bvbnv h hjg jhg hjg hjg jhg jhg jhg ",
-    "image": "_img_1628223545612.jpeg",
-    "price": 2000,
+    "description": "Siéntete un mago de verdad! Con esta experiencia podrás degustar los mejores y más alocados productos de la serie de J.K. Rowling",
+    "image": "_img_1628600653387.jpg",
+    "price": 3500,
     "category": "cine",
     "productList": [
-      "producto1",
-      "producto2",
-      "producto3",
-      "producto4"
+      "Dos cervezas de manteca",
+      "Grajeas de todos los sabores",
+      "Ranas de chocolate"
     ],
     "keywords": [
-      "viaje",
-      "oriente",
-      "parejas"
+      "pelicula",
+      "magia"
     ]
   },
   {
     "id": 10,
-    "name": "Liberen  a Willy",
-    "description": "fdfjdh fdsfdf sdf df sdf sdfsd",
-    "image": "_img_1628226454335.jpeg",
+    "name": "Deadpool",
+    "description": "Vive la experiencia y siéntete un superhéroe de verdad! O debo decir, un antihéroe... Prepará el Blowjob de la peli, te dará superpoderes!",
+    "image": "_img_1628600895402.jpg",
+    "price": 4000,
+    "category": "cine",
+    "productList": [
+      "Una botella de Baileys",
+      "Una botella de licor de café",
+      "400 gr de crema"
+    ],
+    "keywords": [
+      "superheroes",
+      "pelicula"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Advengers",
+    "description": "El poderoso Dios de la mitología Nórdica retomado por los Avengers, como el Dios del trueno, tiene la capacidad de volar y manipular el clima entre sus otros atributos sobrehumanos. Thor, fue motivo de inspiración para degustar un delicioso coctel  inspirado en este héroe del Universo Marvel.",
+    "image": "_img_1628601266534.jpg",
     "price": 3500,
     "category": "cine",
     "productList": [
-      "Ballena",
-      "Coca Cola",
-      "Limon",
-      "Fernet"
+      "Hidromiel",
+      "Licor de Manzana",
+      "Licor de Canela",
+      "Vodka Negro"
     ],
     "keywords": [
-      "ballena",
-      "liberacion",
-      "vegan"
+      "superheroes",
+      "marvel"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "El gran Levowsky",
+    "description": "Alfombras persas, artistas contemporáneos, maleantes nihilistas, productores porno, Steve Buscemi y alucinaciones provocadas por rusos blancos, la bebida favorita del dude, aderezan esta divertida película.",
+    "image": "_img_1628601576961.jpg",
+    "price": 4000,
+    "category": "cine",
+    "productList": [
+      "Una botella de Vodka",
+      "Una botella de licor de café",
+      "400 gr de crema"
+    ],
+    "keywords": [
+      "pelicula",
+      "rusia"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Once Upon a Time In Hollywood",
+    "description": "El personaje de DiCaprio, alcohólico, triste, con cero capacidad de reírse de uno mismo, es a la vez entrañable y gracioso y le da la oportunidad al de Pitt de ser una excelente contraparte de diálogos hilarantes. Prueba el Dirty Shirley Temple, su bebida favorita!",
+    "image": "_img_1628601819255.jpg",
+    "price": 5000,
+    "category": "cine",
+    "productList": [
+      "Una lata de Ginger Ale",
+      "Una botella de Granadina",
+      "Una cereza marraschino",
+      "Una botella de Vodka"
+    ],
+    "keywords": [
+      "pelicula",
+      "comedia",
+      "holliwood"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Experiencia México",
+    "description": "Degusta los mejores sabores de este increíble país.\r\nTequila y tacos, que harán que te salgan bigotes!",
+    "image": "_img_1628601961440.jpg",
+    "price": 5500,
+    "category": "bar",
+    "productList": [
+      "Una botella de Tequila",
+      "Jugo de Limón",
+      "Una docena de tacos",
+      "Salsa picante"
+    ],
+    "keywords": [
+      "bar",
+      "mexico",
+      "tequila"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Experiencia Escocesa",
+    "description": "Los escoceses son gente muy animada y están muy orgullosos de su cultura, muy arraigada a la naturaleza y a su legado celta. Degusta bebidas y comidas típicas de la región con esta experiencia",
+    "image": "_img_1628602187318.jpeg",
+    "price": 7000,
+    "category": "bar",
+    "productList": [
+      "Una botella de Whisky",
+      "Un salmón escocés ahumado",
+      "Una docena de empanadillas"
+    ],
+    "keywords": [
+      "viaje",
+      "escocia",
+      "whisky"
     ]
   }
 ]
