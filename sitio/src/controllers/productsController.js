@@ -69,7 +69,7 @@ module.exports = {
       };
       productos.push(producto);
       guardar(productos);
-      res.redirect("/productos/admin  ");
+      res.redirect("/productos/admin");
     } else {
       return res.render("productLoad", {
         errors:

@@ -34,7 +34,7 @@
 
 .bar .banner p {
     color: var(--color-blanco);
-    font-size: 4vw;
+    font-size: 100%;
     position: absolute;
     top: 7vh;
     left: 1vw;
@@ -48,7 +48,7 @@
     color: var(--color-blanco);
     top: 25vh;
     left: 16vw;
-    font-size: 4vw;
+    font-size: 90%;
     font-weight: 900;
 }
 
@@ -167,7 +167,7 @@
         margin-left: 8vw;
     }
     .bar .banner .background-letter {
-        height: 26vh;
+        height: 30vh;
         width: 41%;
         left: 29vw;
         top: 7vh;
@@ -179,7 +179,7 @@
         line-height: 2vw;
     }
     .bar .banner h3 {
-        top: 28vh;
+        top: 30vh;
         left: 36vw;
         font-size: 1.5vw;
     }
