@@ -9,9 +9,9 @@ module.exports=[
 
     check('descripcion').notEmpty().withMessage('Debe ingresar descripción del producto').bail().isLength({
         min:50,
-        max:200
+        max:300
     }) 
-    .withMessage('La descripción debe tener un mínimo de 50 caracteres y un máximo de 200'),
+    .withMessage('La descripción debe tener un mínimo de 50 caracteres y un máximo de 300'),
 
     check('precio').notEmpty().withMessage('Requerido').bail().isInt().withMessage('Invalido'), /* el isInt comprueba que sólo se puedan ingresar números enteros */
 

@@ -3,13 +3,23 @@ const path=require("path");
 
 const productos_db={
     leer: ()=> JSON.parse(fs.readFileSync(path.join(__dirname, "products.json"),"utf-8")),
+    
     guardar: (productos)=>{
         fs.writeFileSync(path.join(__dirname, "products.json"), JSON.stringify(productos,null,2), "utf-8");
-    }, 
+    },
+     
     obtenerProximoId: ()=>{
         let productos=productos_db.leer();
         return (productos[productos.length-1].id +1);
+    },
+    eliminarImagen: (imagen)=>{
+        try {
+            fs.unlinkSync(path.join(__dirname, "../../public/images/products",imagen));
+            console.log('File removed')
+          } catch(err) {
+            console.error('Something wrong happened removing the file', err)
+          }
     }
 }
 
-module.exports=productos_db 
+module.exports=productos_db

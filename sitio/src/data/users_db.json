@@ -1,0 +1,43 @@
+[
+    {
+        "id": 1,
+        "name": "Alexis",
+        "password": "alexis123",
+        "email": "alexiszacre@gmail.com",
+        "admin": true
+    },
+
+    {
+        "id": 2,
+        "name": "Marcia",
+        "password": "marcia123",
+        "email": "marciadelcastillo@gmail.com",
+        "admin": true
+    },
+
+    {
+        "id": 3,
+        "name": "Octavio",
+        "password": "octavio123",
+        "email": "octaviofitz@gmail.com",
+        "admin": true
+    },
+
+    {
+        "id": 4,
+        "name": "Eric",
+        "password": "eric123",
+        "email": "ericmena@gmail.com",
+        "admin": false
+    },
+
+    {
+        "id": 5,
+        "name": "Robert",
+        "password": "robert123",
+        "email": "robertveintemilla@gmail.com",
+        "admin": false
+    }
+
+
+]

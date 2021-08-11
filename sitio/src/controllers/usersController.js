@@ -13,12 +13,4 @@ module.exports = {
       title: "Registrate",
     });
   },
-  admin: (req, res) => {
-    let id = req.params.id;
-
-    return res.render("adminView", {
-      title: "Administrador",
-      products,
-    });
-  },
 };

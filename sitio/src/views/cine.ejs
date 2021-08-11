@@ -28,9 +28,9 @@
                             <% productosCine.forEach(producto=> { %>
                                 <article class="product">
                                     <div>
-                                        <a href="/productos/detalle/<%=producto.id%>"><img
-                                                src="/images/<%= producto.image
-                                                %> " alt=""></a>
+                                        <a href="/productos/detalle/<%= producto.id %>">
+                                            <img src="/images/products/<%= producto.image%>" alt="">
+                                        </a>
                                     </div>
                                     <div class="product-info">
                                         <h3><%= producto.name %> </h3>

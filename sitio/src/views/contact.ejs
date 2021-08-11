@@ -24,16 +24,20 @@
 
         <div class="contact-news-letter">
             <h2>Suscribiéndote a nuestro NewsLetter obtendrás las últimas actualizaciones y ofertas exclusivas!</h2>
-            <form action="">
+            <form action="/contacto" method="POST" novalidate>
                 <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="floatingInput" placeholder="Dejanos tu E-mail">
-                    
-                    <span></span>
+                    <input type="email" name="email" class="form-control" id="floatingInput" value="<%= locals.old && old.email ? old.email : null%>" placeholder="Dejanos tu E-mail">
+                    <% if (locals.errors && errors.email) { %>
+                      <p class="text-danger"><%= errors.email.msg %> </p>
+                    <% } %>
                   </div>
 
                   <div class="form-group">
                     <label for="exampleFormControlTextarea1"></label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Dejanos tu comentario"></textarea>
+                    <textarea class="form-control" name="textArea" id="exampleFormControlTextarea1" rows="3" placeholder="Dejanos tu comentario"><%= locals.old && old.textArea ? old.textArea : null%></textarea>
+                    <% if (locals.errors && errors.textArea) { %>
+                      <p class="text-danger"><%= errors.textArea.msg %> </p>
+                    <% } %>
                   </div>
 
                   <button type="submit">Suscribirse</button>
