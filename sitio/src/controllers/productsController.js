@@ -29,9 +29,24 @@ module.exports = {
 
   detail: (req, res) => {
     let producto = productos.find((producto) => producto.id === +req.params.id);
+    let relacionados = [];
+    for(let i=0;i<productos.length;i++){ //recorro elarray de productos
+      let senal=false;//se activara si el producto analizado contiene alguna keyword
+                      //del producto que estoy x mostrar en el detalle
+      for(let j=0;j<producto.keywords.length;j++){ //tomo cada keyword de "producto"
+          if(!(producto.id===productos[i].id) && productos[i].keywords.includes(producto.keywords[j])){
+            //si elproducto que estoy revisando contiene la keyword de 
+            senal=true;
+          }
+      }
+      if(senal && relacionados.length<4){
+        relacionados.push(productos[i]);
+      }
+    }
     return res.render("productDetail", {
       title: "Detalle de Experiencia: " + producto.name,
       producto,
+      relacionados
     });
   },
 
@@ -120,9 +135,24 @@ module.exports = {
       }
       guardar(productos);
       let producto = productos[index];
+      let relacionados = [];
+      for(let i=0;i<productos.length;i++){ //recorro elarray de productos
+        let senal=false;//se activara si el producto analizado contiene alguna keyword
+                        //del producto que estoy x mostrar en el detalle
+        for(let j=0;j<producto.keywords.length;j++){ //tomo cada keyword de "producto"
+            if(!(producto.id===productos[i].id) && productos[i].keywords.includes(producto.keywords[j])){
+              //si elproducto que estoy revisando contiene la keyword de 
+              senal=true;
+            }
+        }
+        if(senal && relacionados.length<4){
+          relacionados.push(productos[i]);
+        }
+    }
       return res.render("productDetail", {
         title: "Detalle de Experiencia: " + producto.name,
         producto,
+        relacionados
       });
     }else{
       let producto = productos.find((producto) => producto.id === +req.params.id);

@@ -37,6 +37,37 @@
                 </ul>
             </article>
         </section>
+        <% if(relacionados.length>0){%>
+            <h2 class="titulo-relacionados">Productos relacionados</h2>
+            <section class="relacionados">
+                <% relacionados.forEach(producto=> { %>
+                    <article class="product">
+                        <div>
+                            <a href="/productos/detalle/<%=producto.id%>"><img
+                                src="/images/products/<%= producto.image%>" alt=""></a>
+                        </div>
+                        <div class="product-info">
+                            <h3><%= producto.name %> </h3>
+                                <div class="product-details">
+                                    <span class="product-price">$<%=
+                                            producto.price %>
+                                        </span>
+                                        <form action="#"
+                                            method="POST">
+                                            <span><button
+                                                    class="btn-cart"
+                                                    type="submit">Añadir
+                                                    al
+                                                    carrito</button>
+                                            </span>
+                                        </form>
+                                    </div>
+                                </div>
+                            </article>
+                            <% }) %>
+            </section>
+        <%}%>
+        
     </main>
     <%- include("./partials/footer")%>
     <%- include("./partials/scripts")%>
