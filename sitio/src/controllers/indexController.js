@@ -8,6 +8,24 @@ module.exports = {
       title: "Home Experience",
     });
   },
+  footerPost: (req, res) => {
+    let errors = validationResult(req);
+    if (errors.isEmpty()) {
+      let newsLetter = {
+        email: req.body.letter,
+      };
+      notice.push(newsLetter);
+
+      guardar(notice);
+      res.redirect("/")
+    } else {
+      res.render("index", {
+        title: "Home experience",
+        old: req.body,
+        errors: errors.mapped(),
+      });
+    }
+  },
 
   contact: (req, res) => {
     return res.render("contact", {

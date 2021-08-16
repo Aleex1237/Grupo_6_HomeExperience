@@ -9,13 +9,15 @@
         </ul>
     </nav>
     <div class="news-div">
-        <form action="#" method="POST">
-            <label for="emailUsuario">
+        <form action="/" method="POST" novalidate>
+            <label for="letter">
                 Enterate de las novedades</label>
             <div class="input-div"></div>
-            <input type="email" placeholder="Dejanos tu email" name="emailUsuario" id="emailUsuario" required>
-            <span></span>
+            <input type="email" placeholder="Dejanos tu email" name="letter" id="letter" value="<%= locals.old && old.letter ? old.letter : null%>">
             <button type="submit">Suscribite</button>
+            <% if (locals.errors && errors.letter) { %>
+                <p class="aviso"><%= errors.letter.msg %> </p>
+              <% } %>
     </div>
     </form>
 

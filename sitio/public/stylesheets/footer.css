@@ -1,4 +1,4 @@
-footer{
+footer {
     background-color: #262B2E;
     height: 7vh;
     padding: 13px;
@@ -10,144 +10,152 @@ footer{
     display: flex;
     justify-content: space-between;
 }
- footer h5{
-    
+
+footer h5 {
     display: none;
 }
- footer .nav-footer{
+
+footer .nav-footer {
     display: inline;
 }
- footer ul{
+
+footer ul {
     display: inline;
     padding: 0;
 }
- footer li{
+
+footer li {
     display: inline;
     margin: 8px;
     border-right: solid 1px var(--color-blanco);
     padding-right: 20px;
 }
- footer li:last-child{
+
+footer li:last-child {
     border-right: none;
     padding-right: 0;
     margin-right: 5vw;
 }
- footer .nav-footer ul li .fa-twitter:active{
+
+footer .nav-footer ul li .fa-twitter:active {
     color: skyblue;
 }
- footer h4{
+
+footer h4 {
     font-size: 2vw;
     font-weight: 400;
     display: inline;
     text-align: center;
-    margin-top: 5px;   
+    margin-top: 5px;
 }
-footer .news-div{
+
+footer .news-div {
     display: none;
 }
+
+footer .aviso {
+    color: #dc3545;
+    font-size: 13px !important;
+    margin: 0 !important;
+    margin-top: 4px !important;
+}
+
 @media (min-width:768px) {
-    footer .nav-footer{
+    footer .nav-footer {
         margin-top: .7vh;
     }
-    footer h5{
+    footer h5 {
         display: initial;
         margin-left: 4vw;
     }
-    footer li{
+    footer li {
         margin: 6px;
     }
 }
+
 @media (min-width:1024px) {
-        footer{
-            height: 12vh;
-
-            align-items: flex-start;
-        }
-        footer .nav-footer{
-            margin-top: 2vh;
-        }
-        footer .nav-footer .fa-twitter:hover{
-            color: skyblue;
-        }
-        footer .nav-footer .fa-facebook:hover{
-            color: #4267B2;
-        }
-        footer .nav-footer .fa-instagram,
-        footer .nav-footer .fa-facebook,
-        footer .nav-footer .fa-twitter{
-            font-size: 1.2vw;
-            transition: 0.6s;
-        }
-        footer .nav-footer .fa-instagram:hover{
-            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-            -webkit-background-clip: text;
-                    /* Also define standard property for compatibility */
-                    background-clip: text;
-            -webkit-text-fill-color: transparent;
-            
-            
-        }
-        footer h5{
-            margin-left: 2vw;
-            margin-top: 2vh;
-            font-size: 1.2vw;
-            font-weight: 400;
-        }
-        footer .news-div{
-            display: flex;
-            flex-direction: column;
-            align-content: baseline;
-            margin-left: 8vw;
-        }
-        footer .news-div label{
-            font-size: 80%;
-            text-align: center;
-            line-height: 2vh;
-            margin-left: 2vw;
-            margin-bottom: 0 !important;
-        }
-        
-        footer .news-div input{
-            width: 10vw;
-            background-color: var(--color-azul-oscuro);
-            border: none;
-            color: var(--color-blanco);
-            text-align: center;
-            height: 2.3vh;
-            font-size: 77%;
-            transition: 0.5s;
-        }
-        footer .news-div input:focus{
-            border: solid 1px var(--color-celeste);
-            outline: var(--color-celeste);
-            width: 14vw;
-            box-shadow: 1px 1px 5px var(--color-celeste);
-        }
-        footer form button{
-            background-color: #262B2E;
-            border:none;
-            color:var(--color-blanco);
-            cursor: pointer;
-            font-size: 77%;
-            transition: 0.5s;
-            width: 5vw;
-            margin-left: 1vw;
-        }
-        footer form button:hover{
-            border: solid 1px var(--color-blanco);
-            width: 6vw;
-            background-color:var(--color-celeste);
-            box-shadow: 1px 1px 10px var(--color-celeste);
-            border-radius: 4px;
-        }
-        footer form button:active{
-            opacity:0.5;
-        }
-        footer h4{
-            font-size: 1vw;
-            margin-top: 2vh;
-            margin-right: 2vw;
-        }
-        
-
+    footer {
+        height: 12vh;
+        align-items: flex-start;
+    }
+    footer .nav-footer {
+        margin-top: 2vh;
+    }
+    footer .nav-footer .fa-twitter:hover {
+        color: skyblue;
+    }
+    footer .nav-footer .fa-facebook:hover {
+        color: #4267B2;
+    }
+    footer .nav-footer .fa-instagram, footer .nav-footer .fa-facebook, footer .nav-footer .fa-twitter {
+        font-size: 1.2vw;
+        transition: 0.6s;
+    }
+    footer .nav-footer .fa-instagram:hover {
+        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        -webkit-background-clip: text;
+        /* Also define standard property for compatibility */
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    footer h5 {
+        margin-left: 2vw;
+        margin-top: 2vh;
+        font-size: 1.2vw;
+        font-weight: 400;
+    }
+    footer .news-div {
+        display: flex;
+        flex-direction: column;
+        align-content: baseline;
+        margin-left: 8vw;
+    }
+    footer .news-div label {
+        font-size: 80%;
+        text-align: center;
+        line-height: 2vh;
+        margin-left: 2vw;
+        margin-bottom: 0 !important;
+    }
+    footer .news-div input {
+        width: 10vw;
+        background-color: var(--color-azul-oscuro);
+        border: none;
+        color: var(--color-blanco);
+        text-align: center;
+        height: 2.3vh;
+        font-size: 77%;
+        transition: 0.5s;
+    }
+    footer .news-div input:focus {
+        border: solid 1px var(--color-celeste);
+        outline: var(--color-celeste);
+        width: 14vw;
+        box-shadow: 1px 1px 5px var(--color-celeste);
+    }
+    footer form button {
+        background-color: #262B2E;
+        border: none;
+        color: var(--color-blanco);
+        cursor: pointer;
+        font-size: 77%;
+        transition: 0.5s;
+        width: 5vw;
+        margin-left: 1vw;
+    }
+    footer form button:hover {
+        border: solid 1px var(--color-blanco);
+        width: 6vw;
+        background-color: var(--color-celeste);
+        box-shadow: 1px 1px 10px var(--color-celeste);
+        border-radius: 4px;
+    }
+    footer form button:active {
+        opacity: 0.5;
+    }
+    footer h4 {
+        font-size: 1vw;
+        margin-top: 2vh;
+        margin-right: 2vw;
+    }
 }
