@@ -60,6 +60,7 @@
 .login .cuerpo .form-control{
     background-color: var( --color-celeste);
     height: 40px;
+    border: none;
 }
 
 .login .cuerpo .form-control{
@@ -86,6 +87,7 @@
 }
 
 .login .cuerpo .boton{
+    border: none;
     color: var(--color-blanco);
    background-color:var(--color-azul-oscuro);
    text-transform: uppercase;
@@ -129,6 +131,11 @@
 .creacuenta{
     margin-top: 30px;
     font-size: 18px;
+    
+}
+.login .cuerpo .recuperarpassword:hover,
+.creacuenta:hover{
+    text-decoration: underline;
 }
 
 .login .cuerpo .boton{
@@ -162,6 +169,7 @@
     .login .cuerpo .boton{
         margin-left: 21vw;
         width: 28vw;
+        cursor: pointer;
     }
 
 }

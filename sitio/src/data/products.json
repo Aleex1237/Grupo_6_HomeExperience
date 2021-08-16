@@ -1,7 +1,7 @@
 [
   {
     "id": 3,
-    "name": "Viaje a Cancún",
+    "name": "Viaje a Mexico",
     "category": "bar",
     "image": "_img_1628599248145.jfif",
     "description": "Siente la frescura del viento en las cálidas playas de Cancún mientras tomas Mezcal y comes unos deliciosos plátanos fritos con Dulce de Calabaza",
@@ -145,23 +145,6 @@
     "keywords": [
       "superheroes",
       "marvel"
-    ]
-  },
-  {
-    "id": 12,
-    "name": "El gran Levowsky",
-    "description": "Alfombras persas, artistas contemporáneos, maleantes nihilistas, productores porno, Steve Buscemi y alucinaciones provocadas por rusos blancos, la bebida favorita del dude, aderezan esta divertida película.",
-    "image": "_img_1628601576961.jpg",
-    "price": 4000,
-    "category": "cine",
-    "productList": [
-      "Una botella de Vodka",
-      "Una botella de licor de café",
-      "400 gr de crema"
-    ],
-    "keywords": [
-      "pelicula",
-      "rusia"
     ]
   },
   {

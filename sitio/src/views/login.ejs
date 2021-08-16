@@ -7,18 +7,21 @@
     <main class="cuerpo">
         <h1>¡Iniciá Sesión!</h1>
         
-        <form action="" method="POST">
+        <form action="" method="POST" novalidate>
             <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" name="email" placeholder="Correo electrónico" required>
-                <span></span>
+                <input type="email" class="form-control" id="floatingInput" name="email" placeholder="Correo electrónico" value="<%= locals.old && old.email ? old.email : null %> ">
+
+                
               </div>
               <div class="form-floating">
                 <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Contraseña" required>
-               <span></span>
+                <% if (locals.errors && errors.email) { %>
+                    <p class="text-danger"><%= errors.email.msg %> </p>
+                <% } %>
 
                 <div class="conectado">
-                    <input type="checkbox" name="Conectado" value="Conectado" id="Conectado">
-                    <label for="Manteme">Manteneme conectado</label>
+                    <input type="checkbox" name="check" value="check" id="check">
+                    <label for="check">Manteneme conectado</label>
               </div>
 
         <a href="/usuarios/registro" class="recuperarpassword">¿Olvidaste tu contraseña?</a>
