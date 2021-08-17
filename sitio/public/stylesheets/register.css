@@ -41,7 +41,7 @@
 }
 .register main p{
     margin-top:30px;
-    margin-bottom:60px;
+    margin-bottom:40px;
     color:var(--color-azul-oscuro);
     font-size:9vw;
 }
@@ -50,7 +50,7 @@
     width:90%;
     font-size:4vw;
     padding:8px;
-    margin-bottom:20px;
+    margin-top:20px;
     background-color:var(--color-celeste);
     color:var(--color-blanco);
     border-radius:12px;
@@ -64,6 +64,7 @@
     font-size:4vw;
     padding-left:15px;
     padding-right:15px;
+    padding-top:20px;
 }
 .register main a{
     display:inline-block;
@@ -84,6 +85,13 @@
 }
 .register footer a{
     color:var(--color-blanco);
+}
+.register .errores{
+    font-size:4vw;
+    color: var(--color-rojo);
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 @media(min-width:768px){
@@ -112,6 +120,9 @@
         margin-top:0;
     }
     .register main .dato{
+        font-size:2vw;
+    }
+    .register .errores{
         font-size:2vw;
     }
     .register main label{
