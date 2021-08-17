@@ -1,6 +1,7 @@
-const { leer } = require("../data/products_db");
-let products = leer();
+const { leer, guardar } = require("../data/users_db");
+let users = leer();
 const { validationResult } = require("express-validator");
+let bcrypt = require("bcryptjs");
 
 module.exports = {
   login: (req, res) => {
@@ -26,4 +27,29 @@ module.exports = {
       title: "Registrate",
     });
   },
+  addUser: (req,res)=>{
+    let errors = validationResult(req);
+    if(errors.isEmpty()){
+      let usuario = {
+        id: users[users.length-1].id+1,
+        name: req.body.nombre,
+        password: bcrypt.hashSync(req.body.password),
+        email: req.body.email,
+        admin: false
+      };
+      users.push(usuario);
+      guardar(users);
+
+      return res.render("index", {
+        title: "Home Experience"
+      });
+    }else{
+        res.render("register", {
+        errors: errors.mapped(),
+        old: req.body,
+        title: "Registrate",
+      });
+    }
+    
+  }
 };
