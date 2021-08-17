@@ -1,6 +1,7 @@
 const { check, body } = require("express-validator");
 const { leer } = require("../data/users_db");
 const usuarios = leer();
+const bcrypt=require("bcryptjs");
 
 module.exports = [
   check("email")
@@ -18,7 +19,7 @@ module.exports = [
       //y si el password del usuario es igual al que viene por el body y da true se cumple.
       let usuario = usuarios.find(
         (usuario) =>
-          usuario.email === value && usuario.password === req.body.password
+          usuario.email === value && bcrypt.compareSync(req.body.password, usuario.password)
       );
       //Si usuario da true entonces preguntaremos si usuario existe y si no nos dio ningun error next
       if (usuario) {
