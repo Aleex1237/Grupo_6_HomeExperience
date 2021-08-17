@@ -33,9 +33,11 @@ module.exports = {
     });
   },
   contactPost: (req, res) => {
+    //En la variable errors guardamos los resultados de las validaciones
     let errors = validationResult(req);
 
     if (errors.isEmpty()) {
+      //Si errores está vacio se creará un objeto literal el cual contiene clave y valor.
       let newsLetter = {
         email: req.body.email,
         textArea: req.body.textArea ? req.body.textArea : "",
