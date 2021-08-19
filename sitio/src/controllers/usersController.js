@@ -12,6 +12,15 @@ module.exports = {
   logUser: (req, res) => {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
+      let usuario = users.find(usuario=> usuario.email === req.body.email);
+      req.session.user = {
+        id : usuario.id,
+        name : usuario.name,
+        admin : usuario.admin
+      };
+      if(req.body.check){
+        res.cookie("user", req.session.user , {maxAge: 86400000} );
+      }
       res.redirect("/");
     } else {
       res.render("login", {

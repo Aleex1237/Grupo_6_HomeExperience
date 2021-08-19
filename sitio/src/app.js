@@ -4,11 +4,15 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const methodOverride = require("method-override");
+let session = require("express-session");
 
 //Requiriendo rutas
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
+
+//Requiriendo middlewares
+let loginUserCheck = require("./middlewares/loginUserCheck");
 
 //Guardando funcionalidad de express
 var app = express();
@@ -22,6 +26,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(methodOverride("_method"));
+app.use(session({secret:"Home experience", resave:false, saveUninitialized: true}));
+app.use(loginUserCheck);
 
 //Indicando donde se encuentra la carpeta public
 app.use(express.static(path.join(__dirname, '..', 'public')));
