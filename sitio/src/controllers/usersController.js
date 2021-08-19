@@ -35,6 +35,7 @@ module.exports = {
         name: req.body.nombre,
         password: bcrypt.hashSync(req.body.password),
         email: req.body.email,
+        fecha_nac: req.body.fecha_nac,
         admin: false
       };
       users.push(usuario);

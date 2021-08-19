@@ -25,6 +25,21 @@ module.exports = [
       })
       .withMessage("El email ingresado ya está en uso. Iniciá sesión!"),
 
+      body("fecha_nac").notEmpty().withMessage("Debe ingresar su fecha de nacimiento").bail()
+      .custom((value, { req }) => {
+        let hoy = new Date();
+        let cumpleanos = new Date(value);
+        let edad = hoy.getFullYear() - cumpleanos.getFullYear();
+        let m = hoy.getMonth() - cumpleanos.getMonth();
+        if (m < 0 || (m === 0 && hoy.getDate() < cumpleanos.getDate())) {
+            edad--;
+        }
+        if(edad>=18){
+          return true;
+        }
+        return false;
+      }).withMessage("Debe ser mayor de 18 años"),
+
       body("password").notEmpty().withMessage("Debe ingresar una contraseña").bail()
       .isLength({min:8, max:12}).withMessage("La contraseña debe tener entre 8 y 12 caracteres").bail()
       .custom((value, { req }) => {

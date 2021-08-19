@@ -20,6 +20,10 @@
                     <% if (locals.errors && errors.email) { %>
                     <p  class="errores"><%= errors.email.msg %> </p>
                     <% } %>
+                    <input class="dato" type="date" name="fecha_nac" id="fecha_nac" placeholder="fecha_nac" value="<%=locals.old  ? old.fecha_nac :""%>">
+                    <% if (locals.errors && errors.fecha_nac) { %>
+                    <p  class="errores"><%= errors.fecha_nac.msg %> </p>
+                    <% } %>
                     <input class="dato" type="password" name="password" id="password" placeholder="Clave">
                     <% if (locals.errors && errors.password) { %>
                     <p  class="errores"><%= errors.password.msg %> </p>

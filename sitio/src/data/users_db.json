@@ -4,6 +4,7 @@
     "name": "Alexis",
     "password": "$2a$10$sBECr9eTcy2no0OtU0cOjufpiPq.g3bbtHZS7.d2OS4vu1MvTrH2u",
     "email": "alexiszacre@gmail.com",
+    "fecha_nac": "1990-10-26",
     "admin": true
   },
   {
@@ -11,6 +12,7 @@
     "name": "Marcia",
     "password": "$2a$10$GRWuOjSeoVSiVdoUFkBLkOVjSfdfKwqEk5GJtTPZr8wztFUIFIBee",
     "email": "marciadelcastillo@gmail.com",
+    "fecha_nac": "1990-10-26",
     "admin": true
   },
   {
@@ -18,6 +20,7 @@
     "name": "Octavio",
     "password": "$2a$10$rnDIpwiXzjJqboZC8AICkOqQTrJRS1e8P0TisEpOmBs2gKN/dqc7e",
     "email": "octaviofitz@gmail.com",
+    "fecha_nac": "1990-10-26",
     "admin": true
   },
   {
@@ -25,6 +28,7 @@
     "name": "Eric",
     "password": "$2a$10$xe57LG8JSiUOJ9urWpNNo.PI6g7OwEn3Jl7dQs6ic0IIflv4E6xE.",
     "email": "ericmena@gmail.com",
+    "fecha_nac": "1990-10-26",
     "admin": false
   },
   {
@@ -32,6 +36,15 @@
     "name": "Robert",
     "password": "$2a$10$9qqyNsS/8R7YC2.T8FzW1.LcaG1yPARzz3NNSJUG5P9XTICEtXKbq",
     "email": "robertveintemilla@gmail.com",
+    "fecha_nac": "1990-10-26",
+    "admin": false
+  },
+  {
+    "id": 6,
+    "name": "Andrés",
+    "password": "$2a$10$A8v1Yqg.R3diJYnVMWFEhu.V9BD.bcsWMoByigPPR9TeTK2zbBC72",
+    "email": "andres@gmail.com",
+    "fecha_nac": "1990-10-26",
     "admin": false
   }
 ]
