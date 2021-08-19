@@ -12,7 +12,6 @@ header {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
-    overflow: hidden;
     background-color: var(--color-azul-oscuro);
     padding-top: 1vh;
     position: relative;
@@ -48,10 +47,10 @@ header .navbar button {
 header .navbar button .burgermenu i {
     color: var(--color-celeste);
 }
-header .navbar-collapse{
+
+header .navbar-collapse {
     width: 100%;
 }
-
 
 header .navbar li {
     border-top: solid 1px white;
@@ -79,10 +78,8 @@ header #navuser .user-loged {
     padding-left: 8px;
     padding-top: 3px;
     display: none;
-}
-
-header #navuser #user-loged-mobile {
-    display: none;
+    position: relative;
+    margin-right: 1vw;
 }
 
 header #navuser .user-loged span {
@@ -91,6 +88,14 @@ header #navuser .user-loged span {
 
 header #navuser .user-loged p {
     display: inline-block;
+    position: absolute;
+    left: 18px;
+}
+
+header .btn-group {
+    top: 0.5vh;
+    left: 73px;
+    position: absolute !important;
 }
 
 header #navuser .user-loged .btn-group button {
@@ -102,9 +107,11 @@ header #navuser .user-loged .btn-group button {
 
 header #navuser li.user-loged ul.dropdown-menu {
     background-color: var(--color-azul-oscuro) !important;
-    width: 12vw;
+    width: 20vw;
     position: absolute;
     z-index: 10;
+    padding: 10px;
+    margin-left: -14vw;
 }
 
 header #navuser li.user-loged ul.dropdown-menu li:first-child {
@@ -113,7 +120,7 @@ header #navuser li.user-loged ul.dropdown-menu li:first-child {
 
 header #navuser li.user-loged ul.dropdown-menu li:last-child {
     border-top: solid 1px white;
-    padding-top: 1vh;
+    padding-top: 2vh;
 }
 
 header #navuser li.user-loged ul.dropdown-menu a {
@@ -213,28 +220,43 @@ header a {
         display: none;
     }
     header #navuser .user-loged {
-        display: none;
+        display: initial;
         max-width: 100px;
     }
     header #navuser {
         margin-right: 5vw !important;
     }
     header #navuser li {
-        height: 3vh;
+        height: 5vh;
         margin-bottom: 0;
+    }
+    header #navuser li.divider {
+        height: 2vh;
     }
     header #navuser li a {
         transition: 0.4s;
     }
     header #navuser li:first-child a {
-        padding: 0 1vw 0 0;
+        margin-right: 5px;
     }
     header #navuser li a:hover {
         background-color: var(--color-celeste);
+        padding: 1vh;
     }
     header #navuser li:last-child a:hover {
-        background: none;
         border: none;
+    }
+    header #navuser li.logout a:hover {
+        padding: 6px;
+    }
+    header #navuser li.cart a:hover {
+        padding: none;
+        margin: none;
+    }
+    header #navuser li.cart a:hover {
+        padding: none;
+        background: none;
+        transition: none;
     }
     header #navuser #register {
         margin-right: 1vw;
@@ -262,5 +284,9 @@ header a {
     }
     header .shopping-basket-desktop {
         display: initial;
+    }
+    .btn-group-vertical>.btn.active, .btn-group-vertical>.btn:active, .btn-group-vertical>.btn:focus, .btn-group>.btn.active, .btn-group>.btn:active, .btn-group>.btn:focus {
+        z-index: 1;
+        box-shadow: none;
     }
 }
