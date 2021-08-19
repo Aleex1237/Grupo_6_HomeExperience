@@ -14,6 +14,7 @@ router.get('/modificar/:id', load);
 router.put("/modificar/:id", upload.single("imagen"), addProductValidator, update); 
 router.get('/carrito', cart);
 
+
 router.get("/admin",admin);
 router.delete("/eliminar/:id",destroy)
 

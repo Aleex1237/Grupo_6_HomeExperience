@@ -1,0 +1,142 @@
+/* general */
+.profile{
+    background-color: var(--color-gris);
+    position: relative;
+    height: 130vh;
+}
+
+.profile .contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    justify-content: center;
+}
+
+/* header */
+.profile header {
+    margin-top: -1vh;
+}
+
+.profile header h2{
+    margin-top: 1vh;
+}
+
+/* main */
+
+.profile .imgprofile{
+    width: 40vw;
+    margin-top: 5vh;
+    margin-bottom: 8vh;
+    
+}
+
+.profile article{
+    text-align: center;
+}
+
+.profile input{
+    margin-bottom: 3vh;
+    color: white;
+}
+
+.profile label{
+        color: white;
+}
+
+.profile ::placeholder{
+    color:var(--color-blanco);
+}
+
+.profile .form-control{
+    background-color: var( --color-celeste);
+    height: 40px;
+}
+
+.profile .input-file{
+    font-size: 4vw;
+}
+
+.profile .boton-guardar{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.profile .btn-primary{
+    color: var(--color-blanco);
+   background-color:var(--color-azul-oscuro);
+   border-radius: 12px;
+   margin-top: 2.3vh;
+   padding: 10px 40px;
+}
+
+
+/* footer */
+
+.profile footer{
+    position: fixed;
+    bottom: 0;
+}
+
+.profile footer a{
+    color: white;
+    }
+
+
+@media (min-width: 768px) {
+
+/* ****MAIN*** */
+.profile .imgprofile{
+    width: 25vw;
+}
+
+.profile .form-floating{
+    width: 75vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+}
+
+.profile .input-file{
+    font-size: 3.2vw;
+}
+
+
+}
+
+@media (min-width: 1024px) {
+
+    .profile{
+        height: 110vh;
+    }
+
+    .profile header {
+        margin-top: -2.5vh;
+    }
+
+    .profile .imgprofile{
+        width: 20vw;
+        margin-top: 14vh;
+    }
+
+    .profile .contenedor{
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 5vw;
+        margin-right: 5vw;
+        justify-content: space-around;
+    }
+
+    .profile .contenedorInputs{
+        margin-top: 10vh;
+    }
+    .profile .form-floating{
+        width: 50vw;
+    }
+
+    .profile .input-file{
+        font-size: 2.2vw;
+    }
+
+}
+
