@@ -46,5 +46,13 @@
     "email": "andres@gmail.com",
     "fecha_nac": "1990-10-26",
     "admin": false
+  },
+  {
+    "id": 7,
+    "name": "maximo",
+    "password": "$2a$10$5.kqBcpTNvds4ujqHDT28.Uh/3HOzeifTbBMO.hgGxB.ybHCq4s06",
+    "email": "maximo@hotmail.com",
+    "fecha_nac": "2001-12-08",
+    "admin": false
   }
 ]

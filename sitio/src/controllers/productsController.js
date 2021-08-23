@@ -20,6 +20,7 @@ module.exports = {
       ),
     });
   },
+
   admin: (req, res) => {
     return res.render("adminView", {
       title: "Administrador",
@@ -46,6 +47,7 @@ module.exports = {
       title: "Agregar producto",
     });
   },
+
   save: (req, res) => {
     let errors = validationResult(req);
     let lista = [req.body.product1, req.body.product2];
@@ -57,6 +59,7 @@ module.exports = {
     }
 
     if (errors.isEmpty()) {
+      //Si errores está vacio crearemos la variable producto la cual contendrá un objeto literal, con las propiedades de un producto
       let producto = {
         id: obtenerProximoId(),
         name: req.body.nombre,
@@ -67,10 +70,15 @@ module.exports = {
         productList: lista,
         keywords: req.body.keywords.trim().split(" "),
       };
+
       productos.push(producto);
+
       guardar(productos);
+
       res.redirect("/productos/admin");
+
     } else {
+      //Si no se cumple  renderizará productLoad y guardará los errores en la variable errors y lo mapearan, old guardará lo que venga por el body.
       return res.render("productLoad", {
         errors:
           errors.mapped() /* el mapped ayuda a mostrar un error a la vez y diferenciar de que input es cada error */,
@@ -79,6 +87,7 @@ module.exports = {
       });
     }
   },
+
   load: (req, res) => {
     let producto = productos.find((producto) => producto.id === +req.params.id);
     let keywords = "";
@@ -91,6 +100,7 @@ module.exports = {
       keywords,
     });
   },
+
   update: (req, res) => {
     let index = 0;
     let errors = validationResult(req);
@@ -136,6 +146,7 @@ module.exports = {
     }
     
   },
+
   destroy: (req, res) => {
   let id = req.params.id;
   //creamos un loop en el que nuestra variable iteradora es igual a 0 y mientras el iterador sea menor a la longitud del array se le sumara 1.
