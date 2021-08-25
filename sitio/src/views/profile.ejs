@@ -11,30 +11,80 @@
    
     <main class="contenedor">
         <section>
-            <img src="/images/default-profile.png" alt="imgdefault" class="imgprofile">
+            <img src="/images/users/<%= usuario.image %> " alt="imgdefault" class="imgprofile">
         </section>
 
         <div class="contenedorInputs">
             <section>
-                <form action="" method="POST">
+                <form action="/usuarios/perfil/modificar/<%= usuario.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="form-floating mb-3">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control" id="floatingInput" name="nombre">
+                        <label for="nombre"> Nombre </label>
+                        <input type="text" class="form-control" id="floatingInput" name="nombre" value="<%= locals.old ? locals.old.nombre : usuario.name %>">
+                        <% if (locals.errors && errors.nombre) { %>
+                            <p  class="errores"><%= errors.nombre.msg %> </p>
+                        <% } %>
                     </div>
 
                     <div class="form-floating mb-3">
                         <label for="email">Correo electrónico</label>
-                        <input type="email" class="form-control" id="floatingInput" name="email" disabled>
+                        <input type="email" class="form-control" id="floatingInput" name="email" value="<%= usuario.email %>" disabled>
                     </div>
 
-                    <div class="form-floating">
+                    <div class="form-floating mb-3">
+                        <label for="Pais">País</label>
+                        <input type="text" class="form-control" id="floatingInput" name="pais" value="<%= locals.old ? locals.old.pais : usuario.pais %>">
+                        <% if (locals.errors && errors.pais) { %>
+                            <p  class="errores"><%= errors.nombre.pais %> </p>
+                        <% } %>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <label for="direccion">Dirección</label>
+                        <input type="text" class="form-control" id="floatingInput" name="direccion" value="<%= locals.old ? locals.old.direccion : usuario.direccion %>">
+                        <% if (locals.errors && errors.direccion) { %>
+                            <p  class="errores"><%= errors.direccion.msg %> </p>
+                        <% } %>
+                    </div>
+
+                    <select class="form-floating mb-3" aria-label="Default select example" name="genero">
+                        <option  <%- locals.old && old.genero=="pf" ? "selected" : "" %>  value="pf"> Prefiero no decirlo </option>
+
+
+                          <option <%- locals.old && old.genero=="m" ? "selected" : "" %> value="m">
+                            Masculino
+                          </option>
+
+                          <option <%- locals.old && old.genero=="f" ? "selected" : "" %> value="f">
+                            Femenino
+                          </option>
+
+                          <option <%- locals.old && old.genero=="x" ? "selected" : "" %> value="x">
+                            No binario
+                          </option>
+
+                          
+                         
+                      </select>
+
+                    
+
+
+
+<!--                     <div class="form-floating">
                         <label for="password">Contraseña</label>
                         <input type="password" class="form-control" id="floatingPassword" name="password">
+                        
                     </div>
 
                     <div class="form-floating">
-                        <label for="edad">Edad</label>
-                        <input type="number" class="form-control" id="floatingInput" name="edad">
+                        <label for="password2">Repetir Contraseña</label>
+                        <input type="password" class="form-control" id="floatingPassword" name="password2">
+                       
+                    </div> -->
+
+                    <div class="form-floating">
+                        <label for="fecha_nac">Fecha de nacimiento</label>
+                        <input type="date" class="form-control" id="floatingInput" name="fecha_nac" value="<%= usuario.fecha_nac %>" disabled>
                     </div>
 
                     <div class="form-floating mb-3">
@@ -43,7 +93,7 @@
                     </div>
 
                     <div class="boton-guardar">
-                        <button type="button" class="btn btn-primary btn-dark">GUARDAR CAMBIOS</button>
+                        <button type="submit" class="btn btn-primary btn-dark">GUARDAR CAMBIOS</button>
                     </div>
         </div>
         </form>

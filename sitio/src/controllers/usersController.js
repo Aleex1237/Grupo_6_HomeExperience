@@ -1,4 +1,4 @@
-const { leer, guardar } = require("../data/users_db");
+const { leer, guardar, eliminarImagen } = require("../data/users_db");
 let users = leer();
 const { validationResult } = require("express-validator");
 let bcrypt = require("bcryptjs");
@@ -21,8 +21,8 @@ module.exports = {
       //Dentro de session creamos el elemento user el cual almacenará del usuario que matcheo con email sus keys id, name y admin
       req.session.user = {
         id: usuario.id,
-        name: usuario.name,
-        admin: usuario.admin,
+      /*   name: usuario.name,
+        admin: usuario.admin, */
       };
       //Si por el body viene tildada la checkbox entonces crearemos la cookie "user" la cual almacenará todo lo que hay en session.user y le agregaremos la key maxAge y la value number el cual será el tiempo que "vivirá" la cookie dentro del navegador.
       if (req.body.check) {
@@ -38,10 +38,12 @@ module.exports = {
       });
     }
   },
-  
+
   logOut: (req, res) => {
     //ejecutamos destroy() sobre el session lo cual hará que nos deslogueemos.
     req.session.destroy();
+    
+    res.cookie("user", null, { maxAge: -1 });
     return res.redirect("/");
   },
 
@@ -60,6 +62,7 @@ module.exports = {
         password: bcrypt.hashSync(req.body.password),
         email: req.body.email,
         fecha_nac: req.body.fecha_nac,
+        image:"default-profile.png",
         admin: false,
       };
 
@@ -78,8 +81,67 @@ module.exports = {
     }
   },
   profile: (req, res) => {
+    let usuario=users.find((usuario)=>usuario.id === +req.params.id)
     return res.render("profile", {
-      title: "Perfil",
+      title: "Perfil: " + usuario.name,
+      usuario
     });
+  },
+  updateProfile: (req, res) => {
+    let index = 0;
+    let errors = validationResult(req);
+    
+    if(errors.isEmpty()){
+      for (let i = 0; i < users.length; i++) {
+        if (users[i].id === +req.params.id) {
+          if(req.file){
+            eliminarImagen(users[i].image)
+          };
+          users[i].name = req.body.nombre;
+
+          users[i].image = req.file ? req.file.filename : users[i].image;
+      
+          users[i].pais = req.body.pais ? req.body.pais : ""
+
+          users[i].direccion = req.body.direccion ? req.body.direccion : ""
+
+          users[i].genero = req.body.genero ? req.body.genero : "pf"
+        
+          index = i;
+        }
+      }
+      guardar(users);
+
+      let usuario = users[index];
+
+      /* if(req.body.nombre){
+
+        
+
+        req.session.user = {
+          id: usuario.id,
+          name: usuario.name,
+          admin: usuario.admin,
+        };
+        
+      }  */
+
+
+      
+      
+      return res.render("profile", {
+        title: "Perfil: " + usuario.name,
+        usuario,
+      });
+    }else{
+      let usuario = users.find((usuario) => usuario.id === +req.params.id);
+      return res.render("profile", {
+        title: "Perfil: " + usuario.name,
+        usuario,
+        errors: errors.mapped(),
+        old: req.body
+      });
+    }
+    
   },
 };

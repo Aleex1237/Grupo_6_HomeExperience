@@ -78,24 +78,6 @@
     ]
   },
   {
-    "id": 8,
-    "name": "Esperando la carroza",
-    "category": "cine",
-    "image": "_img_1628600531483.jpg",
-    "description": "Sientete parte de este clásico del cine Argentino, y representa la famosa frase de Luis Brandoni \"Tres empanadas para dos personas!\"",
-    "price": 3000,
-    "productList": [
-      "Una docena de empanadas",
-      "Un vino malbec Alma Mora",
-      "3 planchas de ravioles caseros"
-    ],
-    "keywords": [
-      "argentina",
-      "clasico",
-      "comedia"
-    ]
-  },
-  {
     "id": 9,
     "name": "Harry Potter",
     "description": "Siéntete un mago de verdad! Con esta experiencia podrás degustar los mejores y más alocados productos de la serie de J.K. Rowling",

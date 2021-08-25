@@ -6,6 +6,14 @@ const usuarios_db={
     
     guardar: (usuarios)=>{
         fs.writeFileSync(path.join(__dirname, "users_db.json"), JSON.stringify(usuarios,null,2), "utf-8");
+    },
+    eliminarImagen: (imagen)=>{
+        try {
+            fs.unlinkSync(path.join(__dirname, "../../public/images/users",imagen));
+            console.log('File removed')
+          } catch(err) {
+            console.error('Something wrong happened removing the file', err)
+          }
     }
 }
 

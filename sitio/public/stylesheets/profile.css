@@ -74,15 +74,12 @@
 
 /* footer */
 
-.profile footer{
-    position: fixed;
-    bottom: 0;
-}
-
 .profile footer a{
     color: white;
     }
-
+.profile footer{
+    position: relative;
+}
 
 @media (min-width: 768px) {
 

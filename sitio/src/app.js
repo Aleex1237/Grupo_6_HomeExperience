@@ -10,6 +10,7 @@ let session = require("express-session");
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
+var adminRouter = require("./routes/admin");
 
 //Requiriendo middlewares
 let loginUserCheck = require("./middlewares/loginUserCheck");
@@ -36,6 +37,7 @@ app.use(express.static(path.join(__dirname, '..', 'public')));
 app.use('/', indexRouter);
 app.use('/usuarios', usersRouter);
 app.use('/productos', productsRouter);
+app.use("/admin", adminRouter);
 
 
 // catch 404 and forward to error handler

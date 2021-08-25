@@ -5,7 +5,7 @@
   <%- include("./partials/header")%>
     <main>
         <h1>Nueva experiencia</h1>
-        <form action="/productos/agregar" method="POST" enctype="multipart/form-data" novalidate>
+        <form action="admin/producto/agregar" method="POST" enctype="multipart/form-data" novalidate>
           <div class="nombre">
             <input class="nombre" type="text" name="nombre" id="nombre" placeholder="Nombre" value="<%= locals.old && old.nombre ? old.nombre : null%>">
             <% if (locals.errors && errors.nombre) { %>

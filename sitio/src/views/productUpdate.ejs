@@ -5,7 +5,7 @@
   <%- include("./partials/header")%>
     <main>
         <h1>Modificar experiencia</h1>
-        <form action="/productos/modificar/<%=producto.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <form action="/admin/producto/modificar/<%=producto.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
           <div class="nombre">
             <input class="nombre" type="text" name="nombre" id="nombre" value="<%=locals.old ? old.nombre : producto.name%>">
             <% if (locals.errors && errors.nombre) { %>
