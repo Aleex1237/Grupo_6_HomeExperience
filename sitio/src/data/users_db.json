@@ -26,8 +26,11 @@
     "password": "$2a$10$rnDIpwiXzjJqboZC8AICkOqQTrJRS1e8P0TisEpOmBs2gKN/dqc7e",
     "email": "octaviofitz@gmail.com",
     "fecha_nac": "1990-10-26",
-    "image": "default-profile.png",
-    "admin": true
+    "image": "_img_1629934387085.jpeg",
+    "admin": true,
+    "pais": "Brasil",
+    "direccion": "",
+    "genero": "pf"
   },
   {
     "id": 4,

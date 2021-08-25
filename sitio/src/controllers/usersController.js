@@ -94,7 +94,7 @@ module.exports = {
     if(errors.isEmpty()){
       for (let i = 0; i < users.length; i++) {
         if (users[i].id === +req.params.id) {
-          if(req.file){
+          if(req.file && users[i].image != 'default-profile.png'){
             eliminarImagen(users[i].image)
           };
           users[i].name = req.body.nombre;
