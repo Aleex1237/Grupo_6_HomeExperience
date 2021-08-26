@@ -54,5 +54,13 @@
     "email": "maximo@hotmail.com",
     "fecha_nac": "2001-12-08",
     "admin": false
+  },
+  {
+    "id": 8,
+    "name": "David Gomez",
+    "password": "$2a$10$SFIU9xO1OP7MrkVaYVKpO.xvvCYganqwPCk4sSeWOS4pqItfH6nC6",
+    "email": "davidnaveganteindio@gmail.com",
+    "fecha_nac": "1980-04-08",
+    "admin": false
   }
 ]
