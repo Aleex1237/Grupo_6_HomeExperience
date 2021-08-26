@@ -26,10 +26,10 @@
     "password": "$2a$10$rnDIpwiXzjJqboZC8AICkOqQTrJRS1e8P0TisEpOmBs2gKN/dqc7e",
     "email": "octaviofitz@gmail.com",
     "fecha_nac": "1990-10-26",
-    "image": "_img_1629934387085.jpeg",
+    "image": "_img_1629998875750.png",
     "admin": true,
-    "pais": "Brasil",
-    "direccion": "",
+    "pais": "Argentina",
+    "direccion": "Calle Falsa 1234",
     "genero": "pf"
   },
   {
