@@ -1,11 +1,15 @@
 [
   {
     "id": 1,
-    "name": "Alexis",
+    "name": "Matias",
     "password": "$2a$10$sBECr9eTcy2no0OtU0cOjufpiPq.g3bbtHZS7.d2OS4vu1MvTrH2u",
     "email": "alexiszacre@gmail.com",
     "fecha_nac": "1990-10-26",
-    "admin": true
+    "image": "_img_1629850078101.png",
+    "admin": true,
+    "pais": "Argentina",
+    "direccion": "",
+    "genero": "pf"
   },
   {
     "id": 2,
@@ -13,6 +17,7 @@
     "password": "$2a$10$GRWuOjSeoVSiVdoUFkBLkOVjSfdfKwqEk5GJtTPZr8wztFUIFIBee",
     "email": "marciadelcastillo@gmail.com",
     "fecha_nac": "1990-10-26",
+    "image": "default-profile.png",
     "admin": true
   },
   {
@@ -21,7 +26,11 @@
     "password": "$2a$10$rnDIpwiXzjJqboZC8AICkOqQTrJRS1e8P0TisEpOmBs2gKN/dqc7e",
     "email": "octaviofitz@gmail.com",
     "fecha_nac": "1990-10-26",
-    "admin": true
+    "image": "_img_1629998875750.png",
+    "admin": true,
+    "pais": "Argentina",
+    "direccion": "Calle Falsa 1234",
+    "genero": "pf"
   },
   {
     "id": 4,
@@ -29,6 +38,7 @@
     "password": "$2a$10$xe57LG8JSiUOJ9urWpNNo.PI6g7OwEn3Jl7dQs6ic0IIflv4E6xE.",
     "email": "ericmena@gmail.com",
     "fecha_nac": "1990-10-26",
+    "image": "default-profile.png",
     "admin": false
   },
   {
@@ -37,6 +47,7 @@
     "password": "$2a$10$9qqyNsS/8R7YC2.T8FzW1.LcaG1yPARzz3NNSJUG5P9XTICEtXKbq",
     "email": "robertveintemilla@gmail.com",
     "fecha_nac": "1990-10-26",
+    "image": "default-profile.png",
     "admin": false
   },
   {
@@ -45,6 +56,7 @@
     "password": "$2a$10$A8v1Yqg.R3diJYnVMWFEhu.V9BD.bcsWMoByigPPR9TeTK2zbBC72",
     "email": "andres@gmail.com",
     "fecha_nac": "1990-10-26",
+    "image": "default-profile.png",
     "admin": false
   },
   {
@@ -53,6 +65,7 @@
     "password": "$2a$10$5.kqBcpTNvds4ujqHDT28.Uh/3HOzeifTbBMO.hgGxB.ybHCq4s06",
     "email": "maximo@hotmail.com",
     "fecha_nac": "2001-12-08",
+    "image": "default-profile.png",
     "admin": false
   },
   {

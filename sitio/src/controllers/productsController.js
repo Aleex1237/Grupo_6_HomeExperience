@@ -162,7 +162,7 @@ module.exports = {
   guardar(productos);
 
   //Al terminar la ejecución que creá el producto se redicrecciona al usuarío hacia el home.
-  res.redirect("/productos/admin");
+  res.redirect("/admin/productos");
   },
 
 };

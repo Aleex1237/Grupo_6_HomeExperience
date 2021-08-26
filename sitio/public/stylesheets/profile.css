@@ -40,15 +40,16 @@
     color: white;
 }
 
-.profile label{
+.profile label, select{
         color: white;
+        margin-bottom: 10px;
 }
 
 .profile ::placeholder{
     color:var(--color-blanco);
 }
 
-.profile .form-control{
+.profile .form-control, select{
     background-color: var( --color-celeste);
     height: 40px;
 }
@@ -69,13 +70,14 @@
    border-radius: 12px;
    margin-top: 2.3vh;
    padding: 10px 40px;
+   margin-bottom: 5vh;
 }
 
 
 /* footer */
 
 .profile footer{
-    position: fixed;
+    position: relative;
     bottom: 0;
 }
 

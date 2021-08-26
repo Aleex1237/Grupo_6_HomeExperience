@@ -28,7 +28,7 @@
                 <% if (locals.user) { %>
                     <% if (locals.user.admin === true) { %>
                         <li class="addProduct">
-                            <span> <a class="nav-link" href="/productos/admin">ADMIN</a> </span>
+                            <span> <a class="nav-link" href="/admin/productos">ADMIN</a> </span>
                         </li>
                     <% } %>
                     
@@ -50,8 +50,8 @@
                             </button>
     
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="#">Perfil</a></li>
-                                <li><a href="#">Configuracion del perfil</a></li>
+                                <li><a href="/usuarios/perfil/<%= locals.user.id%> ">Perfil</a></li>
+                               
                                 <li class="divider"></li>
                                 <li class="logout"><a href="/usuarios/cerrar-sesion">Cerrar sesión</a></li>
                             </ul>
