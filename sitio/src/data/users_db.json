@@ -19,9 +19,9 @@
     "fecha_nac": "1990-10-26",
     "image": "default-profile.png",
     "admin": true,
-    "pais": "",
+    "pais": "Argentina",
     "direccion": "",
-    "genero": "f"
+    "genero": "x"
   },
   {
     "id": 3,

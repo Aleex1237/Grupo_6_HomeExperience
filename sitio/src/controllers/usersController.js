@@ -94,6 +94,7 @@ module.exports = {
     if(errors.isEmpty()){
       for (let i = 0; i < users.length; i++) {
         if (users[i].id === +req.params.id) {
+          //si viene una nueva imagen y la qestaba no era la de default, elimina la imagen anterior
           if(req.file && users[i].image != 'default-profile.png'){
             eliminarImagen(users[i].image)
           };
@@ -107,7 +108,7 @@ module.exports = {
 
           users[i].genero = req.body.genero ? req.body.genero : "pf"
         
-          index = i;
+          index = i; //guarda la posicion del elemento para luego poder acceder y enviarlo a la vista
         }
       }
       guardar(users);
@@ -125,14 +126,11 @@ module.exports = {
         };
         
       }  */
-
-
-      
-      
-      return res.render("profile", {
+      /* return res.render("profile", {
         title: "Perfil: " + usuario.name,
         usuario,
-      });
+      }); */
+      res.render("index", {title: "Home experience"});
     }else{
       let usuario = users.find((usuario) => usuario.id === +req.params.id);
       return res.render("profile", {
