@@ -18,7 +18,10 @@
     "email": "marciadelcastillo@gmail.com",
     "fecha_nac": "1990-10-26",
     "image": "default-profile.png",
-    "admin": true
+    "admin": true,
+    "pais": "",
+    "direccion": "",
+    "genero": "f"
   },
   {
     "id": 3,
