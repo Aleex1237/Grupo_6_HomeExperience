@@ -46,19 +46,21 @@
                         <% } %>
                     </div>
 
-                    <select class="form-floating mb-3" aria-label="Default select example" name="genero">
-                        <option  <%- usuario.genero && usuario.genero=="pf" ? "selected" : "" %>  value="pf"> Prefiero no decirlo </option>
+                    <div class="form-floating mb-3">
+                    <label for="genero">Género</label> <br>
+                    <select class="form-select" aria-label="Default select example" name="genero">
+                        
+                        <option  <%= usuario.genero=="pf" ? "selected" : "" %>  value="pf"> Prefiero no decirlo </option>
 
-
-                          <option <%- usuario.genero && usuario.genero=="m" ? "selected" : "" %> value="m">
+                          <option <%= usuario.genero=="m" ? "selected" : "" %> value="m">
                             Masculino
                           </option>
 
-                          <option <%- usuario.genero && usuario.genero=="f" ? "selected" : "" %> value="f">
+                          <option <%= usuario.genero=="f" ? "selected" : "" %> value="f">
                             Femenino
                           </option>
 
-                          <option <%- usuario.genero && usuario.genero=="x" ? "selected" : "" %> value="x">
+                          <option <%= usuario.genero=="x" ? "selected" : "" %> value="x">
                             No binario
                           </option>
 
@@ -66,6 +68,7 @@
                          
                       </select>
 
+                      </div>
                     
 
 

@@ -18,7 +18,10 @@
     "email": "marciadelcastillo@gmail.com",
     "fecha_nac": "1990-10-26",
     "image": "default-profile.png",
-    "admin": true
+    "admin": true,
+    "pais": "Argentina",
+    "direccion": "",
+    "genero": "x"
   },
   {
     "id": 3,
@@ -26,8 +29,11 @@
     "password": "$2a$10$rnDIpwiXzjJqboZC8AICkOqQTrJRS1e8P0TisEpOmBs2gKN/dqc7e",
     "email": "octaviofitz@gmail.com",
     "fecha_nac": "1990-10-26",
-    "image": "default-profile.png",
-    "admin": true
+    "image": "_img_1629998875750.png",
+    "admin": true,
+    "pais": "Argentina",
+    "direccion": "Calle Falsa 1234",
+    "genero": "pf"
   },
   {
     "id": 4,
@@ -63,6 +69,14 @@
     "email": "maximo@hotmail.com",
     "fecha_nac": "2001-12-08",
     "image": "default-profile.png",
+    "admin": false
+  },
+  {
+    "id": 8,
+    "name": "David Gomez",
+    "password": "$2a$10$SFIU9xO1OP7MrkVaYVKpO.xvvCYganqwPCk4sSeWOS4pqItfH6nC6",
+    "email": "davidnaveganteindio@gmail.com",
+    "fecha_nac": "1980-04-08",
     "admin": false
   }
 ]
