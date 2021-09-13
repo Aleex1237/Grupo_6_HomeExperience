@@ -12,7 +12,7 @@ En nuestro análisis aplicamos la técnica de la Estrella de Mar, y nuestras con
 - Definir hoja de ruta para reuniones: encontramos que es clave tener en claro que conceptos y temas se tratarán en cada reunión para aprovechar el tiempo lo mejor posible.
 - Utilizar discord para compartir archivos y enlaces: encontramos en este recurso una buena manera de tener los archivos y enlaces que utilizamos siempre a mano.
 
-### Empezar a hacer:
+### Empezar a hacer:  
 - Reunirnos lo antes posible cuando se larga el Sprint: encontramos que de esta manera, ganamos tiempo valioso y dividimos las primeras tareas, con lo cual cada integrante del equipo se encuentra listo para comenzar a trabajar.
 - Reuniones extracurriculares: en el caso de que algún integrante tenga inconvenientes con alguna de sus tareas, podrá comunicarlo al equipo, y lo antes posible se realizará una reunión para ayudarlo a solucionar el problema.
 - Reuniones diarias de 15-30 minutos: queremos incorporar este recurso para estar al día de lo que cada compañero está haciendo y si tiene algún inconveniente.
