@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "name": "Matias",
+    "name": "Alexis",
     "password": "$2a$10$sBECr9eTcy2no0OtU0cOjufpiPq.g3bbtHZS7.d2OS4vu1MvTrH2u",
     "email": "alexiszacre@gmail.com",
     "fecha_nac": "1990-10-26",
@@ -9,7 +9,7 @@
     "admin": true,
     "pais": "Argentina",
     "direccion": "",
-    "genero": "pf"
+    "genero": "f"
   },
   {
     "id": 2,

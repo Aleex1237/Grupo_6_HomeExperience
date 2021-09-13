@@ -47,18 +47,18 @@
                     </div>
 
                     <select class="form-floating mb-3" aria-label="Default select example" name="genero">
-                        <option  <%- locals.old && old.genero=="pf" ? "selected" : "" %>  value="pf"> Prefiero no decirlo </option>
+                        <option  <%- usuario.genero && usuario.genero=="pf" ? "selected" : "" %>  value="pf"> Prefiero no decirlo </option>
 
 
-                          <option <%- locals.old && old.genero=="m" ? "selected" : "" %> value="m">
+                          <option <%- usuario.genero && usuario.genero=="m" ? "selected" : "" %> value="m">
                             Masculino
                           </option>
 
-                          <option <%- locals.old && old.genero=="f" ? "selected" : "" %> value="f">
+                          <option <%- usuario.genero && usuario.genero=="f" ? "selected" : "" %> value="f">
                             Femenino
                           </option>
 
-                          <option <%- locals.old && old.genero=="x" ? "selected" : "" %> value="x">
+                          <option <%- usuario.genero && usuario.genero=="x" ? "selected" : "" %> value="x">
                             No binario
                           </option>
 
