@@ -1,10 +1,10 @@
-module.exports= (sequelize, dataTypes) => {
+module.exports = (sequelize, dataTypes) => {
 
     let alias= "Experience"
 
     let cols= {
         id: {
-            type: DataTypes.INTEGER.UNSIGNED,
+            type: dataTypes.INTEGER,
             autoIncrement: true,
             allowNull: false,
             primaryKey: true
@@ -22,7 +22,7 @@ module.exports= (sequelize, dataTypes) => {
             allowNull: false
         },
         active:{
-            type: dataTypes.INTEGER.TINYINT,
+            type: dataTypes.INTEGER(1),
             allowNull: false
         },
         idCategory:{
@@ -39,10 +39,10 @@ module.exports= (sequelize, dataTypes) => {
     const Experience= sequelize.define(alias,cols,config)
 
     Experience.associate= models => {
-        Experience.belongsTo(models.Category,{
+        /* Experience.belongsTo(models.Category,{
             as: 'category',
             foreignKey: 'idCategory'
-        }),
+        }), */
 
         Experience.associate= models => {
             Experience.belongsToMany(models.Keyword,{

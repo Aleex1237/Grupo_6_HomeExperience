@@ -63,10 +63,10 @@ module.exports = (sequelize, dataTypes) => {
       as: "address",
       foreignKey: "idAddress",
     });
-    User.hasMany(models.Cart,{
+    /* User.hasMany(models.Cart,{
       as:"cart",
       foreignKey:"idUser"
-    })
+    }) */
   };
 
   return User;
