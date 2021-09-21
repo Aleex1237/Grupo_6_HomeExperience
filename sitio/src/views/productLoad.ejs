@@ -28,8 +28,8 @@
             
                       <select name="categoria">
                         <option hidden selected value="">Categoría</option>
-                        <option value="bar" name='categoria' <%= locals.old && old.categoria === 'bar' ? 'selected' : ''%>>Bar</option>
-                        <option value="cine" name='categoria' <%= locals.old && old.categoria === 'cine' ? 'selected' : ''%>>Cine</option>
+                        <option value=0 name='categoria' <%= locals.old && old.categoria === 0 ? 'selected' : ''%>>Bar</option>
+                        <option value=1 name='categoria' <%= locals.old && old.categoria === 1 ? 'selected' : ''%>>Cine</option>
                       </select>
                       <% if (locals.errors && errors.categoria) { %>
                         <p class="text-danger"><%= errors.categoria.msg %> </p>

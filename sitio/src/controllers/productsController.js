@@ -1,6 +1,7 @@
-const { leer, guardar, obtenerProximoId, eliminarImagen } = require("../data/products_db");
-let productos = leer();
+//const { leer, guardar, obtenerProximoId, eliminarImagen } = require("../data/products_db");
+//let productos = leer();
 const { validationResult } = require("express-validator");
+let db = require("../database/models");
 
 module.exports = {
   bar: (req, res) => {
@@ -48,9 +49,9 @@ module.exports = {
     });
   },
 
-  save: (req, res) => {
+  save: async (req, res) => {
     let errors = validationResult(req);
-    let lista = [req.body.product1, req.body.product2];
+    let lista = [req.body.product1, req.body.product2];//lista de productos
     if(req.body.product3){
       lista.push(req.body.product3);
       if(req.body.product4){
@@ -59,23 +60,49 @@ module.exports = {
     }
 
     if (errors.isEmpty()) {
-      //Si errores está vacio crearemos la variable producto la cual contendrá un objeto literal, con las propiedades de un producto
-      let producto = {
-        id: obtenerProximoId(),
-        name: req.body.nombre,
-        description: req.body.descripcion,
-        image: req.file.filename,
-        price: Number(req.body.precio),
-        category: req.body.categoria,
-        productList: lista,
-        keywords: req.body.keywords.trim().split(" "),
-      };
+      try{
+        //guardo experiencia
+        let experiencia = await db.Experience.create({
+          name: req.body.nombre,
+          description: req.body.descripcion,
+          image: req.file.filename,
+          price: Number(req.body.precio),
+          idCategory: req.body.categoria,
+        });
+        //guardo cada producto
+        let productos = [];
+          for(let i=0;i<lista.length;i++){
+            let producto = {
+                name:lista[i],
+                idExperience: experiencia.idExperience
+            }
+            productos.push(producto);
+          }
+          await db.Product.bulkCreate(productos);
+          //guardo la relacion entre la experiencia y cada keyword
+          let keywords = req.body.keywords.trim().split(" ");
+            for(let i=0;i<keywords.length;i++){
+              let keyword = await db.Keyword.findOne({
+                where:{
+                  name: keywords[i]
+                }
+              });
+              //si la keyword no existe, la creo
+              if(!keyword){
+                await db.Keyword.create({
+                  name:keywords[i]
+                });
+              }
+              await db.KeywordExperience.create({
+                  idKeywords: keyword.id,
+                  idExperience: experience.idExperience
+                });
+            }
+            res.redirect("/productos/admin");
 
-      productos.push(producto);
-
-      guardar(productos);
-
-      res.redirect("/productos/admin");
+      }catch(error){
+        console.log(error);
+      } 
 
     } else {
       //Si no se cumple  renderizará productLoad y guardará los errores en la variable errors y lo mapearan, old guardará lo que venga por el body.
