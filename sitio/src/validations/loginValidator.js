@@ -1,7 +1,6 @@
 const { check, body } = require("express-validator");
-const { leer } = require("../data/users_db");
-const usuarios = leer();
-const bcrypt=require("bcryptjs");
+const bcrypt = require("bcryptjs");
+const db = require("../database/models");
 
 module.exports = [
   check("email")
@@ -12,21 +11,15 @@ module.exports = [
     .isEmail()
     .withMessage("El email es invalido. Ej:name@mail.com")
     .bail(),
-  body("email")
-    .custom((value, { req }) => {
-      //sobre el array de usuarios ejecutamos el metodo find el cual buscará aquel usuario cuyo email sea exactamente el mismo que haya venido por el input.
-
-      //y si el password del usuario es igual al que viene por el body y da true se cumple.
-      let usuario = usuarios.find(
-        (usuario) =>
-          usuario.email === value && bcrypt.compareSync(req.body.password, usuario.password)
-      );
-      //Si usuario da true entonces preguntaremos si usuario existe y si no nos dio ningun error next
-      if (usuario) {
-        return true;
-      }
-      //Si hay algun error con usuario retornaria false con el siguiente msj y este se mandaria a la vista.
-      return false;
-    })
-    .withMessage("Credenciales invalidas!."),
+  body("email").custom((value, { req }) => {
+    return db.User.findOne({ where: { email: value } })
+      .then((user) => {
+        if (!user || !bcrypt.compareSync(req.body.password, user.password)){
+          return Promise.reject()
+        }
+      })
+      .catch(() => {
+        return Promise.reject("Credenciales invalidas!");
+      });
+  }),
 ];

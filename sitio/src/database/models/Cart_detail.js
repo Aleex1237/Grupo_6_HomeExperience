@@ -31,20 +31,6 @@ module.exports = (sequelize, dataTypes)=>{
         timestamps:false
     }
     const Cart_detail = sequelize.define(alias, cols, config);
-    Cart_detail.associate= function(models){
-        Cart_detail.belongsTo(models.experiences,{
-            as:"experience",
-            foreingKey:"idExperience"
-        }),
-        Cart_detail.belongsTo(models.users,{
-            as:"user",
-            foreingKey:"idUser"
-        }),
-        Cart_detail.belongsTo(models.cart,{
-            as:"cart",
-            foreingKey:"idCart"
-        })
-
-    };
+    
     return Cart_detail;
 }

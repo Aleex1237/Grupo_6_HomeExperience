@@ -1,8 +1,7 @@
-const { leer, guardar, eliminarImagen } = require("../data/users_db");
-let users = leer();
-const { validationResult } = require("express-validator");
-let bcrypt = require("bcryptjs");
+
 const db = require("../database/models");
+const bcrypt = require("bcryptjs");
+const { validationResult } = require("express-validator");
 
 module.exports = {
   login: (req, res) => {
@@ -12,26 +11,26 @@ module.exports = {
   },
   logUser: (req, res) => {
     let errors = validationResult(req);
-    //Dentro de la variable errors guardamos las validaciones y le pasamos como parametro todo lo que venga por req
-
-    //Si errors está vacio se ejecutará lo que hay dentro de las llaves
     if (errors.isEmpty()) {
-      //creamos una variable usuario y dentro guardaremos aquel usuario cuyo email sea el mismo que viene por el body
-      let usuario = users.find((usuario) => usuario.email === req.body.email);
+      db.User.findOne({ where: { email: req.body.email } })
+        .then((user) => {
+          req.session.user = {
+            id: user.id,
+            name: user.name,
+            avatar: user.avatar,
+            idRol: user.idRol,
+          };
 
-      //Dentro de session creamos el elemento user el cual almacenará del usuario que matcheo con email sus keys id, name y admin
-      req.session.user = {
-        id: usuario.id,
-        /*   name: usuario.name,
-        admin: usuario.admin, */
-      };
-      //Si por el body viene tildada la checkbox entonces crearemos la cookie "user" la cual almacenará todo lo que hay en session.user y le agregaremos la key maxAge y la value number el cual será el tiempo que "vivirá" la cookie dentro del navegador.
-      if (req.body.check) {
-        res.cookie("user", req.session.user, { maxAge: 86400000 });
-      }
-      res.redirect("/");
+          if (req.body.check) {
+            res.cookie("user", req.session.user, { maxAge: 86400000 });
+          }
+
+          res.redirect("/");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     } else {
-      //Si no se cumple lo anterior, renderizamos de nuevo login, en la variable errors, guardamo errors mapeado, en old guardamos todo lo que vino por el body.
       res.render("login", {
         errors: errors.mapped(),
         old: req.body,
@@ -55,23 +54,25 @@ module.exports = {
   },
   addUser: (req, res) => {
     let errors = validationResult(req);
+
     if (errors.isEmpty()) {
-      //Si errores está vacio creamos la variable usuario, la cual guardará un objeto literal con diferentes keys/values
-      let usuario = {
-        id: users[users.length - 1].id + 1,
-        name: req.body.nombre,
-        password: bcrypt.hashSync(req.body.password),
-        email: req.body.email,
-        fecha_nac: req.body.fecha_nac,
-        image: "default-profile.png",
-        admin: false,
-      };
-
-      users.push(usuario);
-      guardar(users);
-
-      return res.render("index", {
-        title: "Home Experience",
+      db.Address.create().then((address) => {
+        db.User.create({
+          name: req.body.name,
+          email: req.body.email,
+          password: bcrypt.hashSync(req.body.password),
+          dateBirth: req.body.fecha_nac,
+          avatar: "default.png",
+          idRol: 3,
+          idGenre: 1,
+          idAddress: address.id,
+        })
+          .then(() => {
+            res.redirect("/usuarios/iniciar-sesion");
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       });
     } else {
       res.render("register", {
@@ -82,11 +83,36 @@ module.exports = {
     }
   },
   profile: (req, res) => {
-    let usuario = users.find((usuario) => usuario.id === +req.params.id);
-    return res.render("profile", {
-      title: "Perfil: " + usuario.name,
-      usuario,
+    let usuario = db.User.findByPk(req.params.id, {
+      include: [{ association: "genre" }],
     });
+
+    let genre = db.Genre.findAll();
+    /* let countries = fetch("https://restcountries.eu/rest/v2/all").then(
+      (response) => response.json()
+    );
+    return res.json(countries); */
+    Promise.all([usuario, genre])
+      .then(([usuario, genre]) => {
+        return res.render("profile", {
+          title: "Perfil: " + usuario.name,
+          usuario,
+          genre,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  },
+  deleteUser: (req, res) => {
+    db.User.update(
+      { active: +req.body.active },
+      { where: { id: +req.params.id } }
+    )
+      .then((result) => {
+        res.send(req.body);
+      })
+      .catch((err) => console.log(err));
   },
   updateProfile: (req, res) => {
     let index = 0;
@@ -115,22 +141,7 @@ module.exports = {
       guardar(users);
 
       let usuario = users[index];
-
-      /* if(req.body.nombre){
-
-        
-
-        req.session.user = {
-          id: usuario.id,
-          name: usuario.name,
-          admin: usuario.admin,
-        };
-        
-      }  */
-      /* return res.render("profile", {
-        title: "Perfil: " + usuario.name,
-        usuario,
-      }); */
+      
       res.render("index", { title: "Home experience" });
     } else {
       let usuario = users.find((usuario) => usuario.id === +req.params.id);
@@ -141,6 +152,46 @@ module.exports = {
         old: req.body,
       });
     }
+  },
+  address: (req, res) => {
+    db.User.findByPk(req.params.id)
+    .then((user) => {
+      return res.render("addressForm", {
+        title: "Direccion",
+        user
+      });
+    }).catch((err) => {
+      console.log(err);
+    });
+    
+  },
+  updateAddress: (req, res) => {
+    db.Address.findAll()
+    .then((address) => {
+      res.json(address)
+    }).catch((err) => {
+      
+    });
+    db.Address.update(
+      {
+        pais: req.body.pais,
+        localidad: req.body.localidad,
+        provincia: req.body.provincia,
+        calle: req.body.calle,
+        numero: req.body.numero,
+        codigoPostal: req.body.postal,
+        departamento: req.body.departamento,
+      },
+      { where: 
+        { 
+          id: req.params.id 
+        } 
+      }
+    ).then(() => {
+      res.redirect("/usuarios/direccion/"+req.params.id)
+    }).catch((err) => {
+      console.log(err);
+    });
   },
   list: (req, res) => {
     db.User.findAll({ include: [{ association: "rol" }] })

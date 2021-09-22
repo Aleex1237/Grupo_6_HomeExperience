@@ -11,7 +11,7 @@
    
     <main class="contenedor">
         <section>
-            <img src="/images/users/<%= usuario.image %> " alt="imgdefault" class="imgprofile">
+            <img src="/images/users/<%= usuario.avatar %> " alt="imgdefault" class="imgprofile">
         </section>
 
         <div class="contenedorInputs">
@@ -38,36 +38,30 @@
                         <% } %>
                     </div>
 
-                    <div class="form-floating mb-3">
-                        <label for="direccion">Dirección</label>
-                        <input type="text" class="form-control" id="floatingInput" name="direccion" value="<%= locals.old ? locals.old.direccion : usuario.direccion %>">
-                        <% if (locals.errors && errors.direccion) { %>
-                            <p  class="errores"><%= errors.direccion.msg %> </p>
-                        <% } %>
-                    </div>
-
+                <div class="boton-guardar">
+                    <a class="btn btn-primary btn-dark text-align-center" href="/usuarios/direccion/<%= usuario.id %> ">Editar datos de direccion</a>
+                </div>
                     <div class="form-floating mb-3">
                     <label for="genero">Género</label> <br>
                     <select class="form-select" aria-label="Default select example" name="genero">
                         
-                        <option  <%= usuario.genero=="pf" ? "selected" : "" %>  value="pf"> Prefiero no decirlo </option>
+                        <option  <%= usuario.genre.id === genre.id ? "selected" : "" %>  value=1> 
+                            Prefiero no decirlo 
+                        </option>
 
-                          <option <%= usuario.genero=="m" ? "selected" : "" %> value="m">
+                          <option <%= usuario.genre.id === genre.id ? "selected" : "" %> value=2>
                             Masculino
                           </option>
 
-                          <option <%= usuario.genero=="f" ? "selected" : "" %> value="f">
+                          <option <%= usuario.genre.id === genre.id ? "selected" : "" %> value=3>
                             Femenino
                           </option>
 
-                          <option <%= usuario.genero=="x" ? "selected" : "" %> value="x">
+                          <option <%= usuario.genre.id === genre.id ? "selected" : "" %> value=4>
                             No binario
                           </option>
-
-                          
                          
                       </select>
-
                       </div>
                     
 
@@ -87,7 +81,7 @@
 
                     <div class="form-floating">
                         <label for="fecha_nac">Fecha de nacimiento</label>
-                        <input type="date" class="form-control" id="floatingInput" name="fecha_nac" value="<%= usuario.fecha_nac %>" disabled>
+                        <input type="date" class="form-control" id="floatingInput" name="fecha_nac" value="<%= usuario.dateBirth %>" disabled>
                     </div>
 
                     <div class="form-floating mb-3">

@@ -66,6 +66,13 @@ module.exports = (sequelize, dataTypes) => {
                     foreignKey: 'idExperience'
                 })
             }}
+            Experience.belongsToMany(models.Cart, {
+                as: "cart",
+                through: "cart_detail",
+                foreignKey: "idExperience",
+                otherKey: "idCart",
+                timestamps: false,
+              });
     }
 
     return Experience
