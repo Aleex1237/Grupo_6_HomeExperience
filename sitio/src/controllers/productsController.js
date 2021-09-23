@@ -3,38 +3,73 @@ let productos = leer();
 const { validationResult } = require("express-validator");
 
 module.exports = {
-  bar: (req, res) => {
-    return res.render("bar", {
-      title: "Experiencia Bar",
-      productos,
-      productosBar: productos.filter((producto) => producto.category === "bar"),
-    });
-  },
+  bar: (req, res) => {  
+    db.Experience.findAll({
+      where: {
+        idCategory: 1
+      },
+      include: [
+        {
+          association: 'images'
+        }
+      ]
+   
+    }).then(experiencias=> res.render("bar",{
+      title: "Experiencia bar",
+      experiencias, 
+     })).catch(error =>console.log(error))
 
-  cine: (req, res) => {
-    return res.render("cine", {
-      title: "Experiencia Cine",
-      productos,
-      productosCine: productos.filter(
-        (producto) => producto.category === "cine"
-      ),
-    });
-  },
+},
 
-  admin: (req, res) => {
-    return res.render("adminView", {
-      title: "Administrador",
-      productos,
-    });
-  },
+cine: (req, res) => {
+    
+  db.Experience.findAll({
+   where: {
+     idCategory: 2
+   },
+   include: [
+     {
+       association: 'images'
+     }
+   ]
+ }).then(experiencias => res.render('cine',{
+   title: 'Expriencia cine',
+   experiencias
+ }))
+},
 
-  detail: (req, res) => {
-    let producto = productos.find((producto) => producto.id === +req.params.id);
-    return res.render("productDetail", {
-      title: "Detalle de Experiencia: " + producto.name,
-      producto,
-    });
-  },
+admin: (req, res) => {
+  db.Experience.findAll({
+    include: [
+      {
+        association: 'images'
+      }
+    ]
+  })
+ .then(productos => res.render('adminView',{
+   title: 'Lista de productos',
+   productos
+ })).catch(error => console.log(error))
+
+},
+
+detail: (req, res) => {
+  
+  db.Experience.findOne({
+    where : {
+      id : req.params.id
+      }  ,
+      include: [
+        {association:'images'}
+      ]     
+  }).then(experience =>{
+    res.render('productDetail',{
+    title: 'hola',
+    experience,
+    })}).catch(error => console.log(error))
+  
+},
+
 
   cart: (req, res) => {
     return res.render("productCart", {
