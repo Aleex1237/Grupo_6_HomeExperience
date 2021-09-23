@@ -168,7 +168,7 @@ module.exports = {
           })
         }
         //guardo experiencia
-        let experiencia = await db.Experience.update(
+        experiencia = await db.Experience.update(
         {
           name: req.body.nombre,
           description: req.body.descripcion,
