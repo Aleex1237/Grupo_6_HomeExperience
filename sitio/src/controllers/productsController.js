@@ -157,17 +157,33 @@ detail: (req, res) => {
     }
   },
 
-  load: (req, res) => {
-    let producto = productos.find((producto) => producto.id === +req.params.id);
-    let keywords = "";
-    for (let i = 0; i < producto.keywords.length; i++) {
-      keywords = keywords + producto.keywords[i] + " ";
+  load: async (req, res) => {
+    try{
+      //busco la experiencia por id
+      let experiencia = await db.Experience.findOne({
+        where : {
+          id : req.params.id
+          }  ,
+          include: [
+            {association:'images'},
+            {association:'products'},
+            {association:'keywords'}
+          ]     
+      });
+      let keywords = "";
+      for (let i = 0; i < experiencia.keywords.length; i++) {
+        keywords = keywords + experiencia.keywords[i] + " ";
+      }
+      return res.render("productUpdate", {
+        title: "Modificar: " + experiencia.name,
+        producto: experiencia,
+        keywords,
+      });
+
+    }catch(err){
+      console.log(err)
     }
-    return res.render("productUpdate", {
-      title: "Modificar: " + producto.name,
-      producto,
-      keywords,
-    });
+    
   },
 
   update: async (req, res) => {
