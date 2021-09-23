@@ -23,18 +23,22 @@
             </div>
         </div>
 
-        <section>
-            <% productosBar .forEach(producto=> { %>
+        <section>            
+            <% experiencias.forEach(experiencia=> { %>
                 <article class="product">
                     <div>
-                        <a href="/productos/detalle/<%=producto.id%>"><img
-                            src="/images/products/<%= producto.image%>" alt=""></a>
+                        <a href="/productos/detalle/<%=experiencia.id%>">
+                            <% experiencia.images.forEach((image,index) => { %>
+                            <img
+                            src="/images/products/<%=image.name%>" alt=""></a>
+                            <% }) %>
+                            
                     </div>
                     <div class="product-info">
-                        <h3><%= producto.name %> </h3>
+                        <h3><%= experiencia.name %> </h3>
                             <div class="product-details">
                                 <span class="product-price">$<%=
-                                        producto.price %>
+                                        experiencia.price %>
                                     </span>
                                     <form action="#"
                                         method="POST">

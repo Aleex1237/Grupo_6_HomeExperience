@@ -5,13 +5,15 @@
     <%- include("./partials/header")%>
     <main>
     <div class="contenedor1">
-        <div class="caja1">
-            <img class="imagen" src="/images/products/<%= producto.image%>">
-        </div>
+        <div class="caja1"> 
+            <% experience.images.forEach((image,index) => { %>
+         <img class="imagen" src="/images/products/<%= image.name%>">
+                         <% }) %>
+ </div>
         <div class="caja2">
-            <h1>BIG BOX - <%= producto.name%></h1>
-            <P class="precio">$<%= producto.price.toFixed(2)%></P>
-            <P class="cuotas">o 6 cuotas de $<%= (producto.price/6).toFixed(2)%></P>
+            <h1>BIG BOX - <%= experience.name%></h1>
+            <P class="precio">$<%= experience.price.toFixed(2)%></P>
+            <P class="cuotas">o 6 cuotas de $<%= (experience.price/6).toFixed(2)%></P>
             <button>AGREGAR AL CARRITO</button>
         </div>
     </div>
@@ -22,7 +24,7 @@
             </div>
             <article class="experiencia">
                 <p>
-                    <%= producto.description%>
+                    <%= experience.description%>
                     </p>
             </article>
             <article class="contenido">

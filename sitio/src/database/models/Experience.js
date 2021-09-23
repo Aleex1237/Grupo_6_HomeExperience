@@ -39,10 +39,10 @@ module.exports = (sequelize, dataTypes) => {
     const Experience= sequelize.define(alias,cols,config)
 
     Experience.associate= models => {
-        /* Experience.belongsTo(models.Category,{
+         Experience.belongsTo(models.Category,{
             as: 'category',
             foreignKey: 'idCategory'
-        }), */
+        }), 
 
         Experience.associate= models => {
             Experience.belongsToMany(models.Keyword,{
