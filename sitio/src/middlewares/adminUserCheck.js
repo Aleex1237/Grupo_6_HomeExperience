@@ -1,5 +1,5 @@
 module.exports = (req, res, next) => {
-  if (res.locals.user && res.locals.user.admin === true) {  
+  if (res.locals.user && res.locals.user.admin === 2) { 
     //si en locals existe userLogin y en userLogin.admin es true entonces prosigue al siguiente middleware o el controlador
     next();
   } else {
