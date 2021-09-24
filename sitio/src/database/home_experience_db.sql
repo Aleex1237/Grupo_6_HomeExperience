@@ -26,15 +26,15 @@ DROP TABLE IF EXISTS `addresses`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `addresses` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `pais` varchar(100) NOT NULL,
-  `localidad` varchar(100) NOT NULL,
-  `provincia` varchar(100) NOT NULL,
-  `calle` varchar(100) NOT NULL,
-  `numero` int NOT NULL,
-  `codigoPostal` int NOT NULL,
+  `pais` varchar(100) DEFAULT NULL,
+  `localidad` varchar(100) DEFAULT NULL,
+  `provincia` varchar(100) DEFAULT NULL,
+  `calle` varchar(100) DEFAULT NULL,
+  `numero` int DEFAULT NULL,
+  `codigoPostal` int DEFAULT NULL,
   `departamento` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -123,7 +123,7 @@ CREATE TABLE `genres` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -204,7 +204,7 @@ CREATE TABLE `rols` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -239,6 +239,7 @@ CREATE TABLE `users` (
   `idGenre` int DEFAULT NULL,
   `idRol` int NOT NULL,
   `idAddress` int DEFAULT NULL,
+  `active` tinyint NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   KEY `id_genre_idx` (`idGenre`),
   KEY `id_rol_idx` (`idRol`),
@@ -246,12 +247,8 @@ CREATE TABLE `users` (
   CONSTRAINT `idAdress` FOREIGN KEY (`idAddress`) REFERENCES `addresses` (`id`),
   CONSTRAINT `idGenre` FOREIGN KEY (`idGenre`) REFERENCES `genres` (`id`),
   CONSTRAINT `idRol` FOREIGN KEY (`idRol`) REFERENCES `rols` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping events for database 'home_experience'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -262,4 +259,4 @@ CREATE TABLE `users` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-17 20:18:18
+-- Dump completed on 2021-09-24  0:16:18
