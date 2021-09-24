@@ -1,5 +1,3 @@
-const { leer, guardar, obtenerProximoId, eliminarImagen } = require("../data/products_db");
-let productos = leer();
 const { validationResult } = require("express-validator");
 const db = require("../database/models");
 
@@ -7,7 +5,8 @@ module.exports = {
   bar: (req, res) => {  
     db.Experience.findAll({
       where: {
-        idCategory: 1
+        idCategory: 1,
+        active: 1
       },
       include: [
         {
@@ -26,7 +25,8 @@ cine: (req, res) => {
     
   db.Experience.findAll({
    where: {
-     idCategory: 2
+     idCategory: 2,
+     active: 1
    },
    include: [
      {
@@ -58,7 +58,8 @@ detail: (req, res) => {
   
   db.Experience.findOne({
     where : {
-      id : req.params.id
+      id : req.params.id,
+      active: 1
       }  ,
       include: [
         {association:'images'}
@@ -85,9 +86,9 @@ detail: (req, res) => {
     });
   },
 
-  save: (req, res) => {
+  save: async (req, res) => {
     let errors = validationResult(req);
-    let lista = [req.body.product1, req.body.product2];
+    let lista = [req.body.product1, req.body.product2];//lista de productos
     if(req.body.product3){
       lista.push(req.body.product3);
       if(req.body.product4){
@@ -96,23 +97,56 @@ detail: (req, res) => {
     }
 
     if (errors.isEmpty()) {
-      //Si errores está vacio crearemos la variable producto la cual contendrá un objeto literal, con las propiedades de un producto
-      let producto = {
-        id: obtenerProximoId(),
-        name: req.body.nombre,
-        description: req.body.descripcion,
-        image: req.file.filename,
-        price: Number(req.body.precio),
-        category: req.body.categoria,
-        productList: lista,
-        keywords: req.body.keywords.trim().split(" "),
-      };
+      try{
+        //guardo experiencia
+        let experiencia = await db.Experience.create({
+          name: req.body.nombre,
+          description: req.body.descripcion,
+          image: req.file.filename,
+          price: Number(req.body.precio),
+          idCategory: req.body.categoria,
+          active:1
+        });
+        //guardo la imagen
+        await db.Image.create({
+          name: req.file,
+          idExperience: experiencia.id
+        })
+        //guardo cada producto
+        let productos = [];
+          for(let i=0;i<lista.length;i++){
+            let producto = {
+                name:lista[i],
+                idExperience: experiencia.id
+            }
+            productos.push(producto);
+          }
+          await db.Product.bulkCreate(productos);
+          //guardo la relacion entre la experiencia y cada keyword
+          let keywords = req.body.keywords.trim().split(" ");
+            for(let i=0;i<keywords.length;i++){
+              let keyword = await db.Keyword.findOne({
+                where:{
+                  name: keywords[i]
+                }
+              });
+              //si la keyword no existe, la creo
+              if(!keyword){
+                await db.Keyword.create({
+                  name:keywords[i]
+                });
+              }
+              //guardo relacion entre keyword y experiencia
+              await db.KeywordExperience.create({
+                  idKeywords: keyword.id,
+                  idExperience: experiencia.id
+                });
+            }
+            res.redirect("/productos/admin");
 
-      productos.push(producto);
-
-      guardar(productos);
-
-      res.redirect("/productos/admin");
+      }catch(error){
+        console.log(error);
+      } 
 
     } else {
       //Si no se cumple  renderizará productLoad y guardará los errores en la variable errors y lo mapearan, old guardará lo que venga por el body.
@@ -125,20 +159,37 @@ detail: (req, res) => {
     }
   },
 
-  load: (req, res) => {
-    let producto = productos.find((producto) => producto.id === +req.params.id);
-    let keywords = "";
-    for (let i = 0; i < producto.keywords.length; i++) {
-      keywords = keywords + producto.keywords[i] + " ";
+  load: async (req, res) => {
+    try{
+      //busco la experiencia por id
+      let experiencia = await db.Experience.findOne({
+        where : {
+          id : req.params.id,
+          active: 1
+          }  ,
+          include: [
+            {association:'images'},
+            {association:'products'},
+            {association:'keywords'}
+          ]     
+      });
+      let keywords = "";
+      for (let i = 0; i < experiencia.keywords.length; i++) {
+        keywords = keywords + experiencia.keywords[i] + " ";
+      }
+      return res.render("productUpdate", {
+        title: "Modificar: " + experiencia.name,
+        producto: experiencia,
+        keywords,
+      });
+
+    }catch(err){
+      console.log(err)
     }
-    return res.render("productUpdate", {
-      title: "Modificar: " + producto.name,
-      producto,
-      keywords,
-    });
+    
   },
 
-  update: (req, res) => {
+  update: async (req, res) => {
     let index = 0;
     let errors = validationResult(req);
     let lista = [req.body.product1, req.body.product2];
@@ -149,33 +200,109 @@ detail: (req, res) => {
       }
     }
     if(errors.isEmpty()){
-      for (let i = 0; i < productos.length; i++) {
-        if (productos[i].id === +req.params.id) {
-          if(req.file){
-            eliminarImagen(productos[i].image)
-          };
-          productos[i].name = req.body.nombre;
-          productos[i].description = req.body.descripcion;
-          productos[i].price = Number(req.body.precio);
-          productos[i].category = req.body.categoria;
-          productos[i].image = req.file ? req.file.filename : productos[i].image;
-          productos[i].productList =lista,
-          productos[i].keywords = req.body.keywords.trim().split(" ");
-  
-          index = i;
+      try{
+        //busco la experiencia en uso
+        let experiencia = await db.Experience.findOne({
+          where:{
+            id: +req.params.id
+          },
+          include:[
+            {assocition:images}
+          ]
+        });
+        //si vino una nueva imagen,elimino la anterior
+        if(req.file){
+          eliminarImagen(experiencia.images[0]);
+          //elimino anteriores referencias de imagen de
+          //esta experiencia
+          await db.Image.destroy({
+            where:{
+              idExperience: +req.params.id
+            }
+          })
         }
+        //guardo experiencia
+        experiencia = await db.Experience.update(
+        {
+          name: req.body.nombre,
+          description: req.body.descripcion,
+          image: req.file.filename,
+          price: Number(req.body.precio),
+          idCategory: req.body.categoria
+        },
+        {
+          where:
+          {
+            id: +req.params.id
+          }
+        });
+        //guardo nueva imagen
+        await db.Image.create({
+          name: req.file,
+          idExperience: experiencia.id
+        })
+        //elimino anteriores referencias de productos de
+        //esta experiencia
+        await db.Product.destroy({
+          where:{
+            idExperience: +req.params.id
+          }
+        })
+        //guardo cada producto
+        let productos = [];
+          for(let i=0;i<lista.length;i++){
+            let producto = {
+                name:lista[i],
+                idExperience: experiencia.id
+            }
+            productos.push(producto);
+          }
+          await db.Product.bulkCreate(productos);
+          //elimino relaciones keyword-experiencia anteriores
+          await db.KeywordExperience.destroy({
+            where:{
+              idExperience: +req.params.id
+            }
+          })
+          //guardo la relacion entre la experiencia y cada keyword
+          let keywords = req.body.keywords.trim().split(" ");
+            for(let i=0;i<keywords.length;i++){
+              let keyword = await db.Keyword.findOne({
+                where:{
+                  name: keywords[i]
+                }
+              });
+              //si la keyword no existe, la creo
+              if(!keyword){
+                await db.Keyword.create({
+                  name:keywords[i]
+                });
+              }
+              //guardo relacion entre keyword y experiencia
+              await db.KeywordExperience.create({
+                  idKeywords: keyword.id,
+                  idExperience: experience.id
+                });
+            }
+            res.redirect("/productos/admin");
+
+      }catch(err){
+        console.log(error);
       }
-      guardar(productos);
-      let producto = productos[index];
-      return res.render("productDetail", {
-        title: "Detalle de Experiencia: " + producto.name,
-        producto,
-      });
+
     }else{
-      let producto = productos.find((producto) => producto.id === +req.params.id);
+      //busco la experiencia en uso
+      let experiencia = await db.Experience.findOne({
+        where:{
+          id: +req.params.id
+        },
+        include:[
+          {assocition:images}
+        ]
+      });
       return res.render("productUpdate", {
-        title: "Modificar: " + producto.name,
-        producto,
+        title: "Modificar: " + experiencia.name,
+        producto: experiencia,
         keywords: req.body.keywords,
         errors: errors.mapped(),
         old: req.body
@@ -184,22 +311,51 @@ detail: (req, res) => {
     
   },
 
-  destroy: (req, res) => {
-  let id = req.params.id;
-  //creamos un loop en el que nuestra variable iteradora es igual a 0 y mientras el iterador sea menor a la longitud del array se le sumara 1.
-  for (let i = 0; i < productos.length; i++) {
-    if (productos[i].id == id) {
-      //en products en la posicion i entramos al id (products=>product.id) y si matchea con el id pasado por parametro en la url se ejecutará el splice
-      eliminarImagen(productos[i].image);
-      productos.splice(i, 1);
-      //al utilizar el metodo splice sobre products indicamos que queremos que "corte" desde donde i está parado y cuantos elementos del array queremos que elimine, en este caso queremos que solo "corte" uno
-    }
+  destroy: async (req, res) => {
+  try{
+    //modifico la experiencia en uso
+    await db.Experience.update(
+      {
+        active:0
+      },
+      {
+        where:{
+          id: +req.params.id
+        }
+      }
+    );
+/*     //elimino la imagen
+    eliminarImagen(experiencia.images[0]);
+    //elimino los productos asociados
+    await db.Product.destroy({
+      where:{
+        idExperience: +req.params.id
+      }
+    })
+    //elimino las asaociaciones con keywords
+    await db.KeywordExperience.destroy({
+      where:{
+        idExperience: +req.params.id
+      }
+    })
+    //elimino las images asociadas
+    await db.Image.destroy({
+      where:{
+        idExperience: +req.params.id
+      }
+    })
+    //elimino la experiencia
+    await db.Experience.destroy({
+      where:{
+        id: +req.params.id
+      }
+    }) */
+    //Al terminar la ejecución que creá el producto se redicrecciona al usuarío hacia el home.
+    res.redirect("/admin/productos");
+  }catch(err){
+    console.log(err)
   }
-  //En la función guardar se ejecuta  el modulo fs con su metodo writeFileSync y JSON.stringify lo que guardará la variable y la stringificara para que pueda ser una lectura mas eficiente hacía otros lenguajes
-  guardar(productos);
-
-  //Al terminar la ejecución que creá el producto se redicrecciona al usuarío hacia el home.
-  res.redirect("/admin/productos");
+  
   },
 
 };
