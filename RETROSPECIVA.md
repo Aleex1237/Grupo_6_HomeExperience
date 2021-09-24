@@ -90,6 +90,24 @@ En este sprint no hemos podido acordar que dejar de hacer o hacer menos, ya que 
 
 - Reuniones cada dos días: encontramos que teniendo reuniones periódicas y siendo claros en los conceptos, evitamos reuniones demasiado extensas.
 
+## Retrospectiva sexto sprint:
+
+### Seguir haciendo : 
+- División clara de tareas: creemos importante dividir claramente las tareas para que cada integrante pueda trabajar a su tiempo y sin estorbar al otro.
+- Revisión grupal antes de la entrega: una exhaustiva revisión de todas las funcionalidades del proyecto nos deja tranquilos a la hora de entregarlo a revisión.
+- Hoja de ruta para reunión/planificación: sostenemos que llevar una planificación nos permite ganar tiempo a la hora de trabajar.
+- Reunirnos rápidamente al salir el sprint: nos parece valioso para dividir las tareas y empezar a trabajar lo más pronto posible.
+- Poner límites horarios y días para mandar mensajes: lo vemos importante para que todos los miembros del proyecto puedan descansar de manera equitativa.
+. Comentar el código antes de terminar el sprint para que quede una guía para el futuro: vemos muy conveniente comentar el código para que los demás integrantes del grupo entienda la lógica de lo que trabajó su par
+
+### Hacer mas:
+- Anotar duración y temas hablados en las reuniones: debemos llevar un registro más claro sobre lo que se debate en las reuniones para luego hacer un balance.
+
+### Dejar de hacer:
+- Reuniones extracurriculares: hemos encontrado una dinámica en la cuál no nos hace falta juntarnos fuera de las reuniones pactadas.
+
+
+
 
 
 
