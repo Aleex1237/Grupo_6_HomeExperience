@@ -5,7 +5,7 @@
   <%- include("./partials/header")%>
     <main>
         <h1>Nueva experiencia</h1>
-        <form action="admin/producto/agregar" method="POST" enctype="multipart/form-data" novalidate>
+        <form action="/admin/producto/agregar" method="POST" enctype="multipart/form-data" novalidate>
           <div class="nombre">
             <input class="nombre" type="text" name="nombre" id="nombre" placeholder="Nombre" value="<%= locals.old && old.nombre ? old.nombre : null%>">
             <% if (locals.errors && errors.nombre) { %>
@@ -28,8 +28,8 @@
             
                       <select name="categoria">
                         <option hidden selected value="">Categoría</option>
-                        <option value="bar" name='categoria' <%= locals.old && old.categoria === 'bar' ? 'selected' : ''%>>Bar</option>
-                        <option value="cine" name='categoria' <%= locals.old && old.categoria === 'cine' ? 'selected' : ''%>>Cine</option>
+                        <option value=1 name='categoria' <%= locals.old && old.categoria === 1 ? 'selected' : ''%>>Bar</option>
+                        <option value=2 name='categoria' <%= locals.old && old.categoria === 2 ? 'selected' : ''%>>Cine</option>
                       </select>
                       <% if (locals.errors && errors.categoria) { %>
                         <p class="text-danger"><%= errors.categoria.msg %> </p>

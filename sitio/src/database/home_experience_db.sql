@@ -34,7 +34,7 @@ CREATE TABLE `addresses` (
   `codigoPostal` int DEFAULT NULL,
   `departamento` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -89,7 +89,7 @@ CREATE TABLE `categories` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -109,7 +109,7 @@ CREATE TABLE `experiences` (
   PRIMARY KEY (`id`),
   KEY `idCategory_idx` (`idCategory`),
   CONSTRAINT `idCategory` FOREIGN KEY (`idCategory`) REFERENCES `categories` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -140,7 +140,7 @@ CREATE TABLE `images` (
   PRIMARY KEY (`id`),
   KEY `id_experience_images_idx` (`idExperience`),
   CONSTRAINT `idExperienceImages` FOREIGN KEY (`idExperience`) REFERENCES `experiences` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -152,9 +152,9 @@ DROP TABLE IF EXISTS `keywords`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `keywords` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` int DEFAULT NULL,
+  `name` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -173,7 +173,7 @@ CREATE TABLE `keywords_experience` (
   KEY `idKeyWord_idx` (`idKeywords`),
   CONSTRAINT `idExperienceKeyWord` FOREIGN KEY (`idExperience`) REFERENCES `experiences` (`id`),
   CONSTRAINT `idKeyWord` FOREIGN KEY (`idKeywords`) REFERENCES `keywords` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -190,7 +190,7 @@ CREATE TABLE `products` (
   PRIMARY KEY (`id`),
   KEY `idExperience_idx` (`idExperience`),
   CONSTRAINT `idExperience` FOREIGN KEY (`idExperience`) REFERENCES `experiences` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -247,7 +247,7 @@ CREATE TABLE `users` (
   CONSTRAINT `idAdress` FOREIGN KEY (`idAddress`) REFERENCES `addresses` (`id`),
   CONSTRAINT `idGenre` FOREIGN KEY (`idGenre`) REFERENCES `genres` (`id`),
   CONSTRAINT `idRol` FOREIGN KEY (`idRol`) REFERENCES `rols` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -259,4 +259,4 @@ CREATE TABLE `users` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-24  0:16:18
+-- Dump completed on 2021-09-24 13:06:37
