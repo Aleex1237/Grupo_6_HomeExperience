@@ -26,7 +26,7 @@
             <ul id="navuser" class="navbar-nav mr-auto">
                 
                 <% if (locals.user) { %>
-                    <% if (locals.user.admin === true) { %>
+                    <% if (locals.user.idRol == 1 || locals.user.idRol == 2) { %>
                         <li class="addProduct">
                             <span> <a class="nav-link" href="/admin/productos">ADMIN</a> </span>
                         </li>

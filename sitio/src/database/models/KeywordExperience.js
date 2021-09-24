@@ -22,7 +22,7 @@ module.exports= (sequelize, dataTypes) => {
 
     let config= {
         tableName: 'keywords_experience',
-        defaultValue: null
+        timestamps: false
     }
 
     const KeywordExperience= sequelize.define(alias,cols,config)

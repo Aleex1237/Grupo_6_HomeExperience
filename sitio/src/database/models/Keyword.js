@@ -10,13 +10,13 @@ module.exports= (sequelize, dataTypes) => {
             primaryKey: true
         },
         name:{
-            type: dataTypes.INTEGER.UNSIGNED,
+            type: dataTypes.STRING(100),
         }
     }
 
     let config= {
         tableName: 'keywords',
-        defaultValue: null
+        timestamps: false
     }
 
     const Keyword= sequelize.define(alias,cols,config)

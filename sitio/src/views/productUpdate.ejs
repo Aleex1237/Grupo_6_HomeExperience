@@ -25,8 +25,8 @@
                         <p class="text-danger"><%= errors.precio.msg %> </p>
                       <% } %>
                       <select name="categoria">
-                        <option value="bar" <%=producto.category==="bar"?"selected":null%>>Bar</option>
-                        <option value="cine" <%=producto.category==="cine"?"selected":null%>>Cine</option>
+                        <option value=1 <%=producto.idCategory===1?"selected":null%>>Bar</option>
+                        <option value=2 <%=producto.idCategory===2?"selected":null%>>Cine</option>
                       </select>
                       <% if (locals.errors && errors.categoria) { %>
                         <p class="text-danger"><%= errors.categoria.msg %> </p>
@@ -47,19 +47,19 @@
               <div class="caja2">
                     <h3>Productos incluidos en la experiencia:</h3>
                     <br>
-                    <input class="precio" type="text" name="product1" id="keywords" placeholder="Agregar producto" value="<%=locals.old  ? old.product1 : producto.productList[0]%>" required>
+                    <input class="precio" type="text" name="product1" id="keywords" placeholder="Agregar producto" value="<%=locals.old  ? old.product1 : (producto.products[0] ? producto.products[0].name : "")%>" required>
                     <% if (locals.errors && errors.product1) { %>
                       <p class="text-danger"><%= errors.product1.msg %> </p>
                     <% } %>
-                    <input class="precio" type="text" name="product2" id="keywords" placeholder="Agregar producto"  value="<%=locals.old  ? old.product2 : producto.productList[1]%>" >
+                    <input class="precio" type="text" name="product2" id="keywords" placeholder="Agregar producto"  value="<%=locals.old  ? old.product2 : (producto.products[1] ? producto.products[1].name : "")%>" >
                     <% if (locals.errors && errors.product2) { %>
                       <p class="text-danger"><%= errors.product2.msg %> </p>
                     <% } %>
-                    <input class="precio" type="text" name="product3" id="keywords" placeholder="Agregar producto"  value="<%=locals.old  ? old.product3 : producto.productList[2]%>" >
+                    <input class="precio" type="text" name="product3" id="keywords" placeholder="Agregar producto"  value="<%=locals.old  ? old.product3 : (producto.products[2] ? producto.products[2].name : "")%>" >
                     <% if (locals.errors && errors.product3) { %>
                       <p class="text-danger"><%= errors.product3.msg %> </p>
                     <% } %>
-                    <input class="precio" type="text" name="product4" id="keywords" placeholder="Agregar producto"  value="<%=locals.old  ? old.product4 : producto.productList[3]%>"  >  
+                    <input class="precio" type="text" name="product4" id="keywords" placeholder="Agregar producto"  value="<%=locals.old  ? old.product4 : (producto.products[3] ? producto.products[3].name : "")%>"  >  
                     <% if (locals.errors && errors.product4) { %>
                       <p class="text-danger"><%= errors.product4.msg %> </p>
                     <% } %>
