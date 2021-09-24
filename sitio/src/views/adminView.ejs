@@ -18,10 +18,12 @@
                     <% productos.forEach(product => { %>
                         <article>
                             <div class="container">
-                                <img src="/images/products/<%= product.image%>" alt="">
+                                <% product.images.forEach((image,index) => { %>
+                                <img src="/images/products/<%= image.name%>" alt="">
+                                <% }) %>
                                 <ul>
                                     <li><%= product.name %> </li>
-                                    <li class="product-category">Categoria : <%= product.category %> </li>
+                                    <li class="product-category">Categoria : <%= product.category%> </li>
                                     <li>ID del producto : <%= product.id %> </li>
                                     <li>$<%= product.price %> </li>
                                 </ul>
