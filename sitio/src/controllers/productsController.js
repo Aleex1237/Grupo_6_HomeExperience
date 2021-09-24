@@ -1,5 +1,3 @@
-//const { leer, guardar, obtenerProximoId, eliminarImagen } = require("../data/products_db");
-//let productos = leer();
 const { validationResult } = require("express-validator");
 let db = require("../database/models");
 
@@ -297,7 +295,6 @@ detail: (req, res) => {
           {assocition:images}
         ]
       });
-      let producto = productos.find((producto) => producto.id === +req.params.id);
       return res.render("productUpdate", {
         title: "Modificar: " + experiencia.name,
         producto: experiencia,
