@@ -25,11 +25,9 @@ module.exports = (sequelize, dataTypes) => {
     },
     avatar: {
       type: dataTypes.STRING(255),
-      allowNull: true,
     },
     idGenre: {
       type: dataTypes.INTEGER,
-      allowNull: false,
     },
     idRol: {
       type: dataTypes.INTEGER,
@@ -37,8 +35,12 @@ module.exports = (sequelize, dataTypes) => {
     },
     idAddress: {
       type: dataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
+    active:{
+      type:dataTypes.TINYINT,
+      allowNull:true
+    }
   };
 
   const config = {
@@ -63,10 +65,10 @@ module.exports = (sequelize, dataTypes) => {
       as: "address",
       foreignKey: "idAddress",
     });
-    /* User.hasMany(models.Cart,{
+     User.hasMany(models.Cart,{
       as:"cart",
       foreignKey:"idUser"
-    }) */
+    }) 
   };
 
   return User;
