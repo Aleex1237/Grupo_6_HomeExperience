@@ -14,7 +14,6 @@ const {
   profile,
   logOut,
 } = require("../controllers/usersController");
-const crud = require("../controllers/userCRUD");
 
 //requiriendo middlewares
 const loginValidator = require("../validations/loginValidator");
@@ -27,26 +26,25 @@ const editPerfil = require("../middlewares/editPerfil");
 
 /* GET users listing. */
 router.get("/iniciar-sesion", userLogedCheck, login);
-/* router.post("/iniciar-sesion", loginValidator, logUser) */
+
 router.post("/iniciar-sesion", loginValidator, logUser);
 
 router.get("/registro", userLogedCheck, register);
-/* router.post("/registro",registerValidator, addUser); */
+
 router.post("/registro", registerValidator, addUser);
 
 router.get("/cerrar-sesion", logOut);
 
-router.get("/perfil/:id", noUserLoged,editPerfil ,profile);
+router.get("/perfil/:id", noUserLoged, editPerfil, profile);
 router.put(
   "/perfil/modificar/:id",
   update.single("imagenPerfil"),
   updateProfileValidator,
   updateProfile
 );
-router.put("/eliminar/:id", deleteUser);
+router.put("/eliminar", deleteUser);
 
-
-router.get("/direccion/:id", address)
+router.get("/direccion/:id", address);
 
 router.put("/direccion/:id", updateAddress);
 

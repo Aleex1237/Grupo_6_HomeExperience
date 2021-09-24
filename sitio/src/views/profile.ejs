@@ -37,6 +37,7 @@
                             <p  class="errores"><%= errors.nombre.pais %> </p>
                         <% } %>
                     </div>
+                    
 
                 <div class="boton-guardar">
                     <a class="btn btn-primary btn-dark text-align-center" href="/usuarios/direccion/<%= usuario.id %> ">Editar datos de direccion</a>
@@ -93,6 +94,12 @@
                         <button type="submit" class="btn btn-primary btn-dark">GUARDAR CAMBIOS</button>
                     </div>
         </div>
+        </form>
+
+        <form action="/usuarios/eliminar?_method=PUT" method="post">
+            <div class="form-floating mb-3 text-align-center d-flex justify-content-center" >
+                <button type="submit" class="btn  btn-danger">Eliminar Cuenta</button>
+            </div>
         </form>
 
 

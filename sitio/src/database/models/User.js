@@ -37,6 +37,10 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.INTEGER,
       allowNull: true,
     },
+    active:{
+      type:dataTypes.TINYINT,
+      allowNull:true
+    }
   };
 
   const config = {
