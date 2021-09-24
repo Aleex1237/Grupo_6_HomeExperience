@@ -2,6 +2,7 @@ const { leer, guardar, obtenerProximoId, eliminarImagen } = require("../data/pro
 let productos = leer();
 const db = require("../database/models");
 const { validationResult } = require("express-validator");
+const db = require("../database/models");
 
 module.exports = {
   bar: (req, res) => {  
