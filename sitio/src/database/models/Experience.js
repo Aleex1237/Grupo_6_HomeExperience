@@ -33,18 +33,18 @@ module.exports = (sequelize, dataTypes) => {
 
     let config= {
         tableName: 'experiences',
-        timeStamps: false
+        timestamps: false
     }
 
     const Experience= sequelize.define(alias,cols,config)
 
-    Experience.associate= models => {
-         Experience.belongsTo(models.Category,{
-            as: 'category',
-            foreignKey: 'idCategory'
-        }), 
-
         Experience.associate= models => {
+
+            Experience.belongsTo(models.Category,{
+                as: 'category',
+                foreignKey : 'idCategory'
+            })
+
             Experience.belongsToMany(models.Keyword,{
                 as : 'keywords',
                 through : 'KeywordExperience',
@@ -52,28 +52,17 @@ module.exports = (sequelize, dataTypes) => {
                 otherKey : 'idKeywords'
             }),
 
-            Experience.associate= models => {
                 Experience.hasMany(models.Image,{
                     as: 'images',
                     foreignKey: 'idExperience'
                 })
-    
-
-            },
-            Experience.associate= models => {
+         
                 Experience.hasMany(models.Product,{
                     as: 'products',
                     foreignKey: 'idExperience'
                 })
-            }}
-            Experience.belongsToMany(models.Cart, {
-                as: "cart",
-                through: "cart_detail",
-                foreignKey: "idExperience",
-                otherKey: "idCart",
-                timestamps: false,
-              });
+            }
+                return Experience
     }
 
-    return Experience
-}
+    

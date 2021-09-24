@@ -6,35 +6,34 @@ module.exports = (sequelize, dataTypes) => {
       primaryKey: true,
       autoIncrement: true,
       type: dataTypes.INTEGER,
-      allowNull:false
     },
     pais: {
       type: dataTypes.STRING(100),
-      allowNull:true
+      allowNull: false,
     },
     localidad: {
       type: dataTypes.STRING(100),
-      allowNull:true
+      allowNull: false,
     },
     provincia: {
       type: dataTypes.STRING(100),
-      allowNull:true
+      allowNull: false,
     },
     calle: {
       type: dataTypes.STRING(100),
-      allowNull:true
+      allowNull: false,
     },
     numero: {
       type: dataTypes.INTEGER,
-      allowNull:true
+      allowNull: false,
     },
     codigoPostal: {
       type: dataTypes.INTEGER,
-      allowNull:true
+      allowNull: false,
     },
     departamento: {
       type: dataTypes.STRING(100),
-      allowNull:true
+      allowNull: true,
     },
   };
 

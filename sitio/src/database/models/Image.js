@@ -21,14 +21,14 @@ module.exports= (sequelize, dataTypes) => {
 
     let config= {
         tableName: 'images',
-        timeStamps: false
+        timestamps: false
     }
 
     const Image= sequelize.define(alias,cols,config)
 
     Image.associate= models => {
         Image.belongsTo(models.Experience,{
-            as: 'image',
+            as: 'exps',
             foreignKey: 'idExperience'
         })
     }

@@ -1,5 +1,6 @@
 const { leer, guardar, obtenerProximoId, eliminarImagen } = require("../data/products_db");
 let productos = leer();
+const db = require("../database/models");
 const { validationResult } = require("express-validator");
 
 module.exports = {
@@ -64,8 +65,9 @@ detail: (req, res) => {
       ]     
   }).then(experience =>{
     res.render('productDetail',{
-    title: 'hola',
     experience,
+    title: 'Producto: ' + experience.name
+    
     })}).catch(error => console.log(error))
   
 },
