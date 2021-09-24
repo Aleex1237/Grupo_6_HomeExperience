@@ -122,61 +122,35 @@ module.exports = {
 
   //ACTUALIZAR PERFIL
   updateProfile: (req, res) => {
-    /* db.User.update(
-      {
-        name: req.body.nombre,
-        dateBirth: req.body.fecha_nac,
-        avatar: req.body.imagenPerfil,
-        idGenre: req.body.genero,
-      },
-      { where: { id: res.locals.user.id } }
-    )
-      .then((user) => {
 
-        req.session.user={
-          name : req.body.nombre
-        }
-
-        res.locals.user = req.session.user;
-
-        console.log(req.session.user);
-        res.render("index", { user,title:"Home Experience" });
-
-        
-      })
-      .catch((err) => {}); */
-
-    db.User.findByPk(res.locals.user.id)
-      .then((user) => {
+    
         db.User.update(
           {
-            name: req.body ? req.body.nombre : user.name,
-            email: user.email,
-            password: user.password,
-            dateBirth: req.body ? req.body.fecha_nac : user.dateBirth,
-            avatar: req.body ? req.body.imagenPerfil : user.avatar,
-            idGenre: req.body ? req.body.genero : user.idGenre,
-            idRol: user.idRol,
-            idAddress: user.idAddress,
-            active: user.active,
+            name:req.body.nombre ,
+            dateBirth:req.body.fecha_nac ,
+            avatar: req.file ? req.file.filename : "default.png",
+            idGenre:req.body.genero ,
           },
-          { where: { id: user.id } }
-        ).then((user) => {
-          
-          req.session.user = {
-            id: user.id,
-            name: user.name,
-            avatar: user.avatar,
-            idRol: user.idRol,
-          };
+          { where: { id: res.locals.user.id } }
+        ).then(() => {
+          db.User.findOne({where:{id:res.locals.user.id}})
+          .then(user => {
 
-          res.locals.user = req.session.user;
-          res.redirect("/");
+            req.session.user = {
+              id: user.id,
+              name: user.name,
+              avatar: user.avatar,
+              idRol: user.idRol,
+            };
+
+            res.locals.user = req.session.user;
+
+            
+
+            res.redirect(`/usuarios/perfil/${res.locals.user.id}`);
+          })
+          
         });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
   },
 
   //BORRAR USUARIO
