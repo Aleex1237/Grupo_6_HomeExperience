@@ -216,7 +216,8 @@ header a {
     header #navhome li a {
         transition: 0.4s;
     }
-    header #navuser #user-loged-mobile {
+    header #navuser #user-loged-mobile,
+    header #navuser #user-logOut {
         display: none;
     }
     header #navuser .user-loged {

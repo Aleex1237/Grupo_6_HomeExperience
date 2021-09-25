@@ -1,0 +1,57 @@
+.address {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-gris);
+}
+
+.address main.cuerpo {
+  width: 80%;
+  margin-bottom: 14vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.address form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.address input,
+.address select {
+  background-color: #01baef;
+  color: white;
+}
+.address input::placeholder {
+  color: white;
+}
+
+.address input::placeholder:focus {
+  color: black !important;
+}
+.address input:focus {
+  background-color: #01baef !important;
+  color: black !important;
+}
+
+.address .boton {
+  border: none;
+  border-radius: 5px;
+  width: 60%;
+  background-color: #040f16;
+  color: white;
+  text-transform: uppercase;
+  height: 6vh;
+  cursor: pointer;
+}
+
+.address footer {
+  position: fixed;
+  bottom: 0;
+}
+
+.address footer i {
+  color: white;
+}

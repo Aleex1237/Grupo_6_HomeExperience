@@ -23,6 +23,7 @@ const noUserLoged = require("../middlewares/noUserLoged");
 const update = require("../middlewares/userMulter");
 const updateProfileValidator = require("../validations/updateProfileValidator");
 const editPerfil = require("../middlewares/editPerfil");
+const addressForm = require("../validations/addressFormValidator");
 
 /* GET users listing. */
 router.get("/iniciar-sesion", userLogedCheck, login);
@@ -46,6 +47,6 @@ router.put("/eliminar", deleteUser);
 
 router.get("/direccion/:id", address);
 
-router.put("/direccion/:id", updateAddress);
+router.put("/direccion/:id",addressForm, updateAddress);
 
 module.exports = router;

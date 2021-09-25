@@ -102,7 +102,7 @@ module.exports = {
   //PERFIL
   profile: (req, res) => {
     let usuario = db.User.findByPk(req.params.id, {
-      include: [{ association: "genre" }],
+      include: [{ association: "genre" }, { association: "address" }],
     });
 
     let genre = db.Genre.findAll();
@@ -122,35 +122,28 @@ module.exports = {
 
   //ACTUALIZAR PERFIL
   updateProfile: (req, res) => {
+    db.User.update(
+      {
+        name: req.body.nombre,
+        dateBirth: req.body.fecha_nac,
+        avatar: req.file ? req.file.filename : "default.png",
+        idGenre: req.body.genero,
+      },
+      { where: { id: res.locals.user.id } }
+    ).then(() => {
+      db.User.findOne({ where: { id: res.locals.user.id } }).then((user) => {
+        req.session.user = {
+          id: user.id,
+          name: user.name,
+          avatar: user.avatar,
+          idRol: user.idRol,
+        };
 
-    
-        db.User.update(
-          {
-            name:req.body.nombre ,
-            dateBirth:req.body.fecha_nac ,
-            avatar: req.file ? req.file.filename : "default.png",
-            idGenre:req.body.genero ,
-          },
-          { where: { id: res.locals.user.id } }
-        ).then(() => {
-          db.User.findOne({where:{id:res.locals.user.id}})
-          .then(user => {
+        res.locals.user = req.session.user;
 
-            req.session.user = {
-              id: user.id,
-              name: user.name,
-              avatar: user.avatar,
-              idRol: user.idRol,
-            };
-
-            res.locals.user = req.session.user;
-
-            
-
-            res.redirect(`/usuarios/perfil/${res.locals.user.id}`);
-          })
-          
-        });
+        res.redirect(`/usuarios/perfil/${res.locals.user.id}`);
+      });
+    });
   },
 
   //BORRAR USUARIO
@@ -197,43 +190,48 @@ module.exports = {
 
   //ACTUALIZAR DIRECCION ASOCIADA AL USUARIO
   updateAddress: (req, res) => {
-    db.User.findByPk(res.locals.user.id, {
-      include: [{ association: "address" }],
-    })
-      .then((user) => {
-        db.Address.update(
-          {
-            pais: req.body.pais ? req.body.pais : user.address.pais,
-            localidad: req.body.localidad
-              ? req.body.localidad
-              : user.address.localidad,
-            provincia: req.body.provincia
-              ? req.body.provincia
-              : user.address.provincia,
-            calle: req.body.calle ? req.body.calle : user.address.calle,
-            numero: req.body.numero ? +req.body.numero : user.address.numero,
-            codigoPostal: req.body.postal
-              ? req.body.postal
-              : user.address.postal,
-            departamento: req.body.departamento
-              ? req.body.departamento
-              : user.address.departamento,
-          },
-          {
-            where: {
-              id: user.idAddress,
-            },
-          }
-        )
-          .then(() => {
-            res.redirect("/usuarios/direccion/" + req.params.id);
-          })
-          .catch((err) => {
-            console.log(err);
-          });
-      })
-      .catch((err) => {
-        console.log(err);
+    let errors = validationResult(req);
+    
+    if (errors.isEmpty()) {
+      db.Address.update(
+        {
+          pais: req.body.pais,
+          localidad: req.body.localidad,
+          provincia: req.body.provincia,
+          calle: req.body.calle,
+          numero: +req.body.numero,
+          codigoPostal: +req.body.postal,
+          departamento: req.body ? req.body.departamento : "n/a",
+        },
+        { where: { id: res.locals.user.id } }
+      )
+        .then(() => {
+          res.redirect(`/usuarios/direccion/${req.params.id}`);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      let countries = fetch("https://restcountries.com/v3/all").then(
+        (countries) => countries.json()
+      );
+
+      let user = db.User.findByPk(res.locals.user.id, {
+        include: [{ association: "address" }],
       });
+
+      Promise.all([user, countries])
+        .then(([user, countries]) => {
+          return res.render("addressForm", {
+            title: "Direccion",
+            user,
+            countries,
+            errors: errors.mapped(),
+          });
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   },
 };

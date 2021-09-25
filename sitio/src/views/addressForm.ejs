@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
     <%- include('./partials/head')  %> 
-  <body class="login">
+  <body class="address">
     <%- include('./partials/header')  %> 
    
  
@@ -11,38 +11,61 @@
         <form action="/usuarios/direccion/<%= user.id %>?_method=PUT" method="POST" novalidate>
 
 
-          <select class="form-control" aria-label="Default select example" name="pais">
-            <option selected>Seleccione un pais</option>
+          <select class="form-control"  name="pais">
+            <option selected value="">Seleccione un pais</option>
             <% countries.forEach(country => { %>
-              <option <%= user.address.pais === country.name.common ? "selected" : "" %> value="<%= country.name.common %>"><%= country.name.common %></option> 
+              <option <%= user.address.pais === country.name.common ? "selected" : "" %> name=pais value="<%= country.name.common %>"><%= country.name.common %></option> 
             <% }) %>
-            
           </select>
+          <% if (locals.errors && errors.pais) { %>
+            <p class="text-danger"><%= errors.pais.msg %> </p>
+        <% } %>
 
-              <div class="form-floating mb-3">
+              <div class="form-floating mb-3 w-100">
               
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" id="floatingInput"  placeholder="Provincia" name="provincia" value="<%= locals.old ? locals.old.provincia : user.address.provincia %>">
                   </div>
+                  <% if (locals.errors && errors.provincia) { %>
+                    <p class="text-danger"><%= errors.provincia.msg %> </p>
+                <% } %>
             </div>
-            <div class="form-floating mb-3">
+            <div class="form-floating mb-3 w-100">
               <input type="text" class="form-control" id="floatingInput"  placeholder="Localidad" name="localidad" value="<%= locals.old ? locals.old.localidad : user.address.localidad %>">
+              <% if (locals.errors && errors.localidad) { %>
+                <p class="text-danger"><%= errors.localidad.msg %> </p>
+            <% } %>
             </div>
 
-            <div class="form-floating mb-3">
+            <div class="form-floating mb-3 w-100">
                 <input type="text" class="form-control" id="floatingInput"  placeholder="Codigo postal" name="postal" value="<%= locals.old ? locals.old.postal : user.address.postal %>">
+                <% if (locals.errors && errors.postal) { %>
+                  <p class="text-danger"><%= errors.postal.msg %> </p>
+              <% } %>
               </div>
 
         
-          <div class="d-flex mb-3  form-floating justify-content-center">
-            <input type="text" aria-label="First name" class="form-control mr-2 ml-0 w-25" placeholder="Calle" name="calle" value="<%= locals.old ? locals.old.calle : user.address.calle %>">
-            <input type="text" aria-label="Last name" class="form-control m-0 w-25" placeholder="Numero" name="numero" value="<%= locals.old ? locals.old.numero : user.address.numero %>">
+          <div class="form-floating mb-3 w-100">
+            <input type="text" aria-label="First name" class="form-control mr-2 ml-0 w-100" placeholder="Calle" name="calle" value="<%= locals.old ? locals.old.calle : user.address.calle %>">
+            <% if (locals.errors && errors.calle) { %>
+              <p class="text-danger"><%= errors.calle.msg %> </p>
+          <% } %>
           </div>
+
+          <div class="form-floating mb-3 w-100">
+          <input type="text" aria-label="Last name" class="form-control m-0 w-100" placeholder="Numero" name="numero" value="<%= locals.old ? locals.old.numero : user.address.numero %>">
+          <% if (locals.errors && errors.numero) { %>
+            <p class="text-danger"><%= errors.numero.msg %> </p>
+        <% } %>
+      </div>
 
           
 
-              <div class="form-floating mb-3">
+              <div class="form-floating mb-3 w-100">
                 <input type="text" class="form-control" id="floatingInput"  placeholder="Departamento" name="departamento" value="<%= locals.old ? locals.old.departamento : user.address.departamento %>">
+                <% if (locals.errors && errors.departamento) { %>
+                  <p class="text-danger"><%= errors.departamento.msg %> </p>
+              <% } %>
               </div>
                 
 
