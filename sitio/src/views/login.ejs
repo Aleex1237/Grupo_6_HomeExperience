@@ -7,17 +7,22 @@
     <main class="cuerpo">
         <h1>¡Iniciá Sesión!</h1>
         
-        <form action="" method="POST" novalidate>
+        <form id="form-login" action="" method="POST">
             <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" name="email" placeholder="Correo electrónico" value="<%= locals.old && old.email ? old.email : null %> ">
+
+                <input type="email" class="form-control" id="floatingInput" name="email" <%= locals.errores && locals.errores.name ? 'is-invalid' : null %> placeholder="Correo electrónico" value="<%= locals.old && old.email ? old.email : null %> ">
+                <span id="error-mail" class="text-danger"></span>
 
                 
               </div>
               <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Contraseña" required>
+                <input type="password" class="form-control" id="floatingPassword" name="password" <%= locals.errores && locals.errores.name ? 'is-invalid' : null %>placeholder="Contraseña">
                 <% if (locals.errors && errors.email) { %>
-                    <p class="text-danger"><%= errors.email.msg %> </p>
+                    <p class="text-danger" id="error-password"><%= errors.email.msg %> </p>
                 <% } %>
+                <span id="error-password" class="text-danger"></span>
+
+                <span id="error-vacio" class="text-danger"></span>
 
                 <div class="conectado">
                     <input type="checkbox" name="check" value="check" id="check">
@@ -33,5 +38,6 @@
     </main>
     <%- include('./partials/footer')  %> 
     <%- include('./partials/scripts')  %> 
+    <script src="/js/login.js"></script>
     </body>
 </html>

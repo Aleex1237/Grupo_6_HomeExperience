@@ -10,40 +10,48 @@
                 <div class="dibujo"></div>
                 <p>¿No tenés cuenta? Registrate y descubrí Home Experience</p>
             </div>
+
             <div class="formulario">
-                <form action="/usuarios/registro" method="POST">
+                <form id="form-register" action="/usuarios/registro" method="POST">
+                    <span id="error-vacio" class="text-danger"></span>
 
-                    <input class="dato" type="text" name="name" id="name" placeholder="Nombre" value="<%=locals.old  ? old.name :""%>" >
-                    <% if (locals.errors && errors.name) { %>
-                    <p  class="errores"><%= errors.name.msg %> </p>
-                    <% } %>
+                    <input class="dato" type="text" name="name" id="name" <%= locals.errores && locals.errores.name ? 'is-invalid' : null %> placeholder="Nombre" value="<%=locals.old  ? old.name :""%>">
+                    <span class="text-danger" id="error-name"></span> <br>
 
-                    <input class="dato" type="email" name="email" id="email" placeholder="Email" value="<%=locals.old  ? old.email :""%>">
-                    <% if (locals.errors && errors.email) { %>
-                    <p  class="errores"><%= errors.email.msg %> </p>
-                    <% } %>
-
-                    <input class="dato" type="date" name="fecha_nac" id="fecha_nac" placeholder="fecha_nac" value="<%=locals.old  ? old.fecha_nac :""%>">
+                    <input class="dato" type="email" name="email" id="email" <%= locals.errores && locals.errores.name ? 'is-invalid' : null %>  placeholder="Email" value="<%=locals.old  ? old.email :""%>" > 
+                    <span class="text-danger" id="error-email"></span>
+                    
+                    <input class="dato" type="date" name="fecha_nac" id="fecha_nac" <%= locals.errores && locals.errores.name ? 'is-invalid' : null %>  placeholder="fecha_nac" value="<%=locals.old  ? old.fecha_nac :""%>">
                     <% if (locals.errors && errors.fecha_nac) { %>
                     <p  class="errores"><%= errors.fecha_nac.msg %> </p>
                     <% } %>
+                    <span class="text-danger" id="error-date"></span>
 
-                    <input class="dato" type="password" name="password" id="password" placeholder="Clave">
+                    
+                    <input class="dato" type="password" name="password" id="password" placeholder="Contraseña" <%= locals.errores && locals.errores.name ? 'is-invalid' : null %>>
                     <% if (locals.errors && errors.password) { %>
-                    <p  class="errores"><%= errors.password.msg %> </p>
-                    <% } %>
+                        <p  class="errores"><%= errors.password.msg %> </p>
+                        <% } %>   
+                    <span class="text-danger" id="error-password"></span>
 
-                    <input class="dato" type="password" name="password2" id="password2" placeholder="Confirma tu clave">
+                  
+                    
+
+                    <input class="dato" type="password" name="password2" id="password2" <%= locals.errores && locals.errores.name ? 'is-invalid' : null %> placeholder="Confirma tu contraseña">
                     <% if (locals.errors && errors.password2) { %>
                     <p  class="errores"><%= errors.password2.msg %> </p>
                     <% } %>
+                    <span class="text-danger" id="error-password2"></span>
+
                     
                     <label>
-                        <input class="check" type="checkbox" name="acepto" <%=locals.old && old.acepto ? "selected":""%>>Acepto los términos y políticas de este sitio web
+                        <input class="check" type="checkbox" id="checkbox" <%= locals.errores && locals.errores.name ? 'is-invalid' : null %>  name="acepto" <%=locals.old && old.acepto ? "selected":""%>> Acepto los términos y condiciones de este sitio web
                     </label>
                     <% if (locals.errors && errors.acepto) { %>
                         <p  class="errores"><%= errors.acepto.msg %> </p>
                     <% } %>
+                    <span class="text-danger" id="error-acepta"></span>
+                    
                     <a href="/usuarios/iniciar-sesion">¿Ya tenés cuenta? ¡Iniciá sesión!</a>
                     <button type="submit">REGISTRATE</button>
                 </form>
@@ -52,5 +60,7 @@
     </main>
     <%- include("./partials/footer")%>
     <%- include("./partials/scripts")%>
+    <script src="/js/register.js"></script>
+    
 </body>
 </html>
