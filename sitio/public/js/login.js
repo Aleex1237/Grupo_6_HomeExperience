@@ -1,15 +1,8 @@
-let regExEmail =  /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
+
 
 const $= id => document.getElementById(id)
 
-/* window.addEventListener('load', () => {
-    console.log('CONECTADO SATISFACTORIAMENTE CON LOGIN');
 
-    const formularioLogin= $('form-login')
-
-    console.log(formularioLogin) */
-
-    /* validaciones */
     $('floatingInput').addEventListener('blur', () => {
         if(!regExEmail.test($('floatingInput').value)){
             $('floatingInput').classList.add('is-invalid')

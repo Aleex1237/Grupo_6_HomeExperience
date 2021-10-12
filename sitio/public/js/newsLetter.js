@@ -1,4 +1,4 @@
-const $ = (id) => document.getElementById(id);
+
 let regExEmail =
   /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
 window.addEventListener("load", () => {
