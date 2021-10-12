@@ -1,6 +1,8 @@
 module.exports=(req,res,next)=>{
     if(res.locals.user){
-        res.redirect("/usuarios/perfil")
+        res.send("Ya estas registrado")
+
+        //res.render(error,{msg:"ya estas logueado"})
     }
     next()
     

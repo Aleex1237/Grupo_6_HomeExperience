@@ -18,7 +18,7 @@ module.exports = (sequelize, dataTypes)=>{
 
     };
     const config = {
-        tableName: "susriptions",
+        tableName: "suscriptions",
         timestamps:false
     }
     const Suscription = sequelize.define(alias, cols, config);

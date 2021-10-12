@@ -1,217 +1,281 @@
 .contact a {
-    color: white;
+  color: white;
 }
 
 .contact {
-    position: relative;
+  position: relative;
 }
 
 .contact main a:hover {
-    color: white !important;
+  color: white !important;
 }
 
 /* location */
 
 .contact .nav-bar a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .contact {
-    background-color: var(--color-azul-oscuro);
-    color: var(--color-blanco);
+  background-color: var(--color-azul-oscuro);
+  color: var(--color-blanco);
 }
 
 .contact main {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.contact .location h2, .contact .social-media h2, .contact .contact-news-letter h2 {
-    font-size: 6vw;
-    text-align: center;
-    margin: 2vh 0 2vh 0;
+.contact .location h2,
+.contact .social-media h2,
+.contact .contact-news-letter h2 {
+  font-size: 6vw;
+  text-align: center;
+  margin: 2vh 0 2vh 0;
 }
 
 .contact main .map {
-    width: 90%;
-    height: 31vh;
-    margin-left: 4vw;
-    border: solid 1px var(--color-celeste);
+  width: 90%;
+  height: 31vh;
+  margin-left: 4vw;
+  border: solid 1px var(--color-celeste);
 }
 
 .contact main iframe {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
-.contact .location p, .contact .social-media p, .contact .contact-news-letter p {
-    margin-top: 5vh;
-    margin-left: 5vw;
+.contact .location p,
+.contact .social-media p,
+.contact .contact-news-letter p {
+  margin-top: 5vh;
+  margin-left: 5vw;
 }
 
 .contact .location .fa-map-marker-alt {
-    margin-right: 6vw;
+  margin-right: 6vw;
 }
 
 .contact .location p {
-    margin: 5vh 0 0 5vw;
+  margin: 5vh 0 0 5vw;
 }
 
 .contact .location .fa-link {
-    color: var(--color-celeste);
-    margin-left: 2vw;
+  color: var(--color-celeste);
+  margin-left: 2vw;
 }
 
 .contact .location .fa-phone {
-    margin-right: 4vw;
+  margin-right: 4vw;
 }
 
-.contact .location, .contact .social-media, .contact .contact-news-letter {
-    background-color: #262B2E;
-    margin-top: 3vh;
-    height: 60vh;
+.contact .location,
+.contact .social-media,
+.contact .contact-news-letter {
+  background-color: #262b2e;
+  margin-top: 3vh;
+  height: 60vh;
 }
 
 /* location */
 
 /* .social-media */
 
-.contact .social-media .fa-instagram, .contact .social-media .fa-facebook, .contact .social-media .fa-twitter, .contact .social-media .fa-whatsapp {
-    margin-right: 5vw;
+.contact .social-media .fa-instagram,
+.contact .social-media .fa-facebook,
+.contact .social-media .fa-twitter,
+.contact .social-media .fa-whatsapp {
+  margin-right: 5vw;
 }
 
 .contact .social-media {
-    height: 50vh;
+  height: 50vh;
 }
 
 .contact .contact-news-letter {
-    height: 49vh;
-    margin-bottom: 12vh;
+  height: 49vh;
+  margin-bottom: 12vh;
 }
 
 /* .newsletter */
 
 .contact .contact-news-letter h2 {
-    font-size: 4vw;
-    margin-top: 3vh;
+  font-size: 4vw;
+  margin-top: 3vh;
 }
 
 .contact .contact-news-letter .form-floating {
-    margin-bottom: 0 !important;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  margin-bottom: 0 !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
 }
 
-.contact .contact-news-letter input#floatingInput {
-    width: 90%;
-    margin: 4vh auto 0 auto;
-    background-color: #262B2E;
-    border: solid 1px var(--color-celeste);
-    outline: none !important;
+.contact .contact-news-letter .inputEmail {
+  width: 100%;
+  margin: 4vh auto 0 auto;
+  background-color: #262b2e;
+  border: solid 1px var(--color-celeste);
+  outline: none !important;
+  border-radius: 4px;
+  text-indent: 1vw;
 }
 
-.contact .contact-news-letter input#floatingInput:focus {
-    color: black;
-    background-color: white;
+.contact .contact-news-letter .inputEmail:focus {
+  color: white;
+  background-color: #262b2e;
+  border: solid 1px var(--color-celeste);
+  outline: var(--color-celeste);
+  box-shadow: 1px 1px 5px var(--color-celeste);
+}
+
+.contact .contact-news-letter .inputEmailNo {
+  width: 100%;
+  margin: 4vh auto 0 auto;
+  background-color: #262b2e;
+  border: solid 1px crimson;
+  outline: none !important;
+  border-radius: 4px;
+  text-indent: 1vw;
+}
+
+.contact .contact-news-letter .inputEmailNo:focus {
+  color: white;
+  background-color: #262b2e;
+  border: solid 1px crimson;
+  outline: crimson;
+  box-shadow: 1px 1px 5px crimson;
 }
 
 .contact .contact-news-letter .form-group {
-    width: 90%;
-    margin: 0 auto 10px auto;
-    ;
+  width: 90%;
+  margin: 0 auto 10px auto;
 }
 
-.contact .contact-news-letter .form-group textarea {
-    background-color: #262B2E;
-    border: solid 1px var(--color-celeste);
-    height: 15vh;
-    outline: none !important;
-    resize: none;
+.contact .contact-news-letter .contactText {
+  background-color: #262b2e;
+  border: solid 1px var(--color-celeste);
+  height: 15vh;
+  outline: none !important;
+  resize: none;
+  width: 100%;
+  border-radius: 4px;
+  text-indent: 1vw;
+  color: white;
 }
 
-.contact .contact-news-letter textarea:focus {
-    color: black;
-    background-color: white;
+.contact .contact-news-letter .contactText:focus {
+  color: white;
+  background-color: #262b2e;
+  border: solid 1px var(--color-celeste);
+  outline: var(--color-celeste);
+  box-shadow: 1px 1px 5px var(--color-celeste);
+}
+
+.contact .contact-news-letter .contactTextNo {
+  background-color: #262b2e;
+  border: solid 1px crimson;
+  height: 15vh;
+  outline: none !important;
+  resize: none;
+  width: 100%;
+  border-radius: 4px;
+  text-indent: 1vw;
+}
+
+.contact .contact-news-letter .contactTextNo:focus {
+  color: white;
+  background-color: #262b2e;
+  border: solid 1px crimson;
+  outline: crimson;
+  box-shadow: 1px 1px 5px crimson;
 }
 
 .contact .contact-news-letter button {
-    width: 80%;
-    margin-left: 10vw;
-    margin-top: 4vw;
-    border: solid 1px var(--color-celeste);
-    background-color: var(--color-celeste);
-    box-shadow: 5px 5px 10px black;
-    border-radius: 5px;
-    color: white;
-    height: 5vh;
-    font-size: 6vw;
-    cursor: pointer;
+  width: 80%;
+  margin-left: 10vw;
+  margin-top: 4vw;
+  border: solid 1px var(--color-celeste);
+  background-color: var(--color-celeste);
+  box-shadow: 5px 5px 10px black;
+  border-radius: 5px;
+  color: white;
+  height: 5vh;
+  font-size: 6vw;
+  cursor: pointer;
 }
 
 .contact .contact-news-letter button:active {
-    background-color: white;
-    color: black;
-    box-shadow: inherit
+  background-color: white;
+  color: black;
+  box-shadow: inherit;
 }
 
-@media (min-width:768px) {
-    .contact .location h2, .contact .social-media h2, .contact .contact-news-letter h2 {
-        font-size: 4vw;
-        padding: 0 11vw;
-    }
-    .contact .contact-news-letter h2 {
-        font-size: 3vw;
-        padding: 0 7vw;
-    }
-    .contact .contact-news-letter input#floatingInput {
-        width: 80%;
-    }
-    .contact .contact-news-letter .form-group {
-        width: 80%;
-    }
-    .contact .contact-news-letter {
-        height: 60vh;
-        margin-bottom: 5vh;
-    }
-    .contact .contact-news-letter button {
-        width: 65%;
-        margin-left: 18vw;
-        font-size: 4vw;
-    }
+@media (min-width: 768px) {
+  .contact .location h2,
+  .contact .social-media h2,
+  .contact .contact-news-letter h2 {
+    font-size: 4vw;
+    padding: 0 11vw;
+  }
+  .contact .contact-news-letter h2 {
+    font-size: 3vw;
+    padding: 0 7vw;
+  }
+  .contact .contact-news-letter input#floatingInput {
+    width: 80%;
+  }
+  .contact .contact-news-letter .form-group {
+    width: 80%;
+  }
+  .contact .contact-news-letter {
+    height: 60vh;
+    margin-bottom: 5vh;
+  }
+  .contact .contact-news-letter button {
+    width: 65%;
+    margin-left: 18vw;
+    font-size: 4vw;
+  }
 }
 
-@media (min-width:1024px) {
-    .contact main {
-        width: 90%;
-        margin: 0 auto;
-    }
-    .contact .location h2, .contact .social-media h2, .contact .contact-news-letter h2 {
-        font-size: 2.5vw;
-    }
-    .contact .location .fa-phone {
-        margin-right: 6vw;
-    }
-    .contact .contact-news-letter {
-        height: 76vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: normal;
-        margin-bottom: 16vh;
-    }
-    .contact .contact-news-letter input#floatingInput, .contact .contact-news-letter .form-group {
-        width: 60%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .contact .contact-news-letter button {
-        font-size: 3vw;
-        height: 4vw;
-        width: 30%;
-        margin-left: 31vw;
-    }
+@media (min-width: 1024px) {
+  .contact main {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .contact .location h2,
+  .contact .social-media h2,
+  .contact .contact-news-letter h2 {
+    font-size: 2.5vw;
+  }
+  .contact .location .fa-phone {
+    margin-right: 6vw;
+  }
+  .contact .contact-news-letter {
+    height: 76vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: normal;
+    margin-bottom: 16vh;
+  }
+  .contact .contact-news-letter input#floatingInput,
+  .contact .contact-news-letter .form-group {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact .contact-news-letter button {
+    font-size: 3vw;
+    height: 4vw;
+    width: 30%;
+    margin-left: 31vw;
+  }
 }

@@ -24,9 +24,10 @@
 
         <div class="contact-news-letter">
             <h2>Suscribiéndote a nuestro NewsLetter obtendrás las últimas actualizaciones y ofertas exclusivas!</h2>
-            <form action="/contacto" method="POST" novalidate>
+            <form action="/contacto" method="POST" novalidate id="contact">
                 <div class="form-floating mb-3">
-                    <input type="email" name="email" class="form-control" id="floatingInput" value="<%= locals.old && old.email ? old.email : null%>" placeholder="Dejanos tu E-mail">
+                    <input type="email" name="email" class="inputEmail" id="email" value="<%= locals.old && old.email ? old.email : null%>" placeholder="Dejanos tu E-mail">
+                    <span id="msgEmail"></span>
                     <% if (locals.errors && errors.email) { %>
                       <p class="text-danger"><%= errors.email.msg %> </p>
                     <% } %>
@@ -34,7 +35,8 @@
 
                   <div class="form-group">
                     <label for="exampleFormControlTextarea1"></label>
-                    <textarea class="form-control" name="textArea" id="exampleFormControlTextarea1" rows="3" placeholder="Dejanos tu comentario"><%= locals.old && old.textArea ? old.textArea : null%></textarea>
+                    <textarea class="inputEmail" name="textArea" id="area" rows="3" placeholder="Dejanos tu comentario"><%= locals.old && old.textArea ? old.textArea : null%></textarea>
+                    <span id="msgArea"></span>
                     <% if (locals.errors && errors.textArea) { %>
                       <p class="text-danger"><%= errors.textArea.msg %> </p>
                     <% } %>
@@ -45,7 +47,8 @@
         </div>
         
     </main>
-    <%- include("./partials/footer") %>
     <%- include("./partials/scripts") %>
+    <%- include("./partials/footer") %>
+    
 </body>
 </html>

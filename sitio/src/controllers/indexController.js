@@ -1,6 +1,5 @@
 const { validationResult } = require("express-validator");
-const { leer, guardar } = require("../data/newsLetter");
-const notice = leer();
+const db = require("../database/models");
 
 module.exports = {
   index: (req, res) => {
@@ -8,25 +7,6 @@ module.exports = {
       title: "Home Experience",
     });
   },
-  footerPost: (req, res) => {
-    let errors = validationResult(req);
-    if (errors.isEmpty()) {
-      let newsLetter = {
-        email: req.body.letter,
-      };
-      notice.push(newsLetter);
-
-      guardar(notice);
-      res.redirect("/")
-    } else {
-      res.render("index", {
-        title: "Home experience",
-        old: req.body,
-        errors: errors.mapped(),
-      });
-    }
-  },
-
   contact: (req, res) => {
     return res.render("contact", {
       title: "Contacto",
@@ -38,15 +18,16 @@ module.exports = {
 
     if (errors.isEmpty()) {
       //Si errores está vacio se creará un objeto literal el cual contiene clave y valor.
-      let newsLetter = {
+      db.Suscription.create({
         email: req.body.email,
-        textArea: req.body.textArea ? req.body.textArea : "",
-      };
-      notice.push(newsLetter);
-
-      guardar(notice);
-
-      res.redirect("/contacto");
+        description: req.body ? req.body.textArea : null
+      })
+        .then(() => {
+          res.redirect("/contacto");
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     } else {
       return res.render("contact", {
         errors: errors.mapped(),

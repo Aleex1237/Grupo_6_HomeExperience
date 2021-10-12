@@ -4,7 +4,6 @@ module.exports = [
   check("email")
     .notEmpty()
     .withMessage("Debe ingresar un email")
-    .bail()
     .isEmail()
     .withMessage("Debe ingresar un email valido"),
 

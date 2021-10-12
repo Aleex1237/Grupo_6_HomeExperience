@@ -26,4 +26,3 @@ router.put("/producto/modificar/:id", upload.single("imagen"), addProductValidat
 router.get("/list",list)
 
 module.exports=router
-
