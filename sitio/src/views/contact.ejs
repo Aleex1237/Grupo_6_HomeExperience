@@ -26,8 +26,8 @@
             <h2>Suscribiéndote a nuestro NewsLetter obtendrás las últimas actualizaciones y ofertas exclusivas!</h2>
             <form action="/contacto" method="POST" novalidate id="contact">
                 <div class="form-floating mb-3">
-                    <input type="email" name="email" class="inputEmail" id="email" value="<%= locals.old && old.email ? old.email : null%>" placeholder="Dejanos tu E-mail">
-                    <span id="msgEmail"></span>
+                    <input type="email" name="email" class="inputEmail" id="emailContact" value="<%= locals.old && old.email ? old.email : null%>" placeholder="Dejanos tu E-mail">
+                    <span id="msgLetter"></span>
                     <% if (locals.errors && errors.email) { %>
                       <p class="text-danger"><%= errors.email.msg %> </p>
                     <% } %>
@@ -48,7 +48,6 @@
         
     </main>
     <%- include("./partials/scripts") %>
-    <%- include("./partials/footer") %>
     
 </body>
 </html>

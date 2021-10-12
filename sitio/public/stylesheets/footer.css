@@ -11,6 +11,42 @@ footer {
   justify-content: space-between;
 }
 
+footer form .inputEmail {
+  width: 10vw;
+  background-color: var(--color-azul-oscuro);
+  border: none;
+  color: var(--color-blanco);
+  text-align: center;
+  height: 2.3vh;
+  font-size: 77%;
+  transition: 0.5s;
+}
+
+footer form .inputEmail:focus {
+  border: solid 1px var(--color-celeste);
+  outline: var(--color-celeste);
+  width: 14vw;
+  box-shadow: 1px 1px 5px var(--color-celeste);
+}
+
+footer form .inputEmailNo {
+  width: 10vw;
+  background-color: var(--color-azul-oscuro);
+  border: none;
+  color: var(--color-blanco);
+  text-align: center;
+  height: 2.3vh;
+  font-size: 77%;
+  transition: 0.5s;
+}
+
+footer form .inputEmailNo:focus {
+  border: solid 1px crimson;
+  outline: crimson;
+  width: 14vw;
+  box-shadow: 1px 1px 5px crimson;
+}
+
 footer h5 {
   display: none;
 }
