@@ -1,50 +1,102 @@
 <!DOCTYPE html>
 <html lang="es">
+  <%- include("partials/head" ) %>
 
-    <%- include("partials/head" ) %>
+  <body class="admin">
+    <%- include("partials/header" ) %>
+    <main>
+      <div class="headerAdmin">
+        <form action="" method="POST" class="search-form">
+          <button type="submit"><i class="fas fa-search"></i></button>
+          <input
+            class="search"
+            type="text"
+            name="search_products"
+            id=""
+            placeholder="Buscar productos..."
+          />
+        </form>
+        <a href="/admin/producto/agregar"
+          ><i class="fas fa-plus"></i> Agregar producto</a
+        >
+      </div>
+      <% productos.forEach(product => { %>
+      <article>
+        <div class="container">
+          <% product.images.forEach((image,index) => { %>
+          <img src="/images/products/<%= image.name%>" alt="" />
+          <% }) %>
+          <ul>
+            <li><%= product.name %></li>
+            <li class="product-category">
+              Categoria : <%= product.category.name%>
+            </li>
+            <li>ID del producto : <%= product.id %></li>
+            <li>$<%= product.price %></li>
+          </ul>
 
-        <body class="admin">
+          <div class="form">
+            <button class="hide" type="submit">ocultar</button>
+            <a href="/admin/producto/modificar/<%= product.id %>"
+              ><button class="edit" type="submit">editar</button></a
+            >
+            <form
+              action="/admin/producto/eliminar/<%= product.id %>?_method=DELETE"
+              method="POST"
+            >
+              <button class="delete" type="submit" onclick="EventoAlert()">
+                eliminar
+              </button>
+            </form>
+          </div>
+        </div>
+      </article>
+      <% }) %>
+    </main>
 
-            <%- include("partials/header" ) %>
-                <main>
-                    <div class="headerAdmin">
-                        <form action="" method="POST" class="search-form">
-                            <button type="submit"><i class="fas fa-search"></i></button>
-                            <input class="search" type="text" name="search_products"
-                                id="" placeholder="Buscar productos...">
-                        </form>
-                        <a href="/admin/producto/agregar"><i class="fas fa-plus"></i>     Agregar producto</a>
-                    </div>
-                    <% productos.forEach(product => { %>
-                        <article>
-                            <div class="container">
-                                <% product.images.forEach((image,index) => { %>
-                                <img src="/images/products/<%= image.name%>" alt="">
-                                <% }) %>
-                                <ul>
-                                    <li><%= product.name %> </li>
-                                    <li class="product-category">Categoria : <%= product.category.name%> </li>
-                                    <li>ID del producto : <%= product.id %> </li>
-                                    <li>$<%= product.price %> </li>
-                                </ul>
-    
-                                <div class="form">
-                                    <button class="hide" type="submit">ocultar</button>
-                                    <a href="/admin/producto/modificar/<%= product.id %>"><button class="edit"
-                                            type="submit">editar</button></a>
-                                    <form action="/admin/producto/eliminar/<%= product.id %>?_method=DELETE" method="POST">
-                                     <button class="delete" type="submit">eliminar</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </article>
-                    <% }) %>
-                    
-            </main>
+    <script>
+      function EventoAlert() {
+        event.preventDefault();
+        var form = event.target.form;
+        Swal.fire({
+          title: "Está seguro que desea eliminar el producto?",
+          html: `<p class="text-white" >Esta accion será irreversible! </p>`,
+          color: "white",
+          background: "#040F16",
+          backdrop: "rgba(4, 15, 22, 0.6)",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#B80C09",
+          cancelButtonColor: "#01BAEF",
+          confirmButtonText: "ELIMINAR",
+          customClass: {
+            container: "...",
+            popup: "popup-class",
+            header: "...",
+            title: "content-class",
+            closeButton: "...",
+            icon: "...",
+            image: "...",
+            content: "...",
+            htmlContainer: "...",
+            input: "...",
+            inputLabel: "...",
+            validationMessage: "...",
+            actions: "...",
+            confirmButton: "confirmButton",
+            denyButton: "...",
+            cancelButton: "cancelButton",
+            loader: "...",
+            footer: "....",
+          },
+        }).then((result) => {
+          if (result.isConfirmed) {
+            form.submit();
+          }
+        });
+      }
+    </script>
 
-
-
-            <%- include("partials/footer" ) %>
-                <%- include("partials/scripts" ) %>
-                </body>
-            </html>
+    <%- include("partials/footer" ) %> <%- include("partials/scripts" ) %>
+  </body>
+</html>

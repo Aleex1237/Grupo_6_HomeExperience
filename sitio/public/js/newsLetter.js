@@ -2,7 +2,7 @@ const $ = (id) => document.getElementById(id);
 let regExEmail =
   /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
 window.addEventListener("load", () => {
-  console.log($("emailContact"));
+
   $("emailContact").addEventListener("keyup", () => {
     if (!regExEmail.test($("emailContact").value.trim())) {
       $("emailContact").classList.remove("inputEmail");
@@ -31,7 +31,6 @@ window.addEventListener("load", () => {
   }
   
 
-  console.log($("contact").elements);
   $("contact").addEventListener("submit", (e) => {
     e.preventDefault();
 
