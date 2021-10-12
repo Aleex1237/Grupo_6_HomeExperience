@@ -1,6 +1,3 @@
-let regExEmail =  /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
-
-const $= id => document.getElementById(id)
 
 /* window.addEventListener('load', () => {
     console.log('CONECTADO SATISFACTORIAMENTE CON LOGIN');
