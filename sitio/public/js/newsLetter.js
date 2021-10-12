@@ -2,7 +2,6 @@
 let regExEmail =
   /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
 window.addEventListener("load", () => {
-
   $("emailContact").addEventListener("keyup", () => {
     if (!regExEmail.test($("emailContact").value.trim())) {
       $("emailContact").classList.remove("inputEmail");
@@ -15,21 +14,21 @@ window.addEventListener("load", () => {
       $("msgLetter").innerHTML = null;
     }
   });
-  if($("area")){
-    $("area").addEventListener("keyup",()=>{
-        if($("area").value.length > 500){
-          $("area").classList.remove("inputEmail");
-          $("area").classList.add("inputEmailNo");
-          $("msgArea").innerHTML = "Este campo acepta un maximo de 500 caracteres"
-          $("msgArea").style.color = "crimson";
-        }else{
-          $("area").classList.remove("inputEmailNo");
-          $("area").classList.add("inputEmail");
-          $("msgArea").innerHTML = null
-        }
-    })
+  if ($("area")) {
+    $("area").addEventListener("keyup", () => {
+      if ($("area").value.length > 500) {
+        $("area").classList.remove("inputEmail");
+        $("area").classList.add("inputEmailNo");
+        $("msgArea").innerHTML =
+          "Este campo acepta un maximo de 500 caracteres";
+        $("msgArea").style.color = "crimson";
+      } else {
+        $("area").classList.remove("inputEmailNo");
+        $("area").classList.add("inputEmail");
+        $("msgArea").innerHTML = null;
+      }
+    });
   }
-  
 
   $("contact").addEventListener("submit", (e) => {
     e.preventDefault();
