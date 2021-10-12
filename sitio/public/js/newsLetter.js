@@ -1,3 +1,6 @@
+
+let regExEmail =
+  /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
 window.addEventListener("load", () => {
   $("emailContact").addEventListener("keyup", () => {
     if (!regExEmail.test($("emailContact").value.trim())) {

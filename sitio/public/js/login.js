@@ -1,12 +1,13 @@
 
+<<<<<<< HEAD
 /* window.addEventListener('load', () => {
     console.log('CONECTADO SATISFACTORIAMENTE CON LOGIN');
+=======
+>>>>>>> 0bf42785483dbb84ebcacdc3c8bbee6049f7b78b
 
-    const formularioLogin= $('form-login')
+const $= id => document.getElementById(id)
 
-    console.log(formularioLogin) */
 
-    /* validaciones */
     $('floatingInput').addEventListener('blur', () => {
         if(!regExEmail.test($('floatingInput').value)){
             $('floatingInput').classList.add('is-invalid')
