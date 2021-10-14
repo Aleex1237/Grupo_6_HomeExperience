@@ -24,8 +24,8 @@
       <article>
         <div class="container">
           <%if(product.images.length>0){%>
-            <img src="/images/products/<%= product.images[0].name%>" alt="" />
-            <%}%>
+          <img src="/images/products/<%= product.images[0].name%>" alt="" />
+          <%}%>
           <ul>
             <li><%= product.name %></li>
             <li class="product-category">
@@ -36,7 +36,25 @@
           </ul>
 
           <div class="form">
-            <button class="hide" type="submit">ocultar</button>
+            <% if (product.active == 0) { %>
+
+            <form
+              action="/admin/producto/mostrar/<%= product.id%>?_method=PUT"
+              method="POST"
+            >
+              <button class="hide" type="submit">mostrar</button>
+            </form>
+
+            <% }else { %>
+
+            <form
+              action="/admin/producto/ocultar/<%= product.id %>?_method=PUT"
+              method="POST"
+            >
+              <button class="hide" type="submit">Ocultar</button>
+            </form>
+            <% } %>
+
             <a href="/admin/producto/modificar/<%= product.id %>"
               ><button class="edit" type="submit">editar</button></a
             >

@@ -68,9 +68,7 @@ module.exports = {
       where: {
         id: req.params.id,
       },
-      include: [{ association: "images" },
-                { association: "products"}
-              ],
+      include: [{ association: "images" }, { association: "products" }],
     })
       .then((experience) => {
         if (experience.active == 1) {
@@ -98,7 +96,6 @@ module.exports = {
   },
 
   save: async (req, res) => {
-
     let errors = validationResult(req);
     let productos = [];
     if (errors.isEmpty()) {
@@ -113,31 +110,31 @@ module.exports = {
         });
         //guardo las imagenes
         let imagenes = [];
-        if(req.files){
-          for(let i=0; i<req.files.length;i++){
+        if (req.files) {
+          for (let i = 0; i < req.files.length; i++) {
             let img = {
               name: req.files[i].filename,
               idExperience: experiencia.id,
             };
             imagenes.push(img);
           }
-        }else{
+        } else {
           imagenes.push({
             name: "default-product.png",
             idExperience: experiencia.id,
-          })
+          });
         }
-        
+
         await db.Image.bulkCreate(imagenes);
         //guardo cada producto
-        let i=1;
-        while(req.body["product"+i]){
+        let i = 1;
+        while (req.body["product" + i]) {
           let prod = {
-            name: req.body["product"+i],
-            idExperience: experiencia.id
-          }
+            name: req.body["product" + i],
+            idExperience: experiencia.id,
+          };
           productos.push(prod);
-          i++
+          i++;
         }
         await db.Product.bulkCreate(productos);
         //guardo la relacion entre la experiencia y cada keyword
@@ -167,12 +164,11 @@ module.exports = {
     } else {
       //Si no se cumple  renderizará productLoad y guardará los errores en la variable errors y lo mapearan, old guardará lo que venga por el body.
       return res.render("productLoad", {
-        errors:
-          errors.mapped(), // el mapped ayuda a mostrar un error a la vez y diferenciar de que input es cada error ,
+        errors: errors.mapped(), // el mapped ayuda a mostrar un error a la vez y diferenciar de que input es cada error ,
         title: "Agregar producto",
         old: req.body, // el old se encarga de la persistencia de datos del formulario ,
       });
-    }   
+    }
   },
 
   load: async (req, res) => {
@@ -218,14 +214,13 @@ module.exports = {
         });
         //si vinieron nuevas imagenes,elimino las anteriores
         if (req.files) {
-          if(experiencia.images[0].name != "default-product.png"){
-            for(let i=0;i<experiencia.images.length;i++){
+          if (experiencia.images[0].name != "default-product.png") {
+            for (let i = 0; i < experiencia.images.length; i++) {
               eliminarImagen(experiencia.images[i].name);
             }
-           
           }
-           //elimino anteriores referencias de imagen de
-            //esta experiencia
+          //elimino anteriores referencias de imagen de
+          //esta experiencia
           await db.Image.destroy({
             where: {
               idExperience: +req.params.id,
@@ -248,8 +243,8 @@ module.exports = {
         );
         //guardo nuevas imagenes
         let imagenes = [];
-        if(req.files){
-          for(let i=0; i<req.files.length;i++){
+        if (req.files) {
+          for (let i = 0; i < req.files.length; i++) {
             let img = {
               name: req.files[i].filename,
               idExperience: +req.params.id,
@@ -266,14 +261,14 @@ module.exports = {
           },
         });
         //guardo cada producto
-        let i=1;
-        while(req.body["product"+i]){
+        let i = 1;
+        while (req.body["product" + i]) {
           let prod = {
-            name: req.body["product"+i],
-            idExperience: +req.params.id
-          }
+            name: req.body["product" + i],
+            idExperience: +req.params.id,
+          };
           productos.push(prod);
-          i++
+          i++;
         }
         await db.Product.bulkCreate(productos);
         //elimino relaciones keyword-experiencia anteriores
@@ -323,8 +318,25 @@ module.exports = {
       });
     }
   },
-
-  destroy: async (req, res) => {
+  productActive: async (req, res) => {
+    try {
+      //modifico la experiencia en uso
+      await db.Experience.update(
+        {
+          active: 1,
+        },
+        {
+          where: {
+            id: +req.params.id,
+          },
+        }
+      );
+      res.redirect("/admin/productos");
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  productHide: async (req, res) => {
     try {
       //modifico la experiencia en uso
       await db.Experience.update(
@@ -337,36 +349,54 @@ module.exports = {
           },
         }
       );
-      /*     //elimino la imagen
-    eliminarImagen(experiencia.images[0]);
-    //elimino los productos asociados
-    await db.Product.destroy({
-      where:{
-        idExperience: +req.params.id
-      }
-    })
-    //elimino las asaociaciones con keywords
-    await db.KeywordExperience.destroy({
-      where:{
-        idExperience: +req.params.id
-      }
-    })
-    //elimino las images asociadas
-    await db.Image.destroy({
-      where:{
-        idExperience: +req.params.id
-      }
-    })
-    //elimino la experiencia
-    await db.Experience.destroy({
-      where:{
-        id: +req.params.id
-      }
-    }) */
       //Al terminar la ejecución que creá el producto se redicrecciona al usuarío hacia el home.
       res.redirect("/admin/productos");
     } catch (err) {
       console.log(err);
     }
+  },
+  destroy: async (req, res) => {
+    /* let experiencia = await db.Experience.findByPk(req.params.id, {
+      include: [
+        {
+          association: "images",
+        },
+      ],
+    });
+
+    await (function () {
+      if (experiencia.images.length > 1) {
+        for (let i = 0; i < experiencia.images.length; i++) {
+          eliminarImagen(experiencia.images[i]);
+        }
+      } else {
+        eliminarImagen(experiencia.images[0]);
+      }
+    })();
+   
+    //elimino los productos asociados
+    await db.Product.destroy({
+      where: {
+        idExperience: +req.params.id,
+      },
+    });
+    //elimino las asaociaciones con keywords
+    await db.KeywordExperience.destroy({
+      where: {
+        idExperience: +req.params.id,
+      },
+    });
+    //elimino las images asociadas
+    await db.Image.destroy({
+      where: {
+        idExperience: +req.params.id,
+      },
+    });
+    //elimino la experiencia
+    await db.Experience.destroy({
+      where: {
+        id: +req.params.id,
+      },
+    }); */
   },
 };

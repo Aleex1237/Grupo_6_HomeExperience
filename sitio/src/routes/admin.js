@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const { admin, destroy, add, save, load, update } = require("../controllers/productsController");
+const { admin, productHide,productActive ,add, save, load, update,destroy } = require("../controllers/productsController");
 
 const { list } = require('../controllers/usersController');
 
@@ -13,7 +13,11 @@ const upload = require("../middlewares/multerConfig");
 
 router.get("/productos", adminUserCheck, admin);
 
-router.delete("/producto/eliminar/:id", destroy);
+router.put("/producto/mostrar/:id", productActive);
+
+router.put("/producto/ocultar/:id", productHide);
+
+router.delete("/producto/eliminar/:id",destroy);
 
 router.get('/producto/agregar',adminUserCheck ,add);
 
