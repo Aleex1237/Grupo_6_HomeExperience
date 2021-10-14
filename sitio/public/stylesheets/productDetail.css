@@ -84,6 +84,23 @@
 .productDetail footer a{
     color: var(--color-blanco);
 }
+.productDetail .box-miniaturas{
+    width:70%;
+    display:flex;
+    justify-content: center;
+    padding-left:20%;
+}
+.productDetail main .imagen-miniatura{
+    width:33%;
+    display:inline-block;
+    background-size:cover;
+    background-position:center; 
+    margin:5px;
+}
+.productDetail .oculto{
+    display:none;
+}
+
 @media (min-width: 768px){
     .productDetail main .contenedor1{
         display:flex;

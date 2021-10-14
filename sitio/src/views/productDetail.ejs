@@ -6,9 +6,17 @@
     <main>
     <div class="contenedor1">
         <div class="caja1"> 
-            <% experience.images.forEach((image,index) => { %>
-         <img class="imagen" src="/images/products/<%= image.name%>">
-                         <% }) %>
+            <input class="oculto" id="cantidad-imagenes" value="<%=experience.images.length%>">
+            <div class="box-principal">
+                <img class="imagen" id="img-principal" src="/images/products/<%= experience.images[0].name%>">
+            </div>
+            <div class="box-miniaturas">
+                <%if(experience.images.length>1){%>
+                    <%for(let i=0;i<experience.images.length;i++){%>
+                        <img class="imagen-miniatura" id="imagen-<%=i%>" onclick="document.getElementById('img-principal').setAttribute('src', '/images/products/<%= experience.images[i].name%>')" src="/images/products/<%= experience.images[i].name%>">
+                    <%}%>
+                <%}%>
+            </div>
  </div>
         <div class="caja2">
             <h1>BIG BOX - <%= experience.name%></h1>

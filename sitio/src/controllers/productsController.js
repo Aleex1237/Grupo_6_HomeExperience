@@ -98,6 +98,7 @@ module.exports = {
   },
 
   save: async (req, res) => {
+
     let errors = validationResult(req);
     let productos = [];
     if (errors.isEmpty()) {
@@ -110,11 +111,24 @@ module.exports = {
           idCategory: req.body.categoria,
           active: 1,
         });
-        //guardo la imagen
-        await db.Image.create({
-          name: req.file ? req.file.filename : "default-product.png",
-          idExperience: experiencia.id,
-        });
+        //guardo las imagenes
+        let imagenes = [];
+        if(req.files){
+          for(let i=0; i<req.files.length;i++){
+            let img = {
+              name: req.files[i].filename,
+              idExperience: experiencia.id,
+            };
+            imagenes.push(img);
+          }
+        }else{
+          imagenes.push({
+            name: "default-product.png",
+            idExperience: experiencia.id,
+          })
+        }
+        
+        await db.Image.bulkCreate(imagenes);
         //guardo cada producto
         let i=1;
         while(req.body["product"+i]){
@@ -158,7 +172,7 @@ module.exports = {
         title: "Agregar producto",
         old: req.body, // el old se encarga de la persistencia de datos del formulario ,
       });
-    }  
+    }   
   },
 
   load: async (req, res) => {
@@ -202,10 +216,12 @@ module.exports = {
           },
           include: [{ association: "images" }],
         });
-        //si vino una nueva imagen,elimino la anterior
-        if (req.file) {
+        //si vinieron nuevas imagenes,elimino las anteriores
+        if (req.files) {
           if(experiencia.images[0].name != "default-product.png"){
-            eliminarImagen(experiencia.images[0].name);
+            for(let i=0;i<experiencia.images.length;i++){
+              eliminarImagen(experiencia.images[i].name);
+            }
            
           }
            //elimino anteriores referencias de imagen de
@@ -230,12 +246,17 @@ module.exports = {
             },
           }
         );
-        //guardo nueva imagen
-        if (req.file) {
-          await db.Image.create({
-            name: req.file.filename,
-            idExperience: +req.params.id,
-          });
+        //guardo nuevas imagenes
+        let imagenes = [];
+        if(req.files){
+          for(let i=0; i<req.files.length;i++){
+            let img = {
+              name: req.files[i].filename,
+              idExperience: +req.params.id,
+            };
+            imagenes.push(img);
+          }
+          await db.Image.bulkCreate(imagenes);
         }
         //elimino anteriores referencias de productos de
         //esta experiencia
@@ -291,7 +312,7 @@ module.exports = {
         where: {
           id: +req.params.id,
         },
-        include: [{ assocition: images }],
+        include: [{ association: images }],
       });
       return res.render("productUpdate", {
         title: "Modificar: " + experiencia.name,
