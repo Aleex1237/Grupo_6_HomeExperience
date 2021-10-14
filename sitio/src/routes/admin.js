@@ -17,11 +17,11 @@ router.delete("/producto/eliminar/:id", destroy);
 
 router.get('/producto/agregar',adminUserCheck ,add);
 
-router.post("/producto/agregar", upload.single("imagen"), addProductValidator, save); 
+router.post("/producto/agregar", upload.array("imagen"), addProductValidator, save); 
 
 router.get('/producto/modificar/:id', adminUserCheck, load);
 
-router.put("/producto/modificar/:id", upload.single("imagen"), addProductValidator, update);
+router.put("/producto/modificar/:id", upload.array("imagen"), addProductValidator, update);
 
 router.get("/list",list)
 

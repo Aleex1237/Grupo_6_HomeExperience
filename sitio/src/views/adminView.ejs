@@ -23,9 +23,9 @@
       <% productos.forEach(product => { %>
       <article>
         <div class="container">
-          <% product.images.forEach((image,index) => { %>
-          <img src="/images/products/<%= image.name%>" alt="" />
-          <% }) %>
+          <%if(product.images.length>0){%>
+            <img src="/images/products/<%= product.images[0].name%>" alt="" />
+            <%}%>
           <ul>
             <li><%= product.name %></li>
             <li class="product-category">

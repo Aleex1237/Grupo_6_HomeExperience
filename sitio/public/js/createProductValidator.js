@@ -170,7 +170,6 @@ window.addEventListener("load",()=>{
                 $("cp-keywords-error").innerText=respuesta;
             }
             //valido los productos
-            /* productos = JSON.parse(sessionStorage.getItem("productos")); */
             productos.forEach((producto)=>{
                 respuesta = validoProducto(producto,cantidadProductos);
                 if(respuesta!=""){
@@ -288,8 +287,6 @@ window.addEventListener("load",()=>{
                     cantidadProductos--;
                     sessionStorage.setItem("cantidadProductos",cantidadProductos);
                     $("cp-cantidadProductos").value = cantidadProductos;
-                    console.log(productos);
-                    console.log(cantidadProductos);
                 })
             }
         });
@@ -301,8 +298,6 @@ window.addEventListener("load",()=>{
                 cantidadProductos--;
                 sessionStorage.setItem("cantidadProductos",cantidadProductos);
                 $("cp-cantidadProductos").value = cantidadProductos;
-                console.log(productos);
-                console.log(cantidadProductos);
             })
         }
     }

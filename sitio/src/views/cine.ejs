@@ -29,9 +29,10 @@
                                 <article class="product">
                                     <div>
                                         <a href="/productos/detalle/<%= experiencia.id%>">
-                                            <% experiencia.images.forEach((image,index) => { %>
-                                            <img src="/images/products/<%= image.name%>" alt="">
-                                        </a><% }) %>
+                                            <%if(experiencia.images.length>0){%>
+                                                <img src="/images/products/<%= experiencia.images[0].name%>" alt="">
+                                            <% } %>
+                                        </a>
                                     </div>
                                     <div class="product-info">
                                         <h3><%= experiencia.name %> </h3>
