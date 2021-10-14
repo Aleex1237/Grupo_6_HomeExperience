@@ -72,11 +72,14 @@
     text-align:center;
     padding:20px 15px;
 }
-.productDetail main .contenido{
+/* .productDetail main .contenido{
     display:none;
 }
 .productDetail main .experiencia{
     display:inline-block;
+} */
+.productDetail main .ul {
+    list-style-type: none;
 }
 .productDetail footer a{
     color: var(--color-blanco);
@@ -131,4 +134,3 @@
     font-size:1.8vw;
     }
 }
-

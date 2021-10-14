@@ -5,32 +5,37 @@
   <%- include("./partials/header")%>
     <main>
         <h1>Modificar experiencia</h1>
-        <form action="/admin/producto/modificar/<%=producto.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <form id="create-product-form" action="/admin/producto/modificar/<%=producto.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+          <input class="oculto" type="text" name="id" id="cp-id" value="<%=producto.id%>">
           <div class="nombre">
-            <input class="nombre" type="text" name="nombre" id="nombre" value="<%=locals.old ? old.nombre : producto.name%>">
+            <input class="nombre" type="text" name="nombre" id="cp-nombre" value="<%=locals.old ? old.nombre : producto.name%>">
             <% if (locals.errors && errors.nombre) { %>
               <p class="text-danger"><%= errors.nombre.msg %> </p>
             <% } %>
+            <p id="cp-nombre-error" class="text-danger"></p>
           </div>
           <div class="contenedor">
               <div class="caja1">
-                  <textarea name="descripcion" cols="30" rows="10" ><%=locals.old  ? old.descripcion : producto.description%></textarea>
+                  <textarea name="descripcion" id="cp-descripcion" cols="30" rows="10" ><%=locals.old  ? old.descripcion : producto.description%></textarea>
                   <% if (locals.errors && errors.descripcion) { %>
                     <p class="text-danger"><%= errors.descripcion.msg %> </p>
                   <% } %>
+                  <p id="cp-descripcion-error" class="text-danger"></p>
                   <div class="contenedor2">
                     <div>
-                      <input class="precio" type="text" name="precio" id="precio" value="<%=locals.old ? old.precio : producto.price%>">
+                      <input class="precio" type="text" name="precio" id="cp-precio" value="<%=locals.old ? old.precio : producto.price%>">
                       <% if (locals.errors && errors.precio) { %>
                         <p class="text-danger"><%= errors.precio.msg %> </p>
                       <% } %>
-                      <select name="categoria">
+                      <p id="cp-precio-error" class="text-danger"></p>
+                      <select name="categoria" id="cp-categoria">
                         <option value=1 <%=producto.idCategory===1?"selected":null%>>Bar</option>
                         <option value=2 <%=producto.idCategory===2?"selected":null%>>Cine</option>
                       </select>
                       <% if (locals.errors && errors.categoria) { %>
                         <p class="text-danger"><%= errors.categoria.msg %> </p>
                       <% } %>
+                      <p id="cp-categoria-error" class="text-danger"></p>
                     </div>
                     <div class="div-imagen" id="input-file">
                       <input class="input-file" type="file" name="imagen" placeholder="+ FOTO" value="<%=producto.image%>">
@@ -38,31 +43,44 @@
                     
                   </div>
                   <div>
-                    <input class="precio" type="text" name="keywords" id="keywords" placeholder="Palabras relacionadas" value="<%=keywords%>" required>
+                    <input class="precio" type="text" name="keywords" id="cp-keywords" placeholder="Palabras relacionadas" value="<%=keywords%>" required>
                     <% if (locals.errors && errors.keywords) { %>
                       <p class="text-danger"><%= errors.keywords.msg %> </p>
                     <% } %>
+                    <p id="cp-keywords-error" class="text-danger"></p>
                   </div>
               </div>
               <div class="caja2">
                     <h3>Productos incluidos en la experiencia:</h3>
                     <br>
-                    <input class="precio" type="text" name="product1" id="keywords" placeholder="Agregar producto" value="<%=locals.old  ? old.product1 : (producto.products[0] ? producto.products[0].name : "")%>" required>
-                    <% if (locals.errors && errors.product1) { %>
-                      <p class="text-danger"><%= errors.product1.msg %> </p>
+                    <input class="oculto" name="cantidadProductos" id="cp-cantidadProductos" value="<%=producto.products.length%>">
+                    <input class="precio" type="text" name="product" id="cp-product" placeholder="Agregar producto">
+                    <% if (locals.errors && errors.product) { %>
+                      <p class="text-danger"><%= errors.product.msg %> </p>
                     <% } %>
-                    <input class="precio" type="text" name="product2" id="keywords" placeholder="Agregar producto"  value="<%=locals.old  ? old.product2 : (producto.products[1] ? producto.products[1].name : "")%>" >
-                    <% if (locals.errors && errors.product2) { %>
-                      <p class="text-danger"><%= errors.product2.msg %> </p>
-                    <% } %>
-                    <input class="precio" type="text" name="product3" id="keywords" placeholder="Agregar producto"  value="<%=locals.old  ? old.product3 : (producto.products[2] ? producto.products[2].name : "")%>" >
-                    <% if (locals.errors && errors.product3) { %>
-                      <p class="text-danger"><%= errors.product3.msg %> </p>
-                    <% } %>
-                    <input class="precio" type="text" name="product4" id="keywords" placeholder="Agregar producto"  value="<%=locals.old  ? old.product4 : (producto.products[3] ? producto.products[3].name : "")%>"  >  
-                    <% if (locals.errors && errors.product4) { %>
-                      <p class="text-danger"><%= errors.product4.msg %> </p>
-                    <% } %>
+                    <p id="cp-product-error" class="text-danger"></p>
+                    <table id="cp-tabla" class="table">
+                      <thead>
+                        <tr>
+                          <th class="letraBlanca" scope="col" color="white">#</th>
+                          <th class="letraBlanca" scope="col" color="white">Producto</th>
+                          <th class="letraBlanca" scope="col" color="white"></th>
+                        </tr>
+                      </thead>
+                      <tbody id="cp-tabla-productos">
+                        <%for(let i=1;i<=producto.products.length;i++){%>
+                          <tr>
+                            <th class="letraBlanca" scope="row" ><%=i%></th>
+                            <td>
+                            <input type="text" class="sinFormato" name="product<%=i%>" id="cp-product<%=i%>" value="<%=producto.products[i-1].name%>">
+                            </td>
+                            <td>
+                              <button class="btnEliminar" id="cp-eliminar-product<%=i%>">X</button>
+                            </td>
+                            </tr>
+                          <%}%>
+                      </tbody>
+                    </table>
               </div>
           </div> 
           <div>

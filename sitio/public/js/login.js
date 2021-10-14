@@ -1,7 +1,8 @@
+const $ = (id) => document.getElementById(id);
 window.addEventListener("load", () => {
   console.log("CONECTADO SATISFACTORIAMENTE CON LOGIN");
 
-  const $ = (id) => document.getElementById(id);
+  
 
   $("floatingInput").addEventListener("blur", () => {
     if (!regExEmail.test($("floatingInput").value)) {

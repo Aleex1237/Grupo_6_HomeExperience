@@ -47,35 +47,13 @@ module.exports = [
     })
     .withMessage("La palabra clave debe tener un mínimo de 3 caracteres"),
 
-  check("product1")
-    .notEmpty()
-    .withMessage("Debe completar este campo")
-    .bail()
-    .isLength({
-      min: 3,
-      max: 30,
-    })
-    .withMessage("Cada producto debe tener un mínimo de 3 caracteres"),
-
-  check("product2")
-    .notEmpty()
-    .withMessage("Debe completar este campo")
-    .bail()
-    .isLength({
-      min: 3,
-      max: 30,
-    })
-    .withMessage("Cada producto debe tener un mínimo de 3 caracteres"),
-
-  check("product3")
-    .isLength({
-      max: 30,
-    })
-    .withMessage("Cada producto puede tener un máximo de 30 caracteres"),
-
-  check("product4")
-    .isLength({
-      max: 30,
-    })
-    .withMessage("Cada producto puede tener un máximo de 30 caracteres"),
+  check("product").custom((value, { req }) => {
+    console.log(req.body.cantidadProductos);
+    if (+req.body.cantidadProductos>=2) {
+      return true;
+    }else{
+      return false;
+    }
+  })
+  .withMessage("Debe ingresar al menos dos productos para esta experiencia"),
 ];

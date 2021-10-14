@@ -19,28 +19,27 @@
     </div>
         <section>
             <div class="contenedor2">
-                <div class="opciones"><a href="" class="exp"><h2>Experiencia</h2></a></div>
-                <div class="opciones"><a href="" class="cont"><h2>Contenido de la caja</h2></a></div>
+                <div  class="opciones"><a  href="" class="exp"><h2 id="btn-experiencia">Experiencia</h2></a></div>
+                <div  class="opciones"><a  href="" class="cont"><h2 id="btn-contenido">Contenido de la caja</h2></a></div>
             </div>
-            <article class="experiencia">
+            <article id="pd-experiencia" class="experiencia">
                 <p>
                     <%= experience.description%>
                     </p>
             </article>
-            <article class="contenido">
-                <p>Los insumos necesarios para explorar distintas formas de beber un buen MOJITO, se pueden difrutar hasta 12 cócteles. </p>
-                <ul>
-                    <li>Botella Bacardí Carta Blanca 980ml.</li>
-                    <li>3 (tres) latas de agua con gas Perrier.</li>
-                    <li>Lima, hierba buena y azúcar.</li>
-                    <li>Set de coctelería.</li>
-                    <li>2 (dos) vasos Mojito.</li>
-                    <li>Set chocolates Kit Kat.</li>
+            <article id="pd-contenido" class="contenido">
+                <p>Los productos incluídos en esta experiencia son: </p>
+                <ul type="none">
+                    <%experience.products.forEach(product=>{%>
+
+                    <li><%=product.name%></li>
+                    <%})%>
                 </ul>
             </article>
         </section>
     </main>
     <%- include("./partials/footer")%>
     <%- include("./partials/scripts")%>
+    <script src= "/js/productDetail.js"></script>
 </body>
 </html>

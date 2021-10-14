@@ -68,7 +68,9 @@ module.exports = {
       where: {
         id: req.params.id,
       },
-      include: [{ association: "images" }],
+      include: [{ association: "images" },
+                { association: "products"}
+              ],
     })
       .then((experience) => {
         if (experience.active == 1) {
@@ -97,14 +99,7 @@ module.exports = {
 
   save: async (req, res) => {
     let errors = validationResult(req);
-    let lista = [req.body.product1, req.body.product2]; //lista de productos
-    if (req.body.product3) {
-      lista.push(req.body.product3);
-      if (req.body.product4) {
-        lista.push(req.body.product4);
-      }
-    }
-
+    let productos = [];
     if (errors.isEmpty()) {
       try {
         //guardo experiencia
@@ -121,13 +116,14 @@ module.exports = {
           idExperience: experiencia.id,
         });
         //guardo cada producto
-        let productos = [];
-        for (let i = 0; i < lista.length; i++) {
-          let producto = {
-            name: lista[i],
-            idExperience: experiencia.id,
-          };
-          productos.push(producto);
+        let i=1;
+        while(req.body["product"+i]){
+          let prod = {
+            name: req.body["product"+i],
+            idExperience: experiencia.id
+          }
+          productos.push(prod);
+          i++
         }
         await db.Product.bulkCreate(productos);
         //guardo la relacion entre la experiencia y cada keyword
@@ -158,11 +154,11 @@ module.exports = {
       //Si no se cumple  renderizará productLoad y guardará los errores en la variable errors y lo mapearan, old guardará lo que venga por el body.
       return res.render("productLoad", {
         errors:
-          errors.mapped() /* el mapped ayuda a mostrar un error a la vez y diferenciar de que input es cada error */,
+          errors.mapped(), // el mapped ayuda a mostrar un error a la vez y diferenciar de que input es cada error ,
         title: "Agregar producto",
-        old: req.body /* el old se encarga de la persistencia de datos del formulario */,
+        old: req.body, // el old se encarga de la persistencia de datos del formulario ,
       });
-    }
+    }  
   },
 
   load: async (req, res) => {
@@ -196,13 +192,7 @@ module.exports = {
   update: async (req, res) => {
     let index = 0;
     let errors = validationResult(req);
-    let lista = [req.body.product1, req.body.product2];
-    if (req.body.product3) {
-      lista.push(req.body.product3);
-      if (req.body.product4) {
-        lista.push(req.body.product4);
-      }
-    }
+    let productos = [];
     if (errors.isEmpty()) {
       try {
         //busco la experiencia en uso
@@ -255,13 +245,14 @@ module.exports = {
           },
         });
         //guardo cada producto
-        let productos = [];
-        for (let i = 0; i < lista.length; i++) {
-          let producto = {
-            name: lista[i],
-            idExperience: +req.params.id,
-          };
-          productos.push(producto);
+        let i=1;
+        while(req.body["product"+i]){
+          let prod = {
+            name: req.body["product"+i],
+            idExperience: +req.params.id
+          }
+          productos.push(prod);
+          i++
         }
         await db.Product.bulkCreate(productos);
         //elimino relaciones keyword-experiencia anteriores

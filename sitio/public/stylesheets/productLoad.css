@@ -100,9 +100,32 @@
     color: var(--color-blanco);
 }
 
+.productLoad .oculto{
+    display:none;
+}
+.productLoad .sinFormato{
+    background-color:var(--color-azul-oscuro);
+    text-align:center;
+    padding:0;
+    margin:0;
+    width:100%;
+    height:100%;
+    border-radius:0;
+    border:none;
+    font-size:3vw;
+}
+.productLoad .letraBlanca{
+    color:var(--color-blanco);
+}
 
-
-
+.productLoad .btnEliminar{
+    border-radius:2px;
+    color:var(--color-rojo);
+    border:solid 1px var(--color-rojo);
+    padding:3px;
+    margin:2px;
+    font-size:3vw;
+}
 
 
 
@@ -140,6 +163,12 @@
     }
     .productLoad footer{
         position: absolute;
+    }
+    .productLoad .sinFormato{
+        font-size:1vw;
+    }
+    .productLoad .btnEliminar{
+        font-size:1vw;
     }
 }
 @media(min-width:1024px){
