@@ -66,15 +66,16 @@ module.exports = {
 
   search: async (req, res) => {
       let products = await db.Experience.findAll({
-      include: [{ association: "images" },{association:"category"}],
+      include: [{ association: "images" },{association:"category"},{association:"keywords"}],
       where: {
         name: { [Op.substring]: req.query.searchProducts ? req.query.searchProducts : "" },
+        
       },
     });
-   /*  db.Experience.findAll({
+    db.Experience.findAll({
       include: [{ association: "images" }, { association: "category" }],
     })
-      .then((result) => {
+      .then(() => {
         return res.render("searchProduct", {
           products,
           title: `Resultado: ${products.length}`,
@@ -83,7 +84,7 @@ module.exports = {
       })
       .catch((err) => {
         console.log(err);
-      }); */
+      });
   },
 
   detail: (req, res) => {
@@ -200,7 +201,6 @@ module.exports = {
       let experiencia = await db.Experience.findOne({
         where: {
           id: req.params.id,
-          active: 1,
         },
         include: [
           { association: "images" },

@@ -1,2 +1,4 @@
 /sprint2/node_modules
 /sitio/node_modules
+/sitio/src/database/config
+/sitio/.env
