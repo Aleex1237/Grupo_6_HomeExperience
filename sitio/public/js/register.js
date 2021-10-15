@@ -7,9 +7,6 @@ let regExDate = /^\d{4}([\-/.])(0?[1-9]|1[1-2])\1(3[01]|[12][0-9]|0?[1-9])$/;
 window.addEventListener("load", () => {
   console.log("CONECTADO SATISFACTORIAMENTE CON REGISTER");
 
-  window.addEventListener("load", () => {
-    console.log("CONECTADO SATISFACTORIAMENTE CON LOGIN");
-
     const formularioRegister = $("form-register");
 
     console.log(formularioRegister);
@@ -116,4 +113,4 @@ window.addEventListener("load", () => {
       $("form-register").submit();
     }
   });
-});
+
