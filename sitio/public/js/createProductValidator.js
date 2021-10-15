@@ -260,34 +260,39 @@ window.addEventListener("load",()=>{
             $("cp-product-error").innerText=validoProducto(product.value,cantidadProductos);
             if(e.keyCode==13){
                 e.preventDefault();
-                cantidadProductos++;
-                sessionStorage.setItem("cantidadProductos",cantidadProductos);
-                //input oculto que me enviara en el formulario la cantidad de productos ingresada
-                //necesaria para hacer la validacion backend
-                $("cp-cantidadProductos").value = cantidadProductos;
-                productos.push(product.value);
-                //agrego linea de la tabla con input dentro para poder acceder desde el req.body
-                $("cp-tabla-productos").innerHTML+=
-                `<tr>
-                <th class="letraBlanca" scope="row" >${cantidadProductos}</th>
-                <td>
-                <input type="text" class="sinFormato" name="product${cantidadProductos}" value="${product.value}">
-                </td>
-                <td>
-                <button class="btnEliminar" id="cp-eliminar-product${cantidadProductos}">X</button>
-                </td>
-                </tr>`
-                //seteo el input producto
-                product.value="";
-                //agrego la escucha del boton eliminar del nuevo producto
-                $("cp-eliminar-product"+cantidadProductos).addEventListener("click",event=>{
-                    event.preventDefault();
-                    console.log("hiciste click en boton "+cantidadProductos);
-                    productos = eliminarProducto(productos,cantidadProductos);
-                    cantidadProductos--;
+                if($("cp-product").value.length>2){
+                    cantidadProductos++;
                     sessionStorage.setItem("cantidadProductos",cantidadProductos);
+                    //input oculto que me enviara en el formulario la cantidad de productos ingresada
+                    //necesaria para hacer la validacion backend
                     $("cp-cantidadProductos").value = cantidadProductos;
-                })
+                    productos.push(product.value);
+                    //agrego linea de la tabla con input dentro para poder acceder desde el req.body
+                    $("cp-tabla-productos").innerHTML+=
+                    `<tr>
+                    <th class="letraBlanca" scope="row" >${cantidadProductos}</th>
+                    <td>
+                    <input type="text" class="sinFormato" name="product${cantidadProductos}" value="${product.value}">
+                    </td>
+                    <td>
+                    <button class="btnEliminar" id="cp-eliminar-product${cantidadProductos}">X</button>
+                    </td>
+                    </tr>`
+                    //seteo el input producto
+                    product.value="";
+                    //agrego la escucha del boton eliminar del nuevo producto
+                    $("cp-eliminar-product"+cantidadProductos).addEventListener("click",event=>{
+                        event.preventDefault();
+                        console.log("hiciste click en boton "+cantidadProductos);
+                        productos = eliminarProducto(productos,cantidadProductos);
+                        cantidadProductos--;
+                        sessionStorage.setItem("cantidadProductos",cantidadProductos);
+                        $("cp-cantidadProductos").value = cantidadProductos;
+                    })
+                }else{
+                    $("cp-product-error").innerText="Cada producto debe tener al menos tres caracteres";
+                }
+                
             }
         });
         for(let j=1;j<=cantidadProductos;j++){
