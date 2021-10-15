@@ -6,15 +6,9 @@
     <%- include("partials/header" ) %>
     <main>
       <div class="headerAdmin">
-        <form action="" method="POST" class="search-form">
+        <form action="/admin/productos/buscar" method="GET" class="search-form" id="formSearch">
           <button type="submit"><i class="fas fa-search"></i></button>
-          <input
-            class="search"
-            type="text"
-            name="search_products"
-            id=""
-            placeholder="Buscar productos..."
-          />
+          <input class="search" type="text" name="searchProducts" id="search" placeholder="Buscar productos..."/>
         </form>
         <a href="/admin/producto/agregar"
           ><i class="fas fa-plus"></i> Agregar producto</a

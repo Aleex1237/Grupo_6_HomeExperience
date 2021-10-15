@@ -1,6 +1,7 @@
 const { validationResult } = require("express-validator");
 const db = require("../database/models");
 const { eliminarImagen } = require("../data/products_db");
+const { Op } = require("sequelize");
 
 module.exports = {
   bar: (req, res) => {
@@ -61,6 +62,22 @@ module.exports = {
         })
       )
       .catch((error) => console.log(error));
+  },
+
+  search: async (req, res) => {
+    let products = await db.Experience.findAll({
+      include: [{ association: "images" },{association:"category"}],
+      where: {
+        name: { [Op.substring]: req.query.searchProducts ? req.query.searchProducts : "" },
+      },
+    });
+
+
+    return res.render("searchProduct",{
+      products,
+      title : `Resultado: ${products.length}`,
+      query : req.query.searchProducts
+    })
   },
 
   detail: (req, res) => {
@@ -364,10 +381,10 @@ module.exports = {
       ],
     });
 
-      for (let i = 0; i < experiencia.images.length; i++) {
-          eliminarImagen(experiencia.images[i].name);
-      }
-   
+    for (let i = 0; i < experiencia.images.length; i++) {
+      eliminarImagen(experiencia.images[i].name);
+    }
+
     //elimino los productos asociados
     await db.Product.destroy({
       where: {
@@ -393,6 +410,6 @@ module.exports = {
       },
     });
 
-    res.redirect("/admin/productos")
+    res.redirect("/admin/productos");
   },
 };

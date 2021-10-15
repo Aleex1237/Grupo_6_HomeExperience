@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-const { admin, productHide,productActive ,add, save, load, update,destroy } = require("../controllers/productsController");
+const { admin, productHide,productActive ,add, save, load, update,destroy,search } = require("../controllers/productsController");
 
 const { list } = require('../controllers/usersController');
 
@@ -12,6 +12,8 @@ const upload = require("../middlewares/multerConfig");
 
 
 router.get("/productos", adminUserCheck, admin);
+
+router.get("/productos/buscar", search);
 
 router.put("/producto/mostrar/:id", productActive);
 
