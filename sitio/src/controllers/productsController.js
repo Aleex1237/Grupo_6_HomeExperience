@@ -356,7 +356,7 @@ module.exports = {
     }
   },
   destroy: async (req, res) => {
-    /* let experiencia = await db.Experience.findByPk(req.params.id, {
+    let experiencia = await db.Experience.findByPk(req.params.id, {
       include: [
         {
           association: "images",
@@ -364,15 +364,9 @@ module.exports = {
       ],
     });
 
-    await (function () {
-      if (experiencia.images.length > 1) {
-        for (let i = 0; i < experiencia.images.length; i++) {
-          eliminarImagen(experiencia.images[i]);
-        }
-      } else {
-        eliminarImagen(experiencia.images[0]);
+      for (let i = 0; i < experiencia.images.length; i++) {
+          eliminarImagen(experiencia.images[i].name);
       }
-    })();
    
     //elimino los productos asociados
     await db.Product.destroy({
@@ -397,6 +391,8 @@ module.exports = {
       where: {
         id: +req.params.id,
       },
-    }); */
+    });
+
+    res.redirect("/admin/productos")
   },
 };
