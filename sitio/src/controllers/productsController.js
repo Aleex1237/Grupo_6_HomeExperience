@@ -65,19 +65,25 @@ module.exports = {
   },
 
   search: async (req, res) => {
-    let products = await db.Experience.findAll({
+      let products = await db.Experience.findAll({
       include: [{ association: "images" },{association:"category"}],
       where: {
         name: { [Op.substring]: req.query.searchProducts ? req.query.searchProducts : "" },
       },
     });
-
-
-    return res.render("searchProduct",{
-      products,
-      title : `Resultado: ${products.length}`,
-      query : req.query.searchProducts
+   /*  db.Experience.findAll({
+      include: [{ association: "images" }, { association: "category" }],
     })
+      .then((result) => {
+        return res.render("searchProduct", {
+          products,
+          title: `Resultado: ${products.length}`,
+          query: req.query.searchProducts,
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+      }); */
   },
 
   detail: (req, res) => {
