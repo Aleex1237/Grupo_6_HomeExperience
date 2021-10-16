@@ -2,13 +2,10 @@ let regExName = /^([A-Z]{1}[a-zñáéíóú]+[\s]*)+$/;
 let regExPassword = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,12}$/;
 let regExDate = /^\d{4}([\-/.])(0?[1-9]|1[1-2])\1(3[01]|[12][0-9]|0?[1-9])$/;
 
-const $ = (id) => document.getElementById(id);
+//const $ = (id) => document.getElementById(id);
 
 window.addEventListener("load", () => {
-  console.log("CONECTADO SATISFACTORIAMENTE CON LOGIN");
-
-  window.addEventListener("load", () => {
-    console.log("CONECTADO SATISFACTORIAMENTE CON LOGIN");
+  console.log("CONECTADO SATISFACTORIAMENTE CON REGISTER");
 
     const formularioRegister = $("form-register");
 
@@ -116,4 +113,4 @@ window.addEventListener("load", () => {
       $("form-register").submit();
     }
   });
-});
+

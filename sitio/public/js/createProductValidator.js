@@ -1,5 +1,5 @@
 //const $ = id => document.getElementById(id);
-const query = new URLSearchParams(location.search);
+
 const actualizarTabla = productos =>{
     $("cp-tabla-productos").innerHTML="";
     for(let i=1;i<=productos.length;i++){
