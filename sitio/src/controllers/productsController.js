@@ -236,7 +236,7 @@ module.exports = {
           include: [{ association: "images" }],
         });
         //si vinieron nuevas imagenes,elimino las anteriores
-        if (req.files) {
+        if (req.files.length>0) {
           if (experiencia.images[0].name != "default-product.png") {
             for (let i = 0; i < experiencia.images.length; i++) {
               eliminarImagen(experiencia.images[i].name);
@@ -266,7 +266,7 @@ module.exports = {
         );
         //guardo nuevas imagenes
         let imagenes = [];
-        if (req.files) {
+        if (req.files.length>0) {
           for (let i = 0; i < req.files.length; i++) {
             let img = {
               name: req.files[i].filename,
