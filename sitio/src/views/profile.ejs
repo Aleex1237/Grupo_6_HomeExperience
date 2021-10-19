@@ -70,19 +70,19 @@
                     <label for="genero">Género</label> <br>
                     <select class="form-select" aria-label="Default select example" name="genero">
                         
-                        <option  <%= usuario.genre.id === genre.id ? "selected" : "" %>  value=1> 
+                        <option  <%= usuario.genre.id === 1 ? "selected" : "" %>  value=1> 
                             Prefiero no decirlo 
                         </option>
 
-                          <option <%= usuario.genre.id === genre.id ? "selected" : "" %> value=2>
+                          <option <%= usuario.genre.id === 2 ? "selected" : "" %> value=2>
                             Masculino
                           </option>
 
-                          <option <%= usuario.genre.id === genre.id ? "selected" : "" %> value=3>
+                          <option <%= usuario.genre.id === 3 ? "selected" : "" %> value=3>
                             Femenino
                           </option>
 
-                          <option <%= usuario.genre.id === genre.id ? "selected" : "" %> value=4>
+                          <option <%= usuario.genre.id === 4 ? "selected" : "" %> value=4>
                             No binario
                           </option>
                          

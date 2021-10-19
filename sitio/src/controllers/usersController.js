@@ -121,29 +121,36 @@ module.exports = {
   },
 
   //ACTUALIZAR PERFIL
-  updateProfile: (req, res) => {
-    db.User.update(
+  updateProfile: async (req, res) => {
+    let userOld = await db.User.findByPk(res.locals.user.id);
+
+    await db.User.update(
       {
         name: req.body.nombre,
         dateBirth: req.body.fecha_nac,
-        avatar: req.file ? req.file.filename : "default.png",
+        avatar: req.file ? req.file.filename : userOld.avatar,
         idGenre: req.body.genero,
       },
       { where: { id: res.locals.user.id } }
-    ).then(() => {
-      db.User.findOne({ where: { id: res.locals.user.id } }).then((user) => {
-        req.session.user = {
-          id: user.id,
-          name: user.name,
-          avatar: user.avatar,
-          idRol: user.idRol,
-        };
+    );
 
-        res.locals.user = req.session.user;
-
-        res.redirect(`/usuarios/perfil/${res.locals.user.id}`);
-      });
+    let user = await db.User.findOne({
+      where: { id: res.locals.user.id },
     });
+    try {
+      req.session.user = {
+        id: user.id,
+        name: user.name,
+        avatar: user.avatar,
+        idRol: user.idRol,
+      };
+
+      res.locals.user = req.session.user;
+
+      res.redirect(`/usuarios/perfil/${res.locals.user.id}`);
+    } catch (error) {
+      console.log(error);
+    }
   },
 
   //BORRAR USUARIO
@@ -189,11 +196,12 @@ module.exports = {
   },
 
   //ACTUALIZAR DIRECCION ASOCIADA AL USUARIO
-  updateAddress: (req, res) => {
+  updateAddress: async (req, res) => {
     let errors = validationResult(req);
-    
+
     if (errors.isEmpty()) {
-      db.Address.update(
+      let user = await db.User.findByPk(res.locals.user.id);
+      await db.Address.update(
         {
           pais: req.body.pais,
           localidad: req.body.localidad,
@@ -203,14 +211,13 @@ module.exports = {
           codigoPostal: +req.body.postal,
           departamento: req.body ? req.body.departamento : "n/a",
         },
-        { where: { id: res.locals.user.id } }
-      )
-        .then(() => {
-          res.redirect(`/usuarios/direccion/${req.params.id}`);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+        { where: { id: user.idAddress } }
+      );
+      try {
+        res.redirect(`/usuarios/direccion/${req.params.id}`);
+      } catch (error) {
+        console.log(error);
+      }
     } else {
       let countries = fetch("https://restcountries.com/v3/all").then(
         (countries) => countries.json()
