@@ -121,10 +121,30 @@
 .cine header .btn-group {
   top: 1.8vh;
   left: 75px;
-  
 }
-.cine header .dropdown-menu{
-    top: 135% !important;
+.cine header .dropdown-menu {
+  top: 135% !important;
+}
+.cine .popup-class {
+  border-top: solid 1px var(--color-celeste);
+  border-bottom: solid 1px var(--color-celeste);
+  border-radius: 0;
+}
+.cine .content-class {
+  color: white;
+}
+.cine .confirmButton {
+  border: solid 1.2px var(--color-celeste) !important;
+  border-radius: 25px !important;
+  background-color: var(--color-azul-oscuro) !important;
+  transition: 0.4s;
+}
+.cine .confirmButton:hover {
+  background-color: var(--color-celeste) !important;
+  color: black !important;
+}
+.swal2-popup .swal2-styled:focus {
+  box-shadow: none !important;
 }
 
 @media (min-width: 768px) {
