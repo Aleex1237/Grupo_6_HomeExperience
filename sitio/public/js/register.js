@@ -43,7 +43,7 @@ window.addEventListener("load", () => {
 
   /* validación fecha de nacimiento */
 
-  $("fecha_nac").addEventListener("blur", () => {
+  /*  $("fecha_nac").addEventListener("blur", () => {
     if (!regExDate.test($("fecha_nac").value)) {
       $("fecha_nac").classList.add("is-invalid");
       $("error-date").innerHTML = "Ingrese una fecha válida";
@@ -52,7 +52,50 @@ window.addEventListener("load", () => {
       $("fecha_nac").classList.add("is-valid");
       $("error-date").innerHTML = null;
     }
-  });
+  });  */
+
+
+  const fechaNacimiento= document.getElementById('fecha_nac');
+  const menorEdad= document.getElementById('error-date')
+
+  const calcularEdad=(fechaNacimiento)=> {
+    const fechaActual= new Date();
+    const anoActual= parseInt(fechaActual.getFullYear())
+    const mesActual= parseInt(fechaActual.getMonth())+1;
+    const diaActual= parseInt(fechaActual.getDay())
+
+    /* 2016-07-11 es el formato de la fecha */
+    const anoNacimiento= parseInt(String(fechaNacimiento).substring(0,4))
+    const mesNacimiento= parseInt(String(fechaNacimiento).substring(5,7))
+    const diaNacimiento= parseInt(String(fechaNacimiento).substring(8,10))
+
+
+    let edad= anoActual-anoNacimiento
+    if(mesActual<mesNacimiento){
+      edad--
+    } else if(mesActual===mesNacimiento){
+      if(diaActual<diaNacimiento){
+        edad--
+      }
+    }
+    return edad
+  }
+
+  window.addEventListener('load', function (){
+     fechaNacimiento.addEventListener('change', function(){
+      let edadFinal= calcularEdad(this.value)
+      console.log(edadFinal);
+
+       if(edadFinal<18) {
+        $("fecha_nac").classList.add("is-invalid");
+        $("error-date").innerHTML = "Debes ser mayor de edad";
+    } else {
+        $("fecha_nac").classList.remove("is-invalid");
+       $("fecha_nac").classList.add("is-valid");
+        $("error-date").innerHTML = null; 
+      } 
+    })
+  }) 
 
   /* validación Password*/
 
