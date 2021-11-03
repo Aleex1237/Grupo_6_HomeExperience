@@ -61,12 +61,15 @@
     background-color: var( --color-celeste);
     height: 40px;
     border: none;
+    color: var(--color-blanco);
+    margin-bottom: 1.5vh;
 }
 
-.login .cuerpo .form-control{
-    color: var(--color-blanco)
+.login .cuerpo .btn-primary{
+    background-color: var(--color-azul-oscuro);
+    font-size: 10px;
+    margin-top: 2vh;
 }
-
 
 .login .cuerpo ::placeholder{
     color:var(--color-blanco);
@@ -165,6 +168,10 @@
         margin-left: 19vw;
     }
 
+    .btn-primary{
+/*         margin-top: 50vh;
+ */        background-color: red;
+    }
 
     .login .cuerpo .boton{
         margin-left: 21vw;

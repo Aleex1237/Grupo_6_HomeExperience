@@ -16,11 +16,15 @@
                 
               </div>
               <div class="form-floating">
+                  
                 <input type="password" class="form-control" id="floatingPassword" name="password" <%= locals.errores && locals.errores.name ? 'is-invalid' : null %>placeholder="Contraseña">
                 <% if (locals.errors && errors.email) { %>
                     <p class="text-danger" id="error-password"><%= errors.email.msg %> </p>
                 <% } %>
                 <span id="error-password" class="text-danger"></span>
+                    <div class="mostrar">
+                    <button class="btn btn-primary" id="mostrarPass" type="button" onclick="mostrar()">Mostrar Contraseña</button>
+                  </div>   
 
                 <span id="error-vacio" class="text-danger"></span>
 
@@ -35,8 +39,12 @@
 
         <a href="/usuarios/registro" class="creacuenta">¿No tenés cuenta? ¡Creá una ahora!</a>
 
+
+       
     </main>
+   
     <%- include('./partials/footer')  %> 
     <%- include('./partials/scripts')  %> 
+   
     </body>
 </html>

@@ -48,3 +48,17 @@ window.addEventListener("load", () => {
     }
   
 });
+
+function mostrar(){
+    var tipo= document.getElementById('floatingPassword')
+    var ocultarMostrar= document.getElementById('mostrarPass')
+    if(tipo.type =='password'){
+        tipo.type= 'text';
+        ocultarMostrar.innerHTML= 'Ocultar contraseña'
+    } else {
+        tipo.type='password'
+        ocultarMostrar.innerHTML= 'Mostrar contraseña'
+    }
+    }
+
+ 
