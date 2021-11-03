@@ -1,20 +1,27 @@
 console.log("conexion exitosa");
 window.addEventListener("load",()=>{ 
-    $("pd-experiencia").style.display = "inline-block";
-    $("pd-contenido").style.display = "none";
-    $("btn-experiencia").style.color = "white"
+    let experiencia = $("pd-experiencia");
+    let contenido = $("pd-contenido");
+    let btnExperiencia = $("btn-experiencia");
+    let btnContenido = $("btn-contenido");
+    experiencia.style.display = "inline-block";
+    contenido.style.display = "none";
+    btnExperiencia.style.color = "white"
 
-    $("btn-contenido").addEventListener("mouseover",()=> {
-        $("pd-experiencia").style.display = "none";
-        $("pd-contenido").style.display = "inline-block";
-        $("btn-contenido").style.color = "white";
-        $("btn-experiencia").style.color = "var(--color-gris)";
+    btnExperiencia.onclick = function (e) {
+        e.preventDefault();
+        experiencia.style.display = 'inline-block';
+        contenido.style.display = 'none'    
+        btnExperiencia.style.color ="white";
+        btnContenido.style.color ="var(--color-gris)";
+    }
 
-    });
-    $("btn-contenido").addEventListener("mouseout",()=> {
-        $("pd-contenido").style.display = "none";
-        $("pd-experiencia").style.display = "inline-block";
-        $("btn-experiencia").style.color = "white";
-        $("btn-contenido").style.color = "var(--color-gris)";
-    });
+    btnContenido.onclick = function (e) {
+        e.preventDefault();
+        contenido.style.display = 'inline-block';
+        experiencia.style.display = 'none'    
+        btnContenido.style.color ="white";
+        btnExperiencia.style.color ="var(--color-gris)";
+    }
+
 })
