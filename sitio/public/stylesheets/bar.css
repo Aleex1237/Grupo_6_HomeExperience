@@ -171,6 +171,27 @@
 .bar .search-form button i {
   color: #262b2e;
 }
+.bar .popup-class {
+  border-top: solid 1px var(--color-celeste);
+  border-bottom: solid 1px var(--color-celeste);
+  border-radius: 0;
+}
+.bar .content-class {
+  color: white;
+}
+.bar .confirmButton {
+  border: solid 1.2px var(--color-celeste) !important;
+  border-radius: 25px !important;
+  background-color: var(--color-azul-oscuro) !important;
+  transition: 0.4s;
+}
+.bar .confirmButton:hover {
+  background-color: var(--color-celeste) !important;
+  color: black !important;
+}
+.swal2-popup .swal2-styled:focus {
+  box-shadow: none !important;
+}
 
 @media (min-width: 768px) {
   .bar .banner img {

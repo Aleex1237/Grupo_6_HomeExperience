@@ -47,15 +47,15 @@
                                 <span class="product-price">$<%=
                                         experiencia.price %>
                                     </span>
-                                    <form action="#"
-                                        method="POST">
-                                        <span><button
-                                                class="btn-cart"
-                                                type="submit">Añadir
-                                                al
-                                                carrito</button>
-                                        </span>
-                                    </form>
+                                    <span>
+                                        <a
+                                          href="#"
+                                          class="btn-cart"
+                                          id="btn-cine"
+                                          onclick="btnCine()"
+                                        >
+                                          Añadir al carrito
+                                        </a>
                                 </div>
                             </div>
                         </article>
@@ -66,6 +66,46 @@
 
     <%- include("./partials/footer") %>
         <%- include("./partials/scripts") %>
+        <script>
+            let userLog = document.getElementById("userLogued");
+            function btnCine() {
+              if (!userLog) {
+                event.preventDefault();
+                Swal.fire({
+                  title: "¡Debes inicar sesión para agregar productos al carrito!",
+                  html: `<p class="text-white" >Inicie sesión para acceder al carrito </p>`,
+                  color: "white",
+                  background: "#040F16",
+                  backdrop: "rgba(4, 15, 22, 0.6)",
+                  confirmButtonText:
+                    "<a href='usuarios/iniciar-sesion'>Iniciar sesión</a>",
+                  customClass: {
+                    popup: "popup-class",
+                    title: "content-class",
+                    confirmButton: "confirmButton",
+                    cancelButton: "cancelButton",
+                  },
+                });
+              }else{
+                event.preventDefault();
+                Swal.fire({
+                  icon:"warning",
+                  title: "Esta pagina está en desarrollo aún :(",
+                  color: "white",
+                  background: "#040F16",
+                  backdrop: "rgba(4, 15, 22, 0.6)",
+                  confirmButtonText:
+                    "Volver",
+                  customClass: {
+                    popup: "popup-class",
+                    title: "content-class",
+                    confirmButton: "confirmButton",
+                    cancelButton: "cancelButton",
+                  },
+                });
+              }
+            }
+          </script>
 </body>
 
 </html>

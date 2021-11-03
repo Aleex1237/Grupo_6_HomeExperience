@@ -4,6 +4,7 @@ var router = express.Router();
 const {cine, bar, detail , cart, cineSearch,barSearch}= require('../controllers/productsController')
 
 const noUserLoged=require("../middlewares/noUserLoged");
+const pageInWork = require("../middlewares/pageInWork")
 
 /* GET home page. */
 router.get('/cine', cine);
@@ -16,7 +17,7 @@ router.get('/bar/buscar',noUserLoged ,barSearch);
 
 router.get('/detalle/:id', detail);
 
-router.get('/carrito', noUserLoged, cart);
+router.get('/carrito',pageInWork ,noUserLoged, cart);
 
 
 
