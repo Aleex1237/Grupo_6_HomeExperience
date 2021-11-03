@@ -8,7 +8,7 @@
       <div class="headerAdmin">
         <form action="/admin/productos/buscar" method="GET" class="search-form" id="formSearch">
           <button type="submit"><i class="fas fa-search"></i></button>
-          <input class="search" type="text" name="searchProducts" id="search" placeholder="Buscar productos..."/>
+          <input class="search" type="text" name="searchProducts" id="search" placeholder=" Buscar productos..."/>
         </form>
         <a href="/admin/producto/agregar"
           ><i class="fas fa-plus"></i> Agregar producto</a
@@ -36,7 +36,7 @@
               action="/admin/producto/mostrar/<%= product.id%>?_method=PUT"
               method="POST"
             >
-              <button class="hide" type="submit">mostrar</button>
+              <button class="hide" type="submit">Mostrar</button>
             </form>
 
             <% }else { %>
@@ -50,14 +50,14 @@
             <% } %>
 
             <a href="/admin/producto/modificar/<%= product.id %>"
-              ><button class="edit" type="submit">editar</button></a
+              ><button class="edit" type="submit">Editar</button></a
             >
             <form
               action="/admin/producto/eliminar/<%= product.id %>?_method=DELETE"
               method="POST"
             >
               <button class="delete" type="submit" onclick="EventoAlert()">
-                eliminar
+                Eliminar
               </button>
             </form>
           </div>
@@ -71,8 +71,8 @@
         event.preventDefault();
         var form = event.target.form;
         Swal.fire({
-          title: "Está seguro que desea eliminar el producto?",
-          html: `<p class="text-white" >Esta accion será irreversible! </p>`,
+          title: "¿Está seguro que desea eliminar el producto?",
+          html: `<p class="text-white" >¡Esta acción será irreversible! </p>`,
           color: "white",
           background: "#040F16",
           backdrop: "rgba(4, 15, 22, 0.6)",

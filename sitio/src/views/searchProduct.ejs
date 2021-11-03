@@ -29,7 +29,7 @@
             placeholder="Buscar productos..."
           />
         </form>
-        <h2>Resultados de la busqueda de: <%= query %> </h2>
+        <h2>Resultados de la búsqueda de: <%= query %> </h2>
       </div>
       <% if (products.length != 0) { %>
         <% products.forEach(product => { %>
@@ -71,7 +71,7 @@
               </article>
           <% }) %>
       <% }else{ %>
-            <h2 class="noResult" style="color:crimson;">No hay resultados en la busqueda! Intenta con: Experiencia</h2>
+            <h2 class="noResult" style="color:crimson;">¡No hay resultados en la búsqueda! Intenta con: Experiencia</h2>
         <% } %> 
       
      
@@ -82,8 +82,8 @@
         event.preventDefault();
         var form = event.target.form;
         Swal.fire({
-          title: "Está seguro que desea eliminar el producto?",
-          html: `<p class="text-white" >Esta accion será irreversible! </p>`,
+          title: "¿Está seguro que desea eliminar el producto?",
+          html: `<p class="text-white" >¡Esta acción será irreversible! </p>`,
           color: "white",
           background: "#040F16",
           backdrop: "rgba(4, 15, 22, 0.6)",
