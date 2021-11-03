@@ -1,22 +1,7 @@
 .about{
     background-color: var(--color-azul-oscuro);
     position: relative;
-}
-
-
-.about .cuerpo{
-    margin-right: 16px;
-    margin-left: 16px;
-    height: 100vh;
-    text-align: center;
-}
-
-.about .cuerpo .titulo{
-    text-align: center;
-    margin-top: 4vh; 
-    font-size: 35px;
-    color: var(--color-blanco);   
-    font-weight: bold;
+    height: 175vh;
 }
 
 .about .cuerpo .imagen{
@@ -24,54 +9,134 @@
     display: block;
     margin: auto;
     margin-top: 3vh;
+    border-radius: 15px;
 }
 
-.about .cuerpo p{
+.about .texto{
+    text-align: center;
+}
+
+.about .tituloPrincipal{
     color: var(--color-blanco);
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+    margin-right: 16px;
+    margin-left: 16px;
     margin-top: 3vh;
+    margin-bottom: 3vh;
 }
 
-.about .cuerpo b{
-    font-size: 18px;
+.about .tituloSecundario{
+    color: var(--color-blanco);
+    text-align: center;
     font-weight: bold;
+    font-size: 20px;
+    margin-top: 3vh;
+    margin-bottom: 5vh;
+}
+
+.about .accordion{
+    background-color: #262b2e; 
+    margin-right: 5vw;
+    margin-left: 5vw;
+    margin-bottom: 4vh;
+    box-shadow: 15px 15px rgba(4, 15, 22, 0.45);
+    color: white;
+    border: 0.5px solid var(--color-azul-oscuro);
+    border-radius: 5px;
+ }
+
+
+.about .accordion-button{
+    font-size: 22px;
+    display: block;
+    margin: auto;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    background-color: white;
+    color: black;
+    border: 1px solid var(--color-azul-oscuro);
+    border-radius: 5px;
+}
+
+.about .imagenesPerfil{
+    width: 180px;
+    height: 135px;
+    display: block;
+    margin: auto;
+    border: 2px solid black;
+    border-radius: 5px;
+
+}
+
+.about .textoAcordeon{
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    text-align: center;
 }
 
 .about footer a{
     color: white;
 }
 
+.about footer {
+    position: fixed;
+  }
+
+
+
+
 @media (min-width:768px) {
+    
+    .about{
+        height: 180vh;
+    }
+
     .about .cuerpo .imagen{
-        width: 65vw;
-        height: 45vh;
+        width: 55vw;
     }
 
-    .about .cuerpo p{
-        font-size: 20px;
+    .about .tituloPrincipal{
+        font-size: 28px;
     }
 
-    .about .cuerpo b{
-        font-size: 23px;
+    .about .texto{
+        font-size: 18px;
     }
+
+    .about .tituloSecundario{
+        font-size: 24px;
+    }
+    
+    .about .accordion-button{
+        font-size: 25px;
+    }
+        
+   .about .imagenesPerfil{
+        width: 270px;
+        height: 203px;
+    }
+       
 }
+
 
 @media (min-width:1024px) {
 
+    .about{
+        height: 200vh;
+    }
+
     .about .cuerpo .imagen{
-        width: 50vw;
-        height: 37vh;
+        width: 45vw;
     }
 
-    .about .cuerpo p{
-        font-size: 23px;
+    .about .textoAcordeon{
+        font-size: 24px;
     }
-
-    .about .cuerpo b{
-        font-size: 26px;
+    
+    .about .accordion-button{
+        font-size: 28px;
     }
+        
 }
-
-
-
-
-

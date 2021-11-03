@@ -26,8 +26,8 @@ window.addEventListener("load", () => {
     if (!userLogued) {
       event.preventDefault();
       Swal.fire({
-        title: "¡Debe ser mayor de 18 años para ingresar a la seccion bar!",
-        html: `<p class="text-white" >Inicie sesión para verificar su edad. </p>`,
+        title: "¡Debe ser mayor de 18 años para ingresar a la sección bar!",
+        html: `<p class="text-white" >Inicie sesión para verificar su edad </p>`,
         color: "white",
         background: "#040F16",
         backdrop: "rgba(4, 15, 22, 0.6)",

@@ -6,41 +6,50 @@
 
     <main class="cuerpo">
         
-        <h1 class="titulo">¿Quiénes somos?</h1>
-    
-         <img src="/images/Cine_familiar.jpg" alt="cineEnCasa" class="imagen">
-     
-        <p>Somos una empresa que nace atendiendo una necesidad. Debido a acontecimientos sanitarios de carácter público, nos hemos visto privados de vivir experiencias fuera de nuestras casas. Por ello surge <b>HOME EXPERIENCE</b>, con la intención de llevar esas experiencias a la comodidad y seguridad de nuestros hogares.</p>
 
-        <div class="accordion accordion-flush" id="accordionFlushExample">
+         <img src="/images/Cine_familiar.jpg" alt="cineEnCasa" class="imagen"> 
+        <h2 class="tituloPrincipal"><b>HOME EXPERIENCE ® 2021</b></h3> 
+        <p class="texto">Llevando experiencias a la comodidad y seguridad de tu hogar</p>
+
+          <h3 class="tituloSecundario">Nuestros desarrolladores:</h2>
+        <div class="accordion" id="accordionExample">
   <div class="accordion-item">
-    <h2 class="accordion-header" id="flush-headingOne">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-        Accordion Item #1
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Alexis Zacre
       </button>
     </h2>
-    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <img class="imagenesPerfil" src="/images/users/default.png" alt="fotoAlexis">
+        <p class="textoAcordeon">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad tempore ratione magni libero vero sunt quaerat eligendi voluptatem, voluptatibus ex nulla, alias deleniti ullam consectetur atque repellendus quod sequi quas!</p>
+      </div>
     </div>
   </div>
   <div class="accordion-item">
-    <h2 class="accordion-header" id="flush-headingTwo">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-        Accordion Item #2
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Marcia Del Castillo
       </button>
     </h2>
-    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <img class="imagenesPerfil" src="/images/users/default.png" alt="fotoMarcia">
+        <p class="textoAcordeon">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut, doloribus possimus expedita saepe, perspiciatis odit vero sint veniam iure beatae dolores, distinctio reiciendis dolore. Doloribus nam minima impedit cum illo.</p>
+      </div>
     </div>
   </div>
   <div class="accordion-item">
-    <h2 class="accordion-header" id="flush-headingThree">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-        Accordion Item #3
-      </button>
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        Octavio Fitz Maurice
+        </button>
     </h2>
-    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <img class="imagenesPerfil" src="/images/fotoOctavio.jpg" alt="fotoOctavio">
+        <p class="textoAcordeon">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsa harum officiis fuga ad, voluptate earum iste nulla officia distinctio corrupti ipsam est explicabo voluptatum fugit quidem nihil sequi odio qui<p>
+      </div>
     </div>
   </div>
 </div>
@@ -48,6 +57,7 @@
     </main>
     <%- include('./partials/footer')  %> 
     <%- include('./partials/scripts')  %> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>
 </html>
