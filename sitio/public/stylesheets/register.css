@@ -93,6 +93,12 @@
     margin-top: 5px;
     margin-bottom: 5px;
 }
+#mostrarPass,
+ #mostrarPass2{
+    font-size: 3.5vw;
+    margin-bottom: -7px;
+
+}
 
 @media(min-width:768px){
     .register header h2{
@@ -131,6 +137,14 @@
     .register main button{
         font-size:4vw;
     }
+
+    #mostrarPass,
+ #mostrarPass2{
+    font-size: 1.5vw;
+    
+
+}
+
     .register footer{
         position: absolute;
     }

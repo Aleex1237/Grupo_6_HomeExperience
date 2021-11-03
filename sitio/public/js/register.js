@@ -114,3 +114,27 @@ window.addEventListener("load", () => {
     }
   });
 
+  function mostrar(){
+    var tipo= document.getElementById('password')
+    var ocultarMostrar= document.getElementById('mostrarPass')
+    if(tipo.type =='password'){
+        tipo.type= 'text';
+        ocultarMostrar.innerHTML= 'Ocultar contraseña'
+    } else {
+        tipo.type='password'
+        ocultarMostrar.innerHTML= 'Mostrar contraseña'
+    }
+    }
+
+ 
+    function mostrar2(){
+      var tipo= document.getElementById('password2')
+      var ocultarMostrar= document.getElementById('mostrarPass2')
+      if(tipo.type =='password'){
+          tipo.type= 'text';
+          ocultarMostrar.innerHTML= 'Ocultar contraseña'
+      } else {
+          tipo.type='password'
+          ocultarMostrar.innerHTML= 'Mostrar contraseña'
+      }
+      }
