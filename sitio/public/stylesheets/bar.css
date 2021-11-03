@@ -1,209 +1,273 @@
 .bar {
-    background-color: var(--color-azul-oscuro);
+  background-color: var(--color-azul-oscuro);
 }
 
 .bar a {
-    text-decoration: none;
-    color: var(--color-blanco);
+  text-decoration: none;
+  color: var(--color-blanco);
 }
 
 .bar main {
-    margin-bottom: 5vh;
+  margin-bottom: 5vh;
 }
 
 .bar .banner {
-    position: relative;
+  position: relative;
 }
 
 .bar .banner img {
-    width: 100%;
-    height: 30vh;
-    filter: brightness(0.5);
-    margin-top: 1vh;
+  width: 100%;
+  height: 30vh;
+  filter: brightness(0.5);
+  margin-top: 1vh;
 }
 
 .bar .banner .background-letter {
-    background-color: var(--color-azul-oscuro);
-    width: 82%;
-    height: 24vh;
-    position: absolute;
-    top: 5vh;
-    left: 10vw;
-    box-shadow: 8px 5px rgba(4, 15, 22, 0.45);
+  background-color: var(--color-azul-oscuro);
+  width: 82%;
+  height: 24vh;
+  position: absolute;
+  top: 5vh;
+  left: 10vw;
+  box-shadow: 8px 5px rgba(4, 15, 22, 0.45);
 }
 
 .bar .banner p {
-    color: var(--color-blanco);
-    font-size: 100%;
-    position: absolute;
-    top: 7vh;
-    left: 1vw;
-    padding: 0 35px;
-    text-align: center;
-    line-height: 5vw;
+  color: var(--color-blanco);
+  font-size: 100%;
+  position: absolute;
+  top: 7vh;
+  left: 1vw;
+  padding: 0 35px;
+  text-align: center;
+  line-height: 5vw;
 }
 
 .bar .banner h3 {
-    position: absolute;
-    color: var(--color-blanco);
-    top: 25vh;
-    left: 16vw;
-    font-size: 90%;
-    font-weight: 900;
+  position: absolute;
+  color: var(--color-blanco);
+  top: 25vh;
+  left: 16vw;
+  font-size: 90%;
+  font-weight: 900;
 }
 
 .bar section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .bar .product {
-    background-image: url("/images/1525212096_c7eaf859a8c166faa1c4b4f5bed55c30.107387.jpeg");
-    width: 63.3vw;
-    border: solid 3px #262B2E;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 4vh;
+  background-image: url("/images/1525212096_c7eaf859a8c166faa1c4b4f5bed55c30.107387.jpeg");
+  width: 63.3vw;
+  border: solid 3px #262b2e;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4vh;
 }
 
 .bar .product img {
-    width: 61.5vw;
-    height: 33.2vh;
-    border: solid 1px #262B2E;
+  width: 61.5vw;
+  height: 33.2vh;
+  border: solid 1px #262b2e;
 }
 
 .bar .product .product-info {
-    background-color: #262B2E;
-    width: 63.3vw;
-    left: -1vw;
-    height: 13vh;
-    margin-top: 1vh;
+  background-color: #262b2e;
+  width: 63.3vw;
+  left: -1vw;
+  height: 13vh;
+  margin-top: 1vh;
 }
 
 .bar .product .product-info h3 {
-    color: var(--color-blanco);
-    margin-bottom: 1vh;
-    text-align: center;
-    font-size: 4vw;
-    margin-top: 1vh;
-    padding: 3px 0px;
+  color: var(--color-blanco);
+  margin-bottom: 1vh;
+  text-align: center;
+  font-size: 4vw;
+  margin-top: 1vh;
+  padding: 3px 0px;
 }
 
 .bar .product .product-info .product-details {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
 .bar .product .product-info span {
-    display: inline-block;
-    color: var(--color-celeste);
-    margin-right: 0vw;
+  display: inline-block;
+  color: var(--color-celeste);
+  margin-right: 0vw;
 }
 
 .bar .product .product-info span .btn-cart {
-    background: none;
-    padding: 5px;
-    color: var(--color-celeste);
-    border: solid 1px var(--color-blanco);
-    border-radius: 20px 20px;
-    transition: 0.4s;
-    cursor: pointer;
+  background: none;
+  padding: 5px;
+  color: var(--color-celeste);
+  border: solid 1px var(--color-blanco);
+  border-radius: 20px 20px;
+  transition: 0.4s;
+  cursor: pointer;
 }
 
 .bar .product .product-info span .btn-cart:hover {
-    background-color: var(--color-celeste);
-    color: var(--color-blanco);
+  background-color: var(--color-celeste);
+  color: var(--color-blanco);
 }
 
-@media (min-width:768px) {
-    .bar .banner img {
-        height: 43vh;
-    }
-    .bar .banner .background-letter {
-        height: 29vh;
-        background-color: rgba(4, 15, 22, 0.8);
-    }
-    .bar .banner p {
-        font-size: 3vw;
-        padding: 0 78px;
-    }
-    .bar .banner h3 {
-        top: 26vh;
-        left: 24vw;
-        font-size: 3vw;
-    }
-    .bar section {
-        justify-content: space-around;
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
-    .bar .product {
-        width: 34.2vw;
-        margin-top: 2vh;
-    }
-    .bar .product img {
-        width: 33.5vw;
-    }
-    .bar .product .product-info {
-        width: 34.3vw;
-        left: -0.4vw;
-    }
-    .bar .product .product-info h3 {
-        font-size: 2.3vw;
-    }
+.bar .headerAdmin {
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
 
-@media (min-width:1024px) {
-    .bar {
-        position: relative;
-    }
-    .bar .banner img {
-        width: 84%;
-        margin: 2vh;
-        margin-left: 8vw;
-    }
-    .bar .banner .background-letter {
-        height: 30vh;
-        width: 41%;
-        left: 29vw;
-        top: 7vh;
-    }
-    .bar .banner p {
-        font-size: 1.5vw;
-        padding: 0 32%;
-        top: 10vh;
-        line-height: 2vw;
-    }
-    .bar .banner h3 {
-        top: 30vh;
-        left: 36vw;
-        font-size: 1.5vw;
-    }
-    .bar section {
-        flex-wrap: wrap;
-        width: 94%;
-        flex-direction: row;
-        align-items: baseline;
-        margin-left: 1vw;
-        justify-content: flex-start;
-        margin: 0 5vw;
-    }
-    .bar .product {
-        width: 18vw;
-        margin-right: 5vw;
-    }
-    .bar .product img {
-        width: 17.6vw;
-    }
-    .bar .product .product-info {
-        width: 18vw;
-        left: -0.2vw;
-    }
-    .bar .product .product-info h3 {
-        font-size: 1vw;
-    }
+.bar .headerAdmin a {
+  background-color: var(--color-gris);
+  padding: 5px;
+  font-size: 4vw;
+  margin: 15px 0;
+  text-decoration: none;
+}
+
+.bar .search {
+  margin: 20px 0 5px 0;
+  color: #262b2e;
+  outline: var(--color-celeste);
+  border: solid 2px var(--color-celeste);
+  border-radius: 10px;
+  padding: 0 5px;
+}
+
+.bar .search-form {
+  position: relative;
+  color: black !important;
+}
+
+.bar .search-form input {
+  text-indent: 40px;
+}
+
+.bar .search-form input::placeholder {
+  color: var(--color-gris);
+}
+
+.bar .search-form button {
+  position: absolute;
+  top: 26px;
+  z-index: 1;
+  border: none;
+  background: none;
+  left: 10px;
+  cursor: pointer;
+}
+
+.bar .search-form button i {
+  color: #262b2e;
+}
+
+@media (min-width: 768px) {
+  .bar .banner img {
+    height: 43vh;
+  }
+  .bar .banner .background-letter {
+    height: 29vh;
+    background-color: rgba(4, 15, 22, 0.8);
+  }
+  .bar .banner p {
+    font-size: 3vw;
+    padding: 0 78px;
+  }
+  .bar .banner h3 {
+    top: 26vh;
+    left: 24vw;
+    font-size: 3vw;
+  }
+  .bar section {
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  .bar .product {
+    width: 34.2vw;
+    margin-top: 2vh;
+  }
+  .bar .product img {
+    width: 33.5vw;
+  }
+  .bar .product .product-info {
+    width: 34.3vw;
+    left: -0.4vw;
+  }
+  .bar .product .product-info h3 {
+    font-size: 2.3vw;
+  }
+  .bar .search-form {
+    width: 70%;
+    text-align: center;
+  }
+  .bar .search-form input {
+    width: 60%;
+    max-width: 60%;
+  }
+  .bar .search-form button {
+    left: 15.3vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bar {
+    position: relative;
+  }
+  .bar .banner img {
+    width: 84%;
+    margin: 2vh;
+    margin-left: 8vw;
+  }
+  .bar .banner .background-letter {
+    height: 30vh;
+    width: 41%;
+    left: 29vw;
+    top: 7vh;
+  }
+  .bar .banner p {
+    font-size: 1.5vw;
+    padding: 0 32%;
+    top: 10vh;
+    line-height: 2vw;
+  }
+  .bar .banner h3 {
+    top: 30vh;
+    left: 36vw;
+    font-size: 1.5vw;
+  }
+  .bar section {
+    flex-wrap: wrap;
+    width: 94%;
+    flex-direction: row;
+    align-items: baseline;
+    margin-left: 1vw;
+    justify-content: flex-start;
+    margin: 0 5vw;
+  }
+  .bar .product {
+    width: 18vw;
+    margin-right: 5vw;
+  }
+  .bar .product img {
+    width: 17.6vw;
+  }
+  .bar .product .product-info {
+    width: 18vw;
+    left: -0.2vw;
+  }
+  .bar .product .product-info h3 {
+    font-size: 1vw;
+  }
 }

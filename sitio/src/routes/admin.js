@@ -13,7 +13,7 @@ const upload = require("../middlewares/multerConfig");
 
 router.get("/productos", adminUserCheck, admin);
 
-router.get("/productos/buscar", search);
+router.get("/productos/buscar",adminUserCheck ,search);
 
 router.put("/producto/mostrar/:id", productActive);
 

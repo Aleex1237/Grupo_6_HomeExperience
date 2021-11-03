@@ -1,0 +1,113 @@
+<body>
+    <!DOCTYPE html>
+    <html lang="es">
+      <%- include("./partials/head" ) %>
+      <style>
+        .bar footer {
+          margin-top: 12vh;
+        }
+  
+        .bar main {
+          margin-bottom: 10vh;
+        }
+        .bar footer {
+          position: fixed;
+        }
+        .noResult {
+          width: 100%;
+          text-align: center;
+          margin-top: 3vh;
+        }
+      </style>
+      <body class="bar">
+        <%- include("./partials/header" ) %>
+  
+        <main>
+          <div class="headerAdmin">
+            <form
+              action="/productos/bar/buscar"
+              method="GET"
+              class="search-form"
+            >
+              <button type="submit"><i class="fas fa-search"></i></button>
+              <input
+                class="search"
+                type="text"
+                name="searchProducts"
+                placeholder="Buscar productos..."
+              />
+            </form>
+            <h2>Resultados de la búsqueda de: <%= query %></h2>
+          </div>
+          <section>
+            <% if (experiencias.length > 0) { %> <%
+            experiencias.forEach(experiencia=> { %>
+            <article class="product">
+              <div>
+                <a href="/productos/detalle/<%= experiencia.id%>">
+                  <%if(experiencia.images.length>0){%>
+                  <img
+                    src="/images/products/<%= experiencia.images[0].name%>"
+                    alt=""
+                  />
+                  <% } %>
+                </a>
+              </div>
+              <div class="product-info">
+                <h3><%= experiencia.name %></h3>
+                <div class="product-details">
+                  <span class="product-price">$<%= experiencia.price%> </span>
+  
+                  <span>
+                    <a
+                      href="#"
+                      class="btn-cart"
+                      id="btn-bar"
+                      onclick="btnbar()"
+                    >
+                      Añadir al carrito
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </article>
+            <% }) %><% }else{ %>
+            <style>
+              .bar footer {
+                position: fixed;
+              }
+            </style>
+            <h2 class="noResult" style="color: crimson">
+              ¡No hay resultados en la búsqueda! Intenta con: Experiencia
+            </h2>
+            <% } %>
+          </section>
+        </main>
+  
+        <%- include("./partials/footer" ) %> <%- include("./partials/scripts" ) %>
+        <script>
+          let userLog = document.getElementById("userLogued");
+          function btnbar() {
+            if (!userLog) {
+              event.preventDefault();
+              Swal.fire({
+                title: "¡Debes inicar sesión para agregar productos al carrito!",
+                html: `<p class="text-white" >Inicie sesión para acceder al carrito </p>`,
+                color: "white",
+                background: "#040F16",
+                backdrop: "rgba(4, 15, 22, 0.6)",
+                confirmButtonText:
+                  "<a href='usuarios/iniciar-sesion'>Iniciar sesión</a>",
+                customClass: {
+                  popup: "popup-class",
+                  title: "content-class",
+                  confirmButton: "confirmButton",
+                  cancelButton: "cancelButton",
+                },
+              });
+            }
+          }
+        </script>
+      </body>
+    </html>
+  </body>

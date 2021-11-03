@@ -2,34 +2,46 @@
   <!DOCTYPE html>
   <html lang="es">
     <%- include("./partials/head" ) %>
+    <style>
+      .cine footer {
+        margin-top: 12vh;
+      }
 
+      .cine main {
+        margin-bottom: 10vh;
+      }
+      .cine footer {
+        position: fixed;
+      }
+      .noResult {
+        width: 100%;
+        text-align: center;
+        margin-top: 3vh;
+      }
+    </style>
     <body class="cine">
       <%- include("./partials/header" ) %>
 
       <main>
-        <div class="banner">
-          <img src="/images/volver-futuro-banner.png" alt="" />
-          <div class="background-letter"></div>
-          <div class="texto-encima">
-            <p>
-              Disfrutá de la experiencia cine. En nuestras Boxes encontrarás
-              todos los platos y bebidas para que te sientas dentro de tu
-              película preferida. Viví experiencias, ahora desde la comodidad de
-              tu casa.
-            </p>
-            <h3>REGALÁ EXPERIENCIAS. REGALÁ VIDA</h3>
-          </div>
-        </div>
-
         <div class="headerAdmin">
-          <form action="/productos/cine/buscar" method="GET" class="search-form" id="formSearch">
+          <form
+            action="/productos/cine/buscar"
+            method="GET"
+            class="search-form"
+          >
             <button type="submit"><i class="fas fa-search"></i></button>
-            <input class="search" type="text" name="searchProducts" id="search" placeholder=" Buscar productos..."/>
+            <input
+              class="search"
+              type="text"
+              name="searchProducts"
+              placeholder="Buscar productos..."
+            />
           </form>
+          <h2>Resultados de la búsqueda de: <%= query %></h2>
         </div>
-        
         <section>
-          <% experiencias.forEach(experiencia=> { %>
+          <% if (experiencias.length > 0) { %> <%
+          experiencias.forEach(experiencia=> { %>
           <article class="product">
             <div>
               <a href="/productos/detalle/<%= experiencia.id%>">
@@ -59,7 +71,16 @@
               </div>
             </div>
           </article>
-          <% }) %>
+          <% }) %><% }else{ %>
+          <style>
+            .cine footer {
+              position: fixed;
+            }
+          </style>
+          <h2 class="noResult" style="color: crimson">
+            ¡No hay resultados en la búsqueda! Intenta con: Experiencia
+          </h2>
+          <% } %>
         </section>
       </main>
 

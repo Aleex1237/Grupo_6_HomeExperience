@@ -24,6 +24,29 @@ module.exports = {
       )
       .catch((error) => console.log(error));
   },
+  barSearch: async (req, res) => {
+    try {
+      const experiencias = await db.Experience.findAll({
+        include: [{ association: "images" }, { association: "category" }],
+        where: {
+          name: {
+            [Op.substring]: req.query.searchProducts
+              ? req.query.searchProducts
+              : "",
+          },
+          idCategory : 1
+        },
+      });
+
+      return res.render("barSearch", {
+        experiencias,
+        title: `Resultado: ${experiencias.length}`,
+        query: req.query.searchProducts,
+      });
+    } catch (error) {
+      res.send(error);
+    }
+  },
 
   cine: (req, res) => {
     db.Experience.findAll({
@@ -42,6 +65,29 @@ module.exports = {
         experiencias,
       })
     );
+  },
+  cineSearch: async (req, res) => {
+    try {
+      const experiencias = await db.Experience.findAll({
+        include: [{ association: "images" }, { association: "category" }],
+        where: {
+          name: {
+            [Op.substring]: req.query.searchProducts
+              ? req.query.searchProducts
+              : "",
+          },
+          idCategory : 2
+        },
+      });
+
+      return res.render("cineSearch", {
+        experiencias,
+        title: `Resultado: ${experiencias.length}`,
+        query: req.query.searchProducts,
+      });
+    } catch (error) {
+      res.send(error);
+    }
   },
 
   admin: (req, res) => {
@@ -65,11 +111,18 @@ module.exports = {
   },
 
   search: async (req, res) => {
-      let products = await db.Experience.findAll({
-      include: [{ association: "images" },{association:"category"},{association:"keywords"}],
+    let products = await db.Experience.findAll({
+      include: [
+        { association: "images" },
+        { association: "category" },
+        { association: "keywords" },
+      ],
       where: {
-        name: { [Op.substring]: req.query.searchProducts ? req.query.searchProducts : "" },
-        
+        name: {
+          [Op.substring]: req.query.searchProducts
+            ? req.query.searchProducts
+            : "",
+        },
       },
     });
     db.Experience.findAll({
@@ -236,7 +289,7 @@ module.exports = {
           include: [{ association: "images" }],
         });
         //si vinieron nuevas imagenes,elimino las anteriores
-        if (req.files.length>0) {
+        if (req.files.length > 0) {
           if (experiencia.images[0].name != "default-product.png") {
             for (let i = 0; i < experiencia.images.length; i++) {
               eliminarImagen(experiencia.images[i].name);
@@ -266,7 +319,7 @@ module.exports = {
         );
         //guardo nuevas imagenes
         let imagenes = [];
-        if (req.files.length>0) {
+        if (req.files.length > 0) {
           for (let i = 0; i < req.files.length; i++) {
             let img = {
               name: req.files[i].filename,

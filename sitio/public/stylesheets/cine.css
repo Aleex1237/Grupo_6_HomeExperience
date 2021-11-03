@@ -146,6 +146,58 @@
 .swal2-popup .swal2-styled:focus {
   box-shadow: none !important;
 }
+.cine .headerAdmin {
+  width: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cine .headerAdmin a {
+  background-color: var(--color-gris);
+  padding: 5px;
+  font-size: 4vw;
+  margin: 15px 0;
+  text-decoration: none;
+}
+
+.cine .search {
+  margin: 20px 0 5px 0;
+  color: #262b2e;
+  outline: var(--color-celeste);
+  border: solid 2px var(--color-celeste);
+  border-radius: 10px;
+  padding: 0 5px;
+}
+
+.cine .search-form {
+  position: relative;
+  color: black !important;
+}
+
+.cine .search-form input {
+  text-indent: 40px;
+}
+
+.cine .search-form input::placeholder {
+  color: var(--color-gris);
+}
+
+.cine .search-form button {
+  position: absolute;
+  top: 26px;
+  z-index: 1;
+  border: none;
+  background: none;
+  left: 10px;
+  cursor: pointer;
+}
+
+.cine .search-form button i {
+  color: #262b2e;
+}
 
 @media (min-width: 768px) {
   .cine .banner img {
@@ -182,6 +234,17 @@
   }
   .cine .product .product-info h3 {
     font-size: 2.3vw;
+  }
+  .cine .search-form {
+    width: 70%;
+    text-align: center;
+  }
+  .cine .search-form input {
+    width: 60%;
+    max-width: 60%;
+  }
+  .cine .search-form button {
+    left: 15.3vw;
   }
 }
 

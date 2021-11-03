@@ -23,6 +23,12 @@
             </div>
         </div>
 
+        <div class="headerAdmin">
+            <form action="/productos/bar/buscar" method="GET" class="search-form" id="formSearch">
+              <button type="submit"><i class="fas fa-search"></i></button>
+              <input class="search" type="text" name="searchProducts" id="search" placeholder=" Buscar productos..."/>
+            </form>
+          </div>
         <section>            
             <% experiencias.forEach(experiencia=> { %>
                 <article class="product">
