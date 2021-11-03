@@ -4,7 +4,7 @@
     background-color: var(--color-azul-oscuro);
     position: relative;
     margin: auto;
-    height: 112vh;
+    height: 120vh;
 }
 
 /* header */
@@ -31,6 +31,11 @@
 
 /* main */
 
+.experience .d-block{
+    width: 200px;
+    height: 150px;
+}
+
 .experience .carousel-fade{
     width: 100vw;
     margin: auto;
@@ -46,6 +51,8 @@
 .experience .titulo{
     margin-top: 4vh;
     text-align: center;
+    font-weight: bold;
+    margin-bottom: 4vh;
 }
 
 .experience p{
@@ -60,20 +67,56 @@
     background-color: var(--color-azul-oscuro)
 }
 
+@media (min-width: 500px) {
+    .experience .d-block{
+        width: 280px;
+        height: 210px;
+    }
+
+    .experience{
+        height: 105vh;
+    }
+   
+}
+
 
 @media (min-width: 768px) {
     .experience{
-        height: 128vh;
+        height: 110vh;
     } 
+    .experience .d-block{
+        width: 360px;
+        height: 270px;
+    }
 }
 
 @media (min-width: 1024px) {
-    .experience img{
-        height: 50vh;
+    .experience{
+        height: 130vh;
+    } 
+
+    .experience .texto{
+        font-size: 20px;
+    }
+
+    .experience .d-block{
+        width: 450px;
+        height: 338px;
     }
 
     .experience header {
         margin-top: -3.5vh;
     }
-    
+ 
+    @media (min-width: 1439px) {
+        
+        .experience .d-block{
+            width: 490px;
+            height: 368px;
+        }
+
+        .experience .texto{
+            font-size: 25px;
+        }
+    }
 }
