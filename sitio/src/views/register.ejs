@@ -16,15 +16,18 @@
                     <span id="error-vacio" class="text-danger"></span>
 
                     <input class="dato" type="text" name="name" id="name" <%= locals.errores && locals.errores.name ? 'is-invalid' : null %> placeholder="Nombre" value="<%=locals.old  ? old.name :""%>">
-                    <span class="text-danger" id="error-name"></span> <br>
+                    <br>
+                    <span class="text-danger" id="error-name"></span> 
 
                     <input class="dato" type="email" name="email" id="email" <%= locals.errores && locals.errores.name ? 'is-invalid' : null %>  placeholder="Email" value="<%=locals.old  ? old.email :""%>" > 
+                    <br>
                     <span class="text-danger" id="error-email"></span>
                     
                     <input class="dato" type="date" name="fecha_nac" id="fecha_nac" <%= locals.errores && locals.errores.name ? 'is-invalid' : null %>  placeholder="fecha_nac" value="<%=locals.old  ? old.fecha_nac :""%>">
                     <% if (locals.errors && errors.fecha_nac) { %>
                     <p  class="errores"><%= errors.fecha_nac.msg %> </p>
                     <% } %>
+                    <br>
                     <span class="text-danger" id="error-date"></span>
 
                     
