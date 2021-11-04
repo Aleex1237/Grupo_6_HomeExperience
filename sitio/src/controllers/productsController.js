@@ -30,9 +30,7 @@ module.exports = {
         include: [{ association: "images" }, { association: "category" }],
         where: {
           name: {
-            [Op.substring]: req.query.searchProducts
-              ? req.query.searchProducts
-              : "",
+            [Op.substring]: req.query.searchProducts,
           },
           idCategory : 1
         },
@@ -72,9 +70,7 @@ module.exports = {
         include: [{ association: "images" }, { association: "category" }],
         where: {
           name: {
-            [Op.substring]: req.query.searchProducts
-              ? req.query.searchProducts
-              : "",
+            [Op.substring]: req.query.searchProducts,
           },
           idCategory : 2
         },
@@ -119,9 +115,7 @@ module.exports = {
       ],
       where: {
         name: {
-          [Op.substring]: req.query.searchProducts
-            ? req.query.searchProducts
-            : "",
+          [Op.substring]: req.query.searchProducts,
         },
       },
     });
