@@ -1,5 +1,7 @@
 const $ = (id) => document.getElementById(id);
 const query = new URLSearchParams(location.search);
+let regExEmail =
+  /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
 window.addEventListener("load", () => {
   if(location.pathname == '/usuarios/iniciar-sesion'){
     console.log("CONECTADO SATISFACTORIAMENTE CON LOGIN");
