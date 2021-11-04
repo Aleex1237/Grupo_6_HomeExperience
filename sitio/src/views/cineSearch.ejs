@@ -28,6 +28,7 @@
             action="/productos/cine/buscar"
             method="GET"
             class="search-form"
+            id="formSearch"
           >
             <button type="submit"><i class="fas fa-search"></i></button>
             <input
@@ -35,6 +36,7 @@
               type="text"
               name="searchProducts"
               placeholder="Buscar productos..."
+              id="search"
             />
           </form>
           <h2>Resultados de la búsqueda de: <%= query %></h2>
