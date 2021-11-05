@@ -76,6 +76,45 @@ module.exports = {
             res.cookie("user", req.session.user, { maxAge: 86400000 });
           }
 
+          req.session.cart = []
+          console.log(req.session.cart);
+
+          /* db.Cart.findOne({
+                  where : {
+                      idUser : req.session.user.id,
+                      status : 'pending'
+                  },
+                  include : [
+                      {association : 'cart_detail',
+                          include : [
+                              {association : 'experience',
+                                  include : ['category','images']
+                              }
+                          ]
+                      }
+                  ]
+              })
+              .then(cart => {
+                console.log(cart);
+                  if(cart){
+                      cart.cart_detail.forEach(item => {
+                          let product = {
+                              id : item.idExperience,
+                              nombre: item.experience.name,
+                              imagen : item.experience.images[0].name,
+                              categoria : item.experience.category.name,
+                              cantidad : item.cantidad,
+                              precio : item.experience.price,
+                              total : item.experience.price * item.cantidad,
+                              idCart : cart.id
+                          }
+                          req.session.cart.push(product)
+                      });
+                  }
+                  console.log(req.session.cart);
+              }).catch(error => console.log(error)) */
+                   
+
           res.redirect("/");
         })
         .catch((err) => {
