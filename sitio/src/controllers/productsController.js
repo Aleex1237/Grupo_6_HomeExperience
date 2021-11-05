@@ -86,25 +86,7 @@ module.exports = {
     }
   },
 
-  admin: (req, res) => {
-    db.Experience.findAll({
-      include: [
-        {
-          association: "images",
-        },
-        {
-          association: "category",
-        },
-      ],
-    })
-      .then((productos) =>
-        res.render("adminView", {
-          title: "Lista de productos",
-          productos,
-        })
-      )
-      .catch((error) => console.log(error));
-  },
+  admin: (req, res) => {res.render("adminViewApi")},
 
   search: async (req, res) => {
     let products = await db.Experience.findAll({
@@ -397,13 +379,13 @@ module.exports = {
         },
         {
           where: {
-            id: +req.params.id,
+            id: +req.body.id,
           },
         }
       );
-      res.redirect("/admin/productos");
+      res.status(200).json("ok");
     } catch (err) {
-      console.log(err);
+      res.status(500).json("not :v")
     }
   },
   productHide: async (req, res) => {
@@ -415,14 +397,14 @@ module.exports = {
         },
         {
           where: {
-            id: +req.params.id,
+            id: +req.body.id,
           },
         }
       );
       //Al terminar la ejecución que creá el producto se redicrecciona al usuarío hacia el home.
-      res.redirect("/admin/productos");
+      res.status(200).json("ok");
     } catch (err) {
-      console.log(err);
+      res.status(500).json("not :v")
     }
   },
   destroy: async (req, res) => {

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include("partials/head",{title:"admin"} ) %>
+
+  <body class="admin">
+    <%- include("partials/header" ) %>
+    <main>
+      <div class="headerAdmin">
+        <form
+          action="/admin/productos/buscar"
+          method="GET"
+          class="search-form"
+          id="formSearch"
+        >
+          <button type="submit"><i class="fas fa-search"></i></button>
+          <input
+            class="search"
+            type="text"
+            name="searchProducts"
+            id="search"
+            placeholder=" Buscar productos..."
+          />
+        </form>
+        <a href="/admin/producto/agregar"
+          ><i class="fas fa-plus"></i> Agregar producto</a
+        >
+      </div>
+      <article id="product-container">
+        
+      </article>
+    </main>
+
+    <script>
+      function EventoAlert() {
+        event.preventDefault();
+        var form = event.target.form;
+        Swal.fire({
+          title: "¿Está seguro que desea eliminar el producto?",
+          html: `<p class="text-white" >¡Esta acción será irreversible! </p>`,
+          color: "white",
+          background: "#040F16",
+          backdrop: "rgba(4, 15, 22, 0.6)",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#B80C09",
+          cancelButtonColor: "#01BAEF",
+          confirmButtonText: "ELIMINAR",
+          customClass: {
+            popup: "popup-class",
+            title: "content-class",
+            confirmButton: "confirmButton",
+            cancelButton: "cancelButton",
+          },
+        }).then((result) => {
+          if (result.isConfirmed) {
+            form.submit();
+          }
+        });
+      }
+    </script>
+
+    <%- include("partials/footer" ) %> <%- include("partials/scripts" ) %>
+    <script src="/js/adminView.js"></script>
+  </body>
+</html>
