@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `home_experience` /*!40100 DEFAULT CHARACTER SET 
 USE `home_experience`;
 -- MySQL dump 10.13  Distrib 8.0.26, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: home_experience
+-- Host: localhost    Database: home_experience
 -- ------------------------------------------------------
 -- Server version	8.0.26
 
@@ -49,10 +49,11 @@ CREATE TABLE `cart` (
   `idUser` int NOT NULL,
   `date` datetime NOT NULL,
   `total` int NOT NULL,
+  `status` varchar(45) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `id_user_idx` (`idUser`),
-  CONSTRAINT `idUser` FOREIGN KEY (`idUser`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  CONSTRAINT `fk_user_cart` FOREIGN KEY (`idUser`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -68,14 +69,15 @@ CREATE TABLE `cart_detail` (
   `idExperience` int NOT NULL,
   `idCart` int NOT NULL,
   `idUser` int NOT NULL,
+  `statusCart` varchar(45) DEFAULT 'pending',
   PRIMARY KEY (`id`),
   KEY `id_experience_idx` (`idExperience`),
-  KEY `id_cart_idx` (`idCart`),
   KEY `id_user_idx` (`idUser`),
-  CONSTRAINT `idCart` FOREIGN KEY (`idCart`) REFERENCES `cart` (`id`),
-  CONSTRAINT `idExperienceCart` FOREIGN KEY (`idExperience`) REFERENCES `experiences` (`id`),
-  CONSTRAINT `idUserCartDetail` FOREIGN KEY (`idUser`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  KEY `fk_cart_cartDetail_idx` (`idCart`),
+  CONSTRAINT `fk_cart_cartDetail` FOREIGN KEY (`idCart`) REFERENCES `cart` (`id`),
+  CONSTRAINT `fk_experience_cartDetail` FOREIGN KEY (`idExperience`) REFERENCES `experiences` (`id`),
+  CONSTRAINT `fk_Use_rCartDetail` FOREIGN KEY (`idUser`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -109,7 +111,7 @@ CREATE TABLE `experiences` (
   PRIMARY KEY (`id`),
   KEY `idCategory_idx` (`idCategory`),
   CONSTRAINT `idCategory` FOREIGN KEY (`idCategory`) REFERENCES `categories` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -140,7 +142,7 @@ CREATE TABLE `images` (
   PRIMARY KEY (`id`),
   KEY `id_experience_images_idx` (`idExperience`),
   CONSTRAINT `idExperienceImages` FOREIGN KEY (`idExperience`) REFERENCES `experiences` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -154,7 +156,7 @@ CREATE TABLE `keywords` (
   `id` int NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -173,7 +175,7 @@ CREATE TABLE `keywords_experience` (
   KEY `idKeyWord_idx` (`idKeywords`),
   CONSTRAINT `idExperienceKeyWord` FOREIGN KEY (`idExperience`) REFERENCES `experiences` (`id`),
   CONSTRAINT `idKeyWord` FOREIGN KEY (`idKeywords`) REFERENCES `keywords` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=126 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -190,7 +192,7 @@ CREATE TABLE `products` (
   PRIMARY KEY (`id`),
   KEY `idExperience_idx` (`idExperience`),
   CONSTRAINT `idExperience` FOREIGN KEY (`idExperience`) REFERENCES `experiences` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=142 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -259,4 +261,4 @@ CREATE TABLE `users` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-24 13:06:37
+-- Dump completed on 2021-11-05 10:49:09
