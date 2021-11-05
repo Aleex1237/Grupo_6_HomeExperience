@@ -1,12 +1,8 @@
-
-let regExEmail =
-  /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
 window.addEventListener("load", () => {
-  $("emailContact").addEventListener("keyup", () => {
-    if (!regExEmail.test($("emailContact").value.trim())) {
-      $("emailContact").classList.remove("inputEmail");
+  $("emailContact").addEventListener("blur", () => {
+    if (!regExEmail.test($("emailContact").value)) {
       $("emailContact").classList.add("inputEmailNo");
-      $("msgLetter").innerHTML = "Debe indicar un email";
+      $("msgLetter").innerHTML = "Ingrese un correo electrónico válido";
       $("msgLetter").style.color = "crimson";
     } else {
       $("emailContact").classList.remove("inputEmailNo");
@@ -14,6 +10,11 @@ window.addEventListener("load", () => {
       $("msgLetter").innerHTML = null;
     }
   });
+
+
+
+
+
   if ($("area")) {
     $("area").addEventListener("keyup", () => {
       if ($("area").value.length > 500) {
@@ -47,7 +48,7 @@ window.addEventListener("load", () => {
       }
 
       if (!errors) {
-        console.log("hola");
+        $("contact").submit();
       }
     }
   });

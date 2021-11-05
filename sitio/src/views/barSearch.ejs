@@ -24,13 +24,14 @@
 
       <main>
         <div class="headerAdmin">
-          <form action="/productos/bar/buscar" method="GET" class="search-form">
+          <form action="/productos/bar/buscar" method="GET" class="search-form" id="formSearch">
             <button type="submit"><i class="fas fa-search"></i></button>
             <input
               class="search"
               type="text"
               name="searchProducts"
               placeholder="Buscar productos..."
+              id="search"
             />
           </form>
           <h2>Resultados de la búsqueda de: <%= query %></h2>

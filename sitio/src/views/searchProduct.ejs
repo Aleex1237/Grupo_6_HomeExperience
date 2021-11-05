@@ -20,13 +20,9 @@
     <%- include("partials/header" ) %>
     <main>
       <div class="headerAdmin">
-        <form action="/admin/productos/buscar" method="GET" class="search-form">
+        <form action="/admin/productos/buscar" method="GET" class="search-form" id="formSearch">
           <button type="submit"><i class="fas fa-search"></i></button>
-          <input
-            class="search"
-            type="text"
-            name="searchProducts"
-            placeholder="Buscar productos..."
+          <input class="search" type="text" id="search" name="searchProducts" placeholder="Buscar productos..."
           />
         </form>
         <h2>Resultados de la búsqueda de: <%= query %> </h2>
@@ -107,6 +103,5 @@
     </script>
 
     <%- include("partials/footer" ) %> <%- include("partials/scripts" ) %>
-    <script src="/js/searchValidator.js"></script>
   </body>
 </html>

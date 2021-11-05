@@ -1,5 +1,6 @@
 const { validationResult } = require("express-validator");
 const db = require("../database/models");
+const emailSender = require("../services/emailSender");
 
 module.exports = {
   index: (req, res) => {
@@ -10,11 +11,12 @@ module.exports = {
   footerPost: (req, res) => {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
-      
       db.Suscription.create({
         email: req.body.letter,
       })
-        .then(() => {
+        .then((user) => {
+          const email = user.email;
+          emailSender(email);
           res.redirect("/");
         })
         .catch((err) => {
@@ -42,9 +44,11 @@ module.exports = {
       //Si errores está vacio se creará un objeto literal el cual contiene clave y valor.
       db.Suscription.create({
         email: req.body.email,
-        description: req.body ? req.body.textArea : null
+        description: req.body ? req.body.textArea : null,
       })
-        .then(() => {
+        .then((user) => {
+          const email = user.email;
+          emailSender(email);
           res.redirect("/contacto");
         })
         .catch((err) => {

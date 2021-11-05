@@ -13,8 +13,12 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
 var adminRouter = require("./routes/admin");
+<<<<<<< HEAD
 var cartRouter = require("./routes/cart");
 
+=======
+var adminApi = require('./routes/api/products')
+>>>>>>> 8449616d1bd4657fe008e0b3c10ad9b0b7f980dd
 
 //Requiriendo middlewares
 let loginUserCheck = require("./middlewares/loginUserCheck");
@@ -43,6 +47,7 @@ app.use('/usuarios', usersRouter);
 app.use('/productos', productsRouter);
 app.use("/admin", adminRouter);
 app.use("/cart", cartRouter);
+app.use('/api/productos', adminApi);
 
 
 // catch 404 and forward to error handler
