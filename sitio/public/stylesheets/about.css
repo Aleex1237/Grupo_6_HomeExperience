@@ -67,7 +67,15 @@
     margin: auto;
     border: 2px solid black;
     border-radius: 5px;
+}
 
+.about .imagenesPerfil1{
+    width: 140px;
+    height: 120px;
+    display: block;
+    margin: auto;
+    border: 2px solid black;
+    border-radius: 5px;
 }
 
 .about .textoAcordeon{
@@ -116,6 +124,11 @@
    .about .imagenesPerfil{
         width: 270px;
         height: 203px;
+    }
+
+    .about .imagenesPerfil1{
+        width: 220px;
+        height: 165px;
     }
        
 }
