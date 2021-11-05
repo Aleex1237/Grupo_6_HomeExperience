@@ -51,7 +51,7 @@
                     href="/productos/carrito"
                     class="btn-cart"
                     id="btn-cine"
-                    onclick="btnCine()"
+                    onclick="btnCine(event, '<%=experiencia.id%>')"
                   >
                     Añadir al carrito
                   </a>
@@ -66,7 +66,7 @@
       <%- include("./partials/footer" ) %> <%- include("./partials/scripts" ) %>
       <script>
         let userLog = document.getElementById("userLogued");
-        function btnCine() {
+        function btnCine(event,id) {
           if (!userLog) {
             event.preventDefault();
             Swal.fire({
@@ -76,7 +76,7 @@
               background: "#040F16",
               backdrop: "rgba(4, 15, 22, 0.6)",
               confirmButtonText:
-                "<a href='usuarios/iniciar-sesion'>Iniciar sesión</a>",
+                "<a href='/usuarios/iniciar-sesion'>Iniciar sesión</a>",
               customClass: {
                 popup: "popup-class",
                 title: "content-class",
@@ -86,21 +86,8 @@
             });
           }else{
             event.preventDefault();
-            Swal.fire({
-              icon:"warning",
-              title: "Esta pagina está en desarrollo aún :(",
-              color: "white",
-              background: "#040F16",
-              backdrop: "rgba(4, 15, 22, 0.6)",
-              confirmButtonText:
-                "Volver",
-              customClass: {
-                popup: "popup-class",
-                title: "content-class",
-                confirmButton: "confirmButton",
-                cancelButton: "cancelButton",
-              },
-            });
+            agregarItem(event,id);
+            
           }
         }
       </script>

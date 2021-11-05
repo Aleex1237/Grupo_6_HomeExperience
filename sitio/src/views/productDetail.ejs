@@ -22,7 +22,7 @@
             <h1>BIG BOX - <%= experience.name%></h1>
             <P class="precio">$<%= experience.price.toFixed(2)%></P>
             <P class="cuotas">o 6 cuotas de $<%= (experience.price/6).toFixed(2)%></P>
-            <button>AGREGAR AL CARRITO</button>
+            <button onclick="agregarAlCarrito(event,'<%=experience.id%>')">AGREGAR AL CARRITO</button>
         </div>
     </div>
         <section>
@@ -49,5 +49,31 @@
     <%- include("./partials/footer")%>
     <%- include("./partials/scripts")%>
     <script src= "/js/productDetail.js"></script>
+    <script>
+        let userLog = document.getElementById("userLogued");
+        function agregarAlCarrito(event,id) {
+          if (!userLog) {
+            event.preventDefault();
+            Swal.fire({
+              title: "¡Debes inicar sesión para agregar productos al carrito!",
+              html: `<p class="text-white" >Inicie sesión para acceder al carrito </p>`,
+              color: "white",
+              background: "#040F16",
+              backdrop: "rgba(4, 15, 22, 0.6)",
+              confirmButtonText:
+                "<a href='/usuarios/iniciar-sesion'>Iniciar sesión</a>",
+              customClass: {
+                popup: "popup-class",
+                title: "content-class",
+                confirmButton: "confirmButton",
+                cancelButton: "cancelButton",
+              },
+            });
+          }else{
+            event.preventDefault();
+            agregarItem(event,id);
+          }
+        }
+      </script>
 </body>
 </html>

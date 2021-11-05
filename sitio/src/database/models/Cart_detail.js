@@ -1,6 +1,6 @@
 const sequelize = require("sequelize");
 module.exports = (sequelize, dataTypes)=>{
-    const alias = "Cart-detail";
+    const alias = "Cart_detail";
     const cols = {
         id:{
             autoIncrement:true,
@@ -20,6 +20,10 @@ module.exports = (sequelize, dataTypes)=>{
             type:dataTypes.INTEGER,
             allowNull:false
         },
+        statusCart: {
+            type: dataTypes.STRING,
+            allowNull: true,
+          },
         idUser:{
             type:dataTypes.INTEGER,
             allowNull:false
@@ -32,5 +36,23 @@ module.exports = (sequelize, dataTypes)=>{
     }
     const Cart_detail = sequelize.define(alias, cols, config);
     
+    Cart_detail.associate= models => {
+
+        Cart_detail.belongsTo(models.Experience,{
+            as: 'experience',
+            foreignKey : 'idExperience'
+        })
+
+        Cart_detail.belongsTo(models.Cart,{
+            as: 'cart',
+            foreignKey: 'idCart'
+        })
+    
+        Cart_detail.belongsTo(models.User,{
+            as: 'user',
+            foreignKey: 'idUser'
+        })
+        }
+
     return Cart_detail;
 }

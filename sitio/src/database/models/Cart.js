@@ -16,6 +16,10 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.INTEGER,
       allowNull: false,
     },
+    status: {
+      type: dataTypes.STRING,
+      allowNull: false,
+    },
     idUser: {
       type: dataTypes.INTEGER.UNSIGNED,
       allowNull: false,
@@ -27,18 +31,15 @@ module.exports = (sequelize, dataTypes) => {
   };
   const Cart = sequelize.define(alias, cols, config);
 
-  Cart.associate = function (models) {
+  Cart.associate = models => {
     Cart.belongsTo(models.User, {
       as: "user",
-      foreingKey: "idUser",
-    }),
-      Cart.belongsToMany(models.Experience, {
-        as: "experience",
-        through: "cart_detail",
-        foreignKey: "idCart",
-        otherKey: "idExperience",
-        timestamps: false,
-      });
+      foreignKey: "idUser",
+    });
+    Cart.hasMany(models.Cart_detail, {
+      as: "cart_detail",
+      foreignKey: "idCart",
+    });
   };
   return Cart;
 };

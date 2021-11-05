@@ -2,8 +2,9 @@ window.addEventListener("load", () => {
   let userLogued = $("userLogued");
 
   $("cartHeader").addEventListener("click", (event) => {
+    event.preventDefault();
+    console.log("hiciste click");
     if (!userLogued) {
-      event.preventDefault();
       Swal.fire({
         title: "¡Debe iniciar sesión para acceder al carrito de compras!",
         html: `<p class="text-white" >Inicie sesión para poder ingresar </p>`,
@@ -11,7 +12,7 @@ window.addEventListener("load", () => {
         background: "#040F16",
         backdrop: "rgba(4, 15, 22, 0.6)",
         confirmButtonText:
-          "<a href='usuarios/iniciar-sesion'>Iniciar Sesión</a>",
+          "<a href='/usuarios/iniciar-sesion'>Iniciar Sesión</a>",
         customClass: {
           popup: "popup-class",
           title: "content-class",
@@ -20,14 +21,24 @@ window.addEventListener("load", () => {
         },
       });
     } else {
-      event.preventDefault();
+      var myModal = new bootstrap.Modal(document.getElementById('modal-carrito'))
+      myModal.show();
+      show();
+    }
+  });
+
+  $("cartHeader2").addEventListener("click", (event) => {
+    event.preventDefault();
+    console.log("hiciste click");
+    if (!userLogued) {
       Swal.fire({
-        icon: "warning",
-        title: "Esta pagina está en desarrollo aún :(",
+        title: "¡Debe iniciar sesión para acceder al carrito de compras!",
+        html: `<p class="text-white" >Inicie sesión para poder ingresar </p>`,
         color: "white",
         background: "#040F16",
         backdrop: "rgba(4, 15, 22, 0.6)",
-        confirmButtonText: "Volver",
+        confirmButtonText:
+          "<a href='/usuarios/iniciar-sesion'>Iniciar Sesión</a>",
         customClass: {
           popup: "popup-class",
           title: "content-class",
@@ -35,6 +46,10 @@ window.addEventListener("load", () => {
           cancelButton: "cancelButton",
         },
       });
+    } else {
+      var myModal = new bootstrap.Modal(document.getElementById('modal-carrito'))
+      myModal.show();
+      show();
     }
   });
 
@@ -48,7 +63,7 @@ window.addEventListener("load", () => {
         background: "#040F16",
         backdrop: "rgba(4, 15, 22, 0.6)",
         confirmButtonText:
-          "<a href='usuarios/iniciar-sesion'>Iniciar Sesión</a>",
+          "<a href='/usuarios/iniciar-sesion'>Iniciar Sesión</a>",
         customClass: {
           popup: "popup-class",
           title: "content-class",
