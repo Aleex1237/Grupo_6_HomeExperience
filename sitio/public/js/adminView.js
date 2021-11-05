@@ -21,7 +21,7 @@ const productsApi = async () => {
             <button class="hide" onclick="hideProduct(${producto.id},${producto.active})" type="submit">${producto.active == 1 ? "Ocultar" : "Mostrar"}</button>
             <input value="${producto.active}" style="display:none;" type="number" disabled>
 
-          <a href="/admin/producto/modificar/"
+          <a href="/admin/producto/modificar/${producto.id}"
             ><button class="edit" type="submit">Editar</button>
             </a>
           
