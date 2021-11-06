@@ -49,19 +49,19 @@ const mostrarProductos = carrito => {
             <img class="w-100" src="/images/products/${item.imagen}" id="imgProduct"> 
             </td>
             <td class="text-center col-3 align-middle">
-            <a class="text-danger h5" onClick="quitarItem(event,${item.id},cantidad${item.id})"><i class="fas fa-minus-square"></i></a>
-            <span id="cantidad${item.id}" class="h5">${item.cantidad}<span>
-            <a class="text-success h5" onClick="agregarItem(event,${item.id})"><i class="fas fa-plus-square"></i></a>
+            <a class="text-danger h5" onClick="quitarItem(event,${item.id},cantidad${item.id})"><i class="fas fa-minus-square btnQuitarItem"></i></a>
+            <span id="cantidad${item.id}" class="h5 white">${item.cantidad}<span>
+            <a class="text-success h5" onClick="agregarItem(event,${item.id})"><i class="fas fa-plus-square btnAgregarItem"></i></a>
             </td>
-            <td class="align-middle">
+            <td class="align-middle white">
             ${item.nombre}
             </td>
            
             <td class="align-middle">
-            <span>$</span><span class="float-end">${item.precio}</span>
+            <span class="white">$</span><span class="float-end white">${item.precio}</span>
             </td>
             <td class="align-middle">
-            <span>$</span><span class="float-end">${item.total}</span>
+            <span class="white">$</span><span class="float-end white">${item.total}</span>
             </td>
             `;
         changuito.innerHTML += product
