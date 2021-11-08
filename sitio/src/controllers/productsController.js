@@ -141,7 +141,7 @@ module.exports = {
         });
         //guardo las imagenes
         let imagenes = [];
-        if (req.files) {
+        if (req.files.length>0) {
           for (let i = 0; i < req.files.length; i++) {
             let img = {
               name: req.files[i].filename,
@@ -155,7 +155,7 @@ module.exports = {
             idExperience: experiencia.id,
           });
         }
-
+        console.log(imagenes[0].name);
         await db.Image.bulkCreate(imagenes);
         //guardo cada producto
         let i = 1;
