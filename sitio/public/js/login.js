@@ -1,10 +1,24 @@
 const $ = (id) => document.getElementById(id);
 const query = new URLSearchParams(location.search);
-let regExEmail =
-  /^(([^<>()\[\]\.,;:\s@\”]+(\.[^<>()\[\]\.,;:\s@\”]:+)*)|(\”.+\”))@(([^<>()[\]\.,;:\s@\”]+\.)+[^<>()[\]\.,;:\s@\”]{2,})$/;
+
+const formularioLogin= $('form-login')
+
+function mostrar(){
+  var tipo= document.getElementById('floatingPassword')
+  var ocultarMostrar= document.getElementById('mostrarPass')
+  if(tipo.type =='password'){
+      tipo.type= 'text';
+      ocultarMostrar.innerHTML= 'Ocultar contraseña'
+  } else {
+      tipo.type='password'
+      ocultarMostrar.innerHTML= 'Mostrar contraseña'
+  }
+  }
+
 window.addEventListener("load", () => {
-  if(location.pathname == '/usuarios/iniciar-sesion'){
-    console.log("CONECTADO SATISFACTORIAMENTE CON LOGIN");
+   if(location.pathname == '/usuarios/iniciar-sesion'){
+     console.log("CONECTADO SATISFACTORIAMENTE CON LOGIN");
+    console.log(formularioLogin);
 
     $("floatingInput").addEventListener("blur", () => {
       if (!regExEmail.test($("floatingInput").value)) {
@@ -30,37 +44,27 @@ window.addEventListener("load", () => {
       }
     });
 
-    $("form-login").addEventListener("submit", (e) => {
+   
+  
+
+    formularioLogin.addEventListener("submit", (e) => {
+      let error=false;
       e.preventDefault();
+      let elementosFormulario = formularioLogin.elements;
 
-      let elementosForm = $("form-login").elements;
-      let error = false;
-
-      for (let i = 0; i < elementosForm.length - 1; i++) {
-        if (!elementosForm[i].value) {
-          elementosForm[i].classList.add("is-invalid");
+      for (let i = 0; i < elementosFormulario.length -3; i++) {
+        if (!elementosFormulario[i].value) {
+          elementosFormulario[i].classList.add("is-invalid");
           $("error-vacio").innerHTML = "<br>Quedan campos por completar";
-          error = true;
-        }
-        if (!error) {
-          $("form-login").submit();
+          error=true;
         }
       }
-    });
-    }
-  
+        if(!error) {
+          formularioLogin.submit()
+               }
+      });
+     } 
 });
 
-function mostrar(){
-    var tipo= document.getElementById('floatingPassword')
-    var ocultarMostrar= document.getElementById('mostrarPass')
-    if(tipo.type =='password'){
-        tipo.type= 'text';
-        ocultarMostrar.innerHTML= 'Ocultar contraseña'
-    } else {
-        tipo.type='password'
-        ocultarMostrar.innerHTML= 'Mostrar contraseña'
-    }
-    }
 
  

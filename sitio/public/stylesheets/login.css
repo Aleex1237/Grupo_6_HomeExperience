@@ -168,15 +168,10 @@
         margin-left: 19vw;
     }
 
-    .btn-primary{
-/*         margin-top: 50vh;
- */        background-color: red;
-    }
-
     .login .cuerpo .boton{
         margin-left: 21vw;
         width: 28vw;
         cursor: pointer;
     }
-
+    
 }

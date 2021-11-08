@@ -49,19 +49,19 @@ const mostrarProductos = carrito => {
             <img class="w-100" src="/images/products/${item.imagen}" id="imgProduct"> 
             </td>
             <td class="text-center col-3 align-middle">
-            <a class="text-danger h5" onClick="quitarItem(event,${item.id},cantidad${item.id})"><i class="fas fa-minus-square"></i></a>
-            <span id="cantidad${item.id}" class="h5">${item.cantidad}<span>
-            <a class="text-success h5" onClick="agregarItem(event,${item.id})"><i class="fas fa-plus-square"></i></a>
+            <a class="text-danger h5" onClick="quitarItem(event,${item.id},cantidad${item.id})"><i class="fas fa-minus-square btnQuitarItem"></i></a>
+            <span id="cantidad${item.id}" class="h5 white">${item.cantidad}<span>
+            <a class="text-success h5" onClick="agregarItem(event,${item.id})"><i class="fas fa-plus-square btnAgregarItem"></i></a>
             </td>
-            <td class="align-middle">
+            <td class="align-middle white">
             ${item.nombre}
             </td>
            
             <td class="align-middle">
-            <span>$</span><span class="float-end">${item.precio}</span>
+            <span class="white">$</span><span class="float-end white">${item.precio}</span>
             </td>
             <td class="align-middle">
-            <span>$</span><span class="float-end">${item.total}</span>
+            <span class="white">$</span><span class="float-end white">${item.total}</span>
             </td>
             `;
         changuito.innerHTML += product
@@ -118,8 +118,6 @@ const quitarItem = async (e,id,cantidad) => {
     }
     console.log('producto ' + id + ' eliminado!!')
     }else{
-        let response = confirm('¿Estás seguro que querés eliminar')
-        if(response){
             try {
                 let response = await fetch(urlBase + '/cart/remove/' + id)
                 let result = await response.json();
@@ -130,7 +128,6 @@ const quitarItem = async (e,id,cantidad) => {
                 console.log(error)
         
             }
-        }
     }
 }
 
@@ -144,6 +141,58 @@ const empty = async () => {
     } catch (error) {
         console.log(error)
     }
+} 
+
+/* const closeCart = async () => {
+    console.log("presionaste seguir comprando");
+    var myModal = new bootstrap.Modal(document.getElementById('modal-carrito'))
+    myModal.hide();
+}  */
+
+const checkout = async () => {
+        try {
+            let response = await fetch(urlBase + '/cart/checkout')
+            let result = await response.json();
+            if(result.data){
+                Swal.fire({
+                    title: "¡Compra efectuada con éxito!",
+                    html: `<p class="text-white" >Gracias por elegirnos </p>`,
+                    color: "white",
+                    background: "#040F16",
+                    backdrop: "rgba(4, 15, 22, 0.6)",
+                    confirmButtonText:
+                      "<a href='/'>Aceptar</a>",
+                    customClass: {
+                      popup: "popup-class",
+                      title: "content-class",
+                      confirmButton: "confirmButton",
+                      cancelButton: "cancelButton",
+                    },
+                  });
+            }else if(result.meta.status==202){
+                Swal.fire({
+                    title: "¡El carrito está vacío!",
+                    html: `<p class="text-white" >Seleccione alguna experiencia y vuelva a intentarlo </p>`,
+                    color: "white",
+                    background: "#040F16",
+                    backdrop: "rgba(4, 15, 22, 0.6)",
+                    confirmButtonText:
+                      "<a href='/'>Aceptar</a>",
+                    customClass: {
+                      popup: "popup-class",
+                      title: "content-class",
+                      confirmButton: "confirmButton",
+                      cancelButton: "cancelButton",
+                    },
+                  });
+            }
+            mostrarCantidad(result.data);
+            changuito.innerHTML = ""
+    
+        } catch (error) {
+            console.log(error)
+        }
+    
 } 
 
 show()

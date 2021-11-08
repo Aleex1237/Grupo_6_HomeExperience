@@ -246,5 +246,64 @@ module.exports = {
             return res.status(500).json(error)
         }
 
+    },
+    checkout: async (req,res) =>{
+        try {
+            if(req.session.user && req.session.cart && req.session.cart.length > 0){
+                await db.Cart_detail.update(
+                    {
+                        statusCart : 'complete'
+                    },
+                    {
+                        where : {
+                            idUser : req.session.user.id,
+                            statusCart : 'pending'
+                        }
+                    }
+                )
+    
+                await db.Cart.update(
+                    {
+                        status : 'complete'
+                    },
+                    {
+                        where : {
+                            idUser : req.session.user.id,
+                            status : 'pending'
+                        }
+                    }
+                )
+    
+                req.session.cart = [];
+    
+                let response = {
+                    meta: {
+                        link: getURL(req),
+                        status: 200
+                    },
+                    data: req.session.cart
+                }
+                return res.status(200).json(response)
+            }else{
+                let response = {
+                    meta: {
+                        link: getURL(req),
+                        status: 202
+                    }
+                }
+                return res.status(202).json(response)
+            }
+            
+        } catch (error) {
+            console.log(error)
+            let response = {
+                meta: {
+                    link: getURL(req),
+                    status: 500,
+                    error: error
+                }
+            }
+            return res.status(500).json(response)
+        }
     }
 }

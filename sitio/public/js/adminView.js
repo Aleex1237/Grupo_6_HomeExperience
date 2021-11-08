@@ -31,7 +31,7 @@ const productsApi = async () => {
               producto.active
             }" style="display:none;" type="number" disabled>
 
-          <a href="/admin/producto/modificar/"
+          <a href="/admin/producto/modificar/${producto.id}"
             ><button class="edit" type="submit">Editar</button>
             </a>
           

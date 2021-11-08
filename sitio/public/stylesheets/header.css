@@ -139,6 +139,7 @@ header .shopping-basket-mobile-tablet {
     display: initial;
 }
 
+
 header a .fa-shopping-basket {
     color: var(--color-celeste) !important;
     font-size: 5.3vw;
@@ -159,6 +160,24 @@ header a {
     text-decoration: none;
     color: var(--color-blanco);
 }
+#miCarrito{
+    background-color: var(--color-gris)
+}
+.white{
+    color:var(--color-blanco);
+}
+.btnAgregarItem{
+    color: var(--color-celeste);
+}
+.btnQuitarItem{
+    color: var(--color-rojo);
+}
+.btnCarrito{
+    background-color: var(--color-azul-oscuro);
+    color:var(--color-blanco);
+    border:none;
+}
+
 
 @media (min-width: 768px) {
     header {
