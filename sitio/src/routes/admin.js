@@ -15,7 +15,7 @@ router.get("/productos", adminUserCheck, admin);
 
 router.get("/productos/buscar",adminUserCheck ,search);
 
-router.delete("/producto/eliminar/:id",destroy);
+router.delete("/productos/eliminar",destroy);
 
 router.get('/producto/agregar',adminUserCheck ,add);
 

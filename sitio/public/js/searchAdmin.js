@@ -31,18 +31,22 @@ const productsApi = async (query) => {
           </ul>
           
           <div class="form">
-              <button class="hide" onclick="hideProduct(${producto.id},${producto.active},'${producto.name}')" type="submit">${
+              <button class="hide" onclick="hideProduct(${producto.id},${
+          producto.active
+        },'${producto.name}')" type="submit">${
           producto.active == 1 ? "Ocultar" : "Mostrar"
         }</button>
               <input value="${
                 producto.active
               }" style="display:none;" type="number" disabled>
   
-            <a href="/admin/producto/modificar/"
+            <a href="/admin/producto/modificar/${producto.id}"
               ><button class="edit" type="submit">Editar</button>
               </a>
             
-              <button class="delete" type="submit" onclick="EventoAlert()">
+              <button class="delete" type="submit" onclick="EventoAlert(${
+                producto.id
+              })">
                 Eliminar
               </button>
           </div>
@@ -51,14 +55,40 @@ const productsApi = async (query) => {
         $("product-container").innerHTML += item;
       });
     } else {
-      $("noResult").innerHTML = "no hay resultados de busqueda";
+      $("noResult").innerHTML = "no hay resultados de busqueda. <a href='http://localhost:3000/admin/productos'>Volver</a>";
     }
   } catch (error) {
     console.log(error);
   }
 };
 
-async function hideProduct(productId, action,productoName) {
+async function deleteProduct(productId) {
+  const options = {
+    method: "DELETE",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ id: productId }),
+  };
+  try {
+    const response = await fetch(`/admin/productos/eliminar`, options);
+    console.log(response);
+    if (response.ok == false) {
+      window.location.replace(
+        `/admin/productos`
+      );
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "algo salio mal",
+        text: "intenta mas tarde!",
+        confirmButtonText: "Entendido",
+      });
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function hideProduct(productId, action, productoName) {
   const options = {
     method: "PUT",
     headers: { "Content-Type": "application/json" },

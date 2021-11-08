@@ -59,7 +59,7 @@ module.exports = {
       ],
     }).then((experiencias) =>
       res.render("cine", {
-        title: "Expriencia cine",
+        title: "Experiencia cine",
         experiencias,
       })
     );
@@ -386,7 +386,7 @@ module.exports = {
     }
   },
   destroy: async (req, res) => {
-    let experiencia = await db.Experience.findByPk(req.params.id, {
+    let experiencia = await db.Experience.findByPk(+req.body.id, {
       include: [
         {
           association: "images",
@@ -401,25 +401,25 @@ module.exports = {
     //elimino los productos asociados
     await db.Product.destroy({
       where: {
-        idExperience: +req.params.id,
+        idExperience: +req.body.id,
       },
     });
     //elimino las asaociaciones con keywords
     await db.KeywordExperience.destroy({
       where: {
-        idExperience: +req.params.id,
+        idExperience: +req.body.id,
       },
     });
     //elimino las images asociadas
     await db.Image.destroy({
       where: {
-        idExperience: +req.params.id,
+        idExperience: +req.body.id,
       },
     });
     //elimino la experiencia
     await db.Experience.destroy({
       where: {
-        id: +req.params.id,
+        id: +req.body.id,
       },
     });
 

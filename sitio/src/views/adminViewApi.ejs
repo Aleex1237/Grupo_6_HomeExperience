@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
-  <%- include("partials/head",{title:"admin"} ) %>
+  <%- include("partials/head",{title:"Admin"} ) %>
 
   <body class="admin">
     <%- include("partials/header" ) %>
     <main>
       <div class="headerAdmin">
-        <div
-          class="search-form"
-          id="formSearch"
-        >
-          <button type="submit" id="btnSearch"><i class="fas fa-search"></i></button>
+        <div class="search-form" id="formSearch">
+          <button type="submit" id="btnSearch">
+            <i class="fas fa-search"></i>
+          </button>
           <input
             class="search"
             type="text"
@@ -18,18 +17,16 @@
             id="search"
             placeholder=" Buscar productos..."
           />
-      </div>
+        </div>
         <a href="/admin/producto/agregar"
           ><i class="fas fa-plus"></i> Agregar producto</a
         >
       </div>
-      <article id="product-container">
-        
-      </article>
+      <article id="product-container"></article>
     </main>
 
     <script>
-      function EventoAlert() {
+      function EventoAlert(productId) {
         event.preventDefault();
         var form = event.target.form;
         Swal.fire({
@@ -49,11 +46,15 @@
             confirmButton: "confirmButton",
             cancelButton: "cancelButton",
           },
-        }).then((result) => {
-          if (result.isConfirmed) {
-            form.submit();
-          }
-        });
+        })
+          .then((result) => {
+            if (result.isConfirmed) {
+              deleteProduct(productId);
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       }
     </script>
 

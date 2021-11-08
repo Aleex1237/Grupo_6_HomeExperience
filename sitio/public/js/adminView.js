@@ -35,7 +35,9 @@ const productsApi = async () => {
             ><button class="edit" type="submit">Editar</button>
             </a>
           
-            <button class="delete" type="submit" onclick="EventoAlert()">
+            <button class="delete" id="deleteProduct" onclick="EventoAlert(${
+              producto.id
+            })">
               Eliminar
             </button>
         </div>
@@ -48,6 +50,30 @@ const productsApi = async () => {
     console.log(error);
   }
 };
+
+async function deleteProduct(productId) {
+  const options = {
+    method: "DELETE",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ id: productId }),
+  };
+  try {
+    const response = await fetch(`/admin/productos/eliminar`, options);
+
+    if (response.ok == false) {
+      location.reload();
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "algo salio mal",
+        text: "intenta mas tarde!",
+        confirmButtonText: "Entendido",
+      });
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 async function hideProduct(productId, action) {
   const options = {
@@ -88,12 +114,6 @@ async function hideProduct(productId, action) {
     });
   }
 }
-
-/* <form action="/admin/producto/mostrar/?_method=PUT" method="POST"> */
-
-/* <form action="/admin/producto/ocultar/?_method=PUT" method="POST"> */
-
-/* <form action="/admin/producto/eliminar/?_method=DELETE" method="POST"> */
 
 window.addEventListener("load", () => {
   productsApi();

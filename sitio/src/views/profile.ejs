@@ -31,38 +31,7 @@
                         <input type="email" class="form-control" id="floatingInput" name="email" value="<%= usuario.email %>" disabled>
                     </div>
 
-                    
-                    <div class="form-floating mb-3">
-                        <label>País</label>
-                        <input type="text" class="form-control" id="floatingInput"
-                        value="<%= usuario.address ? usuario.address.pais : (usuario.address.pais == null ? "Pais Desconocido" : "") %> " disabled>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        <label>Provincia</label>
-                        <input type="text" class="form-control" id="floatingInput"  
-                        value="<%= usuario.address ? usuario.address.provincia : (usuario.address.provincia == null ? "Provincia Desconocida" : "") %>" disabled>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        <label>Localidad</label>
-                        <input type="text" class="form-control" id="floatingInput" 
-                        value="<%= usuario.address ? usuario.address.localidad : (usuario.address.localidad == null ? "Localidad Desconocida" : "") %>" disabled>
-                    </div>
-
-
-                    <div class="d-flex mb-3  form-floating justify-content-center">
-                        <input type="text" aria-label="First name" class="form-control mr-2 ml-0 w-50" value="<%= usuario.address ? usuario.address.calle : (usuario.address.calle == null ? "Calle Desconocida" : "") %>" disabled>
-                        <input type="text" aria-label="Last name" class="form-control m-0 w-50" value="<%= usuario.address ? usuario.address.numero : (usuario.address.numero == null ? "Numero de calle Desconocido" : "") %>" disabled>
-                      </div>
-
-                      <div class="form-floating mb-3">
-                        <label>Código Postal</label>
-                        <input type="text" class="form-control" id="floatingInput"  
-                        value="<%= usuario.address ? usuario.address.codigoPostal : (usuario.address.codigoPostal == null ? "Numero Postal Desconocido" : "") %>" disabled>
-                    </div>
-                    
-
+                 
                 <div class="boton-guardar">
                     <a class="btn btn-primary btn-dark text-align-center" href="/usuarios/direccion/<%= usuario.id %> ">Editar datos de dirección</a>
                 </div>
