@@ -32,7 +32,7 @@ module.exports = {
           name: {
             [Op.substring]: req.query.searchProducts,
           },
-          idCategory : 1
+          idCategory: 1,
         },
       });
 
@@ -72,7 +72,7 @@ module.exports = {
           name: {
             [Op.substring]: req.query.searchProducts,
           },
-          idCategory : 2
+          idCategory: 2,
         },
       });
 
@@ -86,34 +86,12 @@ module.exports = {
     }
   },
 
-  admin: (req, res) => {res.render("adminViewApi")},
+  admin: (req, res) => {
+    res.render("adminViewApi");
+  },
 
   search: async (req, res) => {
-    let products = await db.Experience.findAll({
-      include: [
-        { association: "images" },
-        { association: "category" },
-        { association: "keywords" },
-      ],
-      where: {
-        name: {
-          [Op.substring]: req.query.searchProducts,
-        },
-      },
-    });
-    db.Experience.findAll({
-      include: [{ association: "images" }, { association: "category" }],
-    })
-      .then(() => {
-        return res.render("searchProduct", {
-          products,
-          title: `Resultado: ${products.length}`,
-          query: req.query.searchProducts,
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    res.render("searchProductApi");
   },
 
   detail: (req, res) => {
@@ -385,7 +363,7 @@ module.exports = {
       );
       res.status(200).json("ok");
     } catch (err) {
-      res.status(500).json("not :v")
+      res.status(500).json("not :v");
     }
   },
   productHide: async (req, res) => {
@@ -404,7 +382,7 @@ module.exports = {
       //Al terminar la ejecución que creá el producto se redicrecciona al usuarío hacia el home.
       res.status(200).json("ok");
     } catch (err) {
-      res.status(500).json("not :v")
+      res.status(500).json("not :v");
     }
   },
   destroy: async (req, res) => {

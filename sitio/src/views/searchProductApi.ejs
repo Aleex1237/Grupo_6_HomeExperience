@@ -1,8 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
-  <%- include("partials/head",{title:"admin"} ) %>
+  <%- include("partials/head",{title:"search"} ) %>
 
   <body class="admin">
+    <style>
+      .admin main {
+        margin-bottom: 10vh;
+      }
+      .admin footer {
+        position: fixed;
+      }
+      .admin h2 {
+        text-align: center;
+        margin-top: 3vh;
+      }
+    </style>
+
     <%- include("partials/header" ) %>
     <main>
       <div class="headerAdmin">
@@ -10,22 +23,23 @@
           class="search-form"
           id="formSearch"
         >
-          <button type="submit" id="btnSearch"><i class="fas fa-search"></i></button>
+        <button type="submit" id="btnSearch"><i class="fas fa-search"></i></button>
           <input
             class="search"
             type="text"
-            name="searchProducts"
             id="search"
-            placeholder=" Buscar productos..."
+            name="searchProducts"
+            placeholder="Buscar productos..."
           />
-      </div>
+        </div>
         <a href="/admin/producto/agregar"
           ><i class="fas fa-plus"></i> Agregar producto</a
         >
+        <h2 id="resultSearch"></h2>
+        <h2 id="noResult"></h2>
       </div>
-      <article id="product-container">
-        
-      </article>
+
+      <article id="product-container"></article>
     </main>
 
     <script>
@@ -58,6 +72,6 @@
     </script>
 
     <%- include("partials/footer" ) %> <%- include("partials/scripts" ) %>
-    <script src="/js/adminView.js"></script>
+    <script src="/js/searchAdmin.js"></script>
   </body>
 </html>

@@ -11,5 +11,7 @@ router.put("/mostrar", adminController.productActive);
 
 router.put("/ocultar", adminController.productHide);
 
+router.get("/buscar", adminApi.search);
+
 
 module.exports = router;
